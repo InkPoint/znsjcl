@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xalt.sjjg.dao.JjcXzscztmdMapper">
+
+    <!--批次查询-->
+    <select id="queryBatch"  resultType="com.xalt.sjjg.model.JjcXzscztmdVo">
+        select distinct t.pc_dm id
+        ,t1.pcmc text
+        from znsjcl_jjc_xzscztmd t
+            ,znsjcl_dm_pc t1
+        where t.pc_dm=t1.pc_dm
+          and t1.yxbz='Y'
+        order by substr(t.pc_dm,5)*1 desc
+    </select>
+    <!--初始化数据说明-->
+    <select id="querySjsm" parameterType="java.util.Map" statementType="CALLABLE">
+        {call  pre_znsjcl_sjcp_xzscztmdsjsm(
+             #{svo.pc_dm,mode=IN,jdbcType=VARCHAR}
+            ,#{svo.sjsm,mode=OUT,jdbcType=VARCHAR}
+        )}
+    </select>
+
+    <!--企业有登记序号-->
+    <select id="qyydjxh"  parameterType="java.util.HashMap" resultType="java.util.HashMap">
+        select t.XH,t.zcsj,t.MC,t.ZCDJH,t.TYSHXYDM,t.ZCDZ,t.DJJG,t.LX,t1.pcmc,t.djxh from znsjcl_jjc_xzscztmd t,znsjcl_dm_pc t1  where t.pc_dm=t1.pc_dm(+) and t.djjg not like '%高新%' and t.lx not like '%个体%' and t.djxh is not null and t.pc_dm=#{svo.pc_dm} order  by to_number(t.xh)
+    </select>
+    <!--企业无登记序号-->
+    <select id="qywdjxh"  parameterType="java.util.HashMap" resultType="java.util.HashMap">
+        select t.XH,t.zcsj,t.MC,t.ZCDJH,t.TYSHXYDM,t.ZCDZ,t.DJJG,t.LX,t1.pcmc,t.djxh from znsjcl_jjc_xzscztmd t,znsjcl_dm_pc t1  where t.pc_dm=t1.pc_dm(+) and t.djjg not like '%高新%' and t.lx not like '%个体%' and t.djxh is null and t.pc_dm=#{svo.pc_dm} order  by to_number(t.xh)
+    </select>
+    <!--个体有登记序号-->
+    <select id="gtydjxh"  parameterType="java.util.HashMap" resultType="java.util.HashMap">
+        select t.XH,t.zcsj,t.MC,t.ZCDJH,t.TYSHXYDM,t.ZCDZ,t.DJJG,t.LX,t1.pcmc,t.djxh from znsjcl_jjc_xzscztmd t,znsjcl_dm_pc t1  where t.pc_dm=t1.pc_dm(+) and t.djjg not like '%高新%' and t.lx like '%个体%' and t.djxh is not null and t.pc_dm=#{svo.pc_dm} order  by to_number(t.xh)
+    </select>
+    <!--个体无登记序号-->
+    <select id="gtwdjxh"  parameterType="java.util.HashMap" resultType="java.util.HashMap">
+        select t.XH,t.zcsj,t.MC,t.ZCDJH,t.TYSHXYDM,t.ZCDZ,t.DJJG,t.LX,t1.pcmc,t.djxh from znsjcl_jjc_xzscztmd t,znsjcl_dm_pc t1  where t.pc_dm=t1.pc_dm(+) and t.djjg not like '%高新%' and t.lx like '%个体%' and t.djxh is null and t.pc_dm=#{svo.pc_dm} order  by to_number(t.xh)
+    </select>
+    <!--高新分局和企业名称为***-->
+    <select id="gxfjhx"  parameterType="java.util.HashMap" resultType="java.util.HashMap">
+        select t.XH,t.zcsj,t.MC,t.ZCDJH,t.TYSHXYDM,t.ZCDZ,t.DJJG,t.LX,t1.pcmc,t.djxh from znsjcl_jjc_xzscztmd t,znsjcl_dm_pc t1  where t.pc_dm=t1.pc_dm(+) and (t.djjg like '%高新%' or t.mc like '%*%') and t.pc_dm=#{svo.pc_dm} order  by to_number(t.xh)
+    </select>
+</mapper>

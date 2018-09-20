@@ -1,0 +1,98 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>自定义查询主表(CX_ZDYCXZB)</title><style type="text/css">
+<!--body {background-color: #EFECDD;}td{ font-family:"宋体"; font-size:9pt; color=#666666;}.style9 {color: #FFFFFF}-->
+</style></head><body>
+<table width="300" height="100" border="0" cellpadding="0" cellspacing="0">
+<tr><td><p align="center">自定义查询主表(CX_ZDYCXZB)</p></td></tr></table>
+<table width="760" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#FF8800">
+<tr bgcolor="#FFAC75">
+<td width="80" height="26"><div align="center" class="style9">列名</div></td>
+<td width="80"><div align="center" class="style9">汉字名</div></td>
+<td width="80"><div align="center" class="style9">数据类型</div></td>
+<td width="80"><div align="center" class="style9">长度</div></td>
+<td width="80"><div align="center" class="style9">精度</div></td>
+<td width="80"><div align="center" class="style9">非空</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">SQLXH</div></td>
+<td><div align="center">SQL序号||SQL序号</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">16</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">SQLMC</div></td>
+<td><div align="center">SQL名称||SQL名称</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">300</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">CXMS</div></td>
+<td><div align="center">查询描述||查询描述，对这个查询定义进行简单的功能或者其他的说明</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">2000</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">SQLSTR</div></td>
+<td><div align="center">SQLSTR||特长sql语句</div></td>
+<td><div align="center">CLOB</div></td>
+<td><div align="center">4000</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">SJYLX</div></td>
+<td><div align="center">数据源类型</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">32</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">SSJG_DM</div></td>
+<td><div align="center">所属机关代码</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">11</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center"><a href="DM_GY_SWRY.html">LRR_DM</div></td>
+<td><div align="center">录入人代码</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">11</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">LRRQ</div></td>
+<td><div align="center">录入日期</div></td>
+<td><div align="center">DATE</div></td>
+<td><div align="center">7</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center"><a href="DM_GY_SWRY.html">XGR_DM</div></td>
+<td><div align="center">修改人代码</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">11</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">XGRQ</div></td>
+<td><div align="center">修改日期</div></td>
+<td><div align="center">DATE</div></td>
+<td><div align="center">7</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">XYBJ</div></td>
+<td><div align="center">选用标记||选用标记</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">BJW</div></td>
+<td><div align="center">标记位||标记位(0为拖拽式，1为SQL式)</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">ZSBJ</div></td>
+<td><div align="center">展示标记||展示标记，目前：0，普通显示方式，1，多表头展示，2，交叉表展示，3，单行模板，4：动态SQL,5:折行</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">GXBJ</div></td>
+<td><div align="center">共享标记||共享标记,1是共享（进行权限过滤）,0私有（仅创建人可见可修改）</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>

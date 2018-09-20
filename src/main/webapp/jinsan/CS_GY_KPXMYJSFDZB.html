@@ -1,0 +1,235 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>开票项目应缴收费对照表(CS_GY_KPXMYJSFDZB)</title><style type="text/css">
+<!--body {background-color: #EFECDD;}td{ font-family:"宋体"; font-size:9pt; color=#666666;}.style9 {color: #FFFFFF}-->
+</style></head><body>
+<table width="300" height="100" border="0" cellpadding="0" cellspacing="0">
+<tr><td><p align="center">开票项目应缴收费对照表(CS_GY_KPXMYJSFDZB)</p></td></tr></table>
+<table width="760" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#FF8800">
+<tr bgcolor="#FFAC75">
+<td width="80" height="26"><div align="center" class="style9">列名</div></td>
+<td width="80"><div align="center" class="style9">汉字名</div></td>
+<td width="80"><div align="center" class="style9">数据类型</div></td>
+<td width="80"><div align="center" class="style9">长度</div></td>
+<td width="80"><div align="center" class="style9">精度</div></td>
+<td width="80"><div align="center" class="style9">非空</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">UUID</div></td>
+<td><div align="center">UUID</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">32</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center"><a href="DM_GY_DKXM.html">DKXM_DM</div></td>
+<td><div align="center">代开项目代码</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center"><a href="DM_GY_ZSXM.html">ZSXM_DM</div></td>
+<td><div align="center">征收项目代码</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">5</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center"><a href="DM_GY_ZSPM.html">ZSPM_DM</div></td>
+<td><div align="center">征收品目代码</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">9</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center"><a href="DM_GY_ZSZM.html">ZSZM_DM</div></td>
+<td><div align="center">征收子目代码</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">16</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">XYBZ</div></td>
+<td><div align="center">选用标志</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center"><a href="DM_GY_SWJG.html">SWJG_DM</div></td>
+<td><div align="center">税务机关代码</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">11</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center"><a href="DM_GY_ZSXM.html">ZSZSXM_DM</div></td>
+<td><div align="center">主税征收项目代码</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">5</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center"><a href="DM_GY_ZSPM.html">ZSZSPM_DM</div></td>
+<td><div align="center">主税征收品目代码</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">9</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">ZFSBZ</div></td>
+<td><div align="center">主附税标志||0：主税，1：附税，2：增值税附税，3：消费税附税</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+</table>
+
+
+   
+<table width="300" height="100" border="0" cellpadding="0" cellspacing="0">
+<tr><td><p align="center">开票项目应缴收费对照表(数据)</p></td></tr></table>
+<table width="760" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#FF8800">
+<tr bgcolor="#FFAC75">
+<td width="80" height="26"><div align="center" class="style9">UUID</div></td>
+<td width="80" height="26"><div align="center" class="style9">代开项目代码</div></td>
+<td width="80" height="26"><div align="center" class="style9">征收项目代码</div></td>
+<td width="80" height="26"><div align="center" class="style9">征收品目代码</div></td>
+<td width="80" height="26"><div align="center" class="style9">征收子目代码</div></td>
+<td width="80" height="26"><div align="center" class="style9">选用标志</div></td>
+<td width="80" height="26"><div align="center" class="style9">税务机关代码</div></td>
+<td width="80" height="26"><div align="center" class="style9">主税征收项目代码</div></td>
+<td width="80" height="26"><div align="center" class="style9">主税征收品目代码</div></td>
+<td width="80" height="26"><div align="center" class="style9">主附税标志||0：主税，1：附税，2：增值税附税，3：消费税附税</div></td>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">2EA3C92087A73CC90E353F0305F810B3</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">10106</div></td>
+<td><div align="center">101060200</div></td>
+<td><div align="center">1010602002415122</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">2500000000 </div></td>
+<td><div align="center">10104</div></td>
+<td><div align="center">101040001</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">348c0b50484741eb9b4eefeacbd35c91</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">10106</div></td>
+<td><div align="center">101060200</div></td>
+<td><div align="center">1010602002415122</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">2500000000 </div></td>
+<td><div align="center">10104</div></td>
+<td><div align="center">101040001</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">438E7DDBBC2BE812BC7519FEEE7F7452</div></td>
+<td><div align="center">07</div></td>
+<td><div align="center">10101</div></td>
+<td><div align="center">101010104</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">25000000000</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">101030102</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">EB09B10E8E247033E040170A82043944</div></td>
+<td><div align="center">03</div></td>
+<td><div align="center">10102</div></td>
+<td><div align="center">101020102</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">25000000000</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">101030102</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">EB0A4ADA97D26246E040170A82044D99</div></td>
+<td><div align="center">02</div></td>
+<td><div align="center">10101</div></td>
+<td><div align="center">101010103</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">25000000000</div></td>
+<td><div align="center">10101</div></td>
+<td><div align="center">101010101</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">D923F19B92AE2961CE67A71A80EFF82A</div></td>
+<td><div align="center">02</div></td>
+<td><div align="center">10108</div></td>
+<td><div align="center">101089901</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">25000000000</div></td>
+<td><div align="center">10104</div></td>
+<td><div align="center">101049901</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">D1D9783B73BD4D03FC625690EE7651BB</div></td>
+<td><div align="center">03</div></td>
+<td><div align="center">10104</div></td>
+<td><div align="center">101049901</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">25000000001</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">101030102</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">f9cebdf29a1844b481b2875d02374431</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">10106</div></td>
+<td><div align="center">101060200</div></td>
+<td><div align="center">1010602002415122</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">21400000000</div></td>
+<td><div align="center">10104</div></td>
+<td><div align="center">101040001</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">543f09c5bb17473492940c424886130e</div></td>
+<td><div align="center">07</div></td>
+<td><div align="center">10101</div></td>
+<td><div align="center">101010104</div></td>
+<td><div align="center">1010602002415122</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">21400000000</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">101030102</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">66f46871a2e14747b555a70e9d58ffa3</div></td>
+<td><div align="center">07</div></td>
+<td><div align="center">10101</div></td>
+<td><div align="center">101010104</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">21400000000</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">101030102</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">f89e0a8969774c729ec0e51359e4646d</div></td>
+<td><div align="center">07</div></td>
+<td><div align="center">10101</div></td>
+<td><div align="center">101010104</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">25000000000</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">101030102</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">  </div></td>
+</tr>

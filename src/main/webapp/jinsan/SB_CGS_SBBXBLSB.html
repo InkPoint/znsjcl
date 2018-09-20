@@ -1,0 +1,602 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>车辆购置税纳税申报表(SB_CGS_SBBXBLSB)</title><style type="text/css">
+<!--body {background-color: #EFECDD;}td{ font-family:"宋体"; font-size:9pt; color=#666666;}.style9 {color: #FFFFFF}-->
+</style></head><body>
+<table width="300" height="100" border="0" cellpadding="0" cellspacing="0">
+<tr><td><p align="center">车辆购置税纳税申报表(SB_CGS_SBBXBLSB)</p></td></tr></table>
+<table width="760" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#FF8800">
+<tr bgcolor="#FFAC75">
+<td width="80" height="26"><div align="center" class="style9">列名</div></td>
+<td width="80"><div align="center" class="style9">汉字名</div></td>
+<td width="80"><div align="center" class="style9">数据类型</div></td>
+<td width="80"><div align="center" class="style9">长度</div></td>
+<td width="80"><div align="center" class="style9">精度</div></td>
+<td width="80"><div align="center" class="style9">非空</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">FPJGZSBZ</div></td>
+<td><div align="center">是否按照发票价格征收||是否按照发票价格征收Y:发票价格征收N:没有按照发票价格征收</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center"><a href="DM_SB_QYSDSZSJG.html">ZSJG_DM</div></td>
+<td><div align="center">征收机关代码</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">11</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">HDJSJG</div></td>
+<td><div align="center">核定计税价格</div></td>
+<td><div align="center">NUMBER</div></td>
+<td><div align="center">18</div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center"><a href="DM_SB_CLGZSSBLX.html">CLGZSSBLX_DM</div></td>
+<td><div align="center">车辆购置税申报类型代码</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">4</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center"><a href="DM_ZS_TDSFYYLX.html">TDSFYYLX_DM</div></td>
+<td><div align="center">退抵税费原因类型代码</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">3</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">QTYXJGZMMC</div></td>
+<td><div align="center">其他有效价格证明名称</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">75</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">QTYXJGZMHM</div></td>
+<td><div align="center">其他有效价格证明号码</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">40</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">QTYXJGZMJE</div></td>
+<td><div align="center">其他有效价格证明金额</div></td>
+<td><div align="center">NUMBER</div></td>
+<td><div align="center">18</div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center"><a href="DM_SB_CLGZSBSLX.html">CLGZSBSLX_DM</div></td>
+<td><div align="center">车辆购置税补税类型代码</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">YJJHJ</div></td>
+<td><div align="center">应缴交合计</div></td>
+<td><div align="center">NUMBER</div></td>
+<td><div align="center">18</div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">YJSE</div></td>
+<td><div align="center">已缴税额</div></td>
+<td><div align="center">NUMBER</div></td>
+<td><div align="center">18</div></td>
+<td><div align="center">6</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">DLRSFZJZL_DM_1</div></td>
+<td><div align="center">代理人身份证件种类代码</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">3</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">DLRSFZJHM_1</div></td>
+<td><div align="center">代理人身份证件号码</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">30</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">SQTSJE</div></td>
+<td><div align="center">申请退税金额</div></td>
+<td><div align="center">NUMBER</div></td>
+<td><div align="center">18</div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">TCFPKJRQ</div></td>
+<td><div align="center">退车发票开具日期</div></td>
+<td><div align="center">DATE</div></td>
+<td><div align="center">7</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">TCFPHM</div></td>
+<td><div align="center">退车发票号码</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">30</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">FJ_2</div></td>
+<td><div align="center">附件</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">3000</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">JWFY</div></td>
+<td><div align="center">价外费用</div></td>
+<td><div align="center">NUMBER</div></td>
+<td><div align="center">18</div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">ZNJ</div></td>
+<td><div align="center">滞纳金</div></td>
+<td><div align="center">NUMBER</div></td>
+<td><div align="center">18</div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center"><a href="DM_SB_CLGZSTSYWLX.html">CLGZSTSYWLX_DM</div></td>
+<td><div align="center">车辆购置税特殊业务类型代码</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center"><a href="DM_GY_XNYQCLX.html">XNYQCLX_DM</div></td>
+<td><div align="center">新能源汽车类型代码</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">CGSSBUUID</div></td>
+<td><div align="center">车购税申报UUID</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">32</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">CGSSBZT</div></td>
+<td><div align="center">车购税申报状态（2车购申报完成、9完税证明发放）</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">DJXH</div></td>
+<td><div align="center">登记序号</div></td>
+<td><div align="center">NUMBER</div></td>
+<td><div align="center">20</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">PZXH</div></td>
+<td><div align="center">凭证序号</div></td>
+<td><div align="center">NUMBER</div></td>
+<td><div align="center">20</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">NSRSBH</div></td>
+<td><div align="center">纳税人识别号</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">20</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">NSRMC</div></td>
+<td><div align="center">纳税人名称</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">300</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">NSRSFZJZL_DM</div></td>
+<td><div align="center">纳税人身份证件种类代码</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">3</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">ZJHM</div></td>
+<td><div align="center">证件号码</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">30</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">LXDH</div></td>
+<td><div align="center">联系电话</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">60</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">YZBM</div></td>
+<td><div align="center">邮政编码</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">6</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">DZ</div></td>
+<td><div align="center">地址</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">300</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center"><a href="DM_GY_HY.html">HY_DM</div></td>
+<td><div align="center">行业代码</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">4</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center"><a href="DM_DJ_DJZCLX.html">DJZCLX_DM</div></td>
+<td><div align="center">登记注册类型代码</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">3</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">JDCZCCCHGZ</div></td>
+<td><div align="center">机动车整车出厂合格证||机动车整车出厂合格证</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">40</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">CLXLH</div></td>
+<td><div align="center">车辆序列号</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">14</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">CLSCQYMC</div></td>
+<td><div align="center">车辆生产企业名称</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">300</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">CLLB_DM_1</div></td>
+<td><div align="center">车辆类别代码</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">CLCPXH</div></td>
+<td><div align="center">车辆厂牌型号</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">150</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">CLCP</div></td>
+<td><div align="center">车辆厂牌||车辆厂牌</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">150</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">CLXH</div></td>
+<td><div align="center">车辆型号||车辆型号</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">150</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">CLDW</div></td>
+<td><div align="center">车辆吨位</div></td>
+<td><div align="center">NUMBER</div></td>
+<td><div align="center">16</div></td>
+<td><div align="center">4</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">ZWS</div></td>
+<td><div align="center">座位数</div></td>
+<td><div align="center">NUMBER</div></td>
+<td><div align="center">10</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">PQL</div></td>
+<td><div align="center">排气量</div></td>
+<td><div align="center">NUMBER</div></td>
+<td><div align="center">16</div></td>
+<td><div align="center">4</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">CLGZSRLNYZL_DM</div></td>
+<td><div align="center">燃料（能源）种类代码||燃料（能源）种类代码</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">ZYPZ</div></td>
+<td><div align="center">主要配置</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">3000</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">ZDJSJG</div></td>
+<td><div align="center">最低计税价格</div></td>
+<td><div align="center">NUMBER</div></td>
+<td><div align="center">18</div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">CLSBDH</div></td>
+<td><div align="center">车辆识别代号</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">30</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">BGQCLSBDH</div></td>
+<td><div align="center">变更前车辆识别代号</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">30</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">FDJHM</div></td>
+<td><div align="center">发动机号码</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">40</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">CDSX</div></td>
+<td><div align="center">产地属性</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">300</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center"><a href="DM_SB_CLGZDSX.html">CLGZDSX_DM</div></td>
+<td><div align="center">车辆购置地属性代码</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">YWLX</div></td>
+<td><div align="center">业务类型</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">75</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center"><a href="DM_SB_CLGZSJSFS.html">CLGZSJSFS_DM</div></td>
+<td><div align="center">车辆购置税计税方式代码</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center"><a href="DM_SB_CLGZSTSJSYJLX.html">CLGZSTSJSYJLX_DM</div></td>
+<td><div align="center">车辆购置税特殊计税依据类型代码</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center"><a href="DM_SB_CLGZSMJSTJ.html">CLGZSMJSTJ_DM</div></td>
+<td><div align="center">车辆购置税免（减）税条件代码</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">4</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">YWSZMHM</div></td>
+<td><div align="center">原完税证明号码</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">40</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">CCNSSBRQ</div></td>
+<td><div align="center">初次纳税申报日期</div></td>
+<td><div align="center">DATE</div></td>
+<td><div align="center">7</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">MSTJXSRQ</div></td>
+<td><div align="center">免税条件消失日期</div></td>
+<td><div align="center">DATE</div></td>
+<td><div align="center">7</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">GZRQ</div></td>
+<td><div align="center">购置日期</div></td>
+<td><div align="center">DATE</div></td>
+<td><div align="center">7</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">XJQX</div></td>
+<td><div align="center">限缴期限</div></td>
+<td><div align="center">DATE</div></td>
+<td><div align="center">7</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">JDCXSTYFPBHSJGHJ</div></td>
+<td><div align="center">机动车销售统一发票不含税价格合计</div></td>
+<td><div align="center">NUMBER</div></td>
+<td><div align="center">18</div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">ESCXSTYFPBHSJGHJ</div></td>
+<td><div align="center">二手车销售统一发票不含税价格合计</div></td>
+<td><div align="center">NUMBER</div></td>
+<td><div align="center">18</div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">HGGSZYJKSJKSHM</div></td>
+<td><div align="center">海关关税专用缴款书缴款书号码</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">20</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">HGDZXFSZYJKSJKSHM</div></td>
+<td><div align="center">海关代征消费税专用缴款书缴款书号码</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">20</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">GSWSJG</div></td>
+<td><div align="center">关税完税价格</div></td>
+<td><div align="center">NUMBER</div></td>
+<td><div align="center">18</div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">GSJE</div></td>
+<td><div align="center">关税金额</div></td>
+<td><div align="center">NUMBER</div></td>
+<td><div align="center">18</div></td>
+<td><div align="center">6</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">XFSSE</div></td>
+<td><div align="center">消费税税额</div></td>
+<td><div align="center">NUMBER</div></td>
+<td><div align="center">18</div></td>
+<td><div align="center">6</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">SBJSJG</div></td>
+<td><div align="center">申报计税价格</div></td>
+<td><div align="center">NUMBER</div></td>
+<td><div align="center">18</div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">JSJG</div></td>
+<td><div align="center">计税价格</div></td>
+<td><div align="center">NUMBER</div></td>
+<td><div align="center">18</div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">SL_1</div></td>
+<td><div align="center">税率</div></td>
+<td><div align="center">NUMBER</div></td>
+<td><div align="center">16</div></td>
+<td><div align="center">6</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">JMSE</div></td>
+<td><div align="center">减免税额</div></td>
+<td><div align="center">NUMBER</div></td>
+<td><div align="center">18</div></td>
+<td><div align="center">6</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">YNSE</div></td>
+<td><div align="center">应纳税额</div></td>
+<td><div align="center">NUMBER</div></td>
+<td><div align="center">18</div></td>
+<td><div align="center">6</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">YBTSE</div></td>
+<td><div align="center">应补(退)税额</div></td>
+<td><div align="center">NUMBER</div></td>
+<td><div align="center">18</div></td>
+<td><div align="center">6</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">DLRMC</div></td>
+<td><div align="center">代理人名称</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">75</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center"><a href="DM_GY_SWRY.html">SWJGJBR_DM</div></td>
+<td><div align="center">税务机关经办人代码</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">11</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">DLRDZ</div></td>
+<td><div align="center">代理人地址</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">300</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">DLRLXDH</div></td>
+<td><div align="center">代理人联系电话</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">60</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">JSR_DM</div></td>
+<td><div align="center">接收人代码</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">11</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">JSRQ</div></td>
+<td><div align="center">接收日期</div></td>
+<td><div align="center">DATE</div></td>
+<td><div align="center">7</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center"><a href="DM_GY_SWJG.html">SLSBSWJG_DM</div></td>
+<td><div align="center">受理申报税务机构代码</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">11</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center"><a href="DM_GY_SWJG.html">ZGSWSKFJ_DM</div></td>
+<td><div align="center">主管税务所（科、分局）代码</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">11</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">YSBXH</div></td>
+<td><div align="center">原申报序号</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">50</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">WSZMHM</div></td>
+<td><div align="center">完税证明号码</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">40</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">ZFBZ_1</div></td>
+<td><div align="center">作废标志</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center"><a href="DM_GY_SWRY.html">ZFR_DM</div></td>
+<td><div align="center">作废人代码</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">11</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">ZFRQ_1</div></td>
+<td><div align="center">作废日期</div></td>
+<td><div align="center">DATE</div></td>
+<td><div align="center">7</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center"><a href="DM_GY_SWRY.html">LRR_DM</div></td>
+<td><div align="center">录入人代码</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">11</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">LRRQ</div></td>
+<td><div align="center">录入日期</div></td>
+<td><div align="center">DATE</div></td>
+<td><div align="center">7</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center"><a href="DM_GY_SWRY.html">XGR_DM</div></td>
+<td><div align="center">修改人代码</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">11</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">XGRQ</div></td>
+<td><div align="center">修改日期</div></td>
+<td><div align="center">DATE</div></td>
+<td><div align="center">7</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">SJGSDQ</div></td>
+<td><div align="center">数据归属地区</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">11</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">FLCRWMXUUID</div></td>
+<td><div align="center">非流程任务明细UUID</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">32</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center"><a href="DM_SB_CLLX.html">CLLX_DM</div></td>
+<td><div align="center">车辆类型代码</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">BSRXM</div></td>
+<td><div align="center">办税人姓名</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">75</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">SJTB_SJ</div></td>
+<td><div align="center">数据同步时间||</div></td>
+<td><div align="center">TIMESTAMP(6)</div></td>
+<td><div align="center">11</div></td>
+<td><div align="center">6</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">LCSLID</div></td>
+<td><div align="center">流程实例ID</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">32</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">SBBWZ</div></td>
+<td><div align="center">申报表位置</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">300</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>

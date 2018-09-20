@@ -1,0 +1,79 @@
+/*旅游产业*/
+*{margin:0; padding:0; font-family:Microsoft YaHei;}
+li{ list-style:none;}
+a{ cursor:pointer;}
+a:link{ text-decoration:none; } 
+body {background: #020a1f; overflow-x:hidden; overflow-y: auto; background:url(../images/wybj.jpg);));
+text-rendering:optimizeLegibility;
+-webkit-font-smoothing: antialiased;
+ -moz-font-smoothing: antialiased;
+ }
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+  cursor: pointer
+}
+
+::-webkit-scrollbar-track {
+  background-color: #ddd;
+  border-radius: 10px
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #00e8ff
+}
+.ghtop { width:100%; height:85px;}
+.ml{width:46px; height:37px; position:absolute; top:15px; left:10px;}
+.mlbtn{ width:46px; height:37px; background:url(../images/ml.png) no-repeat; border:0; cursor:pointer;}
+.ghbanner{width:1600px; height:74px; margin:0 auto; background:url(../images/btop.png) no-repeat; font-size:26px; color:#ffffff; font-weight: 800; line-height:60px;}
+.ghbody{ width:98%;  height:470px; margin:0 auto; }
+.nav-tabs2  a{ width: 30px; margin: 0 auto; line-height: 16px;}
+.nav-tabs2 .active{ background: #13a2d4; color: #fff;}
+ /*矩形边框*/
+.tx_01{position: relative;width: 49%;height: 460px;border: 1px solid #129ed2; float:left;}
+.tx_02{position: relative;width:50%;height: 460px;border: 1px solid #129ed2; float:left; margin-left:15px;}
+.tx_03{position: relative;width: 23%;height: 240px;border: 1px solid #129ed2; float:left; margin-left:15px;  margin-top:5px;}
+.tx_04{position: relative;width: 24%;height: 240px;border: 1px solid #129ed2; float:left; margin-left:15px; margin-top:5px;}
+.tx_05{position: relative;width: 24%;height: 240px;border: 1px solid #129ed2; float:left; margin-left:15px; margin-top:5px;}
+.tx_06{position: relative;width: 24%;height: 240px;border: 1px solid #129ed2; float:left; margin-left:15px; margin-top:5px;}
+
+
+.zklist ul li{
+	width: 30%;
+	height: 180px;
+	margin-left: 20px;
+	float: left;
+	margin-top: 10px;
+}
+
+
+
+.ghdown span{position: absolute;padding:7px;border-style: solid;border-color: #129ed2; }
+.tx_01 span{position: absolute;padding:7px;border-style: solid;border-color: #129ed2; }
+.tx_02 span{position: absolute;padding:7px;border-style: solid;border-color: #129ed2; }
+.tx_new span{position: absolute;padding:7px;border-style: solid;border-color: #129ed2; }
+
+
+
+.row1 {	border-width: 2px 0 0 2px;top: -3px;left:13px;}
+.row2 {	border-width: 2px 2px 0 0;top: -3px;right:13px;}
+.col1 {	border-width: 0 0 2px 2px;bottom: -2px;	left: -2px;}
+.col2 {	border-width: 0 2px 2px 0;bottom: -2px;	right: -2px;}
+
+.gytitle{ background:url(../images/titlebj.png) no-repeat; height:30px; padding-left:35px; font-size:18px; color:#fff; margin:15px 0px 5px 15px;}
+.gytitle2{ background:url(../images/titlebj.png) no-repeat; height:30px; padding-left:35px; font-size:18px; color:#fff; margin:5px 0px 5px 0px;}
+.bt1{ font-size:17px; color:#719dbc;}
+.jine01{ color:#09d5ea; font-size:20px;}
+.jine02{ color:#efc20d; font-size:18px;}
+.jine03{ color:#2c9eec; font-size:16px;}
+.newsfont{ font-size:16px; color:#fff; line-height:30px;}
+.list01 li{ float: left; margin-left: 20px;}
+.list02 li{ font-size: 14px; color: #fff; width: 160px; padding-left: 15px;  margin-left: 10px; height: 35px; line-height: 35px;}
+.list02 img{ margin-top: -5px;}
+.licolor{ background: url(../images/tdbg.png);}
+.spanfont{ font-size: 25px; background: #01CCEF; display: block; margin-left: 10px; width: 30px; height: 50px; line-height: 50px; opacity: 0.8; float: left; text-align: center;}
+.zy01{ color: #fff; float: left; margin-left:30px;  line-height: 27px; margin-top: 15px;}
+.tx01_left{ font-size:16px; color:#fff; float:left; width:220px; margin-top:10px;}
+.tx01_right{ float:left; margin-top:10px;}
+.ghbootom{ color:#fff; clear:both; width:100%; height:50px; background: redghdown; text-align:center; line-height:50px;}

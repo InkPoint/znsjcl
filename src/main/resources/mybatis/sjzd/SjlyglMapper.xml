@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xalt.sjzd.dao.SjlyglMapper">
+    <!--机构树-->
+    <select id="selectZtree" resultType="com.xalt.sjzd.model.SjlyglVo">
+         select lyid,plyid,lymc from znsjcl_dm_sjly where  yxbz='Y'
+    </select>
+
+    <!--父标签 默认子节点查询-->
+    <select id="selectAll" resultType="com.xalt.sjzd.model.SjlyglVo">
+        select t.* from znsjcl_dm_sjly t
+        where t.plyid in (
+        select t1.lyid from znsjcl_dm_sjly t1
+        where t1.plyid is null)   and t.yxbz='Y'
+    </select>
+
+    <!--指定标签详细信息查询-->
+    <select id="gettargetinfo" parameterType="java.util.HashMap" resultType="com.xalt.sjzd.model.SjlyglVo">
+        select t.* from znsjcl_dm_sjly t
+        where 1=1
+        and t.lyid='${svo.lyid}'
+        and t.yxbz='Y'
+    </select>
+
+    <!--指定标签子节点详细信息查询-->
+    <select id="getchildrens" parameterType="java.util.HashMap" resultType="com.xalt.sjzd.model.SjlyglVo">
+      select t.lyid, t.lymc, t.lyms, to_char(t.cjsj, 'yyyy-MM-dd HH24:mi:ss') cjsj, t.plyid, t.bz, t.cjr, t.xh
+      from znsjcl_dm_sjly t
+      where t.plyid = '${svo.lyid}'
+      and t.yxbz = 'Y'
+      ORDER BY cjsj DESC
+    </select>
+
+    <!--根据标签id查询子节点-->
+    <select id="selectbq" parameterType="java.util.HashMap" resultType="com.xalt.sjzd.model.YwbqglVo">
+        select t.* from znsjcl_dm_sjly t
+        where t.plyid='${svo.lyid}'  and t.yxbz='Y'
+    </select>
+
+    <!--添加数据-->
+    <insert id="insertlable"  parameterType="java.util.HashMap">
+        INSERT into znsjcl_dm_sjly (lyid,lymc,plyid,lyms,cjsj,xh,bz,cjr,yxbz)
+        VALUES
+        (All_Indexes.Nextval,'${svo.lymc}','${svo.plyid}','${svo.lyms}',sysdate,to_number('${svo.xh}'),'${svo.bz}','${cjr}','Y')
+    </insert>
+
+    <!--标签编辑-->
+    <update id="updateLable" parameterType="java.util.HashMap">
+         UPDATE znsjcl_dm_sjly SET lymc='${svo.lymc}',lyms='${svo.lyms}',bz='${svo.bz}' where  lyid='${svo.lyid}'
+    </update>
+
+    <!--标签信息删除-->
+    <update id="deleteLable" parameterType="java.util.HashMap" >
+        UPDATE znsjcl_dm_sjly SET yxbz='N' WHERE lyid='${svo.lyid}'
+    </update>
+
+    <!--分区名称名称_校检-->
+    <select id="nameValidation" parameterType="java.util.HashMap" resultType="com.xalt.sjzd.model.SjlyglVo">
+        select t.lymc from znsjcl_dm_sjly t where t.lymc='${svo.lymc}' and t.yxbz='Y'
+    </select>
+
+</mapper>

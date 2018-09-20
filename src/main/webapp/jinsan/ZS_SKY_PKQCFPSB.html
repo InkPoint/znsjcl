@@ -1,0 +1,368 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>批扣清册分票失败(ZS_SKY_PKQCFPSB)</title><style type="text/css">
+<!--body {background-color: #EFECDD;}td{ font-family:"宋体"; font-size:9pt; color=#666666;}.style9 {color: #FFFFFF}-->
+</style></head><body>
+<table width="300" height="100" border="0" cellpadding="0" cellspacing="0">
+<tr><td><p align="center">批扣清册分票失败(ZS_SKY_PKQCFPSB)</p></td></tr></table>
+<table width="760" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#FF8800">
+<tr bgcolor="#FFAC75">
+<td width="80" height="26"><div align="center" class="style9">列名</div></td>
+<td width="80"><div align="center" class="style9">汉字名</div></td>
+<td width="80"><div align="center" class="style9">数据类型</div></td>
+<td width="80"><div align="center" class="style9">长度</div></td>
+<td width="80"><div align="center" class="style9">精度</div></td>
+<td width="80"><div align="center" class="style9">非空</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">FPSBUUID</div></td>
+<td><div align="center">分票失败UUID</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">32</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">PKUUID</div></td>
+<td><div align="center">批扣UUID</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">32</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">DJXH</div></td>
+<td><div align="center">登记序号</div></td>
+<td><div align="center">NUMBER</div></td>
+<td><div align="center">20</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">PZXH</div></td>
+<td><div align="center">凭证序号</div></td>
+<td><div align="center">NUMBER</div></td>
+<td><div align="center">20</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center"><a href="DM_GY_ZSXM.html">ZSXM_DM</div></td>
+<td><div align="center">征收项目代码</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">5</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center"><a href="DM_GY_ZSPM.html">ZSPM_DM</div></td>
+<td><div align="center">征收品目代码</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">9</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center"><a href="DM_GY_ZSZM.html">ZSZM_DM</div></td>
+<td><div align="center">征收子目代码</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">16</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">SKSSQQ</div></td>
+<td><div align="center">税款所属期起</div></td>
+<td><div align="center">DATE</div></td>
+<td><div align="center">7</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">SKSSQZ</div></td>
+<td><div align="center">税款所属期止</div></td>
+<td><div align="center">DATE</div></td>
+<td><div align="center">7</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">SBQX</div></td>
+<td><div align="center">申报期限</div></td>
+<td><div align="center">DATE</div></td>
+<td><div align="center">7</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">JKQX</div></td>
+<td><div align="center">缴款期限</div></td>
+<td><div align="center">DATE</div></td>
+<td><div align="center">7</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">PZMXXH</div></td>
+<td><div align="center">凭证明细序号</div></td>
+<td><div align="center">NUMBER</div></td>
+<td><div align="center">10</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center"><a href="DM_DJ_DJZCLX.html">DJZCLX_DM</div></td>
+<td><div align="center">登记注册类型代码</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">3</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center"><a href="DM_GY_DWLSGX.html">DWLSGX_DM</div></td>
+<td><div align="center">单位隶属关系代码</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center"><a href="DM_GY_HY.html">HY_DM</div></td>
+<td><div align="center">行业代码</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">4</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center"><a href="DM_GY_ZSFS.html">ZSFS_DM</div></td>
+<td><div align="center">征收方式代码</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">3</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center"><a href="DM_GY_SBFS.html">SBFS_DM</div></td>
+<td><div align="center">申报方式代码</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">ZZSNSRLX_DM</div></td>
+<td><div align="center">增值税纳税人类型代码</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center"><a href="DM_GY_JDXZ.html">JDXZ_DM</div></td>
+<td><div align="center">街道乡镇代码</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">9</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center"><a href="DM_GY_ZSDLFS.html">ZSDLFS_DM</div></td>
+<td><div align="center">征收代理方式代码</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">JSYJ</div></td>
+<td><div align="center">计税依据</div></td>
+<td><div align="center">NUMBER</div></td>
+<td><div align="center">22</div></td>
+<td><div align="center">6</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">SL_1</div></td>
+<td><div align="center">税率</div></td>
+<td><div align="center">NUMBER</div></td>
+<td><div align="center">16</div></td>
+<td><div align="center">6</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">YNSE</div></td>
+<td><div align="center">应纳税额</div></td>
+<td><div align="center">NUMBER</div></td>
+<td><div align="center">18</div></td>
+<td><div align="center">6</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">JMSE</div></td>
+<td><div align="center">减免税额</div></td>
+<td><div align="center">NUMBER</div></td>
+<td><div align="center">18</div></td>
+<td><div align="center">6</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">YBTSE</div></td>
+<td><div align="center">应补(退)税额</div></td>
+<td><div align="center">NUMBER</div></td>
+<td><div align="center">18</div></td>
+<td><div align="center">6</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center"><a href="DM_GY_GK.html">SKGK_DM</div></td>
+<td><div align="center">收款国库代码</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">10</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center"><a href="DM_GY_YSKM.html">YSKM_DM</div></td>
+<td><div align="center">预算科目代码</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">9</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center"><a href="DM_GY_YSFPBL.html">YSFPBL_DM</div></td>
+<td><div align="center">预算分配比例代码</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">8</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center"><a href="DM_GY_SWRY.html">SSGLY_DM</div></td>
+<td><div align="center">税收管理员代码</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">11</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center"><a href="DM_GY_SWJG.html">SKSSSWJG_DM</div></td>
+<td><div align="center">税款所属税务机构代码</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">11</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center"><a href="DM_GY_SWJG.html">ZGSWSKFJ_DM</div></td>
+<td><div align="center">主管税务所（科、分局）代码</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">11</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center"><a href="DM_GY_SWJG.html">ZSSWJG_DM</div></td>
+<td><div align="center">征收税务机关代码</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">11</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">CKZHZHUUID</div></td>
+<td><div align="center">存款账户账号UUID</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">32</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">NSRMC</div></td>
+<td><div align="center">纳税人名称</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">300</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">CWBJ_DM</div></td>
+<td><div align="center">错误标记代码</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">GLPZXH</div></td>
+<td><div align="center">关联凭证序号</div></td>
+<td><div align="center">NUMBER</div></td>
+<td><div align="center">20</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">SFXYH</div></td>
+<td><div align="center">三方协议号||三方协议号</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">60</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">QSYHHH</div></td>
+<td><div align="center">清算行行号||清算行行号</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">12</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">KHYHHH</div></td>
+<td><div align="center">开户行行号||开户行行号</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">12</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center"><a href="DM_GY_YHHB.html">YHHB_DM</div></td>
+<td><div align="center">银行行别代码</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">3</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">JKZHMC</div></td>
+<td><div align="center">缴款账户名称||缴款账户名称</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">300</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center"><a href="DM_GY_YHYYWD.html">YHYYWD_DM</div></td>
+<td><div align="center">银行营业网点代码</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">13</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">NSRSBH</div></td>
+<td><div align="center">纳税人识别号</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">20</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center"><a href="DM_ZS_SKYKKFH.html">KKFH_DM</div></td>
+<td><div align="center">扣款返回代码</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">3</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">ZFBZ_1</div></td>
+<td><div align="center">作废标志</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">YJSE</div></td>
+<td><div align="center">已缴税额</div></td>
+<td><div align="center">NUMBER</div></td>
+<td><div align="center">18</div></td>
+<td><div align="center">6</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">ZFRQ_1</div></td>
+<td><div align="center">作废日期</div></td>
+<td><div align="center">DATE</div></td>
+<td><div align="center">7</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center"><a href="DM_GY_SWRY.html">ZFR_DM</div></td>
+<td><div align="center">作废人代码</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">11</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">SYBH_1</div></td>
+<td><div align="center">税源编号</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">40</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center"><a href="DM_ZS_SKYKKZT.html">KKZT_DM</div></td>
+<td><div align="center">扣款状态代码</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">JKZH</div></td>
+<td><div align="center">缴款帐号</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">50</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">PCID</div></td>
+<td><div align="center">批次ID</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">32</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">YDSJLX</div></td>
+<td><div align="center">疑点数据类型</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center"><a href="DM_GY_SWRY.html">LRR_DM</div></td>
+<td><div align="center">录入人代码</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">11</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">LRRQ</div></td>
+<td><div align="center">录入日期</div></td>
+<td><div align="center">DATE</div></td>
+<td><div align="center">7</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center"><a href="DM_GY_SWRY.html">XGR_DM</div></td>
+<td><div align="center">修改人代码</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">11</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">XGRQ</div></td>
+<td><div align="center">修改日期</div></td>
+<td><div align="center">DATE</div></td>
+<td><div align="center">7</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">SJGSDQ</div></td>
+<td><div align="center">数据归属地区</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">11</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">SJTB_SJ</div></td>
+<td><div align="center">数据同步时间</div></td>
+<td><div align="center">TIMESTAMP(6)</div></td>
+<td><div align="center">11</div></td>
+<td><div align="center">6</div></td>
+<td><div align="center">Y</div></td></tr>

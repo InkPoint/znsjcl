@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xalt.sjcl.dao.QxclzktjMapper">
+
+
+    <!--查询（清洗处理状况统计）表信息-->
+    <select id="selectAll" parameterType="java.util.HashMap" resultType="com.xalt.sjcl.model.QxclzktjVo">
+        select t.cll,
+        t.ybsjl,
+        t.clsjl,
+        to_char(t.clsj,'yyyy-mm-dd hh24:mi:ss') clsj,
+        t1.rwid,
+        t1.rwmc,
+        t2.mxmc
+        from znsjcl_cl_clmxb t,
+        znsjcl_jh_xtyxrw t1,
+        znsjcl_cl_qxzhmx t2
+        where t.rwid=t1.rwid(+)
+        and t1.mxid=t2.mxid
+        and t.cllx='0'
+        and t1.yxbz='Y'
+        and t.rwid in(
+        select rwid from znsjcl_jh_xtyxrw where yxbz='Y'
+        )
+        <if test="svo.rwmc != null">
+            and t1.rwmc like '%${svo.rwmc}%'
+        </if>
+        order by t.clsj desc
+    </select>
+    <!--执行存储过程-->
+    <select id="ssgxsj" statementType="CALLABLE">
+        {call  sp_znsjcl_qxclzkhtsj()}
+    </select>
+</mapper>

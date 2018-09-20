@@ -1,0 +1,632 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>行政复议申请登记表(FZ_XZFYSQDJB)</title><style type="text/css">
+<!--body {background-color: #EFECDD;}td{ font-family:"宋体"; font-size:9pt; color=#666666;}.style9 {color: #FFFFFF}-->
+</style></head><body>
+<table width="300" height="100" border="0" cellpadding="0" cellspacing="0">
+<tr><td><p align="center">行政复议申请登记表(FZ_XZFYSQDJB)</p></td></tr></table>
+<table width="760" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#FF8800">
+<tr bgcolor="#FFAC75">
+<td width="80" height="26"><div align="center" class="style9">列名</div></td>
+<td width="80"><div align="center" class="style9">汉字名</div></td>
+<td width="80"><div align="center" class="style9">数据类型</div></td>
+<td width="80"><div align="center" class="style9">长度</div></td>
+<td width="80"><div align="center" class="style9">精度</div></td>
+<td width="80"><div align="center" class="style9">非空</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">SJTB_SJ</div></td>
+<td><div align="center">数据同步时间||</div></td>
+<td><div align="center">TIMESTAMP(6)</div></td>
+<td><div align="center">11</div></td>
+<td><div align="center">6</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center"><a href="DM_GY_SSHJ.html">SSHJ_DM</div></td>
+<td><div align="center">所属环节代码</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">3</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">FYAJZT</div></td>
+<td><div align="center">复议案件状态</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">3</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">BHFYSQZT</div></td>
+<td><div align="center">驳回复议申请状态</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">3</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">TSZT</div></td>
+<td><div align="center">提审状态</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">3</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">XZFYSQDJBUUID</div></td>
+<td><div align="center">行政复议申请登记表UUID||行政复议申请登记表UUID</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">32</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">AJXXUUID</div></td>
+<td><div align="center">案件信息UUID</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">32</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">AJLY</div></td>
+<td><div align="center">案件来源||案件来源，1稽查，2法制，9其他</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">AJBH_1</div></td>
+<td><div align="center">案件编号</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">20</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">AJMC</div></td>
+<td><div align="center">案件名称</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">150</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">DJXH</div></td>
+<td><div align="center">登记序号</div></td>
+<td><div align="center">NUMBER</div></td>
+<td><div align="center">20</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">NSRSBH</div></td>
+<td><div align="center">纳税人识别号</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">20</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">NSRMC</div></td>
+<td><div align="center">纳税人名称</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">300</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center"><a href="DM_FZ_XZJJSQFS.html">XZJJSQFS_DM</div></td>
+<td><div align="center">行政救济申请方式代码</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">SQRLB_DM</div></td>
+<td><div align="center">申请人类别代码</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">5</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">SQRXM</div></td>
+<td><div align="center">申请人姓名</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">75</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">SQRSFZJHM</div></td>
+<td><div align="center">申请人身份证件号码</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">30</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">SQRXB_DM</div></td>
+<td><div align="center">申请人性别代码</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">SQRNL</div></td>
+<td><div align="center">申请人年龄</div></td>
+<td><div align="center">NUMBER</div></td>
+<td><div align="center">3</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">SQRMZMC</div></td>
+<td><div align="center">申请人民族名称</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">30</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">SQRJG</div></td>
+<td><div align="center">申请人籍贯</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">150</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">SQRZS</div></td>
+<td><div align="center">申请人住所</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">300</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">SQRYZBM</div></td>
+<td><div align="center">申请人邮政编码</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">6</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">SQRLXDH</div></td>
+<td><div align="center">申请人联系电话</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">60</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">SQRGZDWMC</div></td>
+<td><div align="center">申请人工作单位名称</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">300</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">SQRZW</div></td>
+<td><div align="center">申请人职务</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">300</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">SQRFRHQTZZMC</div></td>
+<td><div align="center">申请人（法人或其他组织）名称||申请人（法人或其他组织）名称</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">300</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">SQRFRHQTZZLXDH</div></td>
+<td><div align="center">申请人（法人或其他组织）联系电话||申请人（法人或其他组织）联系电话</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">60</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">SQRFRHQTZZDZ</div></td>
+<td><div align="center">申请人（法人或其他组织）地址||申请人（法人或其他组织）地址</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">300</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">SQRFRHQTZZYZBM</div></td>
+<td><div align="center">申请人（法人或其他组织）邮政编码||申请人（法人或其他组织）邮政编码</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">6</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">SQRFRHQTZZFRDBFZRXM</div></td>
+<td><div align="center">申请人（法人或其他组织）法人代表（负责人）姓名||申请人（法人或其他组织）法人代表（负责人）姓名</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">75</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">SQRFRHQTZZFRDBFZRZW</div></td>
+<td><div align="center">申请人（法人或其他组织）法人代表（负责人）职务||申请人（法人或其他组织）法人代表（负责人）职务</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">300</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">SQRDLRMC</div></td>
+<td><div align="center">申请人代理人名称</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">75</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">SQDLRXB_DM</div></td>
+<td><div align="center">申请代理人性别代码</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">SQDLRNL</div></td>
+<td><div align="center">申请代理人年龄</div></td>
+<td><div align="center">NUMBER</div></td>
+<td><div align="center">3</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">SQRDLRZZ</div></td>
+<td><div align="center">申请人代理人住址||申请人代理人住址</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">300</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">SQRDLRGZDWMC</div></td>
+<td><div align="center">申请人代理人工作单位名称</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">300</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">SQRDLRZW</div></td>
+<td><div align="center">申请人代理人职务</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">300</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">DSRLX_DM</div></td>
+<td><div align="center">第三人类型代码</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">DSRXM_1</div></td>
+<td><div align="center">第三人姓名</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">75</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">DSRSFZJHM</div></td>
+<td><div align="center">第三人身份证件号码</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">30</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">DSRXB_DM</div></td>
+<td><div align="center">第三人性别代码</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">DSRNL</div></td>
+<td><div align="center">第三人年龄</div></td>
+<td><div align="center">NUMBER</div></td>
+<td><div align="center">3</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">DSRMZMC</div></td>
+<td><div align="center">第三人民族名称</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">30</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">DSRJG</div></td>
+<td><div align="center">第三人籍贯</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">150</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">DSRZS</div></td>
+<td><div align="center">第三人住所</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">300</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">DSRYZBM</div></td>
+<td><div align="center">第三人邮政编码</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">6</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">DSRLXDH</div></td>
+<td><div align="center">第三人联系电话</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">60</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">DSRGZDWMC</div></td>
+<td><div align="center">第三人工作单位名称</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">300</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">DSRZW_1</div></td>
+<td><div align="center">第三人职务</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">300</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">DSRFRHQTZZMC</div></td>
+<td><div align="center">第三人（法人或其他组织）名称||第三人（法人或其他组织）名称</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">300</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">DSRFRHQTZZLXDH</div></td>
+<td><div align="center">第三人（法人或其他组织）联系电话||第三人（法人或其他组织）联系电话</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">60</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">DSRFRHQTZZDZ</div></td>
+<td><div align="center">第三人（法人或其他组织）地址||第三人（法人或其他组织）地址</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">300</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">DSRFRHQTZZYZBM</div></td>
+<td><div align="center">第三人（法人或其他组织）邮政编码||第三人（法人或其他组织）邮政编码</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">6</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">DSRFRHQTZZFRDBFZRXM</div></td>
+<td><div align="center">第三人（法人或其他组织）法人代表（负责人）姓名||第三人（法人或其他组织）法人代表（负责人）姓名</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">75</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">DSRFRHQTZZFRDBFZRZW</div></td>
+<td><div align="center">第三人（法人或其他组织）法人代表（负责人）职务||第三人（法人或其他组织）法人代表（负责人）职务</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">300</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">DSRDLRMC</div></td>
+<td><div align="center">第三人代理人名称</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">75</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">DSRDLRXB_DM</div></td>
+<td><div align="center">第三人代理人性别代码</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">DSRDLRNL</div></td>
+<td><div align="center">第三人代理人年龄</div></td>
+<td><div align="center">NUMBER</div></td>
+<td><div align="center">3</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">DSRDLRZZ</div></td>
+<td><div align="center">第三人代理人住址</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">300</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">DSRDLRGZDWMC</div></td>
+<td><div align="center">第三人代理人工作单位名称</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">300</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">DSRDLRZW</div></td>
+<td><div align="center">第三人代理人职务</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">300</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">BSQRMC_1</div></td>
+<td><div align="center">被申请人名称</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">75</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">BSQRFZRXM</div></td>
+<td><div align="center">被申请人负责人姓名</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">75</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">BSQRDZ</div></td>
+<td><div align="center">被申请人地址</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">300</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">BSQRYZBM</div></td>
+<td><div align="center">被申请人邮政编码</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">6</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">BSQRLXDH</div></td>
+<td><div align="center">被申请人联系电话</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">60</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">FYSQDYJTXZXWMC</div></td>
+<td><div align="center">复议申请对应具体行政行为名称</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">300</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">JTXZXWZL</div></td>
+<td><div align="center">具体行政行为种类||具体行政行为种类</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">4</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">FYSQDYJTXZXWWSZG</div></td>
+<td><div align="center">复议申请对应具体行政行为文书字轨||复议申请对应具体行政行为文书字轨</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">75</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">FYSQDYJTXZXWZCRQ</div></td>
+<td><div align="center">复议申请对应具体行政行为作出日期</div></td>
+<td><div align="center">DATE</div></td>
+<td><div align="center">7</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">FYSQDYJTXZXWZCYJ</div></td>
+<td><div align="center">复议申请对应具体行政行为政策依据||复议申请对应具体行政行为政策依据</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">750</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">FYQQ</div></td>
+<td><div align="center">复议请求||复议请求</div></td>
+<td><div align="center">CLOB</div></td>
+<td><div align="center">4000</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">ZYSSHLY</div></td>
+<td><div align="center">主要事实和理由||主要事实和理由</div></td>
+<td><div align="center">CLOB</div></td>
+<td><div align="center">4000</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">SFJGFYJD</div></td>
+<td><div align="center">是否经过复议决定</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">XZFYJG_DM</div></td>
+<td><div align="center">行政复议机关代码</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">11</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">XZFYJGMC</div></td>
+<td><div align="center">行政复议机关名称</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">300</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">XZFYJGDZ</div></td>
+<td><div align="center">行政复议机关地址</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">300</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">SQRQ</div></td>
+<td><div align="center">申请日期</div></td>
+<td><div align="center">DATE</div></td>
+<td><div align="center">7</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">SDFYSQRQ</div></td>
+<td><div align="center">收到复议申请日期</div></td>
+<td><div align="center">DATE</div></td>
+<td><div align="center">7</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">SFYQTJGYFZS</div></td>
+<td><div align="center">是否由其他机关依法转送||是否由其他机关依法转送</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center"><a href="DM_FZ_AJLYLX.html">AJLYLX_DM</div></td>
+<td><div align="center">案件来源类型代码||案件来源类型代码</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">YAJBH</div></td>
+<td><div align="center">原案件编号</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">20</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">YAJMC</div></td>
+<td><div align="center">原案件名称</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">150</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">ZSJGMC_1</div></td>
+<td><div align="center">转送机关名称</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">300</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">ZSRQ_1</div></td>
+<td><div align="center">转送日期</div></td>
+<td><div align="center">DATE</div></td>
+<td><div align="center">7</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">DJR</div></td>
+<td><div align="center">登记人||登记人</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">11</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">DJRQ</div></td>
+<td><div align="center">登记日期</div></td>
+<td><div align="center">DATE</div></td>
+<td><div align="center">7</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">SQR</div></td>
+<td><div align="center">申请人</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">75</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">LCSLID</div></td>
+<td><div align="center">流程实例ID</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">32</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">HDSLID</div></td>
+<td><div align="center">活动实例ID</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">32</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">SJSLID</div></td>
+<td><div align="center">事件实例ID</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">32</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center"><a href="DM_GY_SWRY.html">ZFR_DM</div></td>
+<td><div align="center">作废人代码</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">11</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">ZFRQ_1</div></td>
+<td><div align="center">作废日期</div></td>
+<td><div align="center">DATE</div></td>
+<td><div align="center">7</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">ZFBZ_1</div></td>
+<td><div align="center">作废标志</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">LRRQ</div></td>
+<td><div align="center">录入日期</div></td>
+<td><div align="center">DATE</div></td>
+<td><div align="center">7</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center"><a href="DM_GY_SWRY.html">LRR_DM</div></td>
+<td><div align="center">录入人代码</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">11</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">XGRQ</div></td>
+<td><div align="center">修改日期</div></td>
+<td><div align="center">DATE</div></td>
+<td><div align="center">7</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center"><a href="DM_GY_SWRY.html">XGR_DM</div></td>
+<td><div align="center">修改人代码</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">11</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">SJGSDQ</div></td>
+<td><div align="center">数据归属地区</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">11</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">ZLSLZT</div></td>
+<td><div align="center">责令受理状态</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">3</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">FJ</div></td>
+<td><div align="center">附件</div></td>
+<td><div align="center">CLOB</div></td>
+<td><div align="center">4000</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">FYSQDYJTXZXWNSRSDRQ</div></td>
+<td><div align="center">复议申请对应具体行政行为纳税人收到日期||复议申请对应具体行政行为纳税人收到日期</div></td>
+<td><div align="center">DATE</div></td>
+<td><div align="center">7</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>

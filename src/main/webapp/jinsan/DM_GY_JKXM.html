@@ -1,0 +1,2949 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>监控项目代码(DM_GY_JKXM)</title><style type="text/css">
+<!--body {background-color: #EFECDD;}td{ font-family:"宋体"; font-size:9pt; color=#666666;}.style9 {color: #FFFFFF}-->
+</style></head><body>
+<table width="300" height="100" border="0" cellpadding="0" cellspacing="0">
+<tr><td><p align="center">监控项目代码(DM_GY_JKXM)</p></td></tr></table>
+<table width="760" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#FF8800">
+<tr bgcolor="#FFAC75">
+<td width="80" height="26"><div align="center" class="style9">列名</div></td>
+<td width="80"><div align="center" class="style9">汉字名</div></td>
+<td width="80"><div align="center" class="style9">数据类型</div></td>
+<td width="80"><div align="center" class="style9">长度</div></td>
+<td width="80"><div align="center" class="style9">精度</div></td>
+<td width="80"><div align="center" class="style9">非空</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center"><a href="DM_GY_JKXM.html">JKXM_DM</div></td>
+<td><div align="center">监控项目代码</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">75</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">JKXMMC</div></td>
+<td><div align="center">监控项目名称</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">300</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">JKL</div></td>
+<td><div align="center">监控类</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">150</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">JKFF</div></td>
+<td><div align="center">监控方法</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">75</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">XYBZ</div></td>
+<td><div align="center">选用标志</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">YXBZ</div></td>
+<td><div align="center">有效标志</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">JKXMMS</div></td>
+<td><div align="center">监控项目描述</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">300</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">ZXT_DM</div></td>
+<td><div align="center">子系统代码</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">3</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+</table>
+
+
+   
+<table width="300" height="100" border="0" cellpadding="0" cellspacing="0">
+<tr><td><p align="center">监控项目代码(数据)</p></td></tr></table>
+<table width="760" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#FF8800">
+<tr bgcolor="#FFAC75">
+<td width="80" height="26"><div align="center" class="style9">监控项目代码</div></td>
+<td width="80" height="26"><div align="center" class="style9">监控项目名称</div></td>
+<td width="80" height="26"><div align="center" class="style9">监控类</div></td>
+<td width="80" height="26"><div align="center" class="style9">监控方法</div></td>
+<td width="80" height="26"><div align="center" class="style9">选用标志</div></td>
+<td width="80" height="26"><div align="center" class="style9">有效标志</div></td>
+<td width="80" height="26"><div align="center" class="style9">监控项目描述</div></td>
+<td width="80" height="26"><div align="center" class="style9">子系统代码</div></td>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">AS_RD_JK_NSRZG_SYBNSR_FDQ_TG</div></td>
+<td><div align="center">纳税人是否已经是一般纳税人或辅导期一般纳税人，如果不是，监控不通过</div></td>
+<td><div align="center">AS_RD_JK_NSRZG_SYBNSR_FDQ_TG</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">纳税人是否已经是一般纳税人或辅导期一般纳税人，如果不是，监控不通过</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">AS_RD_JK_NSRZG_FYBNSR_FDQ_TG</div></td>
+<td><div align="center">纳税人是否已经是一般纳税人或辅导期一般纳税人，如果是，监控不通过</div></td>
+<td><div align="center">AS_RD_JK_NSRZG_FYBNSR_FDQ_TG</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">纳税人是否已经是一般纳税人或辅导期一般纳税人，如果是，监控不通过</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">AS_RD_JK_SFZRD_XFS_TG</div></td>
+<td><div align="center">监控纳税人是否认定了消费税</div></td>
+<td><div align="center">AS_RD_JK_SFZRD_XFS_TG</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人是否认定了消费税</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">AS_RD_JK_SFZRD_QYSDS_TG</div></td>
+<td><div align="center">监控纳税人是否认定了企业所得税</div></td>
+<td><div align="center">AS_RD_JK_SFZRD_QYSDS_TG</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人是否认定了企业所得税</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">AS_DJ_JK_FJMQY_TG</div></td>
+<td><div align="center">监控纳税人是否为非居民企业</div></td>
+<td><div align="center">AS_DJ_JK_FJMQY_TG</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人是否为非居民企业</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">AS_RD_JK_SFZRD_FZZS_TG</div></td>
+<td><div align="center">监控纳税人是否未认定增值税</div></td>
+<td><div align="center">AS_RD_JK_SFZRD_FZZS_TG</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人是否未认定增值税</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">AS_RD_JK_HZNSQYRD_RD_BTG</div></td>
+<td><div align="center">校验纳税人是否重复汇总纳税企业认定</div></td>
+<td><div align="center">AS_RD_JK_HZNSQYRD_RD_BTG</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">校验纳税人是否重复汇总纳税企业认定</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">AS_DJ_JK_SWDJLX_BYDJ_TG</div></td>
+<td><div align="center">监控纳税人是否为报验户</div></td>
+<td><div align="center">AS_DJ_JK_SWDJLX_BYDJ_TG</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人是否为报验户</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">AS_DJ_JK_KJSKZG_EXIST_BTG</div></td>
+<td><div align="center">监控纳税人是否已经存在扣缴税款资格</div></td>
+<td><div align="center">AS_DJ_JK_KJSKZG_EXIST_BTG</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人是否已经存在扣缴税款资格</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">AS_DJ_JK_KJSKZG_EXIST_TG</div></td>
+<td><div align="center">监控纳税人是否存在扣缴税款资格</div></td>
+<td><div align="center">AS_DJ_JK_KJSKZG_EXIST_TG</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人是否存在扣缴税款资格</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">AS_SB_JK_WSB</div></td>
+<td><div align="center">监控纳税人是否未申报</div></td>
+<td><div align="center">AS_SB_JK_WSB</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人是否未申报</div></td>
+<td><div align="center">02</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">AS_RD_JK_SFZRD_ZYSJRDFW_TG</div></td>
+<td><div align="center">监控纳税人是否认定资源税及认定范围</div></td>
+<td><div align="center">AS_RD_JK_SFZRD_ZYSJRDFW_TG</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人是否认定资源税及认定范围</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">AS_FZ_JK_WFXWCLLCWCL</div></td>
+<td><div align="center">监控纳税人是否存在税收违法行为处理流程未处理完毕</div></td>
+<td><div align="center">AS_FZ_JK_WFXWCLLCWCL</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人是否存在税收违法行为处理流程未处理完毕</div></td>
+<td><div align="center">05</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">AS_DJ_JK_YFQWBJDBRW_EXIST_TG</div></td>
+<td><div align="center">监控纳税人是否存在已发起未办结的待办任务</div></td>
+<td><div align="center">AS_DJ_JK_YFQWBJDBRW_EXIST_TG</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人是否存在已发起未办结的待办任务</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">AS_DJ_JK_ZZLZSWSX_EXIST_TG</div></td>
+<td><div align="center">监控纳税人是否存在正在流转的税务事项</div></td>
+<td><div align="center">AS_DJ_JK_ZZLZSWSX_EXIST_TG</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人是否存在正在流转的税务事项</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">AS_PZ_JK_SSCZWJBXX</div></td>
+<td><div align="center">监控纳税人是否存在未结报的税收票证信息</div></td>
+<td><div align="center">AS_PZ_JK_SSCZWJBXX</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人是否存在未结报的税收票证信息:如果有监控不通过</div></td>
+<td><div align="center">03</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">AS_ZS_JK_NSRYDTXX</div></td>
+<td><div align="center">根据登记序号监控是否存在多缴</div></td>
+<td><div align="center">AS_ZS_JK_NSRYDTXX</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人是否存在多缴</div></td>
+<td><div align="center">02</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">AS_JC_JK_NSRZCAJ</div></td>
+<td><div align="center">监控纳税人是否有在查的案件</div></td>
+<td><div align="center">AS_JC_JK_NSRZCAJ</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人是否有在查的案件</div></td>
+<td><div align="center">05</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">FP_FP041_checkNsrzt</div></td>
+<td><div align="center">纳税人状态是否为正常状态监控</div></td>
+<td><div align="center">PBS_FP041_checkNsrzt</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人登记状态</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">FP_FP041_checkTgfpzt</div></td>
+<td><div align="center">纳税人是否处在停供发票状态监控</div></td>
+<td><div align="center">CBS_FP041_checkTgfpzt</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人是否处于停供发票状态</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">FP_JK041_checkTgfpzt</div></td>
+<td><div align="center">校验纳税人是否在停供发票状态</div></td>
+<td><div align="center">CBS_FP041_checkTgfpzt</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人是否在停供发票状态</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">FP_JK041_checkNsrzt</div></td>
+<td><div align="center">校验纳税人的登记状态是否为正常</div></td>
+<td><div align="center">PBS_FP041_checkNsrzt</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人的登记状态是否为正常</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">FP_JK041_checkSfzgxfwn</div></td>
+<td><div align="center">校验纳税人是否在管辖范围内</div></td>
+<td><div align="center">PBS_FP041_checkSfzgxfwn</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人是否在管辖范围内</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">FP_JK054_checkNsrzt</div></td>
+<td><div align="center">纳税人状态监控</div></td>
+<td><div align="center">PBS_FP054_checkNsrzt</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人状态</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">FP_JK056_checknsrsfylgfp</div></td>
+<td><div align="center">纳税人是否领购发票监控</div></td>
+<td><div align="center">CBS_FP056_checknsrsfylgfp</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人是否已领购发票</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">FP_JK056_checkSfzrd</div></td>
+<td><div align="center">纳税人税（费）种认定监控</div></td>
+<td><div align="center">PBS_FP056_checkSfzrd</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">纳税人税（费）种认定监控</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">FP_JK058_checkNsrzt</div></td>
+<td><div align="center">纳税人状态监控</div></td>
+<td><div align="center">PBS_FP058_checkNsrzt</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人状态</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">FP_FP041_checkSfzgxfwn</div></td>
+<td><div align="center">纳税人是否在管辖范围监控</div></td>
+<td><div align="center">PBS_FP041_checkSfzgxfwn</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人是否在管辖范围内</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">DJ_JK138_JYFWJK</div></td>
+<td><div align="center">纳税人经营范围监控</div></td>
+<td><div align="center">PDS_DJ138_checkNsrJyfw</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">纳税人行业是否制造业行业明细是否为葡萄酒制造业</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">DJ_JK107_NSRZTJK</div></td>
+<td><div align="center">纳税人状态监控(停业)</div></td>
+<td><div align="center">PDS_DJ107_nsrztIsTy</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人是否为停业户</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">FP_FP036_validateNsrzt</div></td>
+<td><div align="center">纳税人状态是否为正常状态监控</div></td>
+<td><div align="center">PBS_FP036_validateNsrzt</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人登记状态</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZS_JK006_DBGZJSRBGDJK</div></td>
+<td><div align="center">代保管资金收入报告单监控</div></td>
+<td><div align="center">CDS_ZS006_dbgzjsrbgdJk</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">查询该纳税人已通过审批的税务代保管资金收入报告单。 </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">AS_PS_JK_NSRSFCZWWCNSPG</div></td>
+<td><div align="center">监控纳税人是否存在未完成的纳税评估</div></td>
+<td><div align="center">AS_PS_JK_NSRSFCZWWCNSPG</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人是否存在未完成的纳税评估</div></td>
+<td><div align="center">05</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">AS_FP_JK_DJXH_SFCZFPDBSQ_TG</div></td>
+<td><div align="center">监控纳税人是否存在发票担保申请</div></td>
+<td><div align="center">AS_FP_JK_DJXH_SFCZFPDBSQ_TG</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人是否存在发票担保申请</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">AS_FP_JK_DJXH_SFCZFPWFWZ_TG</div></td>
+<td><div align="center">监控纳税人是否存在未处理的发票违法违章事项</div></td>
+<td><div align="center">AS_FP_JK_DJXH_SFCZFPWFWZ_TG</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人是否存在未处理的发票违法违章事项</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">AS_FP_JK_DJXH_SFLCYWJXFP_TG</div></td>
+<td><div align="center">监控纳税人是否留存有未缴销的发票</div></td>
+<td><div align="center">AS_FP_JK_DJXH_SFLCYWJXFP_TG</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人是否留存有未缴销的发票</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">AS_DJ_JK_SHBXFDJ_EXIST_TG</div></td>
+<td><div align="center">监控纳税人是否存在社会保险费登记</div></td>
+<td><div align="center">AS_DJ_JK_KJSKZG_EXIST_BTG</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人是否存在社会保险费登记</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">AS_SB_JK_CZWWCTDZZSQSXX</div></td>
+<td><div align="center">查询纳税人是否存在土地增值税信息</div></td>
+<td><div align="center">AS_SB_JK_CZWWCTDZZSQSXX</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">查询纳税人是否存在土地增值税信息</div></td>
+<td><div align="center">02</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">AS_SB_JK_YFHZSBAYSFSB</div></td>
+<td><div align="center">查询定期定额分月汇总申报按月是否已申报</div></td>
+<td><div align="center">AS_SB_JK_YFHZSBAYSFSB</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">查询定期定额分月汇总申报按月是否已申报</div></td>
+<td><div align="center">02</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">AS_SB_JK_QYSDSWZQS</div></td>
+<td><div align="center">企业所得税未做清算</div></td>
+<td><div align="center">AS_SB_JK_QYSDSWZQS</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">企业所得税未做清算</div></td>
+<td><div align="center">02</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">AS_SB_JK_WSB_WBHBY</div></td>
+<td><div align="center">监控未申报不包含本月</div></td>
+<td><div align="center">AS_SB_JK_WSB_WBHBY</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控未申报不包含本月</div></td>
+<td><div align="center">02</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">AS_ZS_JK_QSZNJFK</div></td>
+<td><div align="center">滞纳金缴款罚款服务</div></td>
+<td><div align="center">AS_ZS_JK_QSZNJFK</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">滞纳金缴款罚款服务</div></td>
+<td><div align="center">02</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">AS_DJ_JK_SWDJLX_SLSWDJ_KJYWR_STF_TG</div></td>
+<td><div align="center">监控纳税人是否为办理税务登记或扣缴义务登记或受托方登记纳税人</div></td>
+<td><div align="center">AS_DJ_JK_SWDJLX_SLSWDJ_KJYWR_STF_TG</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人是否为办理税务登记或扣缴义务登记或受托方登记纳税人，存在通过</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">AS_FP_JK_DJXH_SFYZDQYYZFPSWXZXK_TG</div></td>
+<td><div align="center">监控纳税人是否有指定企业印制发票税务行政许可</div></td>
+<td><div align="center">AS_FP_JK_DJXH_SFYZDQYYZFPSWXZXK_TG</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人是否有指定企业印制发票税务行政许可</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">AS_FP_JK_DJXH_SFZZSYBNSR_DK</div></td>
+<td><div align="center">监控纳税人是否是增值税一般纳税人</div></td>
+<td><div align="center">AS_FP_JK_DJXH_SFZZSYBNSR_DK</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人是否是增值税一般纳税人</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">AS_FP_JK_DJXH_SFYZZSSZRDXX_DK</div></td>
+<td><div align="center">监控纳税人是否有增值税税种认定信息</div></td>
+<td><div align="center">AS_FP_JK_DJXH_SFYZZSSZRDXX_DK</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人是否有增值税税种认定信息</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">AS_FP_JK_DJXH_SFYYQWSBXX_DK</div></td>
+<td><div align="center">监控纳税人是否有逾期未申报信息</div></td>
+<td><div align="center">AS_FP_JK_DJXH_SFYYQWSBXX_DK</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人是否有逾期未申报信息</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">AS_FP_JK_NSRZT_TY_DK</div></td>
+<td><div align="center">监控纳税人状态是否为停业(代开发票)</div></td>
+<td><div align="center">AS_FP_JK_NSRZT_TY_DK</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人状态是否为停业(代开发票)</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">AS_FP_JK_NSRZG_LY_TG</div></td>
+<td><div align="center">停供状态纳税人领用发票监控</div></td>
+<td><div align="center">AS_FP_JK_NSRZG_LY_TG</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">停供状态纳税人领用发票监控</div></td>
+<td><div align="center">03</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">AS_DJ_JK_YLXTZG_FWSK_WZX_BTG</div></td>
+<td><div align="center">纳税人是否存在未注销的防伪税控资格</div></td>
+<td><div align="center">AS_DJ_JK_YLXTZG_FWSK_WZX_BTG</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人是否存在未注销的防伪税控资格</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">AS_FP_JK_NSRZT_YJ_TG</div></td>
+<td><div align="center">发票验旧纳税人状态监控</div></td>
+<td><div align="center">AS_FP_JK_NSRZT_YJ_TG</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">发票验旧纳税人状态监控</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">DJ_JK137_SYDJXXJK</div></td>
+<td><div align="center">纳税人是否存在土地、房屋、车船情况登记信息监控</div></td>
+<td><div align="center">CDS_DJ137_checkNsrExistSydjxx</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">纳税人是否已进行了土地、房屋、车船情况登记</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">DJ_JK132_NSRZTJK</div></td>
+<td><div align="center">纳税人状态监控(非正常、注销)</div></td>
+<td><div align="center">PDS_DJ104_nsrztIsFzcOrZx</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人是否为注销或者非正常</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">RD_JK108_NSRJBZQJK</div></td>
+<td><div align="center">简并征期资格监控</div></td>
+<td><div align="center">CDS_RD109_checkNsrIsJbzqzg</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳是否完成简并征期认定</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">FP_JK060_checkNsrzt</div></td>
+<td><div align="center">纳税人状态监控</div></td>
+<td><div align="center">PBS_FP060_checkNsrzt</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人状态</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">FP_JK001_TGFPGPTPJK</div></td>
+<td><div align="center">停供发票购票特批监控</div></td>
+<td><div align="center">CBS_FP041_sqzgJy</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人停供发票购票特批资格</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">FP_JK002_CXLGPTPJK</div></td>
+<td><div align="center">超限量购票特批监控</div></td>
+<td><div align="center">CBS_FP043_sqzgJy</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人超限量购票特批资格</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">YH_JK018_NSRFQMSQ</div></td>
+<td><div align="center">纳税人放弃免税权监控</div></td>
+<td><div align="center">CDS_YH018_checkNsrFqmsq</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人是否放弃免税权</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">FP_JK046_FPDBSQJK</div></td>
+<td><div align="center">发票担保申请监控</div></td>
+<td><div align="center">CBS_FP046_validateNsrsqzg</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人发票担保申请资格 </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">FP_JK039_FPFSTXJK</div></td>
+<td><div align="center">发票发售提醒监控</div></td>
+<td><div align="center">PBS_FP039_validateNsrxxTsjk</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人逾期申报信息,欠缴税款滞纳金信息</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">FP_JK063_FPYJJZGJK</div></td>
+<td><div align="center">纳税人发票验旧资格校验</div></td>
+<td><div align="center">CBS_FP063_yjzgJy</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人发票验旧资格</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">FP_JK048_FPDBJCSQJK</div></td>
+<td><div align="center">发票担保解除监控</div></td>
+<td><div align="center">CBS_FP048_validateNsrjcsqzg</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人发票担保解除信息</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">FP_JK050_checkNsrzt</div></td>
+<td><div align="center">纳税人状态监控</div></td>
+<td><div align="center">PBS_FP050_checkNsrzt</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人状态</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">FP_JK050_checkNsrSz</div></td>
+<td><div align="center">纳税人税种监控</div></td>
+<td><div align="center">PBS_FP050_checkNsrSz</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人税种</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">FP_JK050_checkGtgshqzd</div></td>
+<td><div align="center">个体工商户起征点监控</div></td>
+<td><div align="center">PBS_FP050_checkGtgshqzd</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控个体工商户起征点</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">FP_JK050_checkNsrZg</div></td>
+<td><div align="center">纳税人资格监控</div></td>
+<td><div align="center">PBS_FP050_checkNsrZg</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人资格</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">FP_JK050_checkYqwsb</div></td>
+<td><div align="center">纳税人逾期未申报监控</div></td>
+<td><div align="center">PBS_FP050_checkYqwsb</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人逾期未申报</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">FP_JK052_checkNsrzt</div></td>
+<td><div align="center">纳税人状态监控</div></td>
+<td><div align="center">PBS_FP052_checkNsrzt</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人状态</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">UC_B_CKTS_009_YWGZ_001</div></td>
+<td><div align="center">出口退（免）税资格认定</div></td>
+<td><div align="center">PDS_CKTSRD001_queryNsrwrd</div></td>
+<td><div align="center"> </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">该纳税人已经办理过出口退（免）税资格认定</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">UC_B_CKTS_009_YWGZ_002</div></td>
+<td><div align="center">退税代理机构认定</div></td>
+<td><div align="center">PDS_CKTSRD003_queryTsdljgwrd</div></td>
+<td><div align="center"> </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">该纳税人已经办理退税代理机构认定</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">RD_JK106_NSRFJMQYZGJK</div></td>
+<td><div align="center">非居民企业资格监控</div></td>
+<td><div align="center">PDS_RD106_checkNsrIsFjm</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人是否为非居民企业</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">UC_B_CKTS_009_YWGZ_003</div></td>
+<td><div align="center">出口退（免）税资格认定</div></td>
+<td><div align="center">PDS_CKTSRD002_queryNsryrd</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">该纳税人未办理出口退（免）税资格认定</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">UC_B_CKTS_009_YWGZ_004</div></td>
+<td><div align="center">退税代理机构认定</div></td>
+<td><div align="center">CDS_CKTSRD034_queryJwlkgwljtsdljgWrd</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">该纳税人未办理退税代理机构认定</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">UC_B_CKTS_009_YWGZ_006</div></td>
+<td><div align="center">退税定点商店认定</div></td>
+<td><div align="center">CDS_CKTSRD040_queryJwlkgwljtsddsdYrd</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">该纳税人已办理过境外旅客购物离境退税定点商店认定</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">AS_YH_JK_QYSDS_YH_EXIST_BTG </div></td>
+<td><div align="center">监控纳税人否享受企业所得税优惠，享受优惠，不通过监控 </div></td>
+<td><div align="center">AS_YH_JK_QYSDS_YH_EXIST_BTG </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人否享受企业所得税优惠，享受优惠，不通过监控 </div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">AS_ZS_JK_SFDCQSJLREYJYWDQTQYSDSYJFSDHDSWXZXK_TG</div></td>
+<td><div align="center">根据登记序号监控是否对其他企业所得税预缴方式的核定的税务行政许可监控</div></td>
+<td><div align="center">AS_ZS_JK_SFDCQSJLREYJYWDQTQYSDSYJFSDHDSWXZXK_TG</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">根据登记序号监控是否对采取实际利润额预缴以外的其他企业所得税预缴方式的核定的税务行政许可监控</div></td>
+<td><div align="center">02</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">AS_DJ_JK_DJZCLX_GTJY_SY_TG</div></td>
+<td><div align="center">监控纳税人登记注册类型是否为“个体工商户 ”或“私营独资企业“</div></td>
+<td><div align="center">AS_DJ_JK_DJZCLX_GTJY_SY_TG</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">纳税人登记注册类型是否为“个体工商户 ”或“私营独资企业“</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">AS_YH_JK_NSRXYDJ_TG</div></td>
+<td><div align="center">纳税人信用等级是否为C级或者D级</div></td>
+<td><div align="center">AS_YH_JK_NSRXYDJ_TG</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人信用登记是否为C级或者D级</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">AS_RD_JK_SFZRD_GDZYS_TG</div></td>
+<td><div align="center">纳税人是否认定耕地占用税</div></td>
+<td><div align="center">AS_RD_JK_SFZRD_GDZYS_TG</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人是否认定耕地占用税</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">AS_FP_JK_NSRZT_DB_TG</div></td>
+<td><div align="center">监控纳税人是否存在未解除的发票担保信息</div></td>
+<td><div align="center">AS_FP_JK_NSRZT_DB_TG</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人是否存在未解除的发票担保信息</div></td>
+<td><div align="center">03</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">AS_ZS_JK_NSRZTXXJK</div></td>
+<td><div align="center">监控纳税人状态不能为非正常和注销</div></td>
+<td><div align="center">AS_ZS_JK_NSRZTXXJK</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人状态不能为非正常和注销</div></td>
+<td><div align="center">02</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">AS_FP_JK_NSRZGLXJK_ZH_TG</div></td>
+<td><div align="center">纳税人资格类型监控</div></td>
+<td><div align="center">AS_FP_JK_NSRZGLXJK_ZH_TG</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人是否是辅导期一般纳税人或一般纳税人</div></td>
+<td><div align="center">03</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">AS_DJ_JK_NSRZT_ZX</div></td>
+<td><div align="center">监控纳税人状态是否为注销户或者非正常户注销</div></td>
+<td><div align="center">AS_DJ_JK_NSRZT_ZX</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人状态是否为注销户或者非正常户注销</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">AS_FP_JK_SFBCZXTSWXZXK_ZH_TG</div></td>
+<td><div align="center">税务行政许可监控-是否不存在相同的税务行政许可</div></td>
+<td><div align="center">AS_FP_JK_SFBCZXTSWXZXK_ZH_TG</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">税务行政许可监控-是否不存在相同的税务行政许可</div></td>
+<td><div align="center">03</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">AS_YH_JK_QYSDS_YH_TG</div></td>
+<td><div align="center">监控纳税人否享受企业所得税优惠</div></td>
+<td><div align="center">AS_YH_JK_QYSDS_YH_TG</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人否享受企业所得税优惠</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">AS_DJ_JK_NSRZT_ZX_FZCHZX_BTG</div></td>
+<td><div align="center">监控纳税人状态是否为非正常户注销和注销户</div></td>
+<td><div align="center">AS_DJ_JK_NSRZT_ZX_FZCHZX_BTG</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人状态是否为非正常户注销和注销户</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">AS_FP_JK_DJXH_NSRYCSDBYCJKGZ</div></td>
+<td><div align="center">纳税人一窗式对比异常监控规则</div></td>
+<td><div align="center">AS_FP_JK_DJXH_NSRYCSDBYCJKGZ</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">为纳税人一窗式对比异常监控规则</div></td>
+<td><div align="center">03</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">AS_DJ_JK_DJZCLX_GT_SY_BTG</div></td>
+<td><div align="center">监控纳税人登记注册类型是否为“个体经营”或“私营独资企业“</div></td>
+<td><div align="center">AS_DJ_JK_DJZCLX_GT_SY_BTG</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">纳税人登记注册类型是否为“个体经营”或“私营独资企业“</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">AS_FP_JK_WCJYNSRJK</div></td>
+<td><div align="center">外出经营纳税人监控</div></td>
+<td><div align="center">AS_FP_JK_WCJYNSRJK</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">外出经营纳税人监控</div></td>
+<td><div align="center">03</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">AS_ZS_JK_SFSFZRD</div></td>
+<td><div align="center">根据登记序号监控是否进行税种认定</div></td>
+<td><div align="center">AS_ZS_JK_SFSFZRD</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">统一受理监控监控是否进行税费种认定</div></td>
+<td><div align="center">02</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">AS_FP_JK_SFCZXTSWXZXK_ZH_TG</div></td>
+<td><div align="center">税务行政许可监控-是否存在相同的税务行政许可</div></td>
+<td><div align="center">AS_FP_JK_SFCZXTSWXZXK_ZH_TG</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">税务行政许可监控-是否存在相同的税务行政许可</div></td>
+<td><div align="center">03</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">UC_B_CKTS_009_YWGZ_005</div></td>
+<td><div align="center">退税定点商店认定</div></td>
+<td><div align="center">CDS_CKTSRD035_queryJwlkgwljtsddsdWrd</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">该纳税人未办理过境外旅客购物离境退税定点商店认定</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZM_JK101_CZWHXZM</div></td>
+<td><div align="center">存在未按规定期限核销的外出经营证明监控</div></td>
+<td><div align="center">CDS_ZM101_checkNsrExistWhxzm</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">查询纳税人是否存在未按规定期限核销的外出经营证明</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">FP_FP039_Nsrpzhdxx</div></td>
+<td><div align="center">纳税人是否有票种核定信息</div></td>
+<td><div align="center">CBS_FP039_validateNsrpzhdxx</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人是否有票种核定信息</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">FP_FP039_validateNsrztxx</div></td>
+<td><div align="center">纳税人状态监控</div></td>
+<td><div align="center">PBS_FP039_validateNsrztxx</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控发票发售时纳税人状态</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">RD_JK107_ZKPNSRZGJK</div></td>
+<td><div align="center">自开票纳税人资格监控</div></td>
+<td><div align="center">PDS_RD107_checkNsrIsZkpzgnsr</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人是否具有自开票纳税人资格</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">RD_JK108_DKPNSRZGJK</div></td>
+<td><div align="center">代开票纳税人资格监控</div></td>
+<td><div align="center">PDS_RD108_checkNsrIsDkpzgnsr</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人是否具有代开票纳税人资格</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">FP_JK075_NSRFWYPLGJK</div></td>
+<td><div align="center">纳税人防伪用品领购监控</div></td>
+<td><div align="center">CBS_FP075_jyFwyplgzg</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人是否有领购发票防伪用品资格</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">FP_FP039_nsrfphbjx</div></td>
+<td><div align="center">纳税人发票换版缴销</div></td>
+<td><div align="center">CBS_FP039_validateNsrhbwjxxx</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人是否有换版未缴销信息</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">FP_FP039_nsrtgfpzt</div></td>
+<td><div align="center">纳税人是否处于停供发票状态</div></td>
+<td><div align="center">CBS_FP039_validateNsrtgfp</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人是否停供发票</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">FP_FP039_sbbdsftg</div></td>
+<td><div align="center">纳税人是否通过申报比对</div></td>
+<td><div align="center">CBS_FP039_validateNsrsbbdxx</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人是否通过申报比对</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">FP_FP039_sfyqsb</div></td>
+<td><div align="center">纳税人是否逾期申报</div></td>
+<td><div align="center">CBS_FP039_validateNsryqwsb</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人是否逾期申报</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">FP_FP039_sfqjsk</div></td>
+<td><div align="center">纳税人是否欠缴税款</div></td>
+<td><div align="center">CBS_FP039_validateNsrqjsk</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人是否欠缴税款</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">DJ_JK133_DJZCLXJK</div></td>
+<td><div align="center">登记注册类型监控</div></td>
+<td><div align="center">PDS_DJ133_checkNsrIsGtgsh</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人是否为个体工商户或者个人独资企业</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">RD_JK102_YHSSZRDJK</div></td>
+<td><div align="center">印花税税种认定监控</div></td>
+<td><div align="center">PDS_RD102_checkYhsszRdxx</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人是否认定了印花税</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">DJ_JK110_NSRZTJK</div></td>
+<td><div align="center">纳税人状态监控(注销、停业、非正常)</div></td>
+<td><div align="center">PDS_DJ110_nsrztIsZxOrTyOrFzc</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人是否为注销、停业、非正常</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">DJ_JK111_NSRFZJGZTJK</div></td>
+<td><div align="center">纳税人分支机构状态监控</div></td>
+<td><div align="center">PDS_DJ111_checkNsrFzjgIsZx</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人分支机构是否注销</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">DJ_JK112_NSRKJYWRZGJK</div></td>
+<td><div align="center">纳税人扣缴义务人资格监控</div></td>
+<td><div align="center">PDS_DJ112_checkNsrIsKjywr</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人是否为扣缴义务人</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">DJ_JK113_NSRZTJK</div></td>
+<td><div align="center">纳税人状态监控(非正常户)</div></td>
+<td><div align="center">PDS_DJ113_checkNsrIsFzch</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人是否为非正常户</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">DJ_JK114_NSRDQDEHZGJK</div></td>
+<td><div align="center">纳税人双定户资格监控</div></td>
+<td><div align="center">CDS_DJ114_checkNsrIsDqdeh</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人是否为双定户</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">DJ_JK102_NSRZTJK</div></td>
+<td><div align="center">纳税人状态监控(正常、停业)</div></td>
+<td><div align="center">PDS_DJ102_nsrztIsZcOrTy</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人是否为正常户或者停业户</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">DJ_JK115_NSRWSBXXJK</div></td>
+<td><div align="center">纳税人未申报信息监控</div></td>
+<td><div align="center">CDS_DJ115_checkNsrIsWsb</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人是否存在未申报信息</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">DJ_JK116_NSRQSXXJK</div></td>
+<td><div align="center">纳税人欠税监控</div></td>
+<td><div align="center">CDS_DJ116_checkNsrIsQs</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控是否存在未缴纳的税款、滞纳金和罚款</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">AS_YH_JK_NSRZGLX_TG</div></td>
+<td><div align="center">纳税人是否为增值税一般纳税人</div></td>
+<td><div align="center">AS_YH_JK_NSRZGLX_TG</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人是否为增值税一般纳税人</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">AS_RD_JK_YBNSRSQHCJK_EXIST_BTG</div></td>
+<td><div align="center">一般纳税人申请互斥监控</div></td>
+<td><div align="center">AS_RD_JK_YBNSRSQHCJK_EXIST_BTG</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">一般纳税人申请互斥监控</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">AS_FP_JK_WBYJDJNSRSFYYXDFPDB_LY_TG</div></td>
+<td><div align="center">外埠报验纳税人监控：是否有有效的发票担保</div></td>
+<td><div align="center">AS_FP_JK_WBYJDJNSRSFYYXDFPDB_LY_TG</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">外埠报验纳税人监控：是否有有效的发票担保</div></td>
+<td><div align="center">03</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">AS_DJ_JK_DJZCLX_GT_TG</div></td>
+<td><div align="center">监控纳税人登记注册类型是否为“个体经营”</div></td>
+<td><div align="center">AS_DJ_JK_DJZCLX_GT_TG</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人登记注册类型是否为“个体经营”</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">AS_DJ_JK_NSRZT_FZC_TG</div></td>
+<td><div align="center">监控纳税人状态是否为非正常户</div></td>
+<td><div align="center">AS_DJ_JK_NSRZT_FZC_TG</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人状态是否为非正常,如果是，监控通过</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">AS_DJ_JK_NSRSFKQSYDJ_EXIST_BTG</div></td>
+<td><div align="center">监控纳税人是否为跨区税源登记</div></td>
+<td><div align="center">AS_DJ_JK_NSRSFKQSYDJ_EXIST_BTG</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人是否为跨区税源登记</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">AS_RD_JK_ISQYSDSJMQY_TG</div></td>
+<td><div align="center">纳税人是否是企业所得税居民企业</div></td>
+<td><div align="center">AS_RD_JK_ISQYSDSJMQY_TG</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人是否是企业所得税居民企业</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">AS_RD_JK_ISYCZZY_TG</div></td>
+<td><div align="center">纳税人的国标行业（主）是否为“烟草制造业、住宿和餐饮业、批发和零售业、房地产业、租赁和商务服务业、娱乐业”</div></td>
+<td><div align="center">AS_RD_JK_ISYCZZY_TG</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人的国标行业（主）是否为“烟草制造业、住宿和餐饮业、批发和零售业、房地产业、租赁和商务服务业、娱乐业”</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">AS_FP_JK_DJXH_SFZZSYBNSRANDDS_DK</div></td>
+<td><div align="center">监控纳税人是否是一般纳税人</div></td>
+<td><div align="center">AS_FP_JK_DJXH_SFZZSYBNSRANDDS_DK</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人是否是一般纳税人，如果是地税还需要查询该纳税人国税是否是一般纳税人，如果是报验登记的纳税人需要查询登记地是否是一般纳税人</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">AS_ZS_JK_SFDQDEH</div></td>
+<td><div align="center">根据登记序号监控是否定期定额户</div></td>
+<td><div align="center">AS_ZS_JK_SFDQDEH</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">统一受理监控是否定期定额户</div></td>
+<td><div align="center">02</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">AS_FP_JK_NSRZT_FZCHZXH_TG</div></td>
+<td><div align="center">发票纳税人状态监控，非正常户注销户</div></td>
+<td><div align="center">AS_FP_JK_NSRZT_FZCHZXH_TG</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">发票纳税人状态监控，非正常户注销户</div></td>
+<td><div align="center">03</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">AS_SB_JK_WBS_WBSZLCJBHBY</div></td>
+<td><div align="center">监控未报送资料采集不包含本月</div></td>
+<td><div align="center">AS_SB_JK_WBS_WBSZLCJBHBY</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控未报送资料采集不包含本月</div></td>
+<td><div align="center">02</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">AS_DJ_JK_YSCCDJ_EXIST_TG</div></td>
+<td><div align="center">应税财产登记监控</div></td>
+<td><div align="center">AS_DJ_JK_YSCCDJ_EXIST_TG</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人应税财产状态</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">AS_DJ_JK_SFHZNSQY_BTG</div></td>
+<td><div align="center">监控纳税人是汇总纳税企业，不能进行核定，不通过监控</div></td>
+<td><div align="center">AS_DJ_JK_SFHZNSQY_BTG</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人是汇总纳税企业，不能进行核定，不通过监控</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">AS_YH_JK_QYSDS_YH_EXIST_BTG</div></td>
+<td><div align="center">监控纳税人享受企业所得税优惠，享受优惠，不通过监控</div></td>
+<td><div align="center">AS_YH_JK_QYSDS_YH_EXIST_BTG</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人享受企业所得税优惠，享受优惠，不通过监控</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">AS_DJ_JK_CLGZSJMBA_CSGJC_TG</div></td>
+<td><div align="center">监控纳税人是否办理过城市公交企业公共汽电车辆购置计划备案</div></td>
+<td><div align="center">AS_DJ_JK_CLGZSJMBA_CSGJC_TG</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人是否办理过城市公交企业公共汽电车辆购置计划备案</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">DJ_JK117_NSRWFWZXXJK</div></td>
+<td><div align="center">纳税人违章信息监控</div></td>
+<td><div align="center">CDS_DJ117_checkNsrExitWfwzdj</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控违法违章登记流程未处理完毕</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">DJ_JK118_NSRZPXXJK</div></td>
+<td><div align="center">纳税人在评监控</div></td>
+<td><div align="center">CDS_DJ118_checkNsrInPgsj</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人是否还在评估</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">DJ_JK119_NSRZCZJXXJK</div></td>
+<td><div align="center">纳税人在查案件监控</div></td>
+<td><div align="center">CDS_DJ119_checkNsrInZcaj</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人是否存在在查案件</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">DJ_JK120_NSRFWSKZGJK</div></td>
+<td><div align="center">纳税人防伪税控资格监控</div></td>
+<td><div align="center">CDS_DJ120_checkNsrExistFwskzg</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人是否存在防伪税控资格</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">DJ_JK121_NSRTDSZSQSJK</div></td>
+<td><div align="center">纳税人土地增值税清算监控</div></td>
+<td><div align="center">CDS_DJ121_checkNsrWczdzssqs</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人是否完成土地增值税清算</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">DJ_JK122_NSRDJSKJK</div></td>
+<td><div align="center">纳税人多缴税款监控</div></td>
+<td><div align="center">CDS_DJ122_checkNsrHaveDjsk</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人是否存在多缴税款</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">DJ_JK123_NSRYJSKJK</div></td>
+<td><div align="center">纳税人预缴税款监控</div></td>
+<td><div align="center">CDS_DJ123_checkNsrHaveYjsk</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人是否存在预缴税款</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">DJ_JK124_NSRFPJXJK</div></td>
+<td><div align="center">纳税人发票缴销情况监控</div></td>
+<td><div align="center">CDS_DJ124_checkNsrHaveWjxfp</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人发票收缴情况</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">DJ_JK125_NSRWSYSSPZJK</div></td>
+<td><div align="center">纳税人未使用税收票证监控</div></td>
+<td><div align="center">CDS_DJ125_checkNsrExistWsysspz</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人是否存在未使用税收票证</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">DJ_JK126_NSRCKTSRDZGJK</div></td>
+<td><div align="center">纳税人出口退税认定资格监控</div></td>
+<td><div align="center">CDS_DJ126_checkNsrExistCktszg</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控监控纳税人是否存在出口退（免）税认定资格</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">DJ_JK127_NSRQTSKZZJK</div></td>
+<td><div align="center">纳税人其他税控装置监控</div></td>
+<td><div align="center">CDS_DJ127_checkNsrHaveQtskzz</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人其他税控装置是否缴销</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">DJ_JK128_NSRQTSKZZJK</div></td>
+<td><div align="center">纳税人报验登记监控</div></td>
+<td><div align="center">CDS_DJ128_checkNsrIsWbjynsr</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人是否为外埠经营纳税人报验登记</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">DJ_JK129_NSRBYDJYQJK</div></td>
+<td><div align="center">纳税人报验登记逾期监控</div></td>
+<td><div align="center">CDS_DJ129_checkWbnsrIsyq</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人外埠经营纳税人报验登记是否超期</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">DJ_JK130_NSRZCZTJK</div></td>
+<td><div align="center">纳税人状态监控(正常)</div></td>
+<td><div align="center">PDS_DJ130_nsrztIsZc</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人是否正常状态</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">DJ_JK131_NSRSWDJLXJK</div></td>
+<td><div align="center">纳税人税务登记类型监控</div></td>
+<td><div align="center">PDS_DJ131_checkNsrswjdlx</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人是否为设立税务登记纳税人</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">FP_FS</div></td>
+<td><div align="center">发票发售</div></td>
+<td><div align="center">PBS_FP039_validateNsrxx</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">是否通过发售监控</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">RD_JK101_ZYSSZRDJK</div></td>
+<td><div align="center">资源税税种认定监控</div></td>
+<td><div align="center">PDS_RD101_checkZysszRdxx</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人是否认定了资源税</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">RD_JK103_NSRSZRDJK</div></td>
+<td><div align="center">纳税人税种认定监控</div></td>
+<td><div align="center">PDS_RD103_checkSzRdxx</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人是否存在税种认定信息</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">RD_JK104_QYSDSSZRDJK</div></td>
+<td><div align="center">企业所得税税种认定监控</div></td>
+<td><div align="center">PDS_RD104_checkQysdsszRdxx</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人是否认定了企业所得税</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">RD_JK105_YBNSRRDJK</div></td>
+<td><div align="center">一般纳税人认定资格监控(一般纳税人不能办理业务)</div></td>
+<td><div align="center">PDS_RD105_checkNsrIsYbnsr</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">一般纳税人认定资格监控(一般纳税人不能办理业务)</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">FP_PZHD</div></td>
+<td><div align="center">发票票种核定</div></td>
+<td><div align="center">CBS_FP036_validateNsrxx</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">是否通过票种核定监控</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">DJ_JK134_SCJXTDQKDJJK</div></td>
+<td><div align="center">首次进行土地情况登记监控</div></td>
+<td><div align="center">CDS_DJ134_checkNsrExistTdqkdjxx</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">纳税人是否已进行了土地情况登记</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">AS_DJ_JK_JMQYDJZCLX_EXIST_TG</div></td>
+<td><div align="center">监控纳税人是否为居民企业且登记注册类型不为“私营合伙企业”、“个体经营”</div></td>
+<td><div align="center">AS_DJ_JK_JMQYDJZCLX_EXIST_TG</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人是否为居民企业且登记注册类型不为“私营合伙企业”、“个体经营”,如果是，监控通过</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">AS_DJ_JK_YXSWDJZ_TG</div></td>
+<td><div align="center">监控纳税人是否存在有效的税收登记证</div></td>
+<td><div align="center">AS_DJ_JK_YXSWDJZ_TG</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人是否存在有效的税收登记证</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">AS_FP_JK_NSRZT_LY_TG</div></td>
+<td><div align="center">发票领用纳税人状态监控</div></td>
+<td><div align="center">AS_FP_JK_NSRZT_LY_TG</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">发票领用纳税人状态监控</div></td>
+<td><div align="center">03</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">AS_YH_JK_NSRQYSDSZSFS_CZZH_TG</div></td>
+<td><div align="center">监控纳税人企业所得税征收方式是否为查账征收</div></td>
+<td><div align="center">AS_YH_JK_NSRQYSDSZSFS_CZZH_TG</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人企业所得税征收方式是否为查账征收</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">AS_DJ_JK_YLXTZG_CKTS_WZX_BTG</div></td>
+<td><div align="center">纳税人是否存在未注销的出口退税资格</div></td>
+<td><div align="center">AS_DJ_JK_YLXTZG_CKTS_WZX_BTG</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">纳税人是否存在未注销的出口退税资格</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">AS_FP_JK_DJXH_SFYJDCTYFPXX</div></td>
+<td><div align="center">监控该纳税人是否有未开具的库存机动车销售统一发票信息</div></td>
+<td><div align="center">AS_FP_JK_DJXH_SFYJDCTYFPXX</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控该纳税人是否有未开具的库存机动车销售统一发票信息</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">AS_DJ_JK_SWDJNSRBYDJBSR_EXIST_TG</div></td>
+<td><div align="center">监控纳税人是否为设立登记和报验登记纳税人</div></td>
+<td><div align="center">AS_DJ_JK_SWDJNSRBYDJBSR_EXIST_TG</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人是否为设立登记纳税人和报验登记纳税人</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">AS_DJ_JK_FJMQY_BTG</div></td>
+<td><div align="center">监控纳税人是否为居民企业</div></td>
+<td><div align="center">AS_DJ_JK_FJMQY_BTG</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人是否为居民企业</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">RWGL_SWCLL001_CBSZJK</div></td>
+<td><div align="center">任务管理事务处理类催报事中监控</div></td>
+<td><div align="center">AS_SB_RWGLSWCLLCBSZJK</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">任务管理事务处理类催报事中监控</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">RWGL_SWCLL002_CJSZJK</div></td>
+<td><div align="center">任务管理事务处理类催缴事中监控</div></td>
+<td><div align="center">AS_ZS_RWGLSWCLLCJSZJK</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">任务管理事务处理类催报事中监控</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">RWGL_SWCLL003_QYSDSYZQHDSZJK</div></td>
+<td><div align="center">任务管理事务处理类企业所得税依职权核定事中监控</div></td>
+<td><div align="center">AS_ZS_RWGLSWCLQYSDSYZQHDSZJK</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">任务管理事务处理类催报事中监控</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">DJ_JK135_SCJXFWQKDJJK</div></td>
+<td><div align="center">首次进行房屋情况登记监控</div></td>
+<td><div align="center">CDS_DJ135_checkNsrExistFwqkdjxx</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">纳税人是否已进行了房屋情况登记</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">DJ_JK136_SCJXCCQKDJJK</div></td>
+<td><div align="center">首次进行车船情况登记监控</div></td>
+<td><div align="center">CDS_DJ136_checkNsrExistCcqkdjxx</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">纳税人是否已进行了车船情况登记</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">DJ_JK140_SCJXHZJK</div></td>
+<td><div align="center">纳税人是否需要换证监控</div></td>
+<td><div align="center">CDS_DJ140_checkNsrExistHzxx</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">纳税人是否存在换证信息且未换证</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">DJ_JK139_SCJXYZJK</div></td>
+<td><div align="center">纳税人是否需要验证监控</div></td>
+<td><div align="center">CDS_DJ139_checkNsrExistYzxx</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">纳税人是否存在验证信息且未验证</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">DJ_JK114_NSRZXFWSKZGJK</div></td>
+<td><div align="center">纳税人注销防伪税控资格</div></td>
+<td><div align="center">PDS_DJ114_checkZxNsrFwskZg</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人是否在增值税防伪税控系统中注销了资格</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">RD_JK110_checkNsrYbnsr</div></td>
+<td><div align="center">一般纳税人认定资格监控</div></td>
+<td><div align="center">PDS_RD110_checkNsrYbnsr</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人是否为一般纳税人</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">DJ_JK142_checkNsrTytjjk</div></td>
+<td><div align="center">重复办理停业登记监控</div></td>
+<td><div align="center">CDS_DJ142_checkNsrTytjjk</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">重复办理停业登记监控</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">CDS_DJ144_checkNsrWfysq</div></td>
+<td><div align="center">纳税人已停业，未办理复业申请监控</div></td>
+<td><div align="center">CDS_DJ144_checkNsrWfysq</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">纳税人已停业，未办理复业申请监控</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">DJ_DJ148_checkGtgsh</div></td>
+<td><div align="center">纳税人状态是否个体工商户</div></td>
+<td><div align="center">PDS_DJ148_checkNsrIsGtgsh</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">纳税人状态是否个体工商户</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZS094_checkNsrIsGtgsh</div></td>
+<td><div align="center">此纳税人不是个体工商户、个人独资纳税人是否允许办理监控</div></td>
+<td><div align="center">PDS_ZS094_checkNsrIsGtgsh</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">此纳税人不是个体工商户、个人独资纳税人，不允许办理</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZM_JK102_DWZFZMJK</div></td>
+<td><div align="center">对外支付证明监控</div></td>
+<td><div align="center">CDS_ZM102_checkNsrHaveFwzmForDs</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人是否有地税未开具的对外支付证明编号</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">UC_B_CKTS_009_YWGZ_007</div></td>
+<td><div align="center">出口退税证明申报受理</div></td>
+<td><div align="center">CDS_CKTSRD055_queryTqqy</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">该企业为停权企业</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">RD_RD114_checkNsrzkpzg</div></td>
+<td><div align="center">监控纳税人当前具有货物运输业自开票纳税人资格</div></td>
+<td><div align="center">PDS_RD114_checkNsrHyzkpzg</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人当前具有货物运输业自开票纳税人资格</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">RD_RD115_checkNsrdkpzg</div></td>
+<td><div align="center">监控纳税人当前具有货物运输业代开票中介机构资格</div></td>
+<td><div align="center">PDS_RD115_checkNsrIsdkpzg</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人当前具有货物运输业代开票中介机构资格</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">PDS_RD112_checkjmqyzg</div></td>
+<td><div align="center">非居民企业资格监控(具有非居民企业资格不予受理)</div></td>
+<td><div align="center">PDS_RD112_checkjmqyzg</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">居民企业资格监控(具有非居民企业资格不予受理)</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">PDS_RD113_checkQysdsCzzs</div></td>
+<td><div align="center">纳税人具有税费种认定查账征收企业所得税信息监控(不具有，不允许受理)</div></td>
+<td><div align="center">PDS_RD113_checkQysdsCzzs</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人是否具有税费种认定信息查账征收企业所得税信息(不具有，不允许受理)</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">FP_FP039_nsrfphbjx2</div></td>
+<td><div align="center">纳税人发票换版缴销</div></td>
+<td><div align="center">PBS_FP039_validateNsrhbwjxxx</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人是否有换版未缴销信息</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">PBS_RD013_checkBasx</div></td>
+<td><div align="center">纳税人是否进行印花税认定监控</div></td>
+<td><div align="center">PBS_RD013_checkBasx</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人是否进行了印花税认定</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">RD_RD118_checBqxhuysyzg</div></td>
+<td><div align="center">纳税人取消货物运输业自开票资格不到一年，不能受理</div></td>
+<td><div align="center">CDS_RD118_checNsrBqxhuysyzg</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">纳税人取消货物运输业自开票资格不到一年，不能受理</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">FP_JK056_checkNsrZg</div></td>
+<td><div align="center">纳税人是否为增值税一般纳税人监控</div></td>
+<td><div align="center">PBS_FP056_checkNsrZg</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">纳税人是否为增值税一般纳税人监控</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">DJ_JK151_XMQSJK</div></td>
+<td><div align="center">项目欠税信息监控</div></td>
+<td><div align="center">CDS_DJ151_checkExistXmQsxxByXmbh</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">项目欠税信息监控</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">RD_JK118_SYNDQYSDSRDJK</div></td>
+<td><div align="center">上一年度企业所得税税种认定监控</div></td>
+<td><div align="center">PDS_RD118_checkQysdsszRdxxForSynd</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人上一年度是否认定了企业所得税</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">FP_JK063_NSRFPYJZGJK</div></td>
+<td><div align="center">纳税人状态监控</div></td>
+<td><div align="center">PBS_FP063_validateYjzg</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">纳税人状态监控</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">FP_FP036_validateWbbynsr</div></td>
+<td><div align="center">外埠报验纳税人状态监控</div></td>
+<td><div align="center">CBS_FP036_validateWbbynsr</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">票种核定外埠报验纳税人状态监控</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">FP_FP036_validateSwdjzff</div></td>
+<td><div align="center">非外埠报验纳税人税务登记证发放状态监控</div></td>
+<td><div align="center">CBS_FP036_validateSwdjzff</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">票种核定非外埠报验纳税人税务登记证发放状态监控</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">UC_B_RD_084_YWGZ_002</div></td>
+<td><div align="center">上一年度征收方式监控</div></td>
+<td><div align="center">PDS_RD121_checkQysdsZsfsxxForSynd</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人上一年度是否为企业所得税查账征收纳税人</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">FP_FP018_checkWtdz</div></td>
+<td><div align="center">纳税人是否有委托代征资格</div></td>
+<td><div align="center">CBS_FP108_checkWtdz</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人是否有委托代征资格</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">FP_FP111_checkNsrfpZspm</div></td>
+<td><div align="center">纳税人是否为交通运输业纳税人</div></td>
+<td><div align="center">CBS_FP111_checkNsrHwysyzzszyfpZspm</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人是否为交通运输业纳税人</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">UC_B_RD_084_YWGZ_003</div></td>
+<td><div align="center">上一年度预缴方式监控</div></td>
+<td><div align="center">PDS_RD120_checkQysdsYjfsxxForSynd</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人上一年度是否按实际利润额预缴企业所得税</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">UC_B_RD_084_YWGZ_004</div></td>
+<td><div align="center">上一年度企业所得税年度申报监控</div></td>
+<td><div align="center">PDS_RD119_checkQysdsNdsbxxForSynd</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人上一年度是否办理企业所得税年度申报</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">UC_B_RD_084_YWGZ_005</div></td>
+<td><div align="center">上一年度纳税人小微企业资格监控</div></td>
+<td><div align="center">PDS_RD122_checkXwxqyzgForSynd</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人上一年度是否已有小型微利企业资格</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">FP_FP039_validateNsrxx</div></td>
+<td><div align="center">监控纳税人购票资格</div></td>
+<td><div align="center">CBS_FP039_validateNsrxx</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人购票资格</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">FP_FP039_jkSfzyysSfzrd</div></td>
+<td><div align="center">监控纳税人是否做过营业税税（费）种认定</div></td>
+<td><div align="center">CBS_FP039_jkSfzyysSfzrd</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人是否做过营业税税（费）种认定</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">FP_FP039_jkSffflgb</div></td>
+<td><div align="center">监控纳税人是否发放领购薄</div></td>
+<td><div align="center">CBS_FP039_jkSffflgb</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人是否发放领购薄</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">UC_B_CKTS_478_YWGZ_001</div></td>
+<td><div align="center">计划分配率变更</div></td>
+<td><div align="center">PDS_CKTSSB008_queryJhfpl</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">该纳税人没有备案计划分配率无法进行计划分配率变更</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">UC_B_CKTS_478_YWGZ_002</div></td>
+<td><div align="center">计划分配率变更</div></td>
+<td><div align="center">PDS_CKTSSB009_queryJhfpbg</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">该纳税人已经做过计划分配率变更申报不能进行重复申报！</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">UC_B_CKTS_478_YWGZ_003</div></td>
+<td><div align="center">计划分配率变更</div></td>
+<td><div align="center">PDS_CKTSSB010_queryJhfplwy</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">计划分配率变更每核销年只能做一次！</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">FP_FP039_Nsrsfczzfhcwpxx</div></td>
+<td><div align="center">纳税人是否存在作废或红冲的网络发票开具信息</div></td>
+<td><div align="center">CBS_FP039_Nsrsfczzfhcwpxx</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人发售发票时是否存在作废或红冲的网络发票开具信息</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">PS_JK001_Ybhtsqsl</div></td>
+<td><div align="center">预备会谈受理监控</div></td>
+<td><div align="center">PBS_PS001_ybhtBefore</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">预备会谈受理监控</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">FP_checkNsrzt_TY</div></td>
+<td><div align="center">纳税人状态监控(停业)</div></td>
+<td><div align="center">PBS_FP052_checkNsrzt_TY</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">纳税人状态监控(停业)</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">FP_checkNsrzt_FZC</div></td>
+<td><div align="center">纳税人状态监控(非正常/注销非正常注销)</div></td>
+<td><div align="center">PBS_FP052_checkNsrzt_FZC</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">纳税人状态监控(非正常/注销非正常注销)</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">DJ_DJ901_checkNsrIsBydj</div></td>
+<td><div align="center">外埠报验纳税人报验登记状态监控</div></td>
+<td><div align="center">PDS_DJ901_checkNsrIsBydj</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">外埠报验纳税人报验登记状态监控</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">DJ_JK141_checkNsrRdZzsSz</div></td>
+<td><div align="center">纳税人是否核定增值税税种</div></td>
+<td><div align="center">PDS_RD141_checkNsrRdZzsSz</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">纳税人是否核定增值税税种</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">PDS_RD111_checkNsrXfsRdxx</div></td>
+<td><div align="center">消费税税种监控</div></td>
+<td><div align="center">PDS_RD111_checkNsrXfsRdxx</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">消费税税种监控</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">PDS_RD141_checkNsrRdZzsSz</div></td>
+<td><div align="center">增值税税种监控</div></td>
+<td><div align="center">PDS_RD141_checkNsrRdZzsSz</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">增值税税种监控</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">PDS_RD104_checkQysdRdxx</div></td>
+<td><div align="center">企业所得税税种监控</div></td>
+<td><div align="center">PDS_RD104_checkQysdsszRdxx</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">企业所得税税种监控</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">DJ_DJ147_checkswdjorKjDj</div></td>
+<td><div align="center">监控纳税人是否为设立税务登记纳税人和扣缴税款登记</div></td>
+<td><div align="center">PDS_DJ147_checkNsrIsSlswdjorKjDj</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人是否为设立税务登记纳税人和扣缴税款登记</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">CDS_DJ102_JKNSRSFYWBJRW</div></td>
+<td><div align="center">监控纳税人是否有未办结任务</div></td>
+<td><div align="center">CDS_DJ102_isExistProcIns</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人是否有未办结任务</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">FP_FP039_Nsrpzhdxx2</div></td>
+<td><div align="center">纳税人是否有票种核定信息(主数据)</div></td>
+<td><div align="center">PBS_FP039_validateNsrpzhdxx</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人是否有票种核定信息(主数据)</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">CDS_DJ150_checkJzyxmdj</div></td>
+<td><div align="center">纳税人关联建筑业项目监控</div></td>
+<td><div align="center">CDS_DJ150_checkNsrIsJzyxmdj</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">纳税人关联建筑业项目监控</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">DJ_DJ102_JKNSRSFYWBJRW</div></td>
+<td><div align="center">监控纳税人是否有未办结任务</div></td>
+<td><div align="center">CDS_DJ102_isExistProcIns</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人是否有未办结任务</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">FP_FP039_nsrtgfpzt2</div></td>
+<td><div align="center">纳税人是否处于停供发票状态(主数据)</div></td>
+<td><div align="center">PBS_FP039_validateNsrtgfp</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人是否停供发票(主数据)</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">RD_RD009_NSRSFZRD</div></td>
+<td><div align="center">监控纳税人税（费）种认定信息</div></td>
+<td><div align="center">PDS_RD009_checkNsrsfzrdxx</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">监控纳税人税（费）种认定信息</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">SB_SB005_NSRSFCFSB</div></td>
+<td><div align="center">监控纳税人是否重复申报</div></td>
+<td><div align="center">CDS_SB005_checkCfSb</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">监控纳税人是否重复申报</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZH_FP001_swxzxksqzg</div></td>
+<td><div align="center">纳税人申请行政许可资格</div></td>
+<td><div align="center">CBS_ZH001_validateZg</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">纳税人申请行政许可资格</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">SB_JK001_NSRZTJK</div></td>
+<td><div align="center">申报纳税人状态监控(注销、停业、非正常)</div></td>
+<td><div align="center">PDS_SB001_nsrztIsZxOrTyOrFzc</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控申报纳税人是否为注销、停业、非正常</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">FP_FP039_sbbdsftg2</div></td>
+<td><div align="center">纳税人是否通过申报比对(主数据)</div></td>
+<td><div align="center">PBS_FP039_validateNsrsbbdxx</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人是否通过申报比对(主数据)</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">PDS_RD116_checkNsrzg</div></td>
+<td><div align="center">货物运输业自开票资格监控（具有资格才能办理业务）</div></td>
+<td><div align="center">PDS_RD116_checkNsrHyzkpzgTg</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">货物运输业自开票资格监控</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">PDS_RD117_checkNsrzg</div></td>
+<td><div align="center">货物运输业代开票中介机构资格监控（具有资格才能办理业务）</div></td>
+<td><div align="center">PDS_RD117_checkNsrIsdkpzgTg</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">货物运输业代开票中介机构资格监控</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZM_JK104_QYSDSHZFJMQYSBJK</div></td>
+<td><div align="center">非居民企业企业所得税汇总申报监控</div></td>
+<td><div align="center">CDS_ZM104_nsrIsFjmqyQysdsNdsb</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">企业所得税汇总纳税非居民企业申报监控</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZS094_checkNsrIsZczt</div></td>
+<td><div align="center">纳税人非正常开业状态是否允许办理监控</div></td>
+<td><div align="center">PDS_ZS094_checkNsrIsZczt</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">纳税人非正常开业状态不予受理</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZS094_checkNsrIsDqdeh</div></td>
+<td><div align="center">纳税人不是定期定额户是否允许办理监控</div></td>
+<td><div align="center">PDS_ZS094_checkNsrIsDqdeh</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">该纳税人不是定期定额户，不能办理终止定期定额征收方式</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">UC_B_ZM_051_YWGZ_001</div></td>
+<td><div align="center">税务机关系统上线监控</div></td>
+<td><div align="center">PDS_ZM051_swjgIssx</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控税务机关系统是否上线</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">PBS_FP039_Nsrsfczzfhcwpxx</div></td>
+<td><div align="center">纳税人是否存在作废或红冲的网票开具信息</div></td>
+<td><div align="center">PBS_FP039_Nsrsfczzfhcwpxx</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控发票发售时纳税人是否存在作废或红冲的网票开具信息</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">HBDSYH001_SfzgZcxbqsdscl</div></td>
+<td><div align="center">监控纳税人是否做过政策性搬迁所得税处理</div></td>
+<td><div align="center">PDS_YH301_JksfzgZcxbqsdscl</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人是否做过政策性搬迁所得税处理</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">UC_B_CKTS_039_YWGZ_001</div></td>
+<td><div align="center">受理校验是否存在审核配置信息</div></td>
+<td><div align="center">PDS_CKTSSB011_queryShpzxx</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">该企业未办理出口退（免）税审核配置！</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">UC_B_CKTS_019_YWGZ_002</div></td>
+<td><div align="center">受理校验是否存在审核配置信息</div></td>
+<td><div align="center">PDS_CKTZM021_queryShpzxx</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">该企业未办理出口退（免）税审核配置！</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">PBS_FP126_nsrztIsTy</div></td>
+<td><div align="center">通用机打纳税人停业状态监控（停业）</div></td>
+<td><div align="center">PBS_FP126_nsrztIsTy</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人状态</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">PDS_DJ133_zrrIsdj</div></td>
+<td><div align="center">自然人是否做过税务登记</div></td>
+<td><div align="center">PDS_DJ133_checkZrrIsSlswdj</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">自然人是否做过税务登记监控</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">RD_JK112_NSRQTSKZZJK</div></td>
+<td><div align="center">监控是否是报验登记纳税人，是否存在有效的建筑安装项目</div></td>
+<td><div align="center">CDS_RD112_checkNsrBydj</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控是否是报验登记纳税人，是否存在有效的建筑安装项目</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">UC_B_CKTS_009_YWGZ_008</div></td>
+<td><div align="center">纳税人登记注册类型</div></td>
+<td><div align="center">PDS_CKTSRD005_queryDjzcll</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">该纳税人为非独立法人</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">PDS_RD114_checkGrsdsJk</div></td>
+<td><div align="center">校验纳税人是否认定个人所得税</div></td>
+<td><div align="center">PDS_RD114_checkGrsdsJk</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人是否认定个人所得税</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">UC_B_CKTS_009_YWGZ_009</div></td>
+<td><div align="center">违法违章是否已办结</div></td>
+<td><div align="center">PDS_CKTSRD006_querySfwjwfwz</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">违法违章尚未办理完毕</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">UC_B_CKTS_009_YWGZ_010</div></td>
+<td><div align="center">出口退税证明申报受理</div></td>
+<td><div align="center">PDS_CKTZM021_queryNsdjxx</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">该企业为异常企业</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">PDS_RD010_checkZysJk</div></td>
+<td><div align="center">校验纳税人是否认定资源税</div></td>
+<td><div align="center">PDS_RD010_checkZysJk</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人是否认定资源税</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZM_JK103_QYSDSHZFJMQYZGJK</div></td>
+<td><div align="center">企业所得税汇总纳税非居民企业资格监控</div></td>
+<td><div align="center">PDS_ZM103_nsrzgIsQysdshzfjmqy</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">企业所得税汇总纳税非居民企业资格监控</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">FP_FP108_checkJzdksq</div></td>
+<td><div align="center">纳税人当月是否已开具发票</div></td>
+<td><div align="center">CBS_FP108_checkJzdksq</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人当月是否已开具发票</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">FP_FP039_jkSfzzzsSfzrd</div></td>
+<td><div align="center">监控纳税人是否做过增值税税（费）种认定</div></td>
+<td><div align="center">CBS_FP039_jkSfzzzsSfzrd</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人是否做过增值税税（费）种认定</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">DJ_JK152_NSRSWDJLXJK</div></td>
+<td><div align="center">税务登记类型监控</div></td>
+<td><div align="center">PDS_DJ132_checkNsrswjdlxSldjOrbydj</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">税务登记类型监控设立登记或报验登记的通过</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">CDS_DJ152_NsrIsSbNoMonth</div></td>
+<td><div align="center">纳税人状态是否未申报（不含本月）</div></td>
+<td><div align="center">CDS_DJ152_checkNsrIsSbNoMonth</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">纳税人状态是否未申报（不含本月）</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">PS_JK004_Zssqz</div></td>
+<td><div align="center">正式申请监控</div></td>
+<td><div align="center">PBS_PS004_zssqBefore</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">正式申请监控</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">CDS_DJ130_nsrsfczdzxx</div></td>
+<td><div align="center">监控纳税人是否存在呆账信息</div></td>
+<td><div align="center">CDS_DJ130_checkNsrsfczdzxx</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人是否存在呆账信息</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZS_JK164_SNYRLYJK</div></td>
+<td><div align="center">石脑油燃料油退免税资格监控</div></td>
+<td><div align="center">CDS_ZS164_snyRlyTdsJk</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人是否已暂停或取消使用企业的消费税退（免）税资格！</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">CDS_DJ153_dqdefyhzsfsb</div></td>
+<td><div align="center">监控纳税人分月汇总是否未申报</div></td>
+<td><div align="center">CDS_DJ153_checkNsrIsDqdefyhzsfsb</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人分月汇总是否未申报</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">JK_SB_NSRZT_CFSB</div></td>
+<td><div align="center">纳税人是否重复申报监控</div></td>
+<td><div align="center">JK_SB_NSRZT_CFSB</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人是否处于重复申报状态</div></td>
+<td><div align="center">02</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">JK_SB_NSRZT_YQSB</div></td>
+<td><div align="center">纳税人是否逾期申报监控</div></td>
+<td><div align="center">JK_SB_NSRZT_YQSB</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人是否处于逾期申报状态</div></td>
+<td><div align="center">02</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">JK_FP_NSRZT_TGFP</div></td>
+<td><div align="center">纳税人是否处于停供发票状态监控</div></td>
+<td><div align="center">JK_FP_NSRZT_TGFP</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人是否处于停供发票状态</div></td>
+<td><div align="center">03</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">JK_DJ_NSRZT_FZC</div></td>
+<td><div align="center">纳税人状态是否为正常状态监控</div></td>
+<td><div align="center">JK_DJ_NSRZT_FZC</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人登记状态</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">AS_RD_JK_ZSFS_DQDE_TG</div></td>
+<td><div align="center">监控纳税人是否为定期定额户</div></td>
+<td><div align="center">AS_RD_JK_ZSFS_DQDE_TG</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人是否为定期定额户</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">AS_DJ_JK_DJZCLX_GT_SY_TG</div></td>
+<td><div align="center">监控纳税人登记注册类型是否为“个体经营”或“私营独资企业“</div></td>
+<td><div align="center">AS_DJ_JK_DJZCLX_GT_SY_TG</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人登记注册类型是否为“个体经营”或“私营独资企业“</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">AS_DJ_JK_NSRZT_ZC_TY_TG</div></td>
+<td><div align="center">监控纳税人状态是否为正常户或者停业户</div></td>
+<td><div align="center">AS_DJ_JK_NSRZT_ZC_TY_TG</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人状态是否为正常户或者停业户</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">AS_DJ_JK_NSRZT_TY_TG</div></td>
+<td><div align="center">监控纳税人状态是否为停业</div></td>
+<td><div align="center">AS_DJ_JK_NSRZT_TY_TG</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人状态是否为停业</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">AS_DJ_JK_NSRZT_ZC_TG</div></td>
+<td><div align="center">监控纳税人状态是否为正常</div></td>
+<td><div align="center">AS_DJ_JK_NSRZT_ZC_TG</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人状态是否为正常</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">AS_DJ_JK_NSRZT_FZC_ZX_BTG</div></td>
+<td><div align="center">监控纳税人状态是否为非正常户和注销户（包括报验核销状态和非正常户注销状态）</div></td>
+<td><div align="center">AS_DJ_JK_NSRZT_FZC_ZX_BTG</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人状态是否为非正常户和注销户（包括报验核销状态和非正常户注销状态）</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">AS_DJ_JK_SWDJLX_SLSWDJ_TG</div></td>
+<td><div align="center">监控纳税人是否为办理税务登记纳税人</div></td>
+<td><div align="center">AS_DJ_JK_SWDJLX_SLSWDJ_TG</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人是否为办理税务登记纳税人</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">AS_ZM_JK_NSRHY_PTJZZ_TG</div></td>
+<td><div align="center">监控纳税人行业是否包括葡萄酒制造业</div></td>
+<td><div align="center">AS_ZM_JK_NSRHY_PTJZZ_TG</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人行业是否包括葡萄酒制造业</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">AS_ZM_JK_NSRWHXWJZ_CYXQ_TG</div></td>
+<td><div align="center">监控查询该纳税人已开具未核销的外出经营证明，并且有效届满已超过十日</div></td>
+<td><div align="center">AS_ZM_JK_NSRWHXWJZ_CYXQ_TG</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控查询该纳税人已开具未核销的外出经营证明，并且有效届满已超过十日</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">AS_YH_JK_FQMSQRQ_XY36Y_BTG</div></td>
+<td><div align="center">监控查询该纳税人已进行放弃免税权</div></td>
+<td><div align="center">AS_YH_JK_FQMSQRQ_XY36Y_BTG</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控查询该纳税人已进行放弃免税权,未满36个月</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">AS_RD_JK_SFZRD_ZZS_TG</div></td>
+<td><div align="center">监控纳税人有有效的增值税税费种认定</div></td>
+<td><div align="center">AS_RD_JK_SFZRD_ZZS_TG</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">监控纳税人有有效的增值税税费种认定</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">  </div></td>
+</tr>

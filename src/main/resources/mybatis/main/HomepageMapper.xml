@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xalt.main.dao.HomepageMapper">
+
+  <!--查询交换统计数据-->
+  <select id="jhdata"  resultType="java.util.HashMap">
+         select *
+              from (select t.jhlx, to_char(t.jhsj, 'yyyy-mm') jhsj, round(sum(t.sjl)/10000,2) sjl
+                      from znsjcl_sy_sjjh t
+                     where t.yxbz = 'Y'
+                     group by t.jhlx, to_char(t.jhsj, 'yyyy-mm'))
+             order by jhsj asc
+  </select>
+
+    <!--任务进度-->
+   <select id="rwjd" resultType="java.util.HashMap">
+        select a.rwmc,a.rwjd from znsjcl_sy_rwtj a
+   </select>
+
+    <!--首页类型数据-->
+    <select id="lxsjl" resultType="java.util.HashMap">
+--         select t.bmsl,t.lsjl,t.bsl,t.zsjl,t.ppsjl,t.ppl from Znsjcl_dm_homefl t
+            select count(distinct t.BM)  bmsl  -- 部门数量
+                  ,count(distinct t.SJLX) lsjl --数据类别
+                  ,count(distinct t.SJYB) bsl --表数量
+                  ,sum(t.YBSJL)           zsjl --数据总量
+                  ,sum(nvl(t.YDYPPL,0)+nvl(t.RGPPL,0)+nvl(t.QSIYDDPPL,0)+nvl(t.QSYDDPPL,0))   ppsjl-- 完成匹配条数
+                  ,round(sum(nvl(t.YDYPPL,0)+nvl(t.RGPPL,0)+nvl(t.QSIYDDPPL,0)+nvl(t.QSYDDPPL,0))/sum(t.YBSJL)*100,2) ppl  --匹配率
+            from sjzl_wbsjb_zyml t
+   </select>
+
+    <!--首页分类数据明细查询1-->
+    <!--查询部门数量详细-->
+    <select id="details1" resultType="java.util.HashMap">
+             select distinct t.bm  from sjzl_wbsjb_zyml t
+    </select>
+    <!--类数据-->
+    <select id="details2" resultType="java.util.HashMap">
+             select distinct t.sjlx  from sjzl_wbsjb_zyml t
+    </select>
+    <!--表信息-->
+    <select id="details3" resultType="java.util.HashMap">
+             select distinct t.sjlx, t.sjyb  from sjzl_wbsjb_zyml t    where t.sjyb is not null
+    </select>
+    <!--表数据量-->
+    <select id="details4" resultType="java.util.HashMap">
+             select t.sjlx,t.sjyb,sum(nvl(t.ybsjl,0)) ybsjl from sjzl_wbsjb_zyml t where t.sjyb is not null  group by t.sjlx,t.sjyb order by sum(nvl(t.ybsjl,0)) desc
+    </select>
+    <!--完成匹配量-->
+    <select id="details5" resultType="java.util.HashMap">
+             select t.sjlx,t.sjyb,
+                sum(nvl(t.ydyppl,0)+nvl(t.rgppl,0)+nvl(t.qsiyddppl,0)+nvl(t.qsyddppl,0) ) ybsjl
+                from sjzl_wbsjb_zyml t
+                where t.sjyb is not null
+                group by t.sjlx,t.sjyb
+                order by sum(nvl(t.ydyppl,0)+nvl(t.rgppl,0)+nvl(t.qsiyddppl,0)+nvl(t.qsyddppl,0)) desc
+    </select>
+    <!--匹配率统计-->
+    <select id="details6" resultType="java.util.HashMap">
+             select t.bm,t.dwmc,t.sjlx,t.sjyb,t.ybsjl,t.ydyppl,t.rgppl,t.qsiyddppl,t.qsyddppl,t.sjl,t.pplppl  from sjzl_wbsjb_zyml t
+    </select>
+
+    <!--部门明细信息查询-->
+    <select id="bmdetails" resultType="java.util.HashMap">
+                select
+                      a1.bm,a2.imgname,a1.sjl,a2.bgstyle
+                  from (
+                       select  t.BM,
+                               sum(nvl(t.SJL, 0)) sjl
+                        from   sjzl_wbsjb_zyml t
+                       group by t.BM
+                       order by sum(nvl(t.SJL, 0)) desc
+                      )  a1,
+                      sjzl_wbsjb_bmlist a2
+                  where
+                      a1.bm=a2.bm
+    </select>
+
+    <!--部门明细信息查询  折线图数据-->
+    <select id="bmlinedetails" resultType="java.util.HashMap">
+                  select
+                      a1.bm,'数据量' wd,round(a1.sjl/10000,2) sjl
+                  from (
+                       select  t.BM,
+                               sum(nvl(t.YBSJL, 0)) sjl
+                        from   sjzl_wbsjb_zyml t
+                       group by t.BM
+                       order by sum(nvl(t.YBSJL, 0)) desc
+                      )  a1,
+                      sjzl_wbsjb_bmlist a2
+                  where
+                      a1.bm=a2.bm
+    </select>
+
+    <!--部门明细信息查询  折线图数据-->
+    <select id="bmlinedetails1" resultType="java.util.HashMap" parameterType="map">
+                    select  t.sjlx BM,
+                               t.YBSJL sjl
+                        from   sjzl_wbsjb_zyml t ,
+                                 sjzl_wbsjb_bmlist t1
+                         where    t.bm=t1.bm  and t.bm like '%${bmmc}%'  and  t.YBSJL  >0
+                       order by  t.YBSJL  desc
+
+    </select>
+    <!--Modifier: PengWen Wang-->
+    <!--外部门数据状况-->
+    <select id="externalSectorData" resultType="java.util.HashMap">
+        select t.bm BM, sum(t.ybsjl) SJL from sjzl_wbsjb_zyml t group by t.bm
+    </select>
+    <!--数据汇总(总数据量、总成功数、匹配率、部门数据量、数据类别、表数量)-->
+    <select id="dataAggregation" resultType="java.util.HashMap">
+    select round(sum(to_number(t.YBSJL))/10000,2) ZSJL,
+           round((sum(to_number(t.YDYPPL)) + sum(to_number(t.YDYPPHS)) +
+                 sum(to_number(t.RGPPL)) + sum(to_number(t.RGPPHS)) +
+                 sum(to_number(t.QSYDDPPL)) + sum(to_number(t.QSYDDPPHS)) +
+                 sum(to_number(t.QSYDDPPL)) + sum(to_number(t.QSYDDPPHS))) /
+                 10000,
+                 2) ZCGS,                 --总成功数
+           round(sum(nvl(t.YDYPPL, 0) + nvl(t.RGPPL, 0) + nvl(t.QSIYDDPPL, 0) +
+                     nvl(t.QSYDDPPL, 0)) / sum(t.YBSJL) * 100,
+                  2) PPL,                  --匹配率
+           count(distinct t.BM) BMSL,     --部门数量
+           count(distinct t.SJLX) SJLB,   --数据类别
+           count(distinct t.sjyb) BSL     --数据量
+      from sjzl_wbsjb_zyml t
+    </select>
+    <!--数据获取（市国税、市财政、市民政、苏宁银行、国土局、水务局）视图-->
+    <select id="dataAcquisition" resultType="java.util.HashMap">
+       select * from znsjcl_homepage_bm
+    </select>
+    <!--热词展示-->
+    <select id="selectRc" resultType="java.util.HashMap">
+                select k.modelname,k.counts,k.rn
+          from (select p.modelname, p.counts, rownum rn
+                  from (select r.*
+                          from (select t.modelname, count(1) counts
+                                  from znsjcl_dm_datacloud t
+                                 where 1 = 1
+                                 group by t.modelname) r
+                         order by r.counts desc) p) k
+         where k.rn &lt;= 20
+    </select>
+</mapper>

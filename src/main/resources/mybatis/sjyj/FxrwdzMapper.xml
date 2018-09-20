@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xalt.sjyj.dao.FxrwdzMapper">
+
+    <!--默认信息查询-->
+    <select id="selectlist" parameterType="java.util.HashMap" resultType="com.xalt.sjyj.model.FxrwdzVo">
+        select t.rwmc,
+                t.rwms,
+                t1.mxmc,
+                to_char(t.zxsj, 'yyyy-mm-dd HH:MM:SS') zxsj,
+                t.mxid,
+                t.rwid,
+                t5.ztmc yxzt
+        from znsjcl_jh_xtdr t
+        left join znsjcl_dm_yxzt t5 on t.yxzt = t5.ztid, znsjcl_yj_zdymx t1
+        where t.mxid = t1.mxid
+        and t.yxbz = 'Y'
+        <if test="svo.rwmc!=null">
+            and t.rwmc like '%${svo.rwmc}%'
+        </if>
+        order by t.zxsj desc
+    </select>
+
+
+   <!--模型列表下拉框查询-->
+    <select id="selectmxlb" parameterType="java.util.HashMap" resultType="com.xalt.sjyj.model.FxrwdzVo">
+       select t.mxid id, t.mxmc text from znsjcl_yj_zdymx t where t.yxbz = 'Y'
+    </select>
+
+    <!--下拉框执行周期查询-->
+    <select id="selectZxzq" resultType="com.xalt.sjjh.model.DrrwdzVo">
+        select distinct t.zqid id,t.zqmc text from znsjcl_dm_zxzq t
+    </select>
+
+    <!--删除任务-->
+    <update id="deleteFxrw" parameterType="java.util.HashMap">
+        UPDATE znsjcl_jh_xtdr
+        set yxbz = 'N'
+        WHERE rwid='${svo.rwid}'
+    </update>
+
+    <!--添加任务-->
+    <insert id="insertFxrw"  parameterType="java.util.HashMap">
+         insert into znsjcl_jh_xtdr
+          (rwid, rwmc, rwms, mxid, zxsj, ztid, yxbz,yxzt)
+        values
+          (zdymx_mxid.nextval,
+           '${svo.rwmc}',
+           '${svo.rwms}',
+           '${svo.mxid}',
+            sysdate,
+           '${svo.ztid}',
+           'Y','3'
+           )
+    </insert>
+
+    <!--编辑任务-->
+    <update id="updateDrrwdz" parameterType="java.util.HashMap">
+        UPDATE znsjcl_jh_xtdr
+        set rwmc='${svo.rwmc}',rwms='${svo.rwms}',mxid='${svo.mxid}',zxsj=sysdate
+        where rwid = '${svo.rwid}'
+</update>
+
+    <!--删除任务-->
+    <update id="deleteDrrwdz" parameterType="java.util.HashMap">
+        UPDATE  znsjcl_jh_xtdr
+        set yxbz='N'
+        WHERE rwid='${svo.rwid}'
+    </update>
+
+    <!--Modify the time 2018/5/7分析任务定制(表名校验)-->
+    <select id="nameValidation" parameterType="java.util.HashMap" resultType="com.xalt.sjzd.model.YwbqglVo">
+        select t.rwmc from znsjcl_jh_xtdr t where t.rwmc='${svo.rwmc}' and t.yxbz='Y'
+    </select>
+</mapper>

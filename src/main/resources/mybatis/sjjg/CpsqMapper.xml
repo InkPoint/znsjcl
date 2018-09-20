@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xalt.sjjg.dao.CpsqMapper">
+
+    <!--基本分页查询-->
+    <select id="selectAll" parameterType="java.util.HashMap" resultType="com.xalt.sjjg.model.CpsqVo">
+                    select t.lcid,
+                    t.rwid,
+                    t.rwmc,
+                    to_char(t.cjsj, 'yyyy-mm-dd HH:MM:SS') cjsj,
+                    t.cjr,
+                    t.rwsm,
+                    t.savepath,
+                    t.bz,
+                    t.wcjd,
+                    to_char(t.jzrq,'yyyy-mm-dd HH:MM:SS') jzrq,
+                    t.xyhjid,
+                    a.user_name name,
+                    r.sjb ywbm,
+                    r.ccgc
+                    from znsjcl_sqsp_rwxx t,
+                    acl_user a,
+                    znsjcl_jg_rwssfk r
+                    where t.lcid = '105'
+                     and t.shzt='1'
+                    and t.cjr = a.user_code
+                    and t.rwid = r.sqid(+)
+                    and t.yxbz='Y'
+                    <if test="svo.rwmc!=null">
+                        and t.rwmc like '%${svo.rwmc}%'
+                    </if>
+                    order by cjsj desc
+    </select>
+
+    <update id="updateCpsq" parameterType="java.util.HashMap">
+         UPDATE znsjcl_jh_rwssxj
+            set fkxj = '${svo.fkxj}'
+            where rwid = '${svo.fkrwid}'
+    </update>
+
+    <!--完成进度修改-->
+    <update id="updateWcjd" parameterType="java.util.HashMap">
+        update Znsjcl_Sqsp_Rwxx t
+        set t.wcjd =   #{sliding, jdbcType = VARCHAR}
+        where rwid =   #{rwid, jdbcType = VARCHAR}
+    </update>
+
+</mapper>

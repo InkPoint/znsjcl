@@ -1,0 +1,128 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>职工名册临时表(YH_LS_ZGMC)</title><style type="text/css">
+<!--body {background-color: #EFECDD;}td{ font-family:"宋体"; font-size:9pt; color=#666666;}.style9 {color: #FFFFFF}-->
+</style></head><body>
+<table width="300" height="100" border="0" cellpadding="0" cellspacing="0">
+<tr><td><p align="center">职工名册临时表(YH_LS_ZGMC)</p></td></tr></table>
+<table width="760" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#FF8800">
+<tr bgcolor="#FFAC75">
+<td width="80" height="26"><div align="center" class="style9">列名</div></td>
+<td width="80"><div align="center" class="style9">汉字名</div></td>
+<td width="80"><div align="center" class="style9">数据类型</div></td>
+<td width="80"><div align="center" class="style9">长度</div></td>
+<td width="80"><div align="center" class="style9">精度</div></td>
+<td width="80"><div align="center" class="style9">非空</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">XH</div></td>
+<td><div align="center">序号</div></td>
+<td><div align="center">NUMBER</div></td>
+<td><div align="center">8</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">BH</div></td>
+<td><div align="center">编号</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">20</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">ZGXM</div></td>
+<td><div align="center">职工姓名</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">75</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center"><a href="DM_GY_XB.html">XB_DM</div></td>
+<td><div align="center">性别代码</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center"><a href="DM_GY_SFZJLX.html">SFZJLX_DM</div></td>
+<td><div align="center">身份证件类型代码</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">3</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">SFZJHM</div></td>
+<td><div align="center">身份证件号码</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">30</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">LTXRYBZ</div></td>
+<td><div align="center">离、退休人员标志</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">SXSYHRYBZ</div></td>
+<td><div align="center">属享受优惠人员标志</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">XSSSYHLX_DM</div></td>
+<td><div align="center">享受税收优惠类型代码</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">3</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">XSSSYHZJLX_DM</div></td>
+<td><div align="center">享受税收优惠证件类型代码</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">3</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">XSSSYHZJHM</div></td>
+<td><div align="center">享受税收优惠证件号码</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">30</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">LDHTZH</div></td>
+<td><div align="center">劳动合同证号</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">60</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">LDHTQSRQ</div></td>
+<td><div align="center">劳动合同起始日期</div></td>
+<td><div align="center">DATE</div></td>
+<td><div align="center">7</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">LDHTJSRQ</div></td>
+<td><div align="center">劳动合同结束日期</div></td>
+<td><div align="center">DATE</div></td>
+<td><div align="center">7</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">SHBXFZH</div></td>
+<td><div align="center">社会保险费证号</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">18</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">CJRLB_DM</div></td>
+<td><div align="center">残疾人类别代码</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">GLJGBZ</div></td>
+<td><div align="center">公疗机构标志</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">BZ</div></td>
+<td><div align="center">备注</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">3000</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">DJXH</div></td>
+<td><div align="center">登记序号</div></td>
+<td><div align="center">NUMBER</div></td>
+<td><div align="center">20</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>

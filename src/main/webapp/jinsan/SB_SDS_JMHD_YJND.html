@@ -1,0 +1,296 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>居民企业（核定征收）企业所得税月（季）度及年度纳税申报(SB_SDS_JMHD_YJND)</title><style type="text/css">
+<!--body {background-color: #EFECDD;}td{ font-family:"宋体"; font-size:9pt; color=#666666;}.style9 {color: #FFFFFF}-->
+</style></head><body>
+<table width="300" height="100" border="0" cellpadding="0" cellspacing="0">
+<tr><td><p align="center">居民企业（核定征收）企业所得税月（季）度及年度纳税申报(SB_SDS_JMHD_YJND)</p></td></tr></table>
+<table width="760" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#FF8800">
+<tr bgcolor="#FFAC75">
+<td width="80" height="26"><div align="center" class="style9">列名</div></td>
+<td width="80"><div align="center" class="style9">汉字名</div></td>
+<td width="80"><div align="center" class="style9">数据类型</div></td>
+<td width="80"><div align="center" class="style9">长度</div></td>
+<td width="80"><div align="center" class="style9">精度</div></td>
+<td width="80"><div align="center" class="style9">非空</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">UUID</div></td>
+<td><div align="center">UUID||uuid</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">32</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">PZXH</div></td>
+<td><div align="center">凭证序号</div></td>
+<td><div align="center">NUMBER</div></td>
+<td><div align="center">20</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">SBUUID</div></td>
+<td><div align="center">申报UUID</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">32</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">ASRZE_SRZE</div></td>
+<td><div align="center">按收入总额收入总额</div></td>
+<td><div align="center">NUMBER</div></td>
+<td><div align="center">18</div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">ASRZE_BZSSR</div></td>
+<td><div align="center">按收入总额不征税收入</div></td>
+<td><div align="center">NUMBER</div></td>
+<td><div align="center">18</div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">ASRZE_MSSR</div></td>
+<td><div align="center">按收入总额免税收入</div></td>
+<td><div align="center">NUMBER</div></td>
+<td><div align="center">18</div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">ASRZE_YSSRE</div></td>
+<td><div align="center">按收入总额应税收入额</div></td>
+<td><div align="center">NUMBER</div></td>
+<td><div align="center">18</div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">ASRZE_YSSDL</div></td>
+<td><div align="center">按收入总额税务机关核定的应税所得率</div></td>
+<td><div align="center">NUMBER</div></td>
+<td><div align="center">16</div></td>
+<td><div align="center">6</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">ASRZE_YNSSDE</div></td>
+<td><div align="center">按收入总额应纳税所得额</div></td>
+<td><div align="center">NUMBER</div></td>
+<td><div align="center">18</div></td>
+<td><div align="center">6</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">ACBFY_CBFYZE</div></td>
+<td><div align="center">按成本费用成本费用总额</div></td>
+<td><div align="center">NUMBER</div></td>
+<td><div align="center">18</div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">ACBFY_YSSDL</div></td>
+<td><div align="center">按成本费用税务机关核定的应税所得率</div></td>
+<td><div align="center">NUMBER</div></td>
+<td><div align="center">16</div></td>
+<td><div align="center">6</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">ACBFY_YNSSDE</div></td>
+<td><div align="center">按成本费用应纳税所得额</div></td>
+<td><div align="center">NUMBER</div></td>
+<td><div align="center">18</div></td>
+<td><div align="center">6</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">SL_1</div></td>
+<td><div align="center">税率</div></td>
+<td><div align="center">NUMBER</div></td>
+<td><div align="center">16</div></td>
+<td><div align="center">6</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">YNSDSE</div></td>
+<td><div align="center">应纳所得税额</div></td>
+<td><div align="center">NUMBER</div></td>
+<td><div align="center">18</div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">FHTJDXXWLQYJMSDSE</div></td>
+<td><div align="center">符合条件的小型微利企业减免所得税额</div></td>
+<td><div align="center">NUMBER</div></td>
+<td><div align="center">18</div></td>
+<td><div align="center">6</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">YYJSDSE</div></td>
+<td><div align="center">已预缴所得税额</div></td>
+<td><div align="center">NUMBER</div></td>
+<td><div align="center">18</div></td>
+<td><div align="center">6</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">YBTSDSE</div></td>
+<td><div align="center">应补（退）所得税额</div></td>
+<td><div align="center">NUMBER</div></td>
+<td><div align="center">18</div></td>
+<td><div align="center">6</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">SWJGHDYNSDSE</div></td>
+<td><div align="center">税务机关核定应纳所得税额</div></td>
+<td><div align="center">NUMBER</div></td>
+<td><div align="center">18</div></td>
+<td><div align="center">6</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center"><a href="DM_GY_SWRY.html">LRR_DM</div></td>
+<td><div align="center">录入人代码</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">11</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">LRRQ</div></td>
+<td><div align="center">录入日期</div></td>
+<td><div align="center">DATE</div></td>
+<td><div align="center">7</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center"><a href="DM_GY_SWRY.html">XGR_DM</div></td>
+<td><div align="center">修改人代码</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">11</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">XGRQ</div></td>
+<td><div align="center">修改日期</div></td>
+<td><div align="center">DATE</div></td>
+<td><div align="center">7</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">SJGSDQ</div></td>
+<td><div align="center">数据归属地区</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">11</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">SJTB_SJ</div></td>
+<td><div align="center">数据同步时间||</div></td>
+<td><div align="center">TIMESTAMP(6)</div></td>
+<td><div align="center">11</div></td>
+<td><div align="center">6</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">YJDNDSBBJ</div></td>
+<td><div align="center">月季度年度申报标记</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">GZLXSRMSSR</div></td>
+<td><div align="center">国债利息收入免税收入</div></td>
+<td><div align="center">NUMBER</div></td>
+<td><div align="center">18</div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">DFZFZQLXSR</div></td>
+<td><div align="center">取得的地方政府债券利息所得或收入</div></td>
+<td><div align="center">NUMBER</div></td>
+<td><div align="center">18</div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">FHTJJMQYZJGXHLDQYXSY</div></td>
+<td><div align="center">符合条件居民企业之间股息红利等权益性收益</div></td>
+<td><div align="center">NUMBER</div></td>
+<td><div align="center">18</div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">FHTJDFYLZZSR</div></td>
+<td><div align="center">符合条件的非营利组织收入</div></td>
+<td><div align="center">NUMBER</div></td>
+<td><div align="center">18</div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">QTMSSR</div></td>
+<td><div align="center">其他免税收入</div></td>
+<td><div align="center">NUMBER</div></td>
+<td><div align="center">18</div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">JBZS</div></td>
+<td><div align="center">减半征税</div></td>
+<td><div align="center">NUMBER</div></td>
+<td><div align="center">18</div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">SFSYXXWLQY</div></td>
+<td><div align="center">是否属于小型微利企业</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center"><a href="DM_GY_HY.html">HY_DM</div></td>
+<td><div align="center">行业代码</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">4</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">QYCYRS_QNPJRS</div></td>
+<td><div align="center">企业从业人数全年平均人数</div></td>
+<td><div align="center">NUMBER</div></td>
+<td><div align="center">18</div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">ZCZE_QNPJS</div></td>
+<td><div align="center">资产总额全年平均数</div></td>
+<td><div align="center">NUMBER</div></td>
+<td><div align="center">18</div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">GJXZHJZHY</div></td>
+<td><div align="center">国家限制和禁止行业</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">FDDBR</div></td>
+<td><div align="center">法定代表人（负责人）</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">75</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">FDDBRQZRQ</div></td>
+<td><div align="center">法定代表人签字日期</div></td>
+<td><div align="center">DATE</div></td>
+<td><div align="center">7</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">KJZG</div></td>
+<td><div align="center">会计主管</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">75</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">KJZGQZRQ</div></td>
+<td><div align="center">会计主管签字日期||会计主管签字日期</div></td>
+<td><div align="center">DATE</div></td>
+<td><div align="center">7</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">DLSBZJJG</div></td>
+<td><div align="center">代理申报中介机构</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">75</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">DLSBRQ</div></td>
+<td><div align="center">代理申报日期</div></td>
+<td><div align="center">DATE</div></td>
+<td><div align="center">7</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">JBR</div></td>
+<td><div align="center">经办人</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">75</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">JBRZYZJHM</div></td>
+<td><div align="center">经办人执业证件号码</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">20</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">SLR</div></td>
+<td><div align="center">受理人姓名</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">75</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">SLRQ</div></td>
+<td><div align="center">受理日期</div></td>
+<td><div align="center">DATE</div></td>
+<td><div align="center">7</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">SLSWJG</div></td>
+<td><div align="center">受理税务机关</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">11</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>

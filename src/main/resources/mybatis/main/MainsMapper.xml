@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xalt.main.dao.MainsMapper">
+
+  <!--已完成运行结果-->
+  <select id="infolist"  resultType="java.util.HashMap" parameterType="map">
+      select t.rwid,t.rwmc,to_char(t.zxsj,'yyyy-mm-dd hh:mi:ss') zxsj,t.yxzt   from  znsjcl_jh_xtyxrw  t
+      where t.yxzt in ('2','5') and rownum=1 and t.zxsj &gt; sysdate-10/(60*24)
+            and t.yxbz='Y'  and  t.rwid not in (
+               select rwid from znsjcl_dm_remindque
+            )
+            and t.zxr = '${zxr}'
+       order by t.zxsj desc
+  </select>
+
+    <!--已完成运行结果-->
+    <select id="menuinfo" parameterType="map"  resultType="java.util.HashMap">
+        select t.menuid from znsjcl_dm_qxkz t  where t.usercode='${usercode}'
+    </select>
+
+    <!--插入提醒队列-->
+     <insert id="addremind" parameterType="map">
+            insert into znsjcl_dm_remindque (remidid,rwid,oprtime,yxbz)
+            values(ALL_INDEXES.NEXTVAL,'${rwid}',sysdate,'Y')
+     </insert>
+
+    <!--修改任务运行状态-->
+    <insert id="updaterwzt" parameterType="map">
+            update znsjcl_jh_xtyxrw t  set t.yxzt='0'   where t.rwid='${rwid}'
+     </insert>
+
+    <!--金三数据字典表信息查询-->
+    <select id="jinsantablist"  resultType="com.xalt.sjyj.model.JinSanVo" parameterType="map">
+             select t.ywbm,t.sjl,t.zwbm from znsjcl_yj_jssjb t where nvl(t.ywbm,'1') like '%${ywmc}%' and nvl(t.zwbm,'1') like '%${zwmc}%'
+    </select>
+
+    <!--金三数据字典表信息查询-->
+    <select id="jinsantablist1"  resultType="map" parameterType="map">
+             select t.ywbm,t.sjl,t.zwbm from znsjcl_yj_jssjb t where nvl(t.ywbm,'1') like '%${ywmc}%' and nvl(t.zwbm,'1') like '%${zwmc}%'
+    </select>
+
+    <!--金三数据字典表信息明细查询-->
+    <select id="querydetail"  resultType="map" parameterType="map">
+              select t.tabnameyw,t.tabnamezw,t.colmnid,t.columnname from znsjcl_sjyj_jssjcolumns t  where t.tabnameyw = upper('${ywmc}')
+    </select>
+
+     <!-- 字符云插入数据-->
+    <insert id="addcloudydata" parameterType="map">
+            insert into znsjcl_dm_datacloud
+              (dataid, modelname, usercode, usetime,url)
+             VALUES
+              (sys_guid(), #{cloudyname}, #{usercode}, sysdate,#{urls})
+    </insert>
+
+    <!-- 获取当前登录人的菜单权限-->
+    <select id="permissions" parameterType="map"   resultType="map">
+             select  substr(t.menuid,1,instr(t.menuid,'_${mkstr}')-1) menuids  from acl_user_qxglmenus  t  where t.yxbz ='Y' and  t.mainmenuid=#{mkstr} and t.userid=#{usercode}
+    </select>
+
+    <!--常用功能查询-->
+    <select id="selectCygbcx" resultType="java.util.HashMap">
+        select a.modelname,a.url
+        from (select t.modelname, count(*) a, t.url
+        from znsjcl_dm_datacloud t
+        where t.usercode = '${usercode}'
+        group by t.modelname, t.url
+        order by a desc) a
+        where rownum &lt;= 5
+    </select>
+
+    <!--主菜单查询-->
+    <select id="querymodels" parameterType="map" resultType="java.util.HashMap">
+         select distinct k.mainmenuid from acl_user_qxglmenus  k where k.userid =#{usercode}    and k.yxbz='Y'
+    </select>
+
+    <!--详细菜单查询-->
+    <select id="querymenus" parameterType="map" resultType="java.util.HashMap">
+        select distinct k.menuid from acl_user_qxglmenus  k where k.userid =#{usercode} and k.mainmenuid=#{modelid}  and  k.yxbz='Y'
+    </select>
+
+</mapper>

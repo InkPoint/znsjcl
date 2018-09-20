@@ -1,0 +1,170 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>申报打印自定义备注信息维护(CS_SB_ZDY_BZXXDY)</title><style type="text/css">
+<!--body {background-color: #EFECDD;}td{ font-family:"宋体"; font-size:9pt; color=#666666;}.style9 {color: #FFFFFF}-->
+</style></head><body>
+<table width="300" height="100" border="0" cellpadding="0" cellspacing="0">
+<tr><td><p align="center">申报打印自定义备注信息维护(CS_SB_ZDY_BZXXDY)</p></td></tr></table>
+<table width="760" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#FF8800">
+<tr bgcolor="#FFAC75">
+<td width="80" height="26"><div align="center" class="style9">列名</div></td>
+<td width="80"><div align="center" class="style9">汉字名</div></td>
+<td width="80"><div align="center" class="style9">数据类型</div></td>
+<td width="80"><div align="center" class="style9">长度</div></td>
+<td width="80"><div align="center" class="style9">精度</div></td>
+<td width="80"><div align="center" class="style9">非空</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">UUID</div></td>
+<td><div align="center">UUID||uuid</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">32</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center"><a href="DM_GY_DZBZDSZL.html">DZBZDSZL_DM</div></td>
+<td><div align="center">电子表证单书种类代码</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">10</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">XH</div></td>
+<td><div align="center">序号</div></td>
+<td><div align="center">NUMBER</div></td>
+<td><div align="center">8</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">QSZ_1</div></td>
+<td><div align="center">缺省值</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">300</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">CSZLY</div></td>
+<td><div align="center">参数值来源 01 默认值02表单 03HashMap</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">LYZ</div></td>
+<td><div align="center">来源值</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">300</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">DYLX_1</div></td>
+<td><div align="center">打印类型 1字符串 2 双精度数字 3转换为中文</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">XYBZ</div></td>
+<td><div align="center">选用标志</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">YXBZ</div></td>
+<td><div align="center">有效标志</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center"><a href="DM_GY_SWJG.html">SWJG_DM</div></td>
+<td><div align="center">税务机关代码</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">11</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+</table>
+
+
+   
+<table width="300" height="100" border="0" cellpadding="0" cellspacing="0">
+<tr><td><p align="center">申报打印自定义备注信息维护(数据)</p></td></tr></table>
+<table width="760" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#FF8800">
+<tr bgcolor="#FFAC75">
+<td width="80" height="26"><div align="center" class="style9">UUID||uuid</div></td>
+<td width="80" height="26"><div align="center" class="style9">电子表证单书种类代码</div></td>
+<td width="80" height="26"><div align="center" class="style9">序号</div></td>
+<td width="80" height="26"><div align="center" class="style9">缺省值</div></td>
+<td width="80" height="26"><div align="center" class="style9">参数值来源 01 默认值02表单 03HashMap</div></td>
+<td width="80" height="26"><div align="center" class="style9">来源值</div></td>
+<td width="80" height="26"><div align="center" class="style9">打印类型 1字符串 2 双精度数字 3转换为中文</div></td>
+<td width="80" height="26"><div align="center" class="style9">选用标志</div></td>
+<td width="80" height="26"><div align="center" class="style9">有效标志</div></td>
+<td width="80" height="26"><div align="center" class="style9">税务机关代码</div></td>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">132F59637A552457E053990C170A68E9</div></td>
+<td><div align="center">BDA0610108</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">03</div></td>
+<td><div align="center">sybh</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">134892DBB576610AE053990C170A8D4F</div></td>
+<td><div align="center">BDA0610108</div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">03</div></td>
+<td><div align="center">cqzsh</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">13556F4D465531A6E053990C170AC6DC</div></td>
+<td><div align="center">BDA0610108</div></td>
+<td><div align="center">3</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">03</div></td>
+<td><div align="center">fwzlwz</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">13556F4D465531A6E053990C170AC6DW</div></td>
+<td><div align="center">BDA0610108</div></td>
+<td><div align="center">4</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">03</div></td>
+<td><div align="center">mj</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">13969EF48C2171C7E053990C170A664C</div></td>
+<td><div align="center">BDA0610108</div></td>
+<td><div align="center">5</div></td>
+<td><div align="center"> 合同日期:</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">13556F4D465531A6E053990C170AC6DD</div></td>
+<td><div align="center">BDA0610108</div></td>
+<td><div align="center">6</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">02</div></td>
+<td><div align="center">gov.gt3.vo.sbzs.sb.sb030.SB030QssbVO.htqdsj</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+</tr>

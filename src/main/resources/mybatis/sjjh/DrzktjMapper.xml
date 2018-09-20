@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xalt.sjjh.dao.DrzktjMapper">
+    <!--查询结果-->
+    <!--MyBatis的传入参数parameterType类型分为两种 1.基本数据类型int、string、long、date 2.复杂数据类型 类和Map-->
+    <!--导入状况统计(表数据查询)-->
+
+
+
+    <!--执行存储过程查询数据，把查询到的数据添加到  znsjcl_jh_drzktj  表中-->
+    <!--执行存储过程-->
+    <select id="callprocedure" statementType="CALLABLE">
+        {call  SP_znsjcl_sjjh_drzktj ()}
+    </select>
+
+
+    <select id="drzktjAll" parameterType="java.util.HashMap" resultType="com.xalt.sjjh.model.DrzktjVo">
+
+            select t.sjlxmc,
+                   t.lymc,
+                   t.jbmc,
+                   t.sjb,
+                   t.drsjl,
+                   to_char(t.drsj,'yyyy-MM-dd HH24:mi:ss') drsj,
+                   a.user_name cjr
+              from znsjcl_jh_drzktj t, acl_user a
+             where t.drrdm = a.user_code
+                and t.drrdm =  '${cjr}'
+            <if test="svo.sjlxmc != null">
+                and t.sjlxmc like '%${svo.sjlxmc}%'
+            </if>
+              order by drsj desc
+
+
+    </select>
+    <!--导入类型下拉菜单-->
+    <select id="drlxlist" parameterType="java.util.HashMap" resultType="com.xalt.sjzd.model.DropDownlistVo">
+        select t.lxid id, t.lxmc text from znsjcl_dm_drlx t where t.yxbz = 'Y'
+    </select>
+
+    <!--查询数据(STATEMENT预编译)-->
+    <select id="viewthedata" parameterType="java.util.HashMap" resultType="java.util.HashMap" >
+        select *   from  ${svo.sjb}
+        </select>
+        </mapper>

@@ -1,0 +1,356 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>存量房销售信息表(SB_ZLBS_CLFXSXXB)</title><style type="text/css">
+<!--body {background-color: #EFECDD;}td{ font-family:"宋体"; font-size:9pt; color=#666666;}.style9 {color: #FFFFFF}-->
+</style></head><body>
+<table width="300" height="100" border="0" cellpadding="0" cellspacing="0">
+<tr><td><p align="center">存量房销售信息表(SB_ZLBS_CLFXSXXB)</p></td></tr></table>
+<table width="760" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#FF8800">
+<tr bgcolor="#FFAC75">
+<td width="80" height="26"><div align="center" class="style9">列名</div></td>
+<td width="80"><div align="center" class="style9">汉字名</div></td>
+<td width="80"><div align="center" class="style9">数据类型</div></td>
+<td width="80"><div align="center" class="style9">长度</div></td>
+<td width="80"><div align="center" class="style9">精度</div></td>
+<td width="80"><div align="center" class="style9">非空</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">BZ</div></td>
+<td><div align="center">备注</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">3000</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center"><a href="DM_SB_QSQSZYDX.html">QSQSZYDX_DM</div></td>
+<td><div align="center">契税权属转移对象代码</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">5</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">FWUUID</div></td>
+<td><div align="center">服务UUID</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">200</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">UUID</div></td>
+<td><div align="center">UUID||uuid</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">32</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">ZLBSCJUUID</div></td>
+<td><div align="center">资料报送采集UUID</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">32</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">MFNSRSBH</div></td>
+<td><div align="center">卖方纳税人识别号</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">20</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">MFMC</div></td>
+<td><div align="center">卖方名称</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">300</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">MFSFZJLX_DM</div></td>
+<td><div align="center">卖方证件类型</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">3</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">MFZJHM</div></td>
+<td><div align="center">卖方证件号码</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">30</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">MFGJ_DM</div></td>
+<td><div align="center">卖方国籍代码</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">3</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">MFLXDH</div></td>
+<td><div align="center">卖方联系电话</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">60</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">MFDZ</div></td>
+<td><div align="center">卖方地址</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">300</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">GMFNSRSBH</div></td>
+<td><div align="center">买方纳税人识别号</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">20</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">GMFMC</div></td>
+<td><div align="center">买方名称</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">300</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">GMFSFZJLX_DM</div></td>
+<td><div align="center">买方证件类型</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">3</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">GMFZJHM</div></td>
+<td><div align="center">买方证件号码</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">30</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">GMFGJ_DM</div></td>
+<td><div align="center">购买方国籍代码</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">3</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">GMFLXDH</div></td>
+<td><div align="center">买方联系电话</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">60</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">GMFDZ</div></td>
+<td><div align="center">买方地址</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">300</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">HTBH</div></td>
+<td><div align="center">合同编号</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">60</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">HTQDRQ</div></td>
+<td><div align="center">合同签订日期</div></td>
+<td><div align="center">DATE</div></td>
+<td><div align="center">7</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">TDSYBH</div></td>
+<td><div align="center">土地税源编号</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">75</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center"><a href="DM_GY_XZQH.html">XZQHSZ_DM</div></td>
+<td><div align="center">行政区划数字代码</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">6</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center"><a href="DM_GY_JDXZ.html">JDXZ_DM</div></td>
+<td><div align="center">街道乡镇代码</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">9</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center"><a href="DM_GY_SWJG.html">ZGSWSKFJ_DM</div></td>
+<td><div align="center">主管税务所（科、分局）代码</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">11</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">FWCQZSH</div></td>
+<td><div align="center">房屋产权证书号</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">120</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">FYBH</div></td>
+<td><div align="center">房源编号</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">26</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">HTJE</div></td>
+<td><div align="center">合同金额</div></td>
+<td><div align="center">NUMBER</div></td>
+<td><div align="center">18</div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center"><a href="DM_SB_FCLX.html">FCLX_DM</div></td>
+<td><div align="center">房产类型代码</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">4</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">MJ</div></td>
+<td><div align="center">面积</div></td>
+<td><div align="center">NUMBER</div></td>
+<td><div align="center">14</div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">TNMJ</div></td>
+<td><div align="center">套内面积</div></td>
+<td><div align="center">NUMBER</div></td>
+<td><div align="center">14</div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">FWZH</div></td>
+<td><div align="center">房屋幢号</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">50</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">DY</div></td>
+<td><div align="center">单元</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">50</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">LC_1</div></td>
+<td><div align="center">楼层</div></td>
+<td><div align="center">NUMBER</div></td>
+<td><div align="center">10</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">FH</div></td>
+<td><div align="center">房号</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">75</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center"><a href="DM_XG_JZJGLX.html">JZJGLX_DM</div></td>
+<td><div align="center">建筑结构类型代码</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center"><a href="DM_SB_CX.html">CX_DM</div></td>
+<td><div align="center">朝向代码</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">TDFWDZ</div></td>
+<td><div align="center">土地、房屋地址</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">300</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">JYJG</div></td>
+<td><div align="center">交易价格</div></td>
+<td><div align="center">NUMBER</div></td>
+<td><div align="center">18</div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center"><a href="DM_SB_FCJYFS.html">FCJYFS_DM</div></td>
+<td><div align="center">房产交易方式代码</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">TDSYZBH</div></td>
+<td><div align="center">土地使用证编号</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">75</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">ZRMJ</div></td>
+<td><div align="center">转让面积</div></td>
+<td><div align="center">NUMBER</div></td>
+<td><div align="center">14</div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">SCQD_FWFS</div></td>
+<td><div align="center">上次取得房屋方式</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">30</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">SCQD_FWSJ</div></td>
+<td><div align="center">上次取得房屋时间</div></td>
+<td><div align="center">DATE</div></td>
+<td><div align="center">7</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">SCQD_FWCB</div></td>
+<td><div align="center">上次取得房屋成本</div></td>
+<td><div align="center">NUMBER</div></td>
+<td><div align="center">18</div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center"><a href="DM_GY_SWRY.html">LRR_DM</div></td>
+<td><div align="center">录入人代码</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">11</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">LRRQ</div></td>
+<td><div align="center">录入日期</div></td>
+<td><div align="center">DATE</div></td>
+<td><div align="center">7</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">XGRQ</div></td>
+<td><div align="center">修改日期</div></td>
+<td><div align="center">DATE</div></td>
+<td><div align="center">7</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center"><a href="DM_GY_SWRY.html">XGR_DM</div></td>
+<td><div align="center">修改人代码</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">11</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">SJGSDQ</div></td>
+<td><div align="center">数据归属地区</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">11</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">GMFDJXH</div></td>
+<td><div align="center">购买方登记序号</div></td>
+<td><div align="center">NUMBER</div></td>
+<td><div align="center">20</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">MFSBBZ</div></td>
+<td><div align="center">卖方申报标志</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">GMFSBBZ</div></td>
+<td><div align="center">购买方申报标志</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">CJBZ</div></td>
+<td><div align="center">采集标志||BZ_1</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">SJTB_SJ</div></td>
+<td><div align="center">数据同步时间||</div></td>
+<td><div align="center">TIMESTAMP(6)</div></td>
+<td><div align="center">11</div></td>
+<td><div align="center">6</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">MFPZXH</div></td>
+<td><div align="center">卖方凭证序号</div></td>
+<td><div align="center">NUMBER</div></td>
+<td><div align="center">20</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">GMFPZXH</div></td>
+<td><div align="center">购买方凭证序号</div></td>
+<td><div align="center">NUMBER</div></td>
+<td><div align="center">20</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>

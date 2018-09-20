@@ -1,0 +1,218 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>居民企业清算企业所得税申报表(SB_SDS_JMQYQS)</title><style type="text/css">
+<!--body {background-color: #EFECDD;}td{ font-family:"宋体"; font-size:9pt; color=#666666;}.style9 {color: #FFFFFF}-->
+</style></head><body>
+<table width="300" height="100" border="0" cellpadding="0" cellspacing="0">
+<tr><td><p align="center">居民企业清算企业所得税申报表(SB_SDS_JMQYQS)</p></td></tr></table>
+<table width="760" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#FF8800">
+<tr bgcolor="#FFAC75">
+<td width="80" height="26"><div align="center" class="style9">列名</div></td>
+<td width="80"><div align="center" class="style9">汉字名</div></td>
+<td width="80"><div align="center" class="style9">数据类型</div></td>
+<td width="80"><div align="center" class="style9">长度</div></td>
+<td width="80"><div align="center" class="style9">精度</div></td>
+<td width="80"><div align="center" class="style9">非空</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">SFDLSB</div></td>
+<td><div align="center">是否代理申报</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">BSRXM</div></td>
+<td><div align="center">办税人姓名</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">75</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">QSZ</div></td>
+<td><div align="center">清算组</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">75</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">DLSBZJJG</div></td>
+<td><div align="center">代理申报中介机构</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">75</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">DLJBRXM</div></td>
+<td><div align="center">代理经办人姓名</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">75</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">SJTB_SJ</div></td>
+<td><div align="center">数据同步时间||</div></td>
+<td><div align="center">TIMESTAMP(6)</div></td>
+<td><div align="center">11</div></td>
+<td><div align="center">6</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center"><a href="DM_GY_SWRY.html">LRR_DM</div></td>
+<td><div align="center">录入人代码</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">11</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">LRRQ</div></td>
+<td><div align="center">录入日期</div></td>
+<td><div align="center">DATE</div></td>
+<td><div align="center">7</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center"><a href="DM_GY_SWRY.html">XGR_DM</div></td>
+<td><div align="center">修改人代码</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">11</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">XGRQ</div></td>
+<td><div align="center">修改日期</div></td>
+<td><div align="center">DATE</div></td>
+<td><div align="center">7</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">SJGSDQ</div></td>
+<td><div align="center">数据归属地区</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">11</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">UUID</div></td>
+<td><div align="center">UUID</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">32</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">SBUUID</div></td>
+<td><div align="center">申报UUID</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">32</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">PZXH</div></td>
+<td><div align="center">凭证序号</div></td>
+<td><div align="center">NUMBER</div></td>
+<td><div align="center">20</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">DLSBRQ</div></td>
+<td><div align="center">代理申报日期</div></td>
+<td><div align="center">DATE</div></td>
+<td><div align="center">7</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">JBRZYZJHM</div></td>
+<td><div align="center">经办人执业证件号码</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">20</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">SJYBTSDSE</div></td>
+<td><div align="center">应补退所得税额计算实际应补退所得税额</div></td>
+<td><div align="center">NUMBER</div></td>
+<td><div align="center">18</div></td>
+<td><div align="center">6</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">YQNSNDYBTSDSE</div></td>
+<td><div align="center">应补退所得税额计算以前纳税年度应补退所得税额</div></td>
+<td><div align="center">NUMBER</div></td>
+<td><div align="center">18</div></td>
+<td><div align="center">6</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">JNWSJYNSDSE</div></td>
+<td><div align="center">境内外实际应纳所得税额</div></td>
+<td><div align="center">NUMBER</div></td>
+<td><div align="center">18</div></td>
+<td><div align="center">6</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">JWYBSDSE</div></td>
+<td><div align="center">境外应补所得税额</div></td>
+<td><div align="center">NUMBER</div></td>
+<td><div align="center">18</div></td>
+<td><div align="center">6</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">YBTSDSE_JMQYSDSE</div></td>
+<td><div align="center">应补退所得税额计算减免企业所得税额</div></td>
+<td><div align="center">NUMBER</div></td>
+<td><div align="center">18</div></td>
+<td><div align="center">6</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">YNSDSE</div></td>
+<td><div align="center">应纳所得税额</div></td>
+<td><div align="center">NUMBER</div></td>
+<td><div align="center">18</div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">SL25_YNSDSE</div></td>
+<td><div align="center">应纳所得税额计算税率</div></td>
+<td><div align="center">NUMBER</div></td>
+<td><div align="center">16</div></td>
+<td><div align="center">6</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">YNSSDE</div></td>
+<td><div align="center">应纳税所得额</div></td>
+<td><div align="center">NUMBER</div></td>
+<td><div align="center">16</div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">MBYQNDKS_YNSSDE</div></td>
+<td><div align="center">应纳税所得额计算弥补以前年度亏损</div></td>
+<td><div align="center">NUMBER</div></td>
+<td><div align="center">18</div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">QTMSSD_YNSSDE</div></td>
+<td><div align="center">应纳税所得额计算其他免税所得</div></td>
+<td><div align="center">NUMBER</div></td>
+<td><div align="center">18</div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">BZSSR_YNSSDE</div></td>
+<td><div align="center">应纳税所得额计算不征税收入</div></td>
+<td><div align="center">NUMBER</div></td>
+<td><div align="center">18</div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">MSSR_YNSSDE</div></td>
+<td><div align="center">应纳税所得额计算免税收入</div></td>
+<td><div align="center">NUMBER</div></td>
+<td><div align="center">18</div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">QSSD_YNSSDE</div></td>
+<td><div align="center">应纳税所得额计算清算所得</div></td>
+<td><div align="center">NUMBER</div></td>
+<td><div align="center">18</div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">QTSDHZC_YNSSDE</div></td>
+<td><div align="center">应纳税所得额计算其他所得或支出</div></td>
+<td><div align="center">NUMBER</div></td>
+<td><div align="center">18</div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">QSSJJFJ_YNSSDE</div></td>
+<td><div align="center">应纳税所得额计算清算税金及附加</div></td>
+<td><div align="center">NUMBER</div></td>
+<td><div align="center">18</div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">QSFY_YNSSDE</div></td>
+<td><div align="center">应纳税所得额计算清算费用</div></td>
+<td><div align="center">NUMBER</div></td>
+<td><div align="center">18</div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">FZQCSY_YNSSDE</div></td>
+<td><div align="center">应纳税所得额计算负债清偿损益填附表二</div></td>
+<td><div align="center">NUMBER</div></td>
+<td><div align="center">18</div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">ZCCZSY_YNSSDE</div></td>
+<td><div align="center">应纳税所得额计算资产处置损益填附表一</div></td>
+<td><div align="center">NUMBER</div></td>
+<td><div align="center">18</div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">Y</div></td></tr>

@@ -1,0 +1,265 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title> (DM_GLJC_JHYCFF)</title><style type="text/css">
+<!--body {background-color: #EFECDD;}td{ font-family:"宋体"; font-size:9pt; color=#666666;}.style9 {color: #FFFFFF}-->
+</style></head><body>
+<table width="300" height="100" border="0" cellpadding="0" cellspacing="0">
+<tr><td><p align="center"> (DM_GLJC_JHYCFF)</p></td></tr></table>
+<table width="760" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#FF8800">
+<tr bgcolor="#FFAC75">
+<td width="80" height="26"><div align="center" class="style9">列名</div></td>
+<td width="80"><div align="center" class="style9">汉字名</div></td>
+<td width="80"><div align="center" class="style9">数据类型</div></td>
+<td width="80"><div align="center" class="style9">长度</div></td>
+<td width="80"><div align="center" class="style9">精度</div></td>
+<td width="80"><div align="center" class="style9">非空</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center"><a href="DM_GLJC_JHYCFF.html">JHYCFF_DM</div></td>
+<td><div align="center">计划预测方法代码</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">3</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">JHYCFFMC</div></td>
+<td><div align="center">计划预测方法名称</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">750</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">XYBZ</div></td>
+<td><div align="center">选用标志</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">YXBZ</div></td>
+<td><div align="center">有效标志</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">SJJHYCFF_DM</div></td>
+<td><div align="center">上级计划预测方法代码</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">3</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+</table>
+
+
+   
+<table width="300" height="100" border="0" cellpadding="0" cellspacing="0">
+<tr><td><p align="center"> (数据)</p></td></tr></table>
+<table width="760" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#FF8800">
+<tr bgcolor="#FFAC75">
+<td width="80" height="26"><div align="center" class="style9">计划预测方法代码</div></td>
+<td width="80" height="26"><div align="center" class="style9">计划预测方法名称</div></td>
+<td width="80" height="26"><div align="center" class="style9">选用标志</div></td>
+<td width="80" height="26"><div align="center" class="style9">有效标志</div></td>
+<td width="80" height="26"><div align="center" class="style9">上级计划预测方法代码</div></td>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">100</div></td>
+<td><div align="center">比例推算法</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">200</div></td>
+<td><div align="center">速度推算法</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">300</div></td>
+<td><div align="center">直线趋势预测法</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">310</div></td>
+<td><div align="center">全列平均数法</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">300</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">311</div></td>
+<td><div align="center">全列平均数法</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">310</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">312</div></td>
+<td><div align="center">全列平均增长数法</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">310</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">320</div></td>
+<td><div align="center">分段平均数法</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">300</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">321</div></td>
+<td><div align="center">两端平均法</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">320</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">322</div></td>
+<td><div align="center">半数平均法</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">320</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">330</div></td>
+<td><div align="center">移动平均数法</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">300</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">331</div></td>
+<td><div align="center">简单移动平均数法</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">330</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">332</div></td>
+<td><div align="center">加权移动平均数法</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">330</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">340</div></td>
+<td><div align="center">指数平滑法</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">300</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">350</div></td>
+<td><div align="center">最小平方法</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">300</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">400</div></td>
+<td><div align="center">非直线趋势预测法</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">410</div></td>
+<td><div align="center">二次曲线趋势预测法</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">400</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">420</div></td>
+<td><div align="center">对数直线趋势预测法</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">400</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">430</div></td>
+<td><div align="center">修正指数曲线预测法</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">400</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">500</div></td>
+<td><div align="center">季度变动预测法</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">510</div></td>
+<td><div align="center">季度变动预测直接平均法</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">500</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">520</div></td>
+<td><div align="center">季度变动预测修正平均法</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">500</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">530</div></td>
+<td><div align="center">季度变动预测长期趋势剔除法</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">500</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">600</div></td>
+<td><div align="center">相关与回归预测法</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">610</div></td>
+<td><div align="center">一元回归预测法</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">600</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">620</div></td>
+<td><div align="center">二元回归预测法</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">600</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">630</div></td>
+<td><div align="center">自身回归预测法</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">600</div></td>
+<td><div align="center">  </div></td>
+</tr>

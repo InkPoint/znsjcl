@@ -1,0 +1,3459 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>贷款基准利率维护表(CS_ZS_DKZJLLWHB)</title><style type="text/css">
+<!--body {background-color: #EFECDD;}td{ font-family:"宋体"; font-size:9pt; color=#666666;}.style9 {color: #FFFFFF}-->
+</style></head><body>
+<table width="300" height="100" border="0" cellpadding="0" cellspacing="0">
+<tr><td><p align="center">贷款基准利率维护表(CS_ZS_DKZJLLWHB)</p></td></tr></table>
+<table width="760" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#FF8800">
+<tr bgcolor="#FFAC75">
+<td width="80" height="26"><div align="center" class="style9">列名</div></td>
+<td width="80"><div align="center" class="style9">汉字名</div></td>
+<td width="80"><div align="center" class="style9">数据类型</div></td>
+<td width="80"><div align="center" class="style9">长度</div></td>
+<td width="80"><div align="center" class="style9">精度</div></td>
+<td width="80"><div align="center" class="style9">非空</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">RQ</div></td>
+<td><div align="center">日期</div></td>
+<td><div align="center">DATE</div></td>
+<td><div align="center">7</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center"><a href="DM_ZS_DKLLXM.html">DKLLXM_DM</div></td>
+<td><div align="center">贷款利率项目代码</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">NLL</div></td>
+<td><div align="center">年利率</div></td>
+<td><div align="center">NUMBER</div></td>
+<td><div align="center">4</div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">LRRQ</div></td>
+<td><div align="center">录入日期</div></td>
+<td><div align="center">DATE</div></td>
+<td><div align="center">7</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">XGRQ</div></td>
+<td><div align="center">修改日期</div></td>
+<td><div align="center">DATE</div></td>
+<td><div align="center">7</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center"><a href="DM_GY_SWRY.html">LRR_DM</div></td>
+<td><div align="center">录入人代码</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">11</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center"><a href="DM_GY_SWRY.html">XGR_DM</div></td>
+<td><div align="center">修改人代码</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">11</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">XYBZ</div></td>
+<td><div align="center">选用标志</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">UUID</div></td>
+<td><div align="center">UUID||uuid</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">32</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">YXQQ</div></td>
+<td><div align="center">有效期起</div></td>
+<td><div align="center">DATE</div></td>
+<td><div align="center">7</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">YXQZ</div></td>
+<td><div align="center">有效期止</div></td>
+<td><div align="center">DATE</div></td>
+<td><div align="center">7</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+</table>
+
+
+   
+<table width="300" height="100" border="0" cellpadding="0" cellspacing="0">
+<tr><td><p align="center">贷款基准利率维护表(数据)</p></td></tr></table>
+<table width="760" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#FF8800">
+<tr bgcolor="#FFAC75">
+<td width="80" height="26"><div align="center" class="style9">日期</div></td>
+<td width="80" height="26"><div align="center" class="style9">贷款利率项目代码</div></td>
+<td width="80" height="26"><div align="center" class="style9">年利率</div></td>
+<td width="80" height="26"><div align="center" class="style9">录入日期</div></td>
+<td width="80" height="26"><div align="center" class="style9">修改日期</div></td>
+<td width="80" height="26"><div align="center" class="style9">录入人代码</div></td>
+<td width="80" height="26"><div align="center" class="style9">修改人代码</div></td>
+<td width="80" height="26"><div align="center" class="style9">选用标志</div></td>
+<td width="80" height="26"><div align="center" class="style9">UUID||uuid</div></td>
+<td width="80" height="26"><div align="center" class="style9">有效期起</div></td>
+<td width="80" height="26"><div align="center" class="style9">有效期止</div></td>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">01-1月 -09</div></td>
+<td><div align="center">02</div></td>
+<td><div align="center">5.31</div></td>
+<td><div align="center">09-1月 -15</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0C2F4F5275AA0D07E053EE1712967182</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">01-1月 -09</div></td>
+<td><div align="center">03</div></td>
+<td><div align="center">5.4</div></td>
+<td><div align="center">09-1月 -15</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0C2F4F5275AB0D07E053EE1712967182</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">01-1月 -09</div></td>
+<td><div align="center">04</div></td>
+<td><div align="center">5.76</div></td>
+<td><div align="center">09-1月 -15</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0C2F4F5275AC0D07E053EE1712967182</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">01-1月 -09</div></td>
+<td><div align="center">05</div></td>
+<td><div align="center">5.94</div></td>
+<td><div align="center">09-1月 -15</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0C2F4F5275AD0D07E053EE1712967182</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">01-1月 -13</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">5.6</div></td>
+<td><div align="center">09-1月 -15</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0C2F4F5275AE0D07E053EE1712967182</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">01-1月 -13</div></td>
+<td><div align="center">02</div></td>
+<td><div align="center">6</div></td>
+<td><div align="center">09-1月 -15</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0C2F4F5275AF0D07E053EE1712967182</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">01-1月 -13</div></td>
+<td><div align="center">03</div></td>
+<td><div align="center">6.15</div></td>
+<td><div align="center">09-1月 -15</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0C2F4F5275B00D07E053EE1712967182</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">01-1月 -13</div></td>
+<td><div align="center">04</div></td>
+<td><div align="center">6.4</div></td>
+<td><div align="center">09-1月 -15</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0C2F4F5275B10D07E053EE1712967182</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">01-1月 -13</div></td>
+<td><div align="center">05</div></td>
+<td><div align="center">6.55</div></td>
+<td><div align="center">09-1月 -15</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0C2F4F5275B20D07E053EE1712967182</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">01-1月 -15</div></td>
+<td><div align="center">03</div></td>
+<td><div align="center">6</div></td>
+<td><div align="center">09-1月 -15</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0C2F7EC3D3450DA1E053EE171296D518</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">01-1月 -15</div></td>
+<td><div align="center">04</div></td>
+<td><div align="center">6</div></td>
+<td><div align="center">09-1月 -15</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0C2F7EC3D3460DA1E053EE171296D518</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">01-1月 -15</div></td>
+<td><div align="center">05</div></td>
+<td><div align="center">6.15</div></td>
+<td><div align="center">09-1月 -15</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0C2F7EC3D3470DA1E053EE171296D518</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">01-1月 -15</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">5.6</div></td>
+<td><div align="center">09-1月 -15</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0C2F7EC3D3480DA1E053EE171296D518</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">01-1月 -15</div></td>
+<td><div align="center">02</div></td>
+<td><div align="center">5.6</div></td>
+<td><div align="center">09-1月 -15</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0C2F7EC3D3490DA1E053EE171296D518</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">22-11月-14</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">5.6</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9A685F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">06-7月 -12</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">5.6</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9A695F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">08-6月 -12</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">5.85</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9A6A5F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">07-7月 -11</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">6.1</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9A6B5F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">06-4月 -11</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">5.85</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9A6C5F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">09-2月 -11</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">5.6</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9A6D5F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">26-12月-10</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">5.35</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9A6E5F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">20-10月-10</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">5.1</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9A6F5F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">23-12月-08</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">4.86</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9A705F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">27-11月-08</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">5.04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9A715F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">30-10月-08</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">6.03</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9A725F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">27-10月-08</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">6.12</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9A735F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">09-10月-08</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">6.12</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9A745F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">16-9月 -08</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">6.21</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9A755F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">21-12月-07</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">6.57</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9A765F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">15-9月 -07</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">6.48</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9A775F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">22-8月 -07</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">6.21</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9A785F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">21-7月 -07</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">6.03</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9A795F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">19-5月 -07</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">5.85</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9A7A5F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">18-3月 -07</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">5.67</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9A7B5F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">19-8月 -06</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">5.58</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9A7C5F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">28-4月 -06</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">5.4</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9A7D5F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">17-3月 -05</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">5.22</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9A7E5F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">29-10月-04</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">5.22</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9A7F5F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">21-2月 -02</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">5.04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9A805F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">10-6月 -99</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">5.58</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9A815F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">07-12月-98</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">6.12</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9A825F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">01-7月 -98</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">6.57</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9A835F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">25-3月 -98</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">7.02</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9A845F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">23-10月-97</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">7.65</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9A855F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">23-8月 -96</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">9.18</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9A865F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">01-5月 -96</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">9.72</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9A875F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">01-7月 -95</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">10.08</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9A885F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">01-1月 -95</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">9</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9A895F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">11-7月 -93</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">9</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9A8A5F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">15-5月 -93</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">8.82</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9A8B5F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">21-4月 -91</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">8.1</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9A8C5F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">21-3月 -91</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">9</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9A8D5F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">21-8月 -90</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">8.64</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9A8E5F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">01-2月 -89</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">11.34</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9A8F5F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">22-11月-14</div></td>
+<td><div align="center">02</div></td>
+<td><div align="center">5.6</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9A905F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">06-7月 -12</div></td>
+<td><div align="center">02</div></td>
+<td><div align="center">6</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9A915F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">08-6月 -12</div></td>
+<td><div align="center">02</div></td>
+<td><div align="center">6.31</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9A925F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">07-7月 -11</div></td>
+<td><div align="center">02</div></td>
+<td><div align="center">6.56</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9A935F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">06-4月 -11</div></td>
+<td><div align="center">02</div></td>
+<td><div align="center">6.31</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9A945F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">09-2月 -11</div></td>
+<td><div align="center">02</div></td>
+<td><div align="center">6.06</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9A955F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">26-12月-10</div></td>
+<td><div align="center">02</div></td>
+<td><div align="center">5.81</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9A965F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">20-10月-10</div></td>
+<td><div align="center">02</div></td>
+<td><div align="center">5.56</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9A975F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">23-12月-08</div></td>
+<td><div align="center">02</div></td>
+<td><div align="center">5.31</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9A985F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">27-11月-08</div></td>
+<td><div align="center">02</div></td>
+<td><div align="center">5.58</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9A995F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">30-10月-08</div></td>
+<td><div align="center">02</div></td>
+<td><div align="center">6.66</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9A9A5F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">27-10月-08</div></td>
+<td><div align="center">02</div></td>
+<td><div align="center">6.93</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9A9B5F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">09-10月-08</div></td>
+<td><div align="center">02</div></td>
+<td><div align="center">6.93</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9A9C5F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">16-9月 -08</div></td>
+<td><div align="center">02</div></td>
+<td><div align="center">7.2</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9A9D5F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">21-12月-07</div></td>
+<td><div align="center">02</div></td>
+<td><div align="center">7.47</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9A9E5F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">15-9月 -07</div></td>
+<td><div align="center">02</div></td>
+<td><div align="center">7.29</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9A9F5F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">22-8月 -07</div></td>
+<td><div align="center">02</div></td>
+<td><div align="center">7.02</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9AA05F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">21-7月 -07</div></td>
+<td><div align="center">02</div></td>
+<td><div align="center">6.84</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9AA15F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">19-5月 -07</div></td>
+<td><div align="center">02</div></td>
+<td><div align="center">6.57</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9AA25F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">18-3月 -07</div></td>
+<td><div align="center">02</div></td>
+<td><div align="center">6.39</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9AA35F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">19-8月 -06</div></td>
+<td><div align="center">02</div></td>
+<td><div align="center">6.12</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9AA45F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">28-4月 -06</div></td>
+<td><div align="center">02</div></td>
+<td><div align="center">5.85</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9AA55F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">17-3月 -05</div></td>
+<td><div align="center">02</div></td>
+<td><div align="center">5.58</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9AA65F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">29-10月-04</div></td>
+<td><div align="center">02</div></td>
+<td><div align="center">5.58</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9AA75F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">21-2月 -02</div></td>
+<td><div align="center">02</div></td>
+<td><div align="center">5.31</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9AA85F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">10-6月 -99</div></td>
+<td><div align="center">02</div></td>
+<td><div align="center">5.85</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9AA95F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">07-12月-98</div></td>
+<td><div align="center">02</div></td>
+<td><div align="center">6.39</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9AAA5F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">01-7月 -98</div></td>
+<td><div align="center">02</div></td>
+<td><div align="center">6.93</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9AAB5F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">25-3月 -98</div></td>
+<td><div align="center">02</div></td>
+<td><div align="center">7.92</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9AAC5F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">23-10月-97</div></td>
+<td><div align="center">02</div></td>
+<td><div align="center">8.64</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9AAD5F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">23-8月 -96</div></td>
+<td><div align="center">02</div></td>
+<td><div align="center">10.08</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9AAE5F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">01-5月 -96</div></td>
+<td><div align="center">02</div></td>
+<td><div align="center">10.98</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9AAF5F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">01-7月 -95</div></td>
+<td><div align="center">02</div></td>
+<td><div align="center">12.06</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9AB05F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">01-1月 -95</div></td>
+<td><div align="center">02</div></td>
+<td><div align="center">10.98</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9AB15F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">11-7月 -93</div></td>
+<td><div align="center">02</div></td>
+<td><div align="center">10.98</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9AB25F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">15-5月 -93</div></td>
+<td><div align="center">02</div></td>
+<td><div align="center">9.36</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9AB35F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">21-4月 -91</div></td>
+<td><div align="center">02</div></td>
+<td><div align="center">8.64</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9AB45F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">21-3月 -91</div></td>
+<td><div align="center">02</div></td>
+<td><div align="center">10.08</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9AB55F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">21-8月 -90</div></td>
+<td><div align="center">02</div></td>
+<td><div align="center">9.36</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9AB65F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">01-2月 -89</div></td>
+<td><div align="center">02</div></td>
+<td><div align="center">11.34</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9AB75F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">22-11月-14</div></td>
+<td><div align="center">03</div></td>
+<td><div align="center">6</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9AB85F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">06-7月 -12</div></td>
+<td><div align="center">03</div></td>
+<td><div align="center">6.15</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9AB95F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">08-6月 -12</div></td>
+<td><div align="center">03</div></td>
+<td><div align="center">6.4</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9ABA5F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">07-7月 -11</div></td>
+<td><div align="center">03</div></td>
+<td><div align="center">6.65</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9ABB5F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">06-4月 -11</div></td>
+<td><div align="center">03</div></td>
+<td><div align="center">6.4</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9ABC5F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">09-2月 -11</div></td>
+<td><div align="center">03</div></td>
+<td><div align="center">6.1</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9ABD5F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">26-12月-10</div></td>
+<td><div align="center">03</div></td>
+<td><div align="center">5.85</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9ABE5F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">20-10月-10</div></td>
+<td><div align="center">03</div></td>
+<td><div align="center">5.6</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9ABF5F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">23-12月-08</div></td>
+<td><div align="center">03</div></td>
+<td><div align="center">5.4</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9AC05F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">27-11月-08</div></td>
+<td><div align="center">03</div></td>
+<td><div align="center">5.67</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9AC15F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">30-10月-08</div></td>
+<td><div align="center">03</div></td>
+<td><div align="center">6.75</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9AC25F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">27-10月-08</div></td>
+<td><div align="center">03</div></td>
+<td><div align="center">7.02</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9AC35F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">09-10月-08</div></td>
+<td><div align="center">03</div></td>
+<td><div align="center">7.02</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9AC45F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">16-9月 -08</div></td>
+<td><div align="center">03</div></td>
+<td><div align="center">7.29</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9AC55F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">21-12月-07</div></td>
+<td><div align="center">03</div></td>
+<td><div align="center">7.56</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9AC65F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">15-9月 -07</div></td>
+<td><div align="center">03</div></td>
+<td><div align="center">7.47</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9AC75F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">22-8月 -07</div></td>
+<td><div align="center">03</div></td>
+<td><div align="center">7.2</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9AC85F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">21-7月 -07</div></td>
+<td><div align="center">03</div></td>
+<td><div align="center">7.02</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9AC95F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">19-5月 -07</div></td>
+<td><div align="center">03</div></td>
+<td><div align="center">6.75</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9ACA5F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">18-3月 -07</div></td>
+<td><div align="center">03</div></td>
+<td><div align="center">6.57</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9ACB5F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">19-8月 -06</div></td>
+<td><div align="center">03</div></td>
+<td><div align="center">6.3</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9ACC5F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">28-4月 -06</div></td>
+<td><div align="center">03</div></td>
+<td><div align="center">6.03</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9ACD5F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">17-3月 -05</div></td>
+<td><div align="center">03</div></td>
+<td><div align="center">5.76</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9ACE5F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">29-10月-04</div></td>
+<td><div align="center">03</div></td>
+<td><div align="center">5.76</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9ACF5F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">21-2月 -02</div></td>
+<td><div align="center">03</div></td>
+<td><div align="center">5.49</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9AD05F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">10-6月 -99</div></td>
+<td><div align="center">03</div></td>
+<td><div align="center">5.94</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9AD15F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">07-12月-98</div></td>
+<td><div align="center">03</div></td>
+<td><div align="center">6.66</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9AD25F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">01-7月 -98</div></td>
+<td><div align="center">03</div></td>
+<td><div align="center">7.11</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9AD35F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">25-3月 -98</div></td>
+<td><div align="center">03</div></td>
+<td><div align="center">9</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9AD45F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">23-10月-97</div></td>
+<td><div align="center">03</div></td>
+<td><div align="center">9.36</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9AD55F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">23-8月 -96</div></td>
+<td><div align="center">03</div></td>
+<td><div align="center">10.98</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9AD65F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">01-5月 -96</div></td>
+<td><div align="center">03</div></td>
+<td><div align="center">13.14</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9AD75F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">01-7月 -95</div></td>
+<td><div align="center">03</div></td>
+<td><div align="center">13.5</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9AD85F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">01-1月 -95</div></td>
+<td><div align="center">03</div></td>
+<td><div align="center">12.96</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9AD95F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">11-7月 -93</div></td>
+<td><div align="center">03</div></td>
+<td><div align="center">12.24</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9ADA5F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">15-5月 -93</div></td>
+<td><div align="center">03</div></td>
+<td><div align="center">10.8</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9ADB5F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">21-4月 -91</div></td>
+<td><div align="center">03</div></td>
+<td><div align="center">9</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9ADC5F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">21-3月 -91</div></td>
+<td><div align="center">03</div></td>
+<td><div align="center">10.8</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9ADD5F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">21-8月 -90</div></td>
+<td><div align="center">03</div></td>
+<td><div align="center">10.08</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9ADE5F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">01-2月 -89</div></td>
+<td><div align="center">03</div></td>
+<td><div align="center">12.78</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9ADF5F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">22-11月-14</div></td>
+<td><div align="center">04</div></td>
+<td><div align="center">6</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9AE05F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">06-7月 -12</div></td>
+<td><div align="center">04</div></td>
+<td><div align="center">6.4</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9AE15F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">08-6月 -12</div></td>
+<td><div align="center">04</div></td>
+<td><div align="center">6.65</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9AE25F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">07-7月 -11</div></td>
+<td><div align="center">04</div></td>
+<td><div align="center">6.9</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9AE35F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">06-4月 -11</div></td>
+<td><div align="center">04</div></td>
+<td><div align="center">6.65</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9AE45F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">09-2月 -11</div></td>
+<td><div align="center">04</div></td>
+<td><div align="center">6.45</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9AE55F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">26-12月-10</div></td>
+<td><div align="center">04</div></td>
+<td><div align="center">6.22</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9AE65F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">20-10月-10</div></td>
+<td><div align="center">04</div></td>
+<td><div align="center">5.96</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9AE75F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">23-12月-08</div></td>
+<td><div align="center">04</div></td>
+<td><div align="center">5.76</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9AE85F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">27-11月-08</div></td>
+<td><div align="center">04</div></td>
+<td><div align="center">5.94</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9AE95F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">30-10月-08</div></td>
+<td><div align="center">04</div></td>
+<td><div align="center">7.02</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9AEA5F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">27-10月-08</div></td>
+<td><div align="center">04</div></td>
+<td><div align="center">7.29</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9AEB5F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">09-10月-08</div></td>
+<td><div align="center">04</div></td>
+<td><div align="center">7.29</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9AEC5F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">16-9月 -08</div></td>
+<td><div align="center">04</div></td>
+<td><div align="center">7.56</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9AED5F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">21-12月-07</div></td>
+<td><div align="center">04</div></td>
+<td><div align="center">7.74</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9AEE5F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">15-9月 -07</div></td>
+<td><div align="center">04</div></td>
+<td><div align="center">7.65</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9AEF5F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">22-8月 -07</div></td>
+<td><div align="center">04</div></td>
+<td><div align="center">7.38</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9AF05F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">21-7月 -07</div></td>
+<td><div align="center">04</div></td>
+<td><div align="center">7.2</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9AF15F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">19-5月 -07</div></td>
+<td><div align="center">04</div></td>
+<td><div align="center">6.93</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9AF25F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">18-3月 -07</div></td>
+<td><div align="center">04</div></td>
+<td><div align="center">6.75</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9AF35F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">19-8月 -06</div></td>
+<td><div align="center">04</div></td>
+<td><div align="center">6.48</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9AF45F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">28-4月 -06</div></td>
+<td><div align="center">04</div></td>
+<td><div align="center">6.12</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9AF55F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">17-3月 -05</div></td>
+<td><div align="center">04</div></td>
+<td><div align="center">5.85</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9AF65F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">29-10月-04</div></td>
+<td><div align="center">04</div></td>
+<td><div align="center">5.85</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9AF75F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">21-2月 -02</div></td>
+<td><div align="center">04</div></td>
+<td><div align="center">5.58</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9AF85F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">10-6月 -99</div></td>
+<td><div align="center">04</div></td>
+<td><div align="center">6.03</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9AF95F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">07-12月-98</div></td>
+<td><div align="center">04</div></td>
+<td><div align="center">7.2</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9AFA5F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">01-7月 -98</div></td>
+<td><div align="center">04</div></td>
+<td><div align="center">7.65</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9AFB5F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">25-3月 -98</div></td>
+<td><div align="center">04</div></td>
+<td><div align="center">9.72</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9AFC5F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">23-10月-97</div></td>
+<td><div align="center">04</div></td>
+<td><div align="center">9.9</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9AFD5F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">23-8月 -96</div></td>
+<td><div align="center">04</div></td>
+<td><div align="center">11.7</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9AFE5F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">01-5月 -96</div></td>
+<td><div align="center">04</div></td>
+<td><div align="center">14.94</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9AFF5F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">01-7月 -95</div></td>
+<td><div align="center">04</div></td>
+<td><div align="center">15.12</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9B005F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">01-1月 -95</div></td>
+<td><div align="center">04</div></td>
+<td><div align="center">14.58</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9B015F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">11-7月 -93</div></td>
+<td><div align="center">04</div></td>
+<td><div align="center">13.86</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9B025F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">15-5月 -93</div></td>
+<td><div align="center">04</div></td>
+<td><div align="center">12.06</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9B035F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">21-4月 -91</div></td>
+<td><div align="center">04</div></td>
+<td><div align="center">9.54</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9B045F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">21-3月 -91</div></td>
+<td><div align="center">04</div></td>
+<td><div align="center">11.52</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9B055F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">21-8月 -90</div></td>
+<td><div align="center">04</div></td>
+<td><div align="center">10.8</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9B065F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">01-2月 -89</div></td>
+<td><div align="center">04</div></td>
+<td><div align="center">14.4</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9B075F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">22-11月-14</div></td>
+<td><div align="center">05</div></td>
+<td><div align="center">6.15</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9B085F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">06-7月 -12</div></td>
+<td><div align="center">05</div></td>
+<td><div align="center">6.55</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9B095F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">08-6月 -12</div></td>
+<td><div align="center">05</div></td>
+<td><div align="center">6.8</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9B0A5F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">07-7月 -11</div></td>
+<td><div align="center">05</div></td>
+<td><div align="center">7.05</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9B0B5F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">06-4月 -11</div></td>
+<td><div align="center">05</div></td>
+<td><div align="center">6.8</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9B0C5F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">09-2月 -11</div></td>
+<td><div align="center">05</div></td>
+<td><div align="center">6.6</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9B0D5F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">26-12月-10</div></td>
+<td><div align="center">05</div></td>
+<td><div align="center">6.4</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9B0E5F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">20-10月-10</div></td>
+<td><div align="center">05</div></td>
+<td><div align="center">6.14</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9B0F5F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">23-12月-08</div></td>
+<td><div align="center">05</div></td>
+<td><div align="center">5.94</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9B105F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">27-11月-08</div></td>
+<td><div align="center">05</div></td>
+<td><div align="center">6.12</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9B115F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">30-10月-08</div></td>
+<td><div align="center">05</div></td>
+<td><div align="center">7.2</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9B125F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">27-10月-08</div></td>
+<td><div align="center">05</div></td>
+<td><div align="center">7.47</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9B135F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">09-10月-08</div></td>
+<td><div align="center">05</div></td>
+<td><div align="center">7.47</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9B145F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">16-9月 -08</div></td>
+<td><div align="center">05</div></td>
+<td><div align="center">7.74</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9B155F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">21-12月-07</div></td>
+<td><div align="center">05</div></td>
+<td><div align="center">7.83</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9B165F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">15-9月 -07</div></td>
+<td><div align="center">05</div></td>
+<td><div align="center">7.83</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9B175F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">22-8月 -07</div></td>
+<td><div align="center">05</div></td>
+<td><div align="center">7.56</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9B185F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">21-7月 -07</div></td>
+<td><div align="center">05</div></td>
+<td><div align="center">7.38</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9B195F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">19-5月 -07</div></td>
+<td><div align="center">05</div></td>
+<td><div align="center">7.2</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9B1A5F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">18-3月 -07</div></td>
+<td><div align="center">05</div></td>
+<td><div align="center">7.11</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9B1B5F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">19-8月 -06</div></td>
+<td><div align="center">05</div></td>
+<td><div align="center">6.84</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9B1C5F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">28-4月 -06</div></td>
+<td><div align="center">05</div></td>
+<td><div align="center">6.39</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9B1D5F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">17-3月 -05</div></td>
+<td><div align="center">05</div></td>
+<td><div align="center">6.12</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9B1E5F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">29-10月-04</div></td>
+<td><div align="center">05</div></td>
+<td><div align="center">6.12</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9B1F5F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">21-2月 -02</div></td>
+<td><div align="center">05</div></td>
+<td><div align="center">5.76</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9B205F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">10-6月 -99</div></td>
+<td><div align="center">05</div></td>
+<td><div align="center">6.21</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9B215F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">07-12月-98</div></td>
+<td><div align="center">05</div></td>
+<td><div align="center">7.56</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9B225F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">01-7月 -98</div></td>
+<td><div align="center">05</div></td>
+<td><div align="center">8.01</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9B235F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">25-3月 -98</div></td>
+<td><div align="center">05</div></td>
+<td><div align="center">10.35</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9B245F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">23-10月-97</div></td>
+<td><div align="center">05</div></td>
+<td><div align="center">10.53</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9B255F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">23-8月 -96</div></td>
+<td><div align="center">05</div></td>
+<td><div align="center">12.42</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9B265F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">01-5月 -96</div></td>
+<td><div align="center">05</div></td>
+<td><div align="center">15.12</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9B275F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">01-7月 -95</div></td>
+<td><div align="center">05</div></td>
+<td><div align="center">15.3</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9B285F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">01-1月 -95</div></td>
+<td><div align="center">05</div></td>
+<td><div align="center">14.76</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9B295F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">11-7月 -93</div></td>
+<td><div align="center">05</div></td>
+<td><div align="center">14.04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9B2A5F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">15-5月 -93</div></td>
+<td><div align="center">05</div></td>
+<td><div align="center">12.24</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9B2B5F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">21-4月 -91</div></td>
+<td><div align="center">05</div></td>
+<td><div align="center">9.72</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9B2C5F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">21-3月 -91</div></td>
+<td><div align="center">05</div></td>
+<td><div align="center">11.88</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9B2D5F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">21-8月 -90</div></td>
+<td><div align="center">05</div></td>
+<td><div align="center">11.16</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9B2E5F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">01-2月 -89</div></td>
+<td><div align="center">05</div></td>
+<td><div align="center">19.26</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0B5D0B9C9B2F5F45E053990C170AEC04</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">01-1月 -92</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">8.1</div></td>
+<td><div align="center">09-1月 -15</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0C2F4F5275900D07E053EE1712967182</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">01-1月 -92</div></td>
+<td><div align="center">02</div></td>
+<td><div align="center">8.64</div></td>
+<td><div align="center">09-1月 -15</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0C2F4F5275910D07E053EE1712967182</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">01-1月 -92</div></td>
+<td><div align="center">03</div></td>
+<td><div align="center">9</div></td>
+<td><div align="center">09-1月 -15</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0C2F4F5275920D07E053EE1712967182</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">01-1月 -92</div></td>
+<td><div align="center">04</div></td>
+<td><div align="center">9.54</div></td>
+<td><div align="center">09-1月 -15</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0C2F4F5275930D07E053EE1712967182</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">01-1月 -92</div></td>
+<td><div align="center">05</div></td>
+<td><div align="center">9.72</div></td>
+<td><div align="center">09-1月 -15</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0C2F4F5275940D07E053EE1712967182</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">01-1月 -94</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">9</div></td>
+<td><div align="center">09-1月 -15</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0C2F4F5275950D07E053EE1712967182</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">01-1月 -94</div></td>
+<td><div align="center">02</div></td>
+<td><div align="center">10.98</div></td>
+<td><div align="center">09-1月 -15</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0C2F4F5275960D07E053EE1712967182</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">01-1月 -94</div></td>
+<td><div align="center">03</div></td>
+<td><div align="center">12.24</div></td>
+<td><div align="center">09-1月 -15</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0C2F4F5275970D07E053EE1712967182</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">01-1月 -94</div></td>
+<td><div align="center">04</div></td>
+<td><div align="center">13.86</div></td>
+<td><div align="center">09-1月 -15</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0C2F4F5275980D07E053EE1712967182</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">01-1月 -94</div></td>
+<td><div align="center">05</div></td>
+<td><div align="center">14.04</div></td>
+<td><div align="center">09-1月 -15</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0C2F4F5275990D07E053EE1712967182</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">01-1月 -00</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">5.58</div></td>
+<td><div align="center">09-1月 -15</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0C2F4F52759A0D07E053EE1712967182</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">01-1月 -00</div></td>
+<td><div align="center">02</div></td>
+<td><div align="center">5.85</div></td>
+<td><div align="center">09-1月 -15</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0C2F4F52759B0D07E053EE1712967182</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">01-1月 -00</div></td>
+<td><div align="center">03</div></td>
+<td><div align="center">5.94</div></td>
+<td><div align="center">09-1月 -15</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0C2F4F52759C0D07E053EE1712967182</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">01-1月 -00</div></td>
+<td><div align="center">04</div></td>
+<td><div align="center">6.03</div></td>
+<td><div align="center">09-1月 -15</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0C2F4F52759D0D07E053EE1712967182</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">01-1月 -00</div></td>
+<td><div align="center">05</div></td>
+<td><div align="center">6.21</div></td>
+<td><div align="center">09-1月 -15</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0C2F4F52759E0D07E053EE1712967182</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">01-1月 -01</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">5.58</div></td>
+<td><div align="center">09-1月 -15</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0C2F4F52759F0D07E053EE1712967182</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">01-1月 -01</div></td>
+<td><div align="center">02</div></td>
+<td><div align="center">5.85</div></td>
+<td><div align="center">09-1月 -15</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0C2F4F5275A00D07E053EE1712967182</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">01-1月 -01</div></td>
+<td><div align="center">03</div></td>
+<td><div align="center">5.94</div></td>
+<td><div align="center">09-1月 -15</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0C2F4F5275A10D07E053EE1712967182</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">01-1月 -01</div></td>
+<td><div align="center">04</div></td>
+<td><div align="center">6.03</div></td>
+<td><div align="center">09-1月 -15</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0C2F4F5275A20D07E053EE1712967182</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">01-1月 -01</div></td>
+<td><div align="center">05</div></td>
+<td><div align="center">6.21</div></td>
+<td><div align="center">09-1月 -15</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0C2F4F5275A30D07E053EE1712967182</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">01-1月 -03</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">5.04</div></td>
+<td><div align="center">09-1月 -15</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0C2F4F5275A40D07E053EE1712967182</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">01-1月 -03</div></td>
+<td><div align="center">02</div></td>
+<td><div align="center">5.31</div></td>
+<td><div align="center">09-1月 -15</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0C2F4F5275A50D07E053EE1712967182</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">01-1月 -03</div></td>
+<td><div align="center">03</div></td>
+<td><div align="center">5.49</div></td>
+<td><div align="center">09-1月 -15</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0C2F4F5275A60D07E053EE1712967182</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">01-1月 -03</div></td>
+<td><div align="center">04</div></td>
+<td><div align="center">5.58</div></td>
+<td><div align="center">09-1月 -15</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0C2F4F5275A70D07E053EE1712967182</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">01-1月 -03</div></td>
+<td><div align="center">05</div></td>
+<td><div align="center">5.76</div></td>
+<td><div align="center">09-1月 -15</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0C2F4F5275A80D07E053EE1712967182</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">01-1月 -09</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">4.86</div></td>
+<td><div align="center">09-1月 -15</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0C2F4F5275A90D07E053EE1712967182</div></td>
+<td><div align="center">29-12月-14</div></td>
+<td><div align="center">31-12月-99</div></td>
+<td><div align="center">  </div></td>
+</tr>

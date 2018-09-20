@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xalt.sjjg.dao.YlxxcxMapper">
+    <!--养老信息汇总-->
+    <select id="countAll" parameterType="java.util.HashMap" resultType="com.xalt.sjjg.model.YlxxcxVO">
+        select t.序号         xh,
+                t.缴费人识别号 jfrsbh,
+                t.社保编码     sbbh,
+                t.缴费单位名称 jfdwmc,
+                t.核算机关     hsjg,
+                t.主管社保机构 zgsbjg,
+                t.开票日期     kprq,
+                t.征收属期     zssq,
+                t.单位缴费基数 dwjfjs,
+                t.个人缴费基数 grjfjs,
+                t.缴费人数     jfrs,
+                t.单位实缴金额 dwsjje,
+                t.个人实缴金额 grsjje,
+                t.滞纳金       znj,
+                t.其它个人缴费 qtgrjf,
+                t.罚款         fk,
+                t.利息         lx,
+                t.入库额       rke,
+                t.入库日期     rkrq,
+                t.票号         ph
+        from dm_zs_sbf_jks_ex_yl t
+        <if test="svo.hsjg!=null">
+            where t.核算机关 = '${svo.hsjg}'
+        </if>
+        <if test="svo.zgsbjg!=null">
+            where t.主管社保机构 = '${svo.zgsbjg}'
+        </if>
+        order by rkrq
+    </select>
+    <!--核算机关 (机关菜单)-->
+    <select id="organMenu" parameterType="java.util.HashMap" resultType="com.xalt.sjjg.model.YlxxcxVO">
+        select t.cxsql id,t.hsjg text
+          from (select 'select * from dm_zs_sbf_jks_ex_yl t where t.核算机关=''' || 核算机关 ||'''' cxsql,核算机关 hsjg
+                  from dm_zs_sbf_jks_ex_yl
+                 group by 核算机关 order by cxsql) t
+    </select>
+    <!--经办机构 (机构菜单)-->
+    <select id="mechanismMenu" parameterType="java.util.HashMap" resultType="com.xalt.sjjg.model.YlxxcxVO">
+        select t.cxsql id, t.zgsbjg text
+          from (select 'select * from dm_zs_sbf_jks_ex_yl t where t.主管社保机构=''' ||主管社保机构 || '''' cxsql, 主管社保机构 zgsbjg
+                  from dm_zs_sbf_jks_ex_yl
+                 group by 主管社保机构 order by cxsql) t
+    </select>
+    <!--失业信息汇总-->
+    <select id="exportCountAll" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+        select t.序号         xh,
+                t.缴费人识别号 jfrsbh,
+                t.社保编码     sbbh,
+                t.缴费单位名称 jfdwmc,
+                t.核算机关     hsjg,
+                t.主管社保机构 zgsbjg,
+                t.开票日期     kprq,
+                t.征收属期     zssq,
+                t.单位缴费基数 dwjfjs,
+                t.个人缴费基数 grjfjs,
+                t.缴费人数     jfrs,
+                t.单位实缴金额 dwsjje,
+                t.个人实缴金额 grsjje,
+                t.滞纳金       znj,
+                t.其它个人缴费 qtgrjf,
+                t.罚款         fk,
+                t.利息         lx,
+                t.入库额       rke,
+                to_char(t.入库日期,'yyyy-mm-dd')    rkrq,
+                t.票号         ph
+        from dm_zs_sbf_jks_ex_yl t
+        <if test="svo.hsjg!=null">
+            where t.核算机关 = '${svo.hsjg}'
+        </if>
+        <if test="svo.zgsbjg!=null">
+            where t.主管社保机构 = '${svo.zgsbjg}'
+        </if>
+        order by rkrq
+    </select>
+</mapper>

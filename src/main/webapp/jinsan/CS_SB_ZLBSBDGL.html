@@ -1,0 +1,1753 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>资料报送表单关联表(CS_SB_ZLBSBDGL)</title><style type="text/css">
+<!--body {background-color: #EFECDD;}td{ font-family:"宋体"; font-size:9pt; color=#666666;}.style9 {color: #FFFFFF}-->
+</style></head><body>
+<table width="300" height="100" border="0" cellpadding="0" cellspacing="0">
+<tr><td><p align="center">资料报送表单关联表(CS_SB_ZLBSBDGL)</p></td></tr></table>
+<table width="760" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#FF8800">
+<tr bgcolor="#FFAC75">
+<td width="80" height="26"><div align="center" class="style9">列名</div></td>
+<td width="80"><div align="center" class="style9">汉字名</div></td>
+<td width="80"><div align="center" class="style9">数据类型</div></td>
+<td width="80"><div align="center" class="style9">长度</div></td>
+<td width="80"><div align="center" class="style9">精度</div></td>
+<td width="80"><div align="center" class="style9">非空</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center"><a href="DM_SB_ZLBSXL.html">ZLBSXL_DM</div></td>
+<td><div align="center">资料报送小类代码</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">9</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">ZLBSXLMC</div></td>
+<td><div align="center">资料报送小类名称</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">150</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center"><a href="DM_SB_BSZL.html">BSZL_DM</div></td>
+<td><div align="center">报送资料代码</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">10</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">BSZLMC</div></td>
+<td><div align="center">资料名称</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">300</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center"><a href="DM_GY_CWBBZL.html">CWBBZL_DM</div></td>
+<td><div align="center">财务报表种类代码</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">YXBZ</div></td>
+<td><div align="center">有效标志</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">XYBZ</div></td>
+<td><div align="center">选用标志</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center"><a href="DM_GY_KJZDZZ.html">KJZDZZ_DM</div></td>
+<td><div align="center">会计制度（准则）代码</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">3</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">UUID</div></td>
+<td><div align="center">UUID</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">32</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+</table>
+
+
+   
+<table width="300" height="100" border="0" cellpadding="0" cellspacing="0">
+<tr><td><p align="center">资料报送表单关联表(数据)</p></td></tr></table>
+<table width="760" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#FF8800">
+<tr bgcolor="#FFAC75">
+<td width="80" height="26"><div align="center" class="style9">资料报送小类代码</div></td>
+<td width="80" height="26"><div align="center" class="style9">资料报送小类名称</div></td>
+<td width="80" height="26"><div align="center" class="style9">报送资料代码</div></td>
+<td width="80" height="26"><div align="center" class="style9">资料名称</div></td>
+<td width="80" height="26"><div align="center" class="style9">财务报表种类代码</div></td>
+<td width="80" height="26"><div align="center" class="style9">有效标志</div></td>
+<td width="80" height="26"><div align="center" class="style9">选用标志</div></td>
+<td width="80" height="26"><div align="center" class="style9">会计制度（准则）代码</div></td>
+<td width="80" height="26"><div align="center" class="style9">UUID</div></td>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1001042</div></td>
+<td><div align="center">彩票机构会计制度财务报表报送与信息采集</div></td>
+<td><div align="center">ZLA0610227</div></td>
+<td><div align="center">收入支出表（月报）（适用执行彩票机构会计制度的单位）</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">666</div></td>
+<td><div align="center">e85e0a0fbbbd695fe040170a8204231d</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1001042</div></td>
+<td><div align="center">彩票机构会计制度财务报表报送与信息采集</div></td>
+<td><div align="center">ZLA0610228</div></td>
+<td><div align="center">收入支出表（年报)(适用执行彩票机构会计制度的单位）</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">666</div></td>
+<td><div align="center">e85e0a0fbbbd695fe040170a8204231e</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1001042</div></td>
+<td><div align="center">彩票机构会计制度财务报表报送与信息采集</div></td>
+<td><div align="center">ZLA0610229</div></td>
+<td><div align="center">财政专户核拨资金收入支出表（适用执行彩票机构会计制度的单位）</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">666</div></td>
+<td><div align="center">e85e0a0fbbbd695fe040170a8204231f</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1001002</div></td>
+<td><div align="center">企业会计制度财务报表报送与信息采集</div></td>
+<td><div align="center">ZLA0610203</div></td>
+<td><div align="center">《资产负债表（适用执行企业会计制度的企业）》</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">201</div></td>
+<td><div align="center">E85F419E69F97412E040170A82042811</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1001002</div></td>
+<td><div align="center">企业会计制度财务报表报送与信息采集</div></td>
+<td><div align="center">ZLA0610204</div></td>
+<td><div align="center">《利润表（适用执行企业会计制度的企业）》</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">201</div></td>
+<td><div align="center">E85F419E69F97412E040170A82042821</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1001002</div></td>
+<td><div align="center">企业会计制度财务报表报送与信息采集</div></td>
+<td><div align="center">ZLA0610205</div></td>
+<td><div align="center">《利润分配表（适用执行企业会计制度的企业）》</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">201</div></td>
+<td><div align="center">E85F419E69F97412E040170A82042831</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1001002</div></td>
+<td><div align="center">企业会计制度财务报表报送与信息采集</div></td>
+<td><div align="center">ZLA0610206</div></td>
+<td><div align="center">《现金流量表（适用执行企业会计制度的企业）》</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">201</div></td>
+<td><div align="center">E85F419E69F97412E040170A82042841</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1001002</div></td>
+<td><div align="center">企业会计制度财务报表报送与信息采集</div></td>
+<td><div align="center">ZLA0610207</div></td>
+<td><div align="center">《资产减值准备明细表》</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">201</div></td>
+<td><div align="center">E85F419E69F97412E040170A82042851</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1001002</div></td>
+<td><div align="center">企业会计制度财务报表报送与信息采集</div></td>
+<td><div align="center">ZLA0610208</div></td>
+<td><div align="center">《股东权益增减变动表》</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">201</div></td>
+<td><div align="center">E85F419E69F97412E040170A82042861</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1001002</div></td>
+<td><div align="center">企业会计制度财务报表报送与信息采集</div></td>
+<td><div align="center">ZLA0610209</div></td>
+<td><div align="center">《应交增值税明细表（适用于增值税一般纳税人）》</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">201</div></td>
+<td><div align="center">E85F419E69F97412E040170A82042871</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1001002</div></td>
+<td><div align="center">企业会计制度财务报表报送与信息采集</div></td>
+<td><div align="center">ZLA0610210</div></td>
+<td><div align="center">《分部报表（业务分部）》</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">201</div></td>
+<td><div align="center">E85F419E69F97412E040170A82042881</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1001002</div></td>
+<td><div align="center">企业会计制度财务报表报送与信息采集</div></td>
+<td><div align="center">ZLA0610211</div></td>
+<td><div align="center">《分部报表（地区分部）》</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">201</div></td>
+<td><div align="center">E85F419E69F97412E040170A82042891</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1001003</div></td>
+<td><div align="center">小企业会计准则财务报表报送与信息采集</div></td>
+<td><div align="center">ZLA0610212</div></td>
+<td><div align="center">《资产负债表（适用执行小企业准则的企业）》</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">201</div></td>
+<td><div align="center">E85F419E69F97412E040170A82042111</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1001003</div></td>
+<td><div align="center">小企业会计准则财务报表报送与信息采集</div></td>
+<td><div align="center">ZLA0610213</div></td>
+<td><div align="center">《利润表_月报（适用执行小企业准则的企业）》</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">201</div></td>
+<td><div align="center">E85F419E69F97412E040170A82042221</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1001003</div></td>
+<td><div align="center">小企业会计准则财务报表报送与信息采集</div></td>
+<td><div align="center">ZLA0610214</div></td>
+<td><div align="center">《利润表_年报（适用执行小企业会计准则的企业）》</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">201</div></td>
+<td><div align="center">E85F419E69F97412E040170A82042331</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1001003</div></td>
+<td><div align="center">小企业会计准则财务报表报送与信息采集</div></td>
+<td><div align="center">ZLA0610215</div></td>
+<td><div align="center">《现金流量表_月报（适用执行小企业会计准则的企业）》</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">201</div></td>
+<td><div align="center">E85F419E69F97412E040170A82042441</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1001003</div></td>
+<td><div align="center">小企业会计准则财务报表报送与信息采集</div></td>
+<td><div align="center">ZLA0610216</div></td>
+<td><div align="center">《现金流量表_年报（适用执行小企业会计准则的企业）》</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">201</div></td>
+<td><div align="center">E85F419E69F97412E040170A82042551</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1001003</div></td>
+<td><div align="center">小企业会计准则财务报表报送与信息采集</div></td>
+<td><div align="center">ZLA0610217</div></td>
+<td><div align="center">《应交增值税明细表（适用于增值税一般纳税人）》</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">201</div></td>
+<td><div align="center">E85F419E69F97412E040170A82042671</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1001003</div></td>
+<td><div align="center">小企业会计准则财务报表报送与信息采集</div></td>
+<td><div align="center">ZLA0610218</div></td>
+<td><div align="center">《分部报表（业务分部）》</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">201</div></td>
+<td><div align="center">E85F419E69F97412E040170A82042781</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1001003</div></td>
+<td><div align="center">小企业会计准则财务报表报送与信息采集</div></td>
+<td><div align="center">ZLA0610219</div></td>
+<td><div align="center">《分部报表（地区分部）》</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">201</div></td>
+<td><div align="center">E85F419E69F97412E040170A82042S91</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1003001</div></td>
+<td><div align="center">同期资料采集</div></td>
+<td><div align="center">ZLA0610027</div></td>
+<td><div align="center">《企业同期资料》(非定期报送)</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">E85F419E69637412E040170A820428AE</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1003001</div></td>
+<td><div align="center">同期资料采集</div></td>
+<td><div align="center">ZLA0610024</div></td>
+<td><div align="center">《企业同期资料》(定期报送)</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">E85F419E69617412E040170A820428AE</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1003001</div></td>
+<td><div align="center">同期资料采集</div></td>
+<td><div align="center">ZLA0610025</div></td>
+<td><div align="center">《企业功能风险分析表》</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">E85F419E69627412E040170A820428AE</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1001024</div></td>
+<td><div align="center">事业单位会计制度财务报表报送与信息采集</div></td>
+<td><div align="center">ZLA0610087</div></td>
+<td><div align="center">事业单位会计制度财务报表报送与信息采集</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">216</div></td>
+<td><div align="center">E85F429E69A67412E040170A820428AE</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1001018</div></td>
+<td><div align="center">企业会计准则（商业银行）财务报表报送与信息采集</div></td>
+<td><div align="center">ZLA0610012</div></td>
+<td><div align="center">企业会计准则(商业银行)财务报表报送与信息采集</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">908</div></td>
+<td><div align="center">E85F419E6A2F7412E040170A820428AE</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1012001</div></td>
+<td><div align="center">定点联系企业名册信息报送与采集</div></td>
+<td><div align="center">ZLA0610236</div></td>
+<td><div align="center">下属机构清单</div></td>
+<td><div align="center">99</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">900</div></td>
+<td><div align="center">E85F429E69A67412E040170A820428A2</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1012001</div></td>
+<td><div align="center">定点联系企业名册信息报送与采集</div></td>
+<td><div align="center">ZLA0610235</div></td>
+<td><div align="center">定点联系企业名册信息表</div></td>
+<td><div align="center">99</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">900</div></td>
+<td><div align="center">E85F429E69A67412E040170A820428A1</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1001027</div></td>
+<td><div align="center">医院会计制度财务报表报送与信息采集</div></td>
+<td><div align="center">ZLA0610237</div></td>
+<td><div align="center">资产负债表（适用执行医院会计制度的单位）</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">221</div></td>
+<td><div align="center">E85F419E69437412E040170A820C4131</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1001027</div></td>
+<td><div align="center">医院会计制度财务报表报送与信息采集</div></td>
+<td><div align="center">ZLA0610238</div></td>
+<td><div align="center">收入费用总表（适用执行医院会计制度的单位）</div></td>
+<td><div align="center">99</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">221</div></td>
+<td><div align="center">E85F419E69437412E040170A820C4132</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1001027</div></td>
+<td><div align="center">医院会计制度财务报表报送与信息采集</div></td>
+<td><div align="center">ZLA0610239</div></td>
+<td><div align="center">医疗收入费用明细表（适用执行医院会计制度的单位）</div></td>
+<td><div align="center">99</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">221</div></td>
+<td><div align="center">E85F419E69437412E040170A820C4133</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1001027</div></td>
+<td><div align="center">医院会计制度财务报表报送与信息采集</div></td>
+<td><div align="center">ZLA0610240</div></td>
+<td><div align="center">现金流量表（适用执行医院会计制度的单位）</div></td>
+<td><div align="center">3</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">221</div></td>
+<td><div align="center">E85F419E69437412E040170A820C4134</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1001027</div></td>
+<td><div align="center">医院会计制度财务报表报送与信息采集</div></td>
+<td><div align="center">ZLA0610241</div></td>
+<td><div align="center">财政补助收支情况表（适用执行医院会计制度的单位）</div></td>
+<td><div align="center">99</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">221</div></td>
+<td><div align="center">E85F419E69437412E040170A820C4135</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1001015</div></td>
+<td><div align="center">农民专业合作社财务会计制度财务报表报送与信息采集</div></td>
+<td><div align="center">ZLA0610156</div></td>
+<td><div align="center">农民专业合作社财务会计制度财务报表报送与信息采集</div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">223</div></td>
+<td><div align="center">E85F419E69437412E040170A820428AE</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1001023</div></td>
+<td><div align="center">民间非营利组织会计制度财务报表报送与信息采集</div></td>
+<td><div align="center">ZLA0610159</div></td>
+<td><div align="center">民间非营利组织会计制度财务报表报送与信息采集</div></td>
+<td><div align="center">15</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">222</div></td>
+<td><div align="center">E85F419E69447412E040170A820428AE</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1003002</div></td>
+<td><div align="center">单边预约定价安排企业执行情况年度报告</div></td>
+<td><div align="center">ZLA0610029</div></td>
+<td><div align="center">预约定价安排执行情况年度报告</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">E85F419E69647412E040170A820428AE</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1003003</div></td>
+<td><div align="center">双边或多边预约定价安排企业执行情况年度报告</div></td>
+<td><div align="center">ZLA0610030</div></td>
+<td><div align="center">预约定价安排执行情况年度报告</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">E85F419E69657412E040170A820428AE</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1003004</div></td>
+<td><div align="center">单边预约定价安排企业执行情况实质性变化报告</div></td>
+<td><div align="center">ZLA0610031</div></td>
+<td><div align="center">预约定价安排执行情况实质性变化报告</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">E85F419E69BC7412E040170A820428AE</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1003005</div></td>
+<td><div align="center">双边或多边预约定价安排企业执行情况实质性变化报告</div></td>
+<td><div align="center">ZLA0610032</div></td>
+<td><div align="center">预约定价安排执行情况实质性变化报告</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">E85F419E69667412E040170A820428AE</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1003006</div></td>
+<td><div align="center">成本分摊协议备案</div></td>
+<td><div align="center">ZLA0610033</div></td>
+<td><div align="center">企业成本分摊协议</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">E85F419E69677412E040170A820428AE</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1004001</div></td>
+<td><div align="center">减免收入数据采集</div></td>
+<td><div align="center">ZLA0610034</div></td>
+<td><div align="center">企业减免税调查表</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">E85F419E69687412E040170A820428AE</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1004003</div></td>
+<td><div align="center">企业集团数据采集</div></td>
+<td><div align="center">ZLA0610035</div></td>
+<td><div align="center">企业集团数据采集调查表</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">E85F419E69697412E040170A820428AE</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1004003</div></td>
+<td><div align="center">企业集团数据采集</div></td>
+<td><div align="center">ZLA0610036</div></td>
+<td><div align="center">企业集团成员单位税收调查表</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">E85F419E69BD7412E040170A820428AE</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1004002</div></td>
+<td><div align="center">税收资料调查企业数据采集</div></td>
+<td><div align="center">ZLA0610037</div></td>
+<td><div align="center">全国企业税收调查表</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">E85F419E696A7412E040170A820428AE</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1001001</div></td>
+<td><div align="center">企业会计准则（一般企业）财务报表报送与信息采集</div></td>
+<td><div align="center">ZLA0610001</div></td>
+<td><div align="center">企业会计准则(一般企业)财务报表报送与信息采集</div></td>
+<td><div align="center">4</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">101</div></td>
+<td><div align="center">E85F419E699F7412E040170A820428AE</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1001026</div></td>
+<td><div align="center">高等学校会计制度财务报表报送与信息采集</div></td>
+<td><div align="center">ZLA0610082</div></td>
+<td><div align="center">资产负债表（适用执行高等学校会计制度的单位）</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">229</div></td>
+<td><div align="center">E85F419E69A07412E040170A820428AE</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1010001</div></td>
+<td><div align="center">软件产品增值税即征即退进项分摊方式资料报送与信息采集</div></td>
+<td><div align="center">ZLA0610083</div></td>
+<td><div align="center">纳税人进项税额分摊方式备案报告表</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">E85F419E69C87412E040170A820428AE</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1010001</div></td>
+<td><div align="center">软件产品增值税即征即退进项分摊方式资料报送与信息采集</div></td>
+<td><div align="center">ZLA0610084</div></td>
+<td><div align="center">税务登记证副本</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">E85F419E69A17412E040170A820428AE</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1001024</div></td>
+<td><div align="center">事业单位会计制度财务报表报送与信息采集</div></td>
+<td><div align="center">ZLA0610090</div></td>
+<td><div align="center">事业单位会计制度财务报表报送与信息采集</div></td>
+<td><div align="center">15</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">216</div></td>
+<td><div align="center">E85F419E69A37412E040170A820428AE</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1001024</div></td>
+<td><div align="center">事业单位会计制度财务报表报送与信息采集</div></td>
+<td><div align="center">ZLA0610089</div></td>
+<td><div align="center">事业单位会计制度财务报表报送与信息采集</div></td>
+<td><div align="center">32</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">216</div></td>
+<td><div align="center">E85F419E69A47412E040170A820428AE</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1001024</div></td>
+<td><div align="center">事业单位会计制度财务报表报送与信息采集</div></td>
+<td><div align="center">ZLA0610088</div></td>
+<td><div align="center">事业单位会计制度财务报表报送与信息采集</div></td>
+<td><div align="center">30</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">216</div></td>
+<td><div align="center">E85F419E69A57412E040170A820428AE</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1001035</div></td>
+<td><div align="center">小企业会计制度财务报表报送与信息采集</div></td>
+<td><div align="center">ZLA0610093</div></td>
+<td><div align="center">小企业会计制度财务报表报送与信息采集</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">100</div></td>
+<td><div align="center">E85F419E69A77412E040170A820428AE</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1001035</div></td>
+<td><div align="center">小企业会计制度财务报表报送与信息采集</div></td>
+<td><div align="center">ZLA0610092</div></td>
+<td><div align="center">小企业会计制度财务报表报送与信息采集</div></td>
+<td><div align="center">20</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">100</div></td>
+<td><div align="center">E85F419E69A87412E040170A820428AE</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1001035</div></td>
+<td><div align="center">小企业会计制度财务报表报送与信息采集</div></td>
+<td><div align="center">ZLA0610091</div></td>
+<td><div align="center">小企业会计制度财务报表报送与信息采集</div></td>
+<td><div align="center">15</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">100</div></td>
+<td><div align="center">E85F419E69A97412E040170A820428AE</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1001036</div></td>
+<td><div align="center">银行类金融企业财务报表报送与信息采集</div></td>
+<td><div align="center">ZLA0610095</div></td>
+<td><div align="center">银行类金融企业财务报表报送与信息采集</div></td>
+<td><div align="center">15</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">900</div></td>
+<td><div align="center">E85F419E69AA7412E040170A820428AE</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1001037</div></td>
+<td><div align="center">证券类金融企业财务报表报送与信息采集</div></td>
+<td><div align="center">ZLA0610107</div></td>
+<td><div align="center">证券类金融企业财务报表报送与信息采集</div></td>
+<td><div align="center">20</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">901</div></td>
+<td><div align="center">E85F419E69AB7412E040170A820428AE</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1001038</div></td>
+<td><div align="center">保险类金融企业财务报表报送与信息采集</div></td>
+<td><div align="center">ZLA0610117</div></td>
+<td><div align="center">保险类金融企业财务报表报送与信息采集</div></td>
+<td><div align="center">14</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">902</div></td>
+<td><div align="center">E85F419E69AC7412E040170A820428AE</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1001039</div></td>
+<td><div align="center">担保类金融企业财务报表报送与信息采集</div></td>
+<td><div align="center">ZLA0610127</div></td>
+<td><div align="center">担保类金融企业财务报表报送与信息采集</div></td>
+<td><div align="center">11</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">903</div></td>
+<td><div align="center">E85F419E69AD7412E040170A820428AE</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1001040</div></td>
+<td><div align="center">金融控股集团公司类金融企业财务报表报送与信息采集</div></td>
+<td><div align="center">ZLA0610135</div></td>
+<td><div align="center">金融控股集团公司类金融企业财务报表报送与信息采集</div></td>
+<td><div align="center">9</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">904</div></td>
+<td><div align="center">E85F419E69AE7412E040170A820428AE</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1001041</div></td>
+<td><div align="center">金融资产管理公司类金融企业财务报表报送与信息采集</div></td>
+<td><div align="center">ZLA0610143</div></td>
+<td><div align="center">金融资产管理公司类金融企业财务报表报送与信息采集</div></td>
+<td><div align="center">20</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">905</div></td>
+<td><div align="center">E85F419E69AF7412E040170A820428AE</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1011002</div></td>
+<td><div align="center">消费税涉税信息采集</div></td>
+<td><div align="center">ZLA0610151</div></td>
+<td><div align="center">消费税涉税信息采集</div></td>
+<td><div align="center">15</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">907</div></td>
+<td><div align="center">E85F419E69B17412E040170A820428AE</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1011003</div></td>
+<td><div align="center">消费税退（免）税资料报送与信息采集</div></td>
+<td><div align="center">ZLA0610155</div></td>
+<td><div align="center">消费税退（免）税资料报送与信息采集</div></td>
+<td><div align="center">11</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">906</div></td>
+<td><div align="center">E85F419E69B27412E040170A820428AE</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1011001</div></td>
+<td><div align="center">新牌号、新规格卷烟信息的资料采集</div></td>
+<td><div align="center">ZLA0610085</div></td>
+<td><div align="center">新牌号、新规格卷烟信息汇总表</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">E85F419E69C97412E040170A820428AE</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1001004</div></td>
+<td><div align="center">行业会计制度（工业企业）财务报表报送与信息采集</div></td>
+<td><div align="center">ZDYA060024</div></td>
+<td><div align="center">行业会计制度</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">202</div></td>
+<td><div align="center">E85F419E69CA7412E040170A820428AE</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1001004</div></td>
+<td><div align="center">行业会计制度（工业企业）财务报表报送与信息采集</div></td>
+<td><div align="center">ZDYA060025</div></td>
+<td><div align="center">行业会计制度2</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">202</div></td>
+<td><div align="center">E85F419E69CB7412E040170A820428AE</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1004002</div></td>
+<td><div align="center">税收资料调查企业数据采集</div></td>
+<td><div align="center">ZLA0610038</div></td>
+<td><div align="center">全国企业税收调查表（B0企业表）</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">E85F419E69CC7412E040170A820428AE</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1004002</div></td>
+<td><div align="center">税收资料调查企业数据采集</div></td>
+<td><div align="center">ZLA0610039</div></td>
+<td><div align="center">全国企业税收调查表（B1货物劳务表）</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">E85F419E69CD7412E040170A820428AE</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1002001</div></td>
+<td><div align="center">个人股东变动情况报告</div></td>
+<td><div align="center">ZLA0610046</div></td>
+<td><div align="center">个人股东变动情况报告表</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">E85F419E69D37412E040170A820428AE</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1002002</div></td>
+<td><div align="center">个人所得税股权激励报告管理</div></td>
+<td><div align="center">ZLA0610047</div></td>
+<td><div align="center">股票期权计划或实施方案</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">E85F419E69D47412E040170A820428AE</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1002002</div></td>
+<td><div align="center">个人所得税股权激励报告管理</div></td>
+<td><div align="center">ZLA0610048</div></td>
+<td><div align="center">股票期权协议书</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">E85F419E69D57412E040170A820428AE</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1002002</div></td>
+<td><div align="center">个人所得税股权激励报告管理</div></td>
+<td><div align="center">ZLA0610049</div></td>
+<td><div align="center">授权通知书</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">E85F419E69D67412E040170A820428AE</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1002002</div></td>
+<td><div align="center">个人所得税股权激励报告管理</div></td>
+<td><div align="center">ZLA0610050</div></td>
+<td><div align="center">股票期权行权通知书</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">E85F419E69D77412E040170A820428AE</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1002002</div></td>
+<td><div align="center">个人所得税股权激励报告管理</div></td>
+<td><div align="center">ZLA0610051</div></td>
+<td><div align="center">行权调整通知书</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">E85F419E69D87412E040170A820428AE</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1002002</div></td>
+<td><div align="center">个人所得税股权激励报告管理</div></td>
+<td><div align="center">ZLA0610052</div></td>
+<td><div align="center">外籍人员基础信息登记表（扣缴）</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">E85F419E69D97412E040170A820428AE</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1002002</div></td>
+<td><div align="center">个人所得税股权激励报告管理</div></td>
+<td><div align="center">ZLA0610053</div></td>
+<td><div align="center">中国大陆公民（包括华侨）基础信息登记表（扣缴）</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">E85F419E69DA7412E040170A820428AE</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1006001</div></td>
+<td><div align="center">非税控电子器具使用的软件程序说明资料备案</div></td>
+<td><div align="center">ZLA0610054</div></td>
+<td><div align="center">非税控电子器具使用的软件程序说明资料</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">E85F419E69DB7412E040170A820428AE</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1007001</div></td>
+<td><div align="center">土地出（转）让信息采集</div></td>
+<td><div align="center">ZLA0610078</div></td>
+<td><div align="center">土地出（转）让信息表</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">E85F419E69DC7412E040170A820428AE</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1007001</div></td>
+<td><div align="center">土地出（转）让信息采集</div></td>
+<td><div align="center">ZLA0610055</div></td>
+<td><div align="center">土地出让（转让）合同</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">E85F419E69DD7412E040170A820428AE</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1007001</div></td>
+<td><div align="center">土地出（转）让信息采集</div></td>
+<td><div align="center">ZLA0610056</div></td>
+<td><div align="center">土地出让（转让）合同复印件</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">E85F419E69DE7412E040170A820428AE</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1007001</div></td>
+<td><div align="center">土地出（转）让信息采集</div></td>
+<td><div align="center">ZLA0610057</div></td>
+<td><div align="center">土地使用证</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">E85F419E69DF7412E040170A820428AE</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1007001</div></td>
+<td><div align="center">土地出（转）让信息采集</div></td>
+<td><div align="center">ZLA0610058</div></td>
+<td><div align="center">土地使用证复印件</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">E85F419E69E07412E040170A820428AE</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1007003</div></td>
+<td><div align="center">增量房销售信息采集</div></td>
+<td><div align="center">ZLA0610079</div></td>
+<td><div align="center">增量房销售信息表</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">E85F419E69E17412E040170A820428AE</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1007003</div></td>
+<td><div align="center">增量房销售信息采集</div></td>
+<td><div align="center">ZLA0610059</div></td>
+<td><div align="center">房屋销售合同</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">E85F419E69E27412E040170A820428AE</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1007003</div></td>
+<td><div align="center">增量房销售信息采集</div></td>
+<td><div align="center">ZLA0610060</div></td>
+<td><div align="center">增量房销售信息明细</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">E85F419E69E37412E040170A820428AE</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1007004</div></td>
+<td><div align="center">存量房销售信息采集</div></td>
+<td><div align="center">ZLA0610080</div></td>
+<td><div align="center">存量房销售信息表</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">E85F419E69E47412E040170A820428AE</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1007004</div></td>
+<td><div align="center">存量房销售信息采集</div></td>
+<td><div align="center">ZLA0610061</div></td>
+<td><div align="center">房屋转让合同</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">E85F419E69E57412E040170A820428AE</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1007004</div></td>
+<td><div align="center">存量房销售信息采集</div></td>
+<td><div align="center">ZLA0610062</div></td>
+<td><div align="center">房屋转让合同复印件</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">E85F419E69E67412E040170A820428AE</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1007004</div></td>
+<td><div align="center">存量房销售信息采集</div></td>
+<td><div align="center">ZLA0610063</div></td>
+<td><div align="center">房产证</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">E85F419E69E77412E040170A820428AE</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1007004</div></td>
+<td><div align="center">存量房销售信息采集</div></td>
+<td><div align="center">ZLA0610064</div></td>
+<td><div align="center">房产证复印件</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">E85F419E69E87412E040170A820428AE</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1009001</div></td>
+<td><div align="center">非居民享受税收协定待遇执行情况报告</div></td>
+<td><div align="center">ZLA0610067</div></td>
+<td><div align="center">非居民情况报告表</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">E85F419E69EB7412E040170A820428AE</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1009002</div></td>
+<td><div align="center">非居民企业股权转让的资料采集</div></td>
+<td><div align="center">ZLA0610068</div></td>
+<td><div align="center">股权转让合同或协议</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">E85F419E69EC7412E040170A820428AE</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1009002</div></td>
+<td><div align="center">非居民企业股权转让的资料采集</div></td>
+<td><div align="center">ZLA0610069</div></td>
+<td><div align="center">股权转让合同或协议复印件</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">E85F419E69ED7412E040170A820428AE</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1009002</div></td>
+<td><div align="center">非居民企业股权转让的资料采集</div></td>
+<td><div align="center">ZLA0610070</div></td>
+<td><div align="center">境外投资方与其所转让的境外控股公司在资金、经营、购销等方面的关系</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">E85F419E69EE7412E040170A820428AE</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1009002</div></td>
+<td><div align="center">非居民企业股权转让的资料采集</div></td>
+<td><div align="center">ZLA0610071</div></td>
+<td><div align="center">境外投资方所转让的境外控股公司的生产经营、人员、账务、财产等情况</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">E85F419E69EF7412E040170A820428AE</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1009002</div></td>
+<td><div align="center">非居民企业股权转让的资料采集</div></td>
+<td><div align="center">ZLA0610072</div></td>
+<td><div align="center">境外投资方所转让的境外控股公司与中国居民企业在资金、经营、购销等方面的关系</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">E85F419E69F07412E040170A820428AE</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1009002</div></td>
+<td><div align="center">非居民企业股权转让的资料采集</div></td>
+<td><div align="center">ZLA0610073</div></td>
+<td><div align="center">境外投资方设立被转让的境外控股公司具有合理商业目的的说明</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">E85F419E69F17412E040170A820428AE</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1007002</div></td>
+<td><div align="center">税源申报明细报告</div></td>
+<td><div align="center">ZLA0610081</div></td>
+<td><div align="center">税源申报明细报告表</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">E85F419E69F27412E040170A820428AE</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1009002</div></td>
+<td><div align="center">非居民企业股权转让的资料采集</div></td>
+<td><div align="center">ZLA0610074</div></td>
+<td><div align="center">涉及本企业的分部合同</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">E85F419E69F37412E040170A820428AE</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1009002</div></td>
+<td><div align="center">非居民企业股权转让的资料采集</div></td>
+<td><div align="center">ZLA0610075</div></td>
+<td><div align="center">涉及本企业的分部合同复印件</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">E85F419E69F47412E040170A820428AE</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1009002</div></td>
+<td><div align="center">非居民企业股权转让的资料采集</div></td>
+<td><div align="center">ZLA0610076</div></td>
+<td><div align="center">被整体转让的各个控股公司的详细资料</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">E85F419E69F57412E040170A820428AE</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1009002</div></td>
+<td><div align="center">非居民企业股权转让的资料采集</div></td>
+<td><div align="center">ZLA0610077</div></td>
+<td><div align="center">非居民企业特殊性重组书面备案材料</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">E85F419E69F67412E040170A820428AE</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1002001</div></td>
+<td><div align="center">个人股东变动情况报告</div></td>
+<td><div align="center">ZDYA060007</div></td>
+<td><div align="center">个人股东情况变化表</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">E85F419E6A027412E040170A820428AE</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1013001</div></td>
+<td><div align="center">耕地占用税税源明细信息采集</div></td>
+<td><div align="center">ZLA0610242</div></td>
+<td><div align="center">耕地占用税税源明细表</div></td>
+<td><div align="center">99</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">900</div></td>
+<td><div align="center">E85F419E69437412E040170A820C4161</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1001019</div></td>
+<td><div align="center">企业会计准则（证券公司）财务报表报送与信息采集</div></td>
+<td><div align="center">ZLA0610016</div></td>
+<td><div align="center">企业会计准则(证券公司)财务报表报送与信息采集</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">103</div></td>
+<td><div align="center">E85F419E6A337412E040170A820428AE</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1001020</div></td>
+<td><div align="center">企业会计准则（保险公司）财务报表报送与信息采集</div></td>
+<td><div align="center">ZLA0610020</div></td>
+<td><div align="center">企业会计准则(保险公司)财务报表报送与信息采集</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">909</div></td>
+<td><div align="center">E85F419E6A377412E040170A820428AE</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1003001</div></td>
+<td><div align="center">同期资料采集</div></td>
+<td><div align="center">ZLA0610026</div></td>
+<td><div align="center">《企业年度关联交易财务状况分析表》</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">E85F419E69BB7412E040170A820428AE</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1003001</div></td>
+<td><div align="center">同期资料采集</div></td>
+<td><div align="center">ZLA0610230</div></td>
+<td><div align="center">《企业可比性因素分析表》</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">E85F4A9E69BB7412E040170A829428AE</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1008002</div></td>
+<td><div align="center">固定资产加速折旧(扣除)预缴情况统计</div></td>
+<td><div align="center">ZLA0610234</div></td>
+<td><div align="center">固定资产加速折旧(扣除)预缴情况统计</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">E85F419E69627412E0A0170A820428AE</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1005001</div></td>
+<td><div align="center">重点税源监控企业数据采集</div></td>
+<td><div align="center">ZLA0610040</div></td>
+<td><div align="center">重点税源企业基本信息表</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">908</div></td>
+<td><div align="center">E85F419E6A017412E040170A820428A1</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1005001</div></td>
+<td><div align="center">重点税源监控企业数据采集</div></td>
+<td><div align="center">ZLA0610041</div></td>
+<td><div align="center">重点税源企业税收信息（月报）表</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">908</div></td>
+<td><div align="center">E85F419E69CE7412E040170A820428A2</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1005001</div></td>
+<td><div align="center">重点税源监控企业数据采集</div></td>
+<td><div align="center">ZLA0610043</div></td>
+<td><div align="center">重点税源企业财务信息（季报）表</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">908</div></td>
+<td><div align="center">E85F419E69D07412E040170A820428A4</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1005001</div></td>
+<td><div align="center">重点税源监控企业数据采集</div></td>
+<td><div align="center">ZLA0610044</div></td>
+<td><div align="center">重点税源房地产企业开发经营信息（季报）表</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">908</div></td>
+<td><div align="center">E85F419E69D17412E040170A820428A5</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1005001</div></td>
+<td><div align="center">重点税源监控企业数据采集</div></td>
+<td><div align="center">ZLA0610045</div></td>
+<td><div align="center">重点税源企业景气调查问卷（季报）表</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">908</div></td>
+<td><div align="center">E85F419E69D27412E040170A820428A6</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1005001</div></td>
+<td><div align="center">重点税源监控企业数据采集</div></td>
+<td><div align="center">ZLA0610096</div></td>
+<td><div align="center">重点税源企业主要涉税指标分析表</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">908</div></td>
+<td><div align="center">E85F419E6A017412E040170A820428A7</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1005001</div></td>
+<td><div align="center">重点税源监控企业数据采集</div></td>
+<td><div align="center">ZLA0610042</div></td>
+<td><div align="center">重点税源工业企业主要产品与税收信息（月报）表</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">908</div></td>
+<td><div align="center">E85F419E69CF7412E040170A820428A3</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1001031</div></td>
+<td><div align="center">广播事业单位会计制度财务报表报送与信息采集</div></td>
+<td><div align="center">ZLA0610231</div></td>
+<td><div align="center">收入支出表_月报（适用执行广播事业单位会计制度）</div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">223</div></td>
+<td><div align="center">E851119E69437412E040170A820428AE</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1001031</div></td>
+<td><div align="center">广播事业单位会计制度财务报表报送与信息采集</div></td>
+<td><div align="center">ZLA0610232</div></td>
+<td><div align="center">财政补助收入支出表（适用执行广播事业单位会计制度）</div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">223</div></td>
+<td><div align="center">E852219E69437412E040170A820428AE</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1001031</div></td>
+<td><div align="center">广播事业单位会计制度财务报表报送与信息采集</div></td>
+<td><div align="center">ZLA0610233</div></td>
+<td><div align="center">资产负债表界面（适用执行广播事业单位会计制度）</div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">223</div></td>
+<td><div align="center">E853319E69437412E040170A820428AE</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1001034</div></td>
+<td><div align="center">人口和计划生育事业单位会计制度财务报表报送与信息采集</div></td>
+<td><div align="center">ZLA0610163</div></td>
+<td><div align="center">人口和计划生育事业单位会计制度财务报表报送与信息采集</div></td>
+<td><div align="center">4</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">101</div></td>
+<td><div align="center">002D94024C663FACE053EE1712962813</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1001032</div></td>
+<td><div align="center">体育事业单位会计制度财务报表报送与信息采集</div></td>
+<td><div align="center">ZLA0610162</div></td>
+<td><div align="center">66 体育事业单位会计制度财务报表报送与信息采集</div></td>
+<td><div align="center">4</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">101</div></td>
+<td><div align="center">0031625E8A1F63C5E053990C170AF4D3</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1001028</div></td>
+<td><div align="center">科学事业单位会计制度财务报表报送与信息采集</div></td>
+<td><div align="center">ZLA0610164</div></td>
+<td><div align="center">资产负债表</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">229</div></td>
+<td><div align="center">E85F419E69557412E040170A820428DF</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1001030</div></td>
+<td><div align="center">文化事业单位会计制度财务报表报送与信息采集</div></td>
+<td><div align="center">ZLA0610165</div></td>
+<td><div align="center">资产负债表</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">229</div></td>
+<td><div align="center">E85F419E69557412E040170A8204212F</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1001033</div></td>
+<td><div align="center">文物事业单位会计制度财务报表报送与信息采集</div></td>
+<td><div align="center">ZLA0610166</div></td>
+<td><div align="center">资产负债表</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">229</div></td>
+<td><div align="center">E85F419E69557412E040170A8204212F</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1008001</div></td>
+<td><div align="center">海上油气生产设施废弃处置方案备案</div></td>
+<td><div align="center">ZLA0610065</div></td>
+<td><div align="center">海上油气生产设施废弃处置方案备案</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">909</div></td>
+<td><div align="center">E85F419E69E97412E040170A820428AE</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1001001</div></td>
+<td><div align="center">企业会计准则（一般企业）财务报表报送与信息采集</div></td>
+<td><div align="center">ZLA0610005</div></td>
+<td><div align="center">《资产负债表（适用执行企业会计制度的一般企业）》</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">201</div></td>
+<td><div align="center">E85F419E69F97412E040170A82042801</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1001001</div></td>
+<td><div align="center">企业会计准则（一般企业）财务报表报送与信息采集</div></td>
+<td><div align="center">ZLA0610006</div></td>
+<td><div align="center">《利润表（适用执行企业会计制度的一般企业）》</div></td>
+<td><div align="center">02</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">201</div></td>
+<td><div align="center">E85F419E69F97412E040170A82042802</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1001001</div></td>
+<td><div align="center">企业会计准则（一般企业）财务报表报送与信息采集</div></td>
+<td><div align="center">ZLA0610007</div></td>
+<td><div align="center">《现金流量表（适用执行企业会计制度的一般企业）》</div></td>
+<td><div align="center">03</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">201</div></td>
+<td><div align="center">E85F419E69F97412E040170A82042803</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1001001</div></td>
+<td><div align="center">企业会计准则（一般企业）财务报表报送与信息采集</div></td>
+<td><div align="center">ZLA0610008</div></td>
+<td><div align="center">所有者权益变动表</div></td>
+<td><div align="center">04</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">201</div></td>
+<td><div align="center">E85F419E69F97412E040170A82042804</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1001001</div></td>
+<td><div align="center">企业会计准则（一般企业）财务报表报送与信息采集</div></td>
+<td><div align="center">ZLA0610200</div></td>
+<td><div align="center">应交增值税明细表（适用于增值税一般纳税人）</div></td>
+<td><div align="center">11</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">201</div></td>
+<td><div align="center">E85F419E69F97412E040170A82042805</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1001001</div></td>
+<td><div align="center">企业会计准则（一般企业）财务报表报送与信息采集</div></td>
+<td><div align="center">ZLA0610201</div></td>
+<td><div align="center">分部报表（业务分部）</div></td>
+<td><div align="center">12</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">201</div></td>
+<td><div align="center">E85F419E69F97412E040170A82042806</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1001001</div></td>
+<td><div align="center">企业会计准则（一般企业）财务报表报送与信息采集</div></td>
+<td><div align="center">ZLA0610202</div></td>
+<td><div align="center">分部报表（地区分部）</div></td>
+<td><div align="center">13</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">201</div></td>
+<td><div align="center">E85F419E69F97412E040170A82042807</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1001043</div></td>
+<td><div align="center">村集体经济组织财务报表报送与信息采集</div></td>
+<td><div align="center">ZLA0610199</div></td>
+<td><div align="center">村集体经济组织财务报表报送与信息采集</div></td>
+<td><div align="center">44</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">243</div></td>
+<td><div align="center">E85A419E6A227412E240170A824428AE</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1001044</div></td>
+<td><div align="center">个体工商户财务报表报送与信息采集</div></td>
+<td><div align="center">ZLA0610197</div></td>
+<td><div align="center">个体工商户财务报表报送与信息采集</div></td>
+<td><div align="center">85</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">258</div></td>
+<td><div align="center">E85A419E6B237418E2401E0A824428AE</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1001025</div></td>
+<td><div align="center">中小学校会计制度财务报表报送与信息采集</div></td>
+<td><div align="center">ZLA0610220</div></td>
+<td><div align="center">资产负债表（适用执行中小学校会计制度的单位）</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">666</div></td>
+<td><div align="center">e85e0a0fbbbd695fe040170a8204233a</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1001025</div></td>
+<td><div align="center">中小学校会计制度财务报表报送与信息采集</div></td>
+<td><div align="center">ZLA0610221</div></td>
+<td><div align="center">收入支出表_月报（适用执行中小学校会计制度的单位）</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">666</div></td>
+<td><div align="center">e85e0a0fbbbd695fe040170a8204233b</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1001025</div></td>
+<td><div align="center">中小学校会计制度财务报表报送与信息采集</div></td>
+<td><div align="center">ZLA0610222</div></td>
+<td><div align="center">收入支出表_年报（适用执行中小学校会计制度的单位）</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">666</div></td>
+<td><div align="center">e85e0a0fbbbd695fe040170a8204233c</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1001025</div></td>
+<td><div align="center">中小学校会计制度财务报表报送与信息采集</div></td>
+<td><div align="center">ZLA0610223</div></td>
+<td><div align="center">财政补助收入支出表（适用执行中小学校会计制度的单位）</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">666</div></td>
+<td><div align="center">e85e0a0fbbbd695fe040170a8204233d</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1001042</div></td>
+<td><div align="center">彩票机构会计制度财务报表报送与信息采集</div></td>
+<td><div align="center">ZLA0610224</div></td>
+<td><div align="center">资产负债表（适用执行彩票机构会计制度的单位）</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">666</div></td>
+<td><div align="center">e85e0a0fbbbd695fe040170a8204231a</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1001042</div></td>
+<td><div align="center">彩票机构会计制度财务报表报送与信息采集</div></td>
+<td><div align="center">ZLA0610225</div></td>
+<td><div align="center">返奖奖金变动明细表（适用执行彩票机构会计制度的单位）</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">666</div></td>
+<td><div align="center">e85e0a0fbbbd695fe040170a8204231b</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZL1001042</div></td>
+<td><div align="center">彩票机构会计制度财务报表报送与信息采集</div></td>
+<td><div align="center">ZLA0610226</div></td>
+<td><div align="center">彩票资金分配明细表（适用执行彩票机构会计制度的单位）</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">666</div></td>
+<td><div align="center">e85e0a0fbbbd695fe040170a8204231c</div></td>
+<td><div align="center">  </div></td>
+</tr>

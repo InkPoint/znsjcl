@@ -1,0 +1,417 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>票表税比对异常类型分类代码(DM_SB_PBSBDYCLXFL)</title><style type="text/css">
+<!--body {background-color: #EFECDD;}td{ font-family:"宋体"; font-size:9pt; color=#666666;}.style9 {color: #FFFFFF}-->
+</style></head><body>
+<table width="300" height="100" border="0" cellpadding="0" cellspacing="0">
+<tr><td><p align="center">票表税比对异常类型分类代码(DM_SB_PBSBDYCLXFL)</p></td></tr></table>
+<table width="760" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#FF8800">
+<tr bgcolor="#FFAC75">
+<td width="80" height="26"><div align="center" class="style9">列名</div></td>
+<td width="80"><div align="center" class="style9">汉字名</div></td>
+<td width="80"><div align="center" class="style9">数据类型</div></td>
+<td width="80"><div align="center" class="style9">长度</div></td>
+<td width="80"><div align="center" class="style9">精度</div></td>
+<td width="80"><div align="center" class="style9">非空</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center"><a href="DM_SB_PBSBDYCLXFL.html">PBSBDYCLXFL_DM</div></td>
+<td><div align="center">票表税比对异常类型分类代码</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">4</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">PBSBDYCLXFLMC</div></td>
+<td><div align="center">票表税比对异常类型分类名称</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">300</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">XYBZ</div></td>
+<td><div align="center">选用标志</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">YXBZ</div></td>
+<td><div align="center">有效标志</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">SJPBSBDYCLXFL_DM</div></td>
+<td><div align="center">上级票表税比对异常类型分类代码</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">4</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+</table>
+
+
+   
+<table width="300" height="100" border="0" cellpadding="0" cellspacing="0">
+<tr><td><p align="center">票表税比对异常类型分类代码(数据)</p></td></tr></table>
+<table width="760" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#FF8800">
+<tr bgcolor="#FFAC75">
+<td width="80" height="26"><div align="center" class="style9">票表税比对异常类型分类代码</div></td>
+<td width="80" height="26"><div align="center" class="style9">票表税比对异常类型分类名称</div></td>
+<td width="80" height="26"><div align="center" class="style9">选用标志</div></td>
+<td width="80" height="26"><div align="center" class="style9">有效标志</div></td>
+<td width="80" height="26"><div align="center" class="style9">上级票表税比对异常类型分类代码</div></td>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">0100</div></td>
+<td><div align="center">进、销项比对不符</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">0101</div></td>
+<td><div align="center">系统设置造成申报表附表“防伪税控系统开具专用发票金额”栏数据与报税系统采集的“销项金额”或申报表附表“本期认证且本期抵扣”栏数据与认证系统采集的认证相符的发票金额比对不符</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0100</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">0102</div></td>
+<td><div align="center">预征或汇总缴纳增值税纳税人的报税地与申报地或认证地与申报地不一致造成进、销项比对不符</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0100</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">0103</div></td>
+<td><div align="center">延期申报</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0100</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">0200</div></td>
+<td><div align="center">销项比对不符</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">0201</div></td>
+<td><div align="center">已作废的纸质专用发票未在防伪税控开票系统中作废造成销项比对不符</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0200</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">0202</div></td>
+<td><div align="center">防伪税控系统误作废纸质专用发票未作废造成销项比对不符</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0200</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">0203</div></td>
+<td><div align="center">月底开具专用发票后未关闭防伪税控开票系统，次月1日开具的专用发票仍默认上月造成销项比对不符</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0200</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">0204</div></td>
+<td><div align="center">企业防伪税控开票系统的会计区间与会计结算时间不一致造成防伪税控系统开具发票税额与报税系统采集税额的比对不符。</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0200</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">0205</div></td>
+<td><div align="center">前期未开具专用发票但已申报交税的销售收入本期补开专用发票并抄报税造成销项比对不符</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0200</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">0206</div></td>
+<td><div align="center">非防伪税控开具的发票误填“本期开具的防伪税控发票金额”栏造成销项比对不符</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0200</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">0207</div></td>
+<td><div align="center">进料加工复出口转售开具专用发票无须申报造成销项比对异常</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0200</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">0300</div></td>
+<td><div align="center">进项比对不符</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">0301</div></td>
+<td><div align="center">《增值税运输发票抵扣清单》与《增值税纳税申报表附列资料 (表二)》进项比对不符</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0300</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">0302</div></td>
+<td><div align="center">《海关完税凭证抵扣清单》与《增值税纳税申报表附列资料 (表二)》进项比对不符</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0300</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">0303</div></td>
+<td><div align="center">前期进货退出已作进项税转出处理，本期取得红字专用票并认证造成进项比对不符</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0300</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">0304</div></td>
+<td><div align="center">申报期内认证的专用发票进项税额当期申报抵扣造成进项比对不符</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0300</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">0305</div></td>
+<td><div align="center">重复抵扣进项税造成进项比对不符</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0300</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">0306</div></td>
+<td><div align="center">当期认证当期未申报抵扣而在以后月份申报抵扣造成进项比对不符</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0300</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">0307</div></td>
+<td><div align="center">未经认证的进项增值税专用发票申报抵扣了进项税造成进项比对不符</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0300</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">0308</div></td>
+<td><div align="center">非税控发票抵扣税额误填“本期认证相符且本期申报抵扣”栏造成进项比对不符</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0300</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">0309</div></td>
+<td><div align="center">《增值税纳税申报表附列资料（表二）》“红字专用发票通知单注明的进项税额”栏金额与红字增值税专用发票通知单管理系统“开具红字增值税专用发票通知单”中“需要作进项税额转出”税额比对不符</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0300</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">0310</div></td>
+<td><div align="center">《代开发票抵扣清单》与《增值税纳税申报表附列资料 (表二 )》比对不符</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0300</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">0400</div></td>
+<td><div align="center">票表比对不符</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">0401</div></td>
+<td><div align="center">税控系统采集的普通发票实际开票金额与《增值税纳税申报表附列资料（表一）》“开具普通发票”栏金额比对不符</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0400</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">0402</div></td>
+<td><div align="center">税控收款机管理系统采集的普通发票实际开票金额与《增值税纳税申报表（适用于小规模纳税人）》含税销售额比对不符</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0400</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">0403</div></td>
+<td><div align="center">技术问题造成税控采集的普通发票与营业税申报表申报的金额比对不符</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0400</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">0404</div></td>
+<td><div align="center">营业税申报表填报错误造成票表比对不符</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0400</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">0499</div></td>
+<td><div align="center">其他情形税票表比对不符</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0400</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">0500</div></td>
+<td><div align="center">表税比对不符</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">0501</div></td>
+<td><div align="center">未提供《税收通用缴款书》造成表税比对不符</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0500</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">0502</div></td>
+<td><div align="center">“税银联网”、“税库银联网”划款不成功造成表税比对不符</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0500</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">0600</div></td>
+<td><div align="center">未票表比对</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">0601</div></td>
+<td><div align="center">未申报导致未票表比对</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0600</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">0602</div></td>
+<td><div align="center">未报税导致未票表比对</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0600</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">0700</div></td>
+<td><div align="center">消费税退税比对异常（使用企业）</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">0701</div></td>
+<td><div align="center">占全部产品总量的比例异常</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0700</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">0702</div></td>
+<td><div align="center">外购凭证明细表与汉字防伪版增值税专用发票比对异常</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0700</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">0703</div></td>
+<td><div align="center">外购凭证明细表与普通版增值税专用发票比对异常</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0700</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">0704</div></td>
+<td><div align="center">外购凭证明细表与海关信息比对异常</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0700</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">0705</div></td>
+<td><div align="center">涉税信息与退税申请表钩稽关系异常</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0700</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">0800</div></td>
+<td><div align="center">消费税抵税比对异常（生产企业）</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">0801</div></td>
+<td><div align="center">纳税申报表与涉税信息钩稽关系异常</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0800</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">0802</div></td>
+<td><div align="center">超过定点直供计划限额</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0800</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">0803</div></td>
+<td><div align="center">油品数量与汉字防伪版增值税专用发票比对异常</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">0800</div></td>
+<td><div align="center">  </div></td>
+</tr>

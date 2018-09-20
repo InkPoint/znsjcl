@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xalt.sjjg.dao.YlfpMapper">
+
+
+
+    <!--养老封皮默认信息查询-->
+    <select id="selectAll" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+
+                select
+                  t.主管社保机构 zgsbjg
+                  ,sum(nvl(单位缴费基数,0)) dwjfjs
+                  ,sum(nvl(个人缴费基数,0)) grjfjs
+                  ,sum(nvl(缴费人数,0)) jfrs
+                  ,sum(nvl(单位实缴金额,0)) dwsjje
+                  ,sum(nvl(个人实缴金额,0)) grsjje
+                  ,sum(nvl(滞纳金,0))  znj
+                  ,sum(nvl(其它个人缴费,0)) qt
+                  ,sum(nvl(罚款,0)) fk
+                  ,sum(nvl(利息,0)) lx
+                  ,sum(nvl(入库额,0)) rke
+                from DM_ZS_SBF_JKS_ex_yl t
+                group by t.主管社保机构
+
+
+    </select>
+
+
+</mapper>

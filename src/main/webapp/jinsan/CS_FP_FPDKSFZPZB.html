@@ -1,0 +1,3745 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>发票代开税费种配置表(CS_FP_FPDKSFZPZB)</title><style type="text/css">
+<!--body {background-color: #EFECDD;}td{ font-family:"宋体"; font-size:9pt; color=#666666;}.style9 {color: #FFFFFF}-->
+</style></head><body>
+<table width="300" height="100" border="0" cellpadding="0" cellspacing="0">
+<tr><td><p align="center">发票代开税费种配置表(CS_FP_FPDKSFZPZB)</p></td></tr></table>
+<table width="760" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#FF8800">
+<tr bgcolor="#FFAC75">
+<td width="80" height="26"><div align="center" class="style9">列名</div></td>
+<td width="80"><div align="center" class="style9">汉字名</div></td>
+<td width="80"><div align="center" class="style9">数据类型</div></td>
+<td width="80"><div align="center" class="style9">长度</div></td>
+<td width="80"><div align="center" class="style9">精度</div></td>
+<td width="80"><div align="center" class="style9">非空</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">SFHBBZ</div></td>
+<td><div align="center">是否合并标志</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">UUID</div></td>
+<td><div align="center">UUID</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">32</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center"><a href="DM_GY_SWJG.html">SWJG_DM</div></td>
+<td><div align="center">税务机关代码</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">11</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center"><a href="DM_GY_ZSXM.html">ZSXM_DM</div></td>
+<td><div align="center">征收项目代码</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">5</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center"><a href="DM_GY_ZSPM.html">ZSPM_DM</div></td>
+<td><div align="center">征收品目代码</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">9</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center"><a href="DM_GY_ZSXM.html">ZSZSXM_DM</div></td>
+<td><div align="center">主税征收项目代码</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">5</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center"><a href="DM_GY_ZSPM.html">ZSZSPM_DM</div></td>
+<td><div align="center">主税征收品目代码</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">9</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">PZLX</div></td>
+<td><div align="center">配置类型</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">LRRQ</div></td>
+<td><div align="center">录入日期</div></td>
+<td><div align="center">DATE</div></td>
+<td><div align="center">7</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center"><a href="DM_GY_SWRY.html">LRR_DM</div></td>
+<td><div align="center">录入人代码</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">11</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">XGRQ</div></td>
+<td><div align="center">修改日期</div></td>
+<td><div align="center">DATE</div></td>
+<td><div align="center">7</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center"><a href="DM_GY_SWRY.html">XGR_DM</div></td>
+<td><div align="center">修改人代码</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">11</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">ZFSBZ</div></td>
+<td><div align="center">主附税标志||0：主税，1：附税，2：增值税附税，3：消费税附税</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+</table>
+
+
+   
+<table width="300" height="100" border="0" cellpadding="0" cellspacing="0">
+<tr><td><p align="center">发票代开税费种配置表(数据)</p></td></tr></table>
+<table width="760" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#FF8800">
+<tr bgcolor="#FFAC75">
+<td width="80" height="26"><div align="center" class="style9">是否合并标志</div></td>
+<td width="80" height="26"><div align="center" class="style9">UUID</div></td>
+<td width="80" height="26"><div align="center" class="style9">税务机关代码</div></td>
+<td width="80" height="26"><div align="center" class="style9">征收项目代码</div></td>
+<td width="80" height="26"><div align="center" class="style9">征收品目代码</div></td>
+<td width="80" height="26"><div align="center" class="style9">主税征收项目代码</div></td>
+<td width="80" height="26"><div align="center" class="style9">主税征收品目代码</div></td>
+<td width="80" height="26"><div align="center" class="style9">配置类型</div></td>
+<td width="80" height="26"><div align="center" class="style9">录入日期</div></td>
+<td width="80" height="26"><div align="center" class="style9">录入人代码</div></td>
+<td width="80" height="26"><div align="center" class="style9">修改日期</div></td>
+<td width="80" height="26"><div align="center" class="style9">修改人代码</div></td>
+<td width="80" height="26"><div align="center" class="style9">主附税标志||0：主税，1：附税，2：增值税附税，3：消费税附税</div></td>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">023E02E5D09B76D4E053EE171296D081</div></td>
+<td><div align="center">24401000000</div></td>
+<td><div align="center">30200</div></td>
+<td><div align="center">302030200</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">10103%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">04-9月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">023E02E5D09C76D4E053EE171296D081</div></td>
+<td><div align="center">24401000000</div></td>
+<td><div align="center">30100</div></td>
+<td><div align="center">301270200</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">10103%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">04-9月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">023E02E5D09D76D4E053EE171296D081</div></td>
+<td><div align="center">24401000000</div></td>
+<td><div align="center">30100</div></td>
+<td><div align="center">301260100</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">1010306% </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">04-9月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">023E02E5D09E76D4E053EE171296D081</div></td>
+<td><div align="center">24401000000</div></td>
+<td><div align="center">30100</div></td>
+<td><div align="center">301260200</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">101030708</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">04-9月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">023E02E5D09F76D4E053EE171296D081</div></td>
+<td><div align="center">24401830000</div></td>
+<td><div align="center">10109</div></td>
+<td><div align="center">101090102</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">10103%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">04-9月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">023E02E5D0A076D4E053EE171296D081</div></td>
+<td><div align="center">24401830000</div></td>
+<td><div align="center">10109</div></td>
+<td><div align="center">101090202</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">10103%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">04-9月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">023E02E5D0A176D4E053EE171296D081</div></td>
+<td><div align="center">24401830000</div></td>
+<td><div align="center">30200</div></td>
+<td><div align="center">302030200</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">10103%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">04-9月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">023E02E5D0A276D4E053EE171296D081</div></td>
+<td><div align="center">24401830000</div></td>
+<td><div align="center">30100</div></td>
+<td><div align="center">301270200</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">10103%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">04-9月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">023E02E5D0A376D4E053EE171296D081</div></td>
+<td><div align="center">24401830000</div></td>
+<td><div align="center">30100</div></td>
+<td><div align="center">301260100</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">1010306% </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">04-9月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">023E02E5D0A476D4E053EE171296D081</div></td>
+<td><div align="center">24401830000</div></td>
+<td><div align="center">30100</div></td>
+<td><div align="center">301260200</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">101030708</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">04-9月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">023E02E5D0A576D4E053EE171296D081</div></td>
+<td><div align="center">24401840000</div></td>
+<td><div align="center">10109</div></td>
+<td><div align="center">101090102</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">10103%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">04-9月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">023E02E5D0A676D4E053EE171296D081</div></td>
+<td><div align="center">24401840000</div></td>
+<td><div align="center">10109</div></td>
+<td><div align="center">101090202</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">10103%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">04-9月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">023E02E5D0A776D4E053EE171296D081</div></td>
+<td><div align="center">24401840000</div></td>
+<td><div align="center">30200</div></td>
+<td><div align="center">302030200</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">10103%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">04-9月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">023E02E5D0A876D4E053EE171296D081</div></td>
+<td><div align="center">24401840000</div></td>
+<td><div align="center">30100</div></td>
+<td><div align="center">301270200</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">10103%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">04-9月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">023E02E5D0A976D4E053EE171296D081</div></td>
+<td><div align="center">24401840000</div></td>
+<td><div align="center">30100</div></td>
+<td><div align="center">301260100</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">1010306% </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">04-9月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">023E02E5D0AA76D4E053EE171296D081</div></td>
+<td><div align="center">24401840000</div></td>
+<td><div align="center">30100</div></td>
+<td><div align="center">301260200</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">101030708</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">04-9月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">023E02E5D0AB76D4E053EE171296D081</div></td>
+<td><div align="center">24407850000</div></td>
+<td><div align="center">10109</div></td>
+<td><div align="center">101090102</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">10103%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">04-9月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">023E02E5D0B076D4E053EE171296D081</div></td>
+<td><div align="center">24407850000</div></td>
+<td><div align="center">30200</div></td>
+<td><div align="center">302030200</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">10103%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">04-9月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">023E02E5D0B176D4E053EE171296D081</div></td>
+<td><div align="center">24407820000</div></td>
+<td><div align="center">10109</div></td>
+<td><div align="center">101090102</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">10103%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">04-9月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">5700E74CE4A3B411864258BAF6D6CDE1</div></td>
+<td><div align="center">25001040000</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">10103%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">11-9月 -14</div></td>
+<td><div align="center">25000000998</div></td>
+<td><div align="center">12-9月 -14</div></td>
+<td><div align="center">25000000998</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">01AD0028928E321BE053EE171296951A</div></td>
+<td><div align="center">14409820000</div></td>
+<td><div align="center">30203</div></td>
+<td><div align="center">302030100</div></td>
+<td><div align="center">10101</div></td>
+<td><div align="center">10101%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">28-8月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">AEA70B561629EC016AF1F3CCA5183994</div></td>
+<td><div align="center">14408070000</div></td>
+<td><div align="center">30203</div></td>
+<td><div align="center">302030100</div></td>
+<td><div align="center">10101</div></td>
+<td><div align="center">10101%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">19-9月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">AB0F500F088CF800B26D1E0129E2D5B5</div></td>
+<td><div align="center">14408070000</div></td>
+<td><div align="center">30203</div></td>
+<td><div align="center">302030200</div></td>
+<td><div align="center">10102</div></td>
+<td><div align="center">10102%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">19-9月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">886DD85991BC5E5C10C8B3FCB37C0F86</div></td>
+<td><div align="center">14408070000</div></td>
+<td><div align="center">30203</div></td>
+<td><div align="center">302030300</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">10103%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">19-9月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">131A0000000000000000000000000001</div></td>
+<td><div align="center">13100000000</div></td>
+<td><div align="center">30446</div></td>
+<td><div align="center">304460201</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">1010306% </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">02-2月 -16</div></td>
+<td><div align="center">13100000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">131A0000000000000000000000000002</div></td>
+<td><div align="center">13100000000</div></td>
+<td><div align="center">10109</div></td>
+<td><div align="center">101090102</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">1010306% </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">02-2月 -16</div></td>
+<td><div align="center">13100000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">131A0000000000000000000000000003</div></td>
+<td><div align="center">13100000000</div></td>
+<td><div align="center">10109</div></td>
+<td><div align="center">101090202</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">1010306% </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">02-2月 -16</div></td>
+<td><div align="center">13100000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">131A0000000000000000000000000004</div></td>
+<td><div align="center">13100000000</div></td>
+<td><div align="center">10109</div></td>
+<td><div align="center">101090302</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">1010306% </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">02-2月 -16</div></td>
+<td><div align="center">13100000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">131A0000000000000000000000000005</div></td>
+<td><div align="center">13100000000</div></td>
+<td><div align="center">30203</div></td>
+<td><div align="center">302030200</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">1010306% </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">02-2月 -16</div></td>
+<td><div align="center">13100000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">131A0000000000000000000000000006</div></td>
+<td><div align="center">13100000000</div></td>
+<td><div align="center">30216</div></td>
+<td><div align="center">302160200</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">1010306% </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">02-2月 -16</div></td>
+<td><div align="center">13100000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">131A0000000000000000000000000007</div></td>
+<td><div align="center">13100000000</div></td>
+<td><div align="center">30446</div></td>
+<td><div align="center">304460201</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">1010302% </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">02-2月 -16</div></td>
+<td><div align="center">13100000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">131A0000000000000000000000000008</div></td>
+<td><div align="center">13100000000</div></td>
+<td><div align="center">10109</div></td>
+<td><div align="center">101090102</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">1010302% </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">02-2月 -16</div></td>
+<td><div align="center">13100000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">131A0000000000000000000000000009</div></td>
+<td><div align="center">13100000000</div></td>
+<td><div align="center">10109</div></td>
+<td><div align="center">101090202</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">1010302% </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">02-2月 -16</div></td>
+<td><div align="center">13100000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">131A0000000000000000000000000010</div></td>
+<td><div align="center">13100000000</div></td>
+<td><div align="center">10109</div></td>
+<td><div align="center">101090302</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">1010302% </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">02-2月 -16</div></td>
+<td><div align="center">13100000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">131A0000000000000000000000000011</div></td>
+<td><div align="center">13100000000</div></td>
+<td><div align="center">30203</div></td>
+<td><div align="center">302030200</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">1010302% </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">02-2月 -16</div></td>
+<td><div align="center">13100000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">131A0000000000000000000000000012</div></td>
+<td><div align="center">13100000000</div></td>
+<td><div align="center">30216</div></td>
+<td><div align="center">302160200</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">1010302% </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">02-2月 -16</div></td>
+<td><div align="center">13100000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">131A0000000000000000000000000013</div></td>
+<td><div align="center">13100000000</div></td>
+<td><div align="center">30446</div></td>
+<td><div align="center">304460201</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">1010309% </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">02-2月 -16</div></td>
+<td><div align="center">13100000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">131A0000000000000000000000000014</div></td>
+<td><div align="center">13100000000</div></td>
+<td><div align="center">10109</div></td>
+<td><div align="center">101090102</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">1010309% </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">02-2月 -16</div></td>
+<td><div align="center">13100000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">131A0000000000000000000000000015</div></td>
+<td><div align="center">13100000000</div></td>
+<td><div align="center">10109</div></td>
+<td><div align="center">101090202</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">1010309% </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">02-2月 -16</div></td>
+<td><div align="center">13100000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">131A0000000000000000000000000016</div></td>
+<td><div align="center">13100000000</div></td>
+<td><div align="center">10109</div></td>
+<td><div align="center">101090302</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">1010309% </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">02-2月 -16</div></td>
+<td><div align="center">13100000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">131A0000000000000000000000000017</div></td>
+<td><div align="center">13100000000</div></td>
+<td><div align="center">30203</div></td>
+<td><div align="center">302030200</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">1010309% </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">02-2月 -16</div></td>
+<td><div align="center">13100000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">131A0000000000000000000000000018</div></td>
+<td><div align="center">13100000000</div></td>
+<td><div align="center">30216</div></td>
+<td><div align="center">302160200</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">1010309% </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">02-2月 -16</div></td>
+<td><div align="center">13100000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">63FF53E8E6825728F1476A7DF7D58CF6</div></td>
+<td><div align="center">13100000000</div></td>
+<td><div align="center">30446</div></td>
+<td><div align="center">304460201</div></td>
+<td><div align="center">10101</div></td>
+<td><div align="center">10101%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">12-1月 -16</div></td>
+<td><div align="center">13100000000</div></td>
+<td><div align="center">12-1月 -16</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">779EE978EF53D8E7A945368691F75E7D</div></td>
+<td><div align="center">13100000000</div></td>
+<td><div align="center">30446</div></td>
+<td><div align="center">304460201</div></td>
+<td><div align="center">10102</div></td>
+<td><div align="center">10102%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">12-1月 -16</div></td>
+<td><div align="center">13100000000</div></td>
+<td><div align="center">12-1月 -16</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">01AD00289273321BE053EE171296951A</div></td>
+<td><div align="center">14415230000</div></td>
+<td><div align="center">10109</div></td>
+<td><div align="center">101090101</div></td>
+<td><div align="center">10101</div></td>
+<td><div align="center">10101%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">28-8月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">01AD00289274321BE053EE171296951A</div></td>
+<td><div align="center">14415230000</div></td>
+<td><div align="center">10109</div></td>
+<td><div align="center">101090201</div></td>
+<td><div align="center">10101</div></td>
+<td><div align="center">10101%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">28-8月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">01AD00289275321BE053EE171296951A</div></td>
+<td><div align="center">14415230000</div></td>
+<td><div align="center">10109</div></td>
+<td><div align="center">101090301</div></td>
+<td><div align="center">10101</div></td>
+<td><div align="center">10101%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">28-8月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">01AD00289276321BE053EE171296951A</div></td>
+<td><div align="center">14415230000</div></td>
+<td><div align="center">30203</div></td>
+<td><div align="center">302030100</div></td>
+<td><div align="center">10101</div></td>
+<td><div align="center">10101%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">28-8月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">01AD00289277321BE053EE171296951A</div></td>
+<td><div align="center">14415810000</div></td>
+<td><div align="center">10109</div></td>
+<td><div align="center">101090101</div></td>
+<td><div align="center">10101</div></td>
+<td><div align="center">10101%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">28-8月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">01AD00289278321BE053EE171296951A</div></td>
+<td><div align="center">14415810000</div></td>
+<td><div align="center">10109</div></td>
+<td><div align="center">101090201</div></td>
+<td><div align="center">10101</div></td>
+<td><div align="center">10101%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">28-8月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">01AD00289279321BE053EE171296951A</div></td>
+<td><div align="center">14415810000</div></td>
+<td><div align="center">10109</div></td>
+<td><div align="center">101090301</div></td>
+<td><div align="center">10101</div></td>
+<td><div align="center">10101%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">28-8月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">01AD0028927A321BE053EE171296951A</div></td>
+<td><div align="center">14415810000</div></td>
+<td><div align="center">30203</div></td>
+<td><div align="center">302030100</div></td>
+<td><div align="center">10101</div></td>
+<td><div align="center">10101%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">28-8月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">01AD0028927B321BE053EE171296951A</div></td>
+<td><div align="center">14416000000</div></td>
+<td><div align="center">10109</div></td>
+<td><div align="center">101090101</div></td>
+<td><div align="center">10101</div></td>
+<td><div align="center">10101%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">28-8月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">01AD0028927C321BE053EE171296951A</div></td>
+<td><div align="center">14416000000</div></td>
+<td><div align="center">10109</div></td>
+<td><div align="center">101090201</div></td>
+<td><div align="center">10101</div></td>
+<td><div align="center">10101%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">28-8月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">01AD0028927D321BE053EE171296951A</div></td>
+<td><div align="center">14416000000</div></td>
+<td><div align="center">10109</div></td>
+<td><div align="center">101090301</div></td>
+<td><div align="center">10101</div></td>
+<td><div align="center">10101%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">28-8月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">01AD0028927E321BE053EE171296951A</div></td>
+<td><div align="center">14416000000</div></td>
+<td><div align="center">30203</div></td>
+<td><div align="center">302030100</div></td>
+<td><div align="center">10101</div></td>
+<td><div align="center">10101%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">28-8月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">01AD0028927F321BE053EE171296951A</div></td>
+<td><div align="center">14418000000</div></td>
+<td><div align="center">10109</div></td>
+<td><div align="center">101090101</div></td>
+<td><div align="center">10101</div></td>
+<td><div align="center">10101%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">28-8月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">01AD00289280321BE053EE171296951A</div></td>
+<td><div align="center">14418000000</div></td>
+<td><div align="center">10109</div></td>
+<td><div align="center">101090201</div></td>
+<td><div align="center">10101</div></td>
+<td><div align="center">10101%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">28-8月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">01AD00289281321BE053EE171296951A</div></td>
+<td><div align="center">14418000000</div></td>
+<td><div align="center">10109</div></td>
+<td><div align="center">101090301</div></td>
+<td><div align="center">10101</div></td>
+<td><div align="center">10101%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">28-8月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">01AD00289282321BE053EE171296951A</div></td>
+<td><div align="center">14418000000</div></td>
+<td><div align="center">30203</div></td>
+<td><div align="center">302030100</div></td>
+<td><div align="center">10101</div></td>
+<td><div align="center">10101%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">28-8月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">01AD00289283321BE053EE171296951A</div></td>
+<td><div align="center">14419000000</div></td>
+<td><div align="center">10109</div></td>
+<td><div align="center">101090101</div></td>
+<td><div align="center">10101</div></td>
+<td><div align="center">10101%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">28-8月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">01AD00289284321BE053EE171296951A</div></td>
+<td><div align="center">14419000000</div></td>
+<td><div align="center">10109</div></td>
+<td><div align="center">101090201</div></td>
+<td><div align="center">10101</div></td>
+<td><div align="center">10101%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">28-8月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">01AD00289285321BE053EE171296951A</div></td>
+<td><div align="center">14419000000</div></td>
+<td><div align="center">10109</div></td>
+<td><div align="center">101090301</div></td>
+<td><div align="center">10101</div></td>
+<td><div align="center">10101%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">28-8月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">01AD00289286321BE053EE171296951A</div></td>
+<td><div align="center">14419000000</div></td>
+<td><div align="center">30203</div></td>
+<td><div align="center">302030100</div></td>
+<td><div align="center">10101</div></td>
+<td><div align="center">10101%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">28-8月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">01AD00289287321BE053EE171296951A</div></td>
+<td><div align="center">14453000000</div></td>
+<td><div align="center">10109</div></td>
+<td><div align="center">101090101</div></td>
+<td><div align="center">10101</div></td>
+<td><div align="center">10101%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">28-8月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">01AD00289288321BE053EE171296951A</div></td>
+<td><div align="center">14453000000</div></td>
+<td><div align="center">10109</div></td>
+<td><div align="center">101090201</div></td>
+<td><div align="center">10101</div></td>
+<td><div align="center">10101%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">28-8月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">01AD00289289321BE053EE171296951A</div></td>
+<td><div align="center">14453000000</div></td>
+<td><div align="center">10109</div></td>
+<td><div align="center">101090301</div></td>
+<td><div align="center">10101</div></td>
+<td><div align="center">10101%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">28-8月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">01AD0028928A321BE053EE171296951A</div></td>
+<td><div align="center">14453000000</div></td>
+<td><div align="center">30203</div></td>
+<td><div align="center">302030100</div></td>
+<td><div align="center">10101</div></td>
+<td><div align="center">10101%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">28-8月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">90C4DA0413997A171414A01AE09B00C8</div></td>
+<td><div align="center">14408070000</div></td>
+<td><div align="center">30127</div></td>
+<td><div align="center">301270300</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">10103%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">19-9月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">7143960DB2E6D3CC81127C4A81695CEE</div></td>
+<td><div align="center">14408070000</div></td>
+<td><div align="center">30446</div></td>
+<td><div align="center">304460201</div></td>
+<td><div align="center">10101</div></td>
+<td><div align="center">10101%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">19-9月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">A39A6B6774C79F6E6A44EDC917490322</div></td>
+<td><div align="center">14408070000</div></td>
+<td><div align="center">30446</div></td>
+<td><div align="center">304460201</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">10103%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">19-9月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">023E02E5D0E776D4E053EE171296D081</div></td>
+<td><div align="center">24414000000</div></td>
+<td><div align="center">30100</div></td>
+<td><div align="center">301270000</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">1010306% </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">04-9月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">023E02E5D0E876D4E053EE171296D081</div></td>
+<td><div align="center">24414000000</div></td>
+<td><div align="center">10106</div></td>
+<td><div align="center">101060200</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">1010306% </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">04-9月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">023E02E5D0E976D4E053EE171296D081</div></td>
+<td><div align="center">24414000000</div></td>
+<td><div align="center">10104</div></td>
+<td><div align="center">101040001</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">1010306% </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">04-9月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">023E02E5D0EA76D4E053EE171296D081</div></td>
+<td><div align="center">24414000000</div></td>
+<td><div align="center">30100</div></td>
+<td><div align="center">301260100</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">1010306% </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">04-9月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">023E02E5D0EB76D4E053EE171296D081</div></td>
+<td><div align="center">24414000000</div></td>
+<td><div align="center">30138</div></td>
+<td><div align="center">301380283</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">1010306% </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">04-9月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">023E02E5D0EC76D4E053EE171296D081</div></td>
+<td><div align="center">24414000000</div></td>
+<td><div align="center">10109</div></td>
+<td><div align="center">101090102</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">101030707</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">04-9月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">023E02E5D0ED76D4E053EE171296D081</div></td>
+<td><div align="center">24414000000</div></td>
+<td><div align="center">30200</div></td>
+<td><div align="center">302030200</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">101030707</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">04-9月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">023E02E5D0EE76D4E053EE171296D081</div></td>
+<td><div align="center">24414000000</div></td>
+<td><div align="center">30100</div></td>
+<td><div align="center">301270000</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">101030707</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">04-9月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">023E02E5D0EF76D4E053EE171296D081</div></td>
+<td><div align="center">24405000000</div></td>
+<td><div align="center">10109</div></td>
+<td><div align="center">101090102</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">10103%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">04-9月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">023E02E5D0F076D4E053EE171296D081</div></td>
+<td><div align="center">24405000000</div></td>
+<td><div align="center">10109</div></td>
+<td><div align="center">101090202</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">10103%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">04-9月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">023E02E5D0F176D4E053EE171296D081</div></td>
+<td><div align="center">24405000000</div></td>
+<td><div align="center">10109</div></td>
+<td><div align="center">101090302</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">10103%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">04-9月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">023E02E5D0F276D4E053EE171296D081</div></td>
+<td><div align="center">24405000000</div></td>
+<td><div align="center">30100</div></td>
+<td><div align="center">301270200</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">10103%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">04-9月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">023E02E5D0F376D4E053EE171296D081</div></td>
+<td><div align="center">24405000000</div></td>
+<td><div align="center">30200</div></td>
+<td><div align="center">302030200</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">10103%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">04-9月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">023E02E5D0F476D4E053EE171296D081</div></td>
+<td><div align="center">24418810000</div></td>
+<td><div align="center">10109</div></td>
+<td><div align="center">101090202</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">10103%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">04-9月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">023E02E5D0F576D4E053EE171296D081</div></td>
+<td><div align="center">24418810000</div></td>
+<td><div align="center">30100</div></td>
+<td><div align="center">301270200</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">10103%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">04-9月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">023E02E5D0F676D4E053EE171296D081</div></td>
+<td><div align="center">24418810000</div></td>
+<td><div align="center">30200</div></td>
+<td><div align="center">302030200</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">10103%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">04-9月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">023E02E5D08976D4E053EE171296D081</div></td>
+<td><div align="center">24407030000</div></td>
+<td><div align="center">10109</div></td>
+<td><div align="center">101090102</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">10103%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">04-9月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">023E02E5D08A76D4E053EE171296D081</div></td>
+<td><div align="center">24407030000</div></td>
+<td><div align="center">10109</div></td>
+<td><div align="center">101090202</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">10103%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">04-9月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">023E02E5D08B76D4E053EE171296D081</div></td>
+<td><div align="center">24407030000</div></td>
+<td><div align="center">10109</div></td>
+<td><div align="center">101090302</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">10103%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">04-9月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">023E02E5D08C76D4E053EE171296D081</div></td>
+<td><div align="center">24407030000</div></td>
+<td><div align="center">30100</div></td>
+<td><div align="center">301270200</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">10103%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">04-9月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">023E02E5D08D76D4E053EE171296D081</div></td>
+<td><div align="center">24407030000</div></td>
+<td><div align="center">30200</div></td>
+<td><div align="center">302030200</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">10103%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">04-9月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">5585713A7DBD21BE390933C17FBEE0C8</div></td>
+<td><div align="center">13100000000</div></td>
+<td><div align="center">30446</div></td>
+<td><div align="center">304460201</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">10103%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">12-1月 -16</div></td>
+<td><div align="center">13100000000</div></td>
+<td><div align="center">12-1月 -16</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">D6598F38D32E5037311144B3133C189E</div></td>
+<td><div align="center">13100000000</div></td>
+<td><div align="center">10109</div></td>
+<td><div align="center">101090101</div></td>
+<td><div align="center">10101</div></td>
+<td><div align="center">10101%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">12-1月 -16</div></td>
+<td><div align="center">13100000000</div></td>
+<td><div align="center">12-1月 -16</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">C05480DD7330F6955273C0BC62FD37C5</div></td>
+<td><div align="center">13100000000</div></td>
+<td><div align="center">10109</div></td>
+<td><div align="center">101090102</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">10103%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">12-1月 -16</div></td>
+<td><div align="center">13100000000</div></td>
+<td><div align="center">12-1月 -16</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">23A9C0603933F00F2FFDB55ABAEC596A</div></td>
+<td><div align="center">13100000000</div></td>
+<td><div align="center">10109</div></td>
+<td><div align="center">101090103</div></td>
+<td><div align="center">10102</div></td>
+<td><div align="center">10102%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">12-1月 -16</div></td>
+<td><div align="center">13100000000</div></td>
+<td><div align="center">12-1月 -16</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">D1FB8E125AF9D5C7F8D15586C1DB5075</div></td>
+<td><div align="center">13100000000</div></td>
+<td><div align="center">10109</div></td>
+<td><div align="center">101090201</div></td>
+<td><div align="center">10101</div></td>
+<td><div align="center">10101%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">12-1月 -16</div></td>
+<td><div align="center">13100000000</div></td>
+<td><div align="center">12-1月 -16</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">BDF1B2C6A5D6BB0CC458B90BB0DBF8F3</div></td>
+<td><div align="center">13100000000</div></td>
+<td><div align="center">10109</div></td>
+<td><div align="center">101090202</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">10103%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">12-1月 -16</div></td>
+<td><div align="center">13100000000</div></td>
+<td><div align="center">12-1月 -16</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">126E4213B003AB9B3D2874E87B2BEF93</div></td>
+<td><div align="center">13100000000</div></td>
+<td><div align="center">10109</div></td>
+<td><div align="center">101090203</div></td>
+<td><div align="center">10102</div></td>
+<td><div align="center">10102%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">12-1月 -16</div></td>
+<td><div align="center">13100000000</div></td>
+<td><div align="center">12-1月 -16</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">788345242757EBB15EACD46C172964C5</div></td>
+<td><div align="center">13100000000</div></td>
+<td><div align="center">10109</div></td>
+<td><div align="center">101090301</div></td>
+<td><div align="center">10101</div></td>
+<td><div align="center">10101%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">12-1月 -16</div></td>
+<td><div align="center">13100000000</div></td>
+<td><div align="center">12-1月 -16</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">0619C35CC36FB821C3B23F37602B33F3</div></td>
+<td><div align="center">13100000000</div></td>
+<td><div align="center">10109</div></td>
+<td><div align="center">101090302</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">10103%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">12-1月 -16</div></td>
+<td><div align="center">13100000000</div></td>
+<td><div align="center">12-1月 -16</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">1977BD5A3090826490C3C94753F7BCCD</div></td>
+<td><div align="center">13100000000</div></td>
+<td><div align="center">10109</div></td>
+<td><div align="center">101090303</div></td>
+<td><div align="center">10102</div></td>
+<td><div align="center">10102%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">12-1月 -16</div></td>
+<td><div align="center">13100000000</div></td>
+<td><div align="center">12-1月 -16</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">5F850D0AC5304832F1C05B88A6718DC6</div></td>
+<td><div align="center">13100000000</div></td>
+<td><div align="center">30203</div></td>
+<td><div align="center">302030100</div></td>
+<td><div align="center">10101</div></td>
+<td><div align="center">10101%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">12-1月 -16</div></td>
+<td><div align="center">13100000000</div></td>
+<td><div align="center">12-1月 -16</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">9320FD815D1D4EED51E18C63C1E39CED</div></td>
+<td><div align="center">13100000000</div></td>
+<td><div align="center">30203</div></td>
+<td><div align="center">302030200</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">10103%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">12-1月 -16</div></td>
+<td><div align="center">13100000000</div></td>
+<td><div align="center">12-1月 -16</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">A0A61C91D3AD71910ECBCDDAF0B36258</div></td>
+<td><div align="center">13100000000</div></td>
+<td><div align="center">30203</div></td>
+<td><div align="center">302030300</div></td>
+<td><div align="center">10102</div></td>
+<td><div align="center">10102%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">12-1月 -16</div></td>
+<td><div align="center">13100000000</div></td>
+<td><div align="center">12-1月 -16</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ED88008CBD90C16E2A8BF7B9DFF85473</div></td>
+<td><div align="center">13100000000</div></td>
+<td><div align="center">30216</div></td>
+<td><div align="center">302160100</div></td>
+<td><div align="center">10101</div></td>
+<td><div align="center">10101%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">12-1月 -16</div></td>
+<td><div align="center">13100000000</div></td>
+<td><div align="center">12-1月 -16</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">BD3F72C700EBEA15F96B000292D57779</div></td>
+<td><div align="center">13100000000</div></td>
+<td><div align="center">30216</div></td>
+<td><div align="center">302160200</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">10103%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">12-1月 -16</div></td>
+<td><div align="center">13100000000</div></td>
+<td><div align="center">12-1月 -16</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">344A385C91A1136394E464A28AF4FAF6</div></td>
+<td><div align="center">13100000000</div></td>
+<td><div align="center">30216</div></td>
+<td><div align="center">302160300</div></td>
+<td><div align="center">10102</div></td>
+<td><div align="center">10102%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">12-1月 -16</div></td>
+<td><div align="center">13100000000</div></td>
+<td><div align="center">12-1月 -16</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">C06860535EE500BBAA55C8B3AC9AB4C4</div></td>
+<td><div align="center">13100000000</div></td>
+<td><div align="center">30217</div></td>
+<td><div align="center">302170200</div></td>
+<td><div align="center">10101</div></td>
+<td><div align="center">101016404</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">12-1月 -16</div></td>
+<td><div align="center">13100000000</div></td>
+<td><div align="center">12-1月 -16</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">77D3CF92F3FFF8F2DDA756E459587FFD</div></td>
+<td><div align="center">13100000000</div></td>
+<td><div align="center">30217</div></td>
+<td><div align="center">302170100</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">1010306% </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">12-1月 -16</div></td>
+<td><div align="center">13100000000</div></td>
+<td><div align="center">12-1月 -16</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">0BAD258A6FC4B519E5E3AA74CF27AB18</div></td>
+<td><div align="center">13100000000</div></td>
+<td><div align="center">10104</div></td>
+<td><div align="center">101040001</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">1010302% </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">12-1月 -16</div></td>
+<td><div align="center">13100000000</div></td>
+<td><div align="center">12-1月 -16</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">9218AC4696527E95A1B2878D3593ABEE</div></td>
+<td><div align="center">13100000000</div></td>
+<td><div align="center">10111</div></td>
+<td><div align="center">101110200</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">1010309% </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">12-1月 -16</div></td>
+<td><div align="center">13100000000</div></td>
+<td><div align="center">12-1月 -16</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">13100000000000000000000000000002</div></td>
+<td><div align="center">13100000000</div></td>
+<td><div align="center">30446</div></td>
+<td><div align="center">304460201</div></td>
+<td><div align="center">10101</div></td>
+<td><div align="center">101016404</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">12-1月 -16</div></td>
+<td><div align="center">13100000000</div></td>
+<td><div align="center">12-1月 -16</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">13100000000000000000000000000003</div></td>
+<td><div align="center">13100000000</div></td>
+<td><div align="center">10109</div></td>
+<td><div align="center">101090101</div></td>
+<td><div align="center">10101</div></td>
+<td><div align="center">101016404</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">12-1月 -16</div></td>
+<td><div align="center">13100000000</div></td>
+<td><div align="center">12-1月 -16</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">13100000000000000000000000000004</div></td>
+<td><div align="center">13100000000</div></td>
+<td><div align="center">10109</div></td>
+<td><div align="center">101090201</div></td>
+<td><div align="center">10101</div></td>
+<td><div align="center">101016404</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">12-1月 -16</div></td>
+<td><div align="center">13100000000</div></td>
+<td><div align="center">12-1月 -16</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">01AD0028928B321BE053EE171296951A</div></td>
+<td><div align="center">14409820000</div></td>
+<td><div align="center">10109</div></td>
+<td><div align="center">101090101</div></td>
+<td><div align="center">10101</div></td>
+<td><div align="center">10101%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">28-8月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">01AD0028928C321BE053EE171296951A</div></td>
+<td><div align="center">14409820000</div></td>
+<td><div align="center">10109</div></td>
+<td><div align="center">101090201</div></td>
+<td><div align="center">10101</div></td>
+<td><div align="center">10101%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">28-8月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">023E02E5D0CF76D4E053EE171296D081</div></td>
+<td><div align="center">24414000000</div></td>
+<td><div align="center">10109</div></td>
+<td><div align="center">101090102</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">101030201</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">04-9月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">01AD0028928D321BE053EE171296951A</div></td>
+<td><div align="center">14409820000</div></td>
+<td><div align="center">10109</div></td>
+<td><div align="center">101090301</div></td>
+<td><div align="center">10101</div></td>
+<td><div align="center">10101%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">28-8月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">023E02E5D0D076D4E053EE171296D081</div></td>
+<td><div align="center">24414000000</div></td>
+<td><div align="center">30200</div></td>
+<td><div align="center">302030200</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">101030201</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">04-9月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">023E02E5D0D176D4E053EE171296D081</div></td>
+<td><div align="center">24414000000</div></td>
+<td><div align="center">30100</div></td>
+<td><div align="center">301270000</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">101030201</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">04-9月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">023E02E5D0D276D4E053EE171296D081</div></td>
+<td><div align="center">24414000000</div></td>
+<td><div align="center">10106</div></td>
+<td><div align="center">101060200</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">101030201</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">04-9月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">023E02E5D0D376D4E053EE171296D081</div></td>
+<td><div align="center">24414000000</div></td>
+<td><div align="center">10104</div></td>
+<td><div align="center">101040001</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">101030201</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">04-9月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">023E02E5D0D476D4E053EE171296D081</div></td>
+<td><div align="center">24400000000</div></td>
+<td><div align="center">10111</div></td>
+<td><div align="center">%        </div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">10103%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">04-9月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">21-9月 -14</div></td>
+<td><div align="center">24400000000</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">023E02E5D0D576D4E053EE171296D081</div></td>
+<td><div align="center">24414000000</div></td>
+<td><div align="center">10107</div></td>
+<td><div align="center">%        </div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">101030201</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">04-9月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">023E02E5D0D676D4E053EE171296D081</div></td>
+<td><div align="center">24414000000</div></td>
+<td><div align="center">30138</div></td>
+<td><div align="center">301380283</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">101030201</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">04-9月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">023E02E5D0D776D4E053EE171296D081</div></td>
+<td><div align="center">24414000000</div></td>
+<td><div align="center">10109</div></td>
+<td><div align="center">101090102</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">1010305% </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">04-9月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">023E02E5D0D876D4E053EE171296D081</div></td>
+<td><div align="center">24414000000</div></td>
+<td><div align="center">30200</div></td>
+<td><div align="center">302030200</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">1010305% </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">04-9月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">023E02E5D0D976D4E053EE171296D081</div></td>
+<td><div align="center">24414000000</div></td>
+<td><div align="center">30100</div></td>
+<td><div align="center">301270000</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">1010305% </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">04-9月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">023E02E5D0DA76D4E053EE171296D081</div></td>
+<td><div align="center">24414000000</div></td>
+<td><div align="center">10106</div></td>
+<td><div align="center">101060200</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">1010305% </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">04-9月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">023E02E5D0DB76D4E053EE171296D081</div></td>
+<td><div align="center">24414000000</div></td>
+<td><div align="center">10104</div></td>
+<td><div align="center">101040001</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">1010305% </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">04-9月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">023E02E5D0DC76D4E053EE171296D081</div></td>
+<td><div align="center">24400000000</div></td>
+<td><div align="center">10111</div></td>
+<td><div align="center">%        </div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">1010305% </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">04-9月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">21-9月 -14</div></td>
+<td><div align="center">24400000000</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">023E02E5D0DD76D4E053EE171296D081</div></td>
+<td><div align="center">24414000000</div></td>
+<td><div align="center">30138</div></td>
+<td><div align="center">301380283</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">1010305% </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">04-9月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">023E02E5D0DE76D4E053EE171296D081</div></td>
+<td><div align="center">24414000000</div></td>
+<td><div align="center">10109</div></td>
+<td><div align="center">101090102</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">101030799</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">04-9月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">023E02E5D0DF76D4E053EE171296D081</div></td>
+<td><div align="center">24414000000</div></td>
+<td><div align="center">30200</div></td>
+<td><div align="center">302030200</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">101030799</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">04-9月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">023E02E5D0E076D4E053EE171296D081</div></td>
+<td><div align="center">24414000000</div></td>
+<td><div align="center">30100</div></td>
+<td><div align="center">301270000</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">101030799</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">04-9月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">023E02E5D0E176D4E053EE171296D081</div></td>
+<td><div align="center">24414000000</div></td>
+<td><div align="center">10106</div></td>
+<td><div align="center">101060200</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">101030799</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">04-9月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">023E02E5D0E276D4E053EE171296D081</div></td>
+<td><div align="center">24414000000</div></td>
+<td><div align="center">10104</div></td>
+<td><div align="center">101040001</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">101030799</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">04-9月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">023E02E5D0E476D4E053EE171296D081</div></td>
+<td><div align="center">24414000000</div></td>
+<td><div align="center">30138</div></td>
+<td><div align="center">301380283</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">101030799</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">04-9月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">023E02E5D08E76D4E053EE171296D081</div></td>
+<td><div align="center">24407840000</div></td>
+<td><div align="center">10109</div></td>
+<td><div align="center">101090202</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">10103%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">04-9月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">023E02E5D08F76D4E053EE171296D081</div></td>
+<td><div align="center">24407850000</div></td>
+<td><div align="center">10109</div></td>
+<td><div align="center">101090202</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">10103%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">04-9月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">023E02E5D09076D4E053EE171296D081</div></td>
+<td><div align="center">24408000000</div></td>
+<td><div align="center">10109</div></td>
+<td><div align="center">101090202</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">10103%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">04-9月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">023E02E5D09176D4E053EE171296D081</div></td>
+<td><div align="center">24408000000</div></td>
+<td><div align="center">10109</div></td>
+<td><div align="center">101090302</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">10103%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">04-9月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">023E02E5D09276D4E053EE171296D081</div></td>
+<td><div align="center">24408000000</div></td>
+<td><div align="center">30100</div></td>
+<td><div align="center">301270200</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">10103%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">04-9月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">023E02E5D0E876D4SSSSEE171296D081</div></td>
+<td><div align="center">24400000000</div></td>
+<td><div align="center">10106</div></td>
+<td><div align="center">10106%   </div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">10103%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">04-9月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">25D5DB69F5190004E0538C1B47191577</div></td>
+<td><div align="center">23702000000</div></td>
+<td><div align="center">10104</div></td>
+<td><div align="center">10104%   </div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">10103%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">01-12月-15</div></td>
+<td><div align="center">23702000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">25D5DB69F51A0004E0538C1B47191577</div></td>
+<td><div align="center">23702000000</div></td>
+<td><div align="center">10106</div></td>
+<td><div align="center">10106%   </div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">10103%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">01-12月-15</div></td>
+<td><div align="center">23702000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">25D5DB69F51B0004E0538C1B47191577</div></td>
+<td><div align="center">23702000000</div></td>
+<td><div align="center">10109</div></td>
+<td><div align="center">10109%   </div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">10103%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">01-12月-15</div></td>
+<td><div align="center">23702000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">25D5DB69F51C0004E0538C1B47191577</div></td>
+<td><div align="center">23702000000</div></td>
+<td><div align="center">10110</div></td>
+<td><div align="center">10110%   </div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">101030707</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">01-12月-15</div></td>
+<td><div align="center">23702000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">25D5DB69F51D0004E0538C1B47191577</div></td>
+<td><div align="center">23702000000</div></td>
+<td><div align="center">10111</div></td>
+<td><div align="center">10111%   </div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">10103%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">01-12月-15</div></td>
+<td><div align="center">23702000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">25D5DB69F51E0004E0538C1B47191577</div></td>
+<td><div align="center">23702000000</div></td>
+<td><div align="center">30203</div></td>
+<td><div align="center">30203%   </div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">10103%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">01-12月-15</div></td>
+<td><div align="center">23702000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">25D5DB69F51F0004E0538C1B47191577</div></td>
+<td><div align="center">23702000000</div></td>
+<td><div align="center">30216</div></td>
+<td><div align="center">30216%   </div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">10103%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">01-12月-15</div></td>
+<td><div align="center">23702000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">25D5DB69F5200004E0538C1B47191577</div></td>
+<td><div align="center">23702000000</div></td>
+<td><div align="center">30217</div></td>
+<td><div align="center">302170100</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">1010306% </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">01-12月-15</div></td>
+<td><div align="center">23702000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">25D5DB69F5210004E0538C1B47191577</div></td>
+<td><div align="center">23702000000</div></td>
+<td><div align="center">10112</div></td>
+<td><div align="center">10112%   </div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">10103%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">01-12月-15</div></td>
+<td><div align="center">23702000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">25D5DB69F5220004E0538C1B47191577</div></td>
+<td><div align="center">23702000000</div></td>
+<td><div align="center">10113</div></td>
+<td><div align="center">10113%   </div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">10103%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">01-12月-15</div></td>
+<td><div align="center">23702000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">25D5DB69F5230004E0538C1B47191577</div></td>
+<td><div align="center">23702000000</div></td>
+<td><div align="center">30221</div></td>
+<td><div align="center">30221%   </div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">10103%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">01-12月-15</div></td>
+<td><div align="center">23702000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">13100000000000000000000000000005</div></td>
+<td><div align="center">13100000000</div></td>
+<td><div align="center">10109</div></td>
+<td><div align="center">101090301</div></td>
+<td><div align="center">10101</div></td>
+<td><div align="center">101016404</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">12-1月 -16</div></td>
+<td><div align="center">13100000000</div></td>
+<td><div align="center">12-1月 -16</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">13100000000000000000000000000006</div></td>
+<td><div align="center">13100000000</div></td>
+<td><div align="center">30203</div></td>
+<td><div align="center">302030100</div></td>
+<td><div align="center">10101</div></td>
+<td><div align="center">101016404</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">12-1月 -16</div></td>
+<td><div align="center">13100000000</div></td>
+<td><div align="center">12-1月 -16</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">13100000000000000000000000000007</div></td>
+<td><div align="center">13100000000</div></td>
+<td><div align="center">30216</div></td>
+<td><div align="center">302160100</div></td>
+<td><div align="center">10101</div></td>
+<td><div align="center">101016404</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">12-1月 -16</div></td>
+<td><div align="center">13100000000</div></td>
+<td><div align="center">12-1月 -16</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">DC97692936ECCE8CC5139EDB230DD8EC</div></td>
+<td><div align="center">25001040000</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">10103%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">12-9月 -14</div></td>
+<td><div align="center">25000000998</div></td>
+<td><div align="center">12-9月 -14</div></td>
+<td><div align="center">25000000998</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">A57C642D135B392B97F2ECE499C7BD33</div></td>
+<td><div align="center">25000000000</div></td>
+<td><div align="center">10104</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">1%       </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">06-9月 -14</div></td>
+<td><div align="center">25000000998</div></td>
+<td><div align="center">12-9月 -14</div></td>
+<td><div align="center">25000000998</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">96E77C54823659D94610C0FCC12E1456</div></td>
+<td><div align="center">25000000000</div></td>
+<td><div align="center">10101</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">10101</div></td>
+<td><div align="center">1        </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">12-9月 -14</div></td>
+<td><div align="center">25000000998</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">135E5B90FFD7D5C1A6EDA8CB8201C87E</div></td>
+<td><div align="center">25001040000</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">10103%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">09-9月 -14</div></td>
+<td><div align="center">25000000998</div></td>
+<td><div align="center">12-9月 -14</div></td>
+<td><div align="center">25000000998</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">21b6cadbb10f41188d5469ed2c0ea9ae</div></td>
+<td><div align="center">25000000000</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">cvbb     </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">30-8月 -14</div></td>
+<td><div align="center">25000000998</div></td>
+<td><div align="center">06-9月 -14</div></td>
+<td><div align="center">25000000998</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">f50e5ab03f1a4c529cea1b8d76103039</div></td>
+<td><div align="center">25001020000</div></td>
+<td><div align="center">10102</div></td>
+<td><div align="center">10%      </div></td>
+<td><div align="center">10101</div></td>
+<td><div align="center">wt4%%    </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">30-8月 -14</div></td>
+<td><div align="center">25000000998</div></td>
+<td><div align="center">06-9月 -14</div></td>
+<td><div align="center">25000000998</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">15398275ae094afeb1e5ac5b377818b3</div></td>
+<td><div align="center">25001020000</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">23       </div></td>
+<td><div align="center">10102</div></td>
+<td><div align="center">3e       </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">01-9月 -14</div></td>
+<td><div align="center">25000000998</div></td>
+<td><div align="center">06-9月 -14</div></td>
+<td><div align="center">25000000998</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">58933f152ee8496fb3819bb2c964831d</div></td>
+<td><div align="center">25001030000</div></td>
+<td><div align="center">10102</div></td>
+<td><div align="center">1%       </div></td>
+<td><div align="center">10107</div></td>
+<td><div align="center">1%       </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">01-9月 -14</div></td>
+<td><div align="center">25000000998</div></td>
+<td><div align="center">06-9月 -14</div></td>
+<td><div align="center">25000000998</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">023E02E5D0B276D4E053EE171296D081</div></td>
+<td><div align="center">24407820000</div></td>
+<td><div align="center">10109</div></td>
+<td><div align="center">101090302</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">10103%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">04-9月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">023E02E5D0B376D4E053EE171296D081</div></td>
+<td><div align="center">24407820000</div></td>
+<td><div align="center">30200</div></td>
+<td><div align="center">302030200</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">10103%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">04-9月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">023E02E5D0B476D4E053EE171296D081</div></td>
+<td><div align="center">24453000000</div></td>
+<td><div align="center">10109</div></td>
+<td><div align="center">101090102</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">10103%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">04-9月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">023E02E5D0B576D4E053EE171296D081</div></td>
+<td><div align="center">24453000000</div></td>
+<td><div align="center">10109</div></td>
+<td><div align="center">101090202</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">10103%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">04-9月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">023E02E5D0B676D4E053EE171296D081</div></td>
+<td><div align="center">24453000000</div></td>
+<td><div align="center">10109</div></td>
+<td><div align="center">101090302</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">10103%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">04-9月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">023E02E5D0B776D4E053EE171296D081</div></td>
+<td><div align="center">24453000000</div></td>
+<td><div align="center">30100</div></td>
+<td><div align="center">301270200</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">10103%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">04-9月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">023E02E5D0B876D4E053EE171296D081</div></td>
+<td><div align="center">24453000000</div></td>
+<td><div align="center">30200</div></td>
+<td><div align="center">302030200</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">10103%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">04-9月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">023E02E5D0B976D4E053EE171296D081</div></td>
+<td><div align="center">24407830000</div></td>
+<td><div align="center">10109</div></td>
+<td><div align="center">101090302</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">10103%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">04-9月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">023E02E5D0BA76D4E053EE171296D081</div></td>
+<td><div align="center">24407810000</div></td>
+<td><div align="center">10109</div></td>
+<td><div align="center">101090102</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">10103%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">04-9月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">023E02E5D0BB76D4E053EE171296D081</div></td>
+<td><div align="center">24407840000</div></td>
+<td><div align="center">10109</div></td>
+<td><div align="center">101090102</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">10103%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">04-9月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">023E02E5D0BC76D4E053EE171296D081</div></td>
+<td><div align="center">24407840000</div></td>
+<td><div align="center">10109</div></td>
+<td><div align="center">101090302</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">10103%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">04-9月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">023E02E5D0BD76D4E053EE171296D081</div></td>
+<td><div align="center">24407840000</div></td>
+<td><div align="center">30200</div></td>
+<td><div align="center">302030200</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">10103%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">04-9月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">023E02E5D0E576D4E053EE171296D081</div></td>
+<td><div align="center">24414000000</div></td>
+<td><div align="center">10109</div></td>
+<td><div align="center">101090102</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">1010306% </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">04-9月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">023E02E5D0E676D4E053EE171296D081</div></td>
+<td><div align="center">24414000000</div></td>
+<td><div align="center">30200</div></td>
+<td><div align="center">302030200</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">1010306% </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">04-9月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">01AD00289263321BE053EE171296951A</div></td>
+<td><div align="center">14401000000</div></td>
+<td><div align="center">10109</div></td>
+<td><div align="center">101090101</div></td>
+<td><div align="center">10101</div></td>
+<td><div align="center">10101%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">28-8月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">01AD00289264321BE053EE171296951A</div></td>
+<td><div align="center">14401000000</div></td>
+<td><div align="center">10109</div></td>
+<td><div align="center">101090201</div></td>
+<td><div align="center">10101</div></td>
+<td><div align="center">10101%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">28-8月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">01AD00289265321BE053EE171296951A</div></td>
+<td><div align="center">14401000000</div></td>
+<td><div align="center">10109</div></td>
+<td><div align="center">101090301</div></td>
+<td><div align="center">10101</div></td>
+<td><div align="center">10101%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">28-8月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">01AD00289266321BE053EE171296951A</div></td>
+<td><div align="center">14401000000</div></td>
+<td><div align="center">30203</div></td>
+<td><div align="center">302030100</div></td>
+<td><div align="center">10101</div></td>
+<td><div align="center">10101%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">28-8月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">01AD00289267321BE053EE171296951A</div></td>
+<td><div align="center">14405130000</div></td>
+<td><div align="center">10109</div></td>
+<td><div align="center">101090101</div></td>
+<td><div align="center">10101</div></td>
+<td><div align="center">10101%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">28-8月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">01AD00289268321BE053EE171296951A</div></td>
+<td><div align="center">14405130000</div></td>
+<td><div align="center">10109</div></td>
+<td><div align="center">101090201</div></td>
+<td><div align="center">10101</div></td>
+<td><div align="center">10101%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">28-8月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">01AD00289269321BE053EE171296951A</div></td>
+<td><div align="center">14405130000</div></td>
+<td><div align="center">10109</div></td>
+<td><div align="center">101090301</div></td>
+<td><div align="center">10101</div></td>
+<td><div align="center">10101%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">28-8月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">01AD0028926A321BE053EE171296951A</div></td>
+<td><div align="center">14405130000</div></td>
+<td><div align="center">30203</div></td>
+<td><div align="center">302030100</div></td>
+<td><div align="center">10101</div></td>
+<td><div align="center">10101%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">28-8月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">01AD0028926B321BE053EE171296951A</div></td>
+<td><div align="center">14408070000</div></td>
+<td><div align="center">10109</div></td>
+<td><div align="center">101090101</div></td>
+<td><div align="center">10101</div></td>
+<td><div align="center">10101%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">28-8月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">19-9月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">01AD0028926C321BE053EE171296951A</div></td>
+<td><div align="center">14408070000</div></td>
+<td><div align="center">10109</div></td>
+<td><div align="center">101090201</div></td>
+<td><div align="center">10102</div></td>
+<td><div align="center">10102%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">28-8月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">19-9月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">01AD0028926D321BE053EE171296951A</div></td>
+<td><div align="center">14408070000</div></td>
+<td><div align="center">10109</div></td>
+<td><div align="center">101090301</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">10103%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">28-8月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">19-9月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">01AD0028926E321BE053EE171296951A</div></td>
+<td><div align="center">14408070000</div></td>
+<td><div align="center">30127</div></td>
+<td><div align="center">301270100</div></td>
+<td><div align="center">10101</div></td>
+<td><div align="center">10101%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">28-8月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">19-9月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">01AD0028926F321BE053EE171296951A</div></td>
+<td><div align="center">14415210000</div></td>
+<td><div align="center">10109</div></td>
+<td><div align="center">101090101</div></td>
+<td><div align="center">10101</div></td>
+<td><div align="center">10101%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">28-8月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">01AD00289270321BE053EE171296951A</div></td>
+<td><div align="center">14415210000</div></td>
+<td><div align="center">10109</div></td>
+<td><div align="center">101090201</div></td>
+<td><div align="center">10101</div></td>
+<td><div align="center">10101%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">28-8月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">01AD00289271321BE053EE171296951A</div></td>
+<td><div align="center">14415210000</div></td>
+<td><div align="center">10109</div></td>
+<td><div align="center">101090301</div></td>
+<td><div align="center">10101</div></td>
+<td><div align="center">10101%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">28-8月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">023E02E5D09376D4E053EE171296D081</div></td>
+<td><div align="center">24408000000</div></td>
+<td><div align="center">30200</div></td>
+<td><div align="center">302030200</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">10103%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">04-9月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">023E02E5D09476D4E053EE171296D081</div></td>
+<td><div align="center">24406000000</div></td>
+<td><div align="center">10109</div></td>
+<td><div align="center">101090102</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">10103%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">04-9月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">023E02E5D09576D4E053EE171296D081</div></td>
+<td><div align="center">24407810000</div></td>
+<td><div align="center">10109</div></td>
+<td><div align="center">101090202</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">10103%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">04-9月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">023E02E5D09676D4E053EE171296D081</div></td>
+<td><div align="center">24407810000</div></td>
+<td><div align="center">10109</div></td>
+<td><div align="center">101090302</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">10103%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">04-9月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">023E02E5D09776D4E053EE171296D081</div></td>
+<td><div align="center">24407810000</div></td>
+<td><div align="center">30100</div></td>
+<td><div align="center">301270200</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">10103%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">04-9月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">023E02E5D09876D4E053EE171296D081</div></td>
+<td><div align="center">24407810000</div></td>
+<td><div align="center">30200</div></td>
+<td><div align="center">302030200</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">10103%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">04-9月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">023E02E5D09A76D4E053EE171296D081</div></td>
+<td><div align="center">24401000000</div></td>
+<td><div align="center">10109</div></td>
+<td><div align="center">101090102</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">10103%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">04-9月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">023E02E5D0BE76D4E053EE171296D081</div></td>
+<td><div align="center">24407820000</div></td>
+<td><div align="center">10109</div></td>
+<td><div align="center">101090202</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">10103%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">04-9月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">023E02E5D0BF76D4E053EE171296D081</div></td>
+<td><div align="center">24407850000</div></td>
+<td><div align="center">30100</div></td>
+<td><div align="center">301270200</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">10103%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">04-9月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">023E02E5D0C076D4E053EE171296D081</div></td>
+<td><div align="center">24407830000</div></td>
+<td><div align="center">10109</div></td>
+<td><div align="center">101090102</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">10103%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">04-9月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">023E02E5D0C176D4E053EE171296D081</div></td>
+<td><div align="center">24407830000</div></td>
+<td><div align="center">10109</div></td>
+<td><div align="center">101090202</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">10103%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">04-9月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">023E02E5D0C276D4E053EE171296D081</div></td>
+<td><div align="center">24407830000</div></td>
+<td><div align="center">30100</div></td>
+<td><div align="center">301270200</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">10103%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">04-9月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">023E02E5D0C376D4E053EE171296D081</div></td>
+<td><div align="center">24407830000</div></td>
+<td><div align="center">30200</div></td>
+<td><div align="center">302030200</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">10103%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">04-9月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">023E02E5D0C476D4E053EE171296D081</div></td>
+<td><div align="center">24407820000</div></td>
+<td><div align="center">30100</div></td>
+<td><div align="center">301270200</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">10103%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">04-9月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">023E02E5D0C576D4E053EE171296D081</div></td>
+<td><div align="center">24404000000</div></td>
+<td><div align="center">10109</div></td>
+<td><div align="center">101090102</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">10103%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">04-9月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">023E02E5D0C676D4E053EE171296D081</div></td>
+<td><div align="center">24404000000</div></td>
+<td><div align="center">30100</div></td>
+<td><div align="center">301270200</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">10103%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">04-9月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">023E02E5D0C776D4E053EE171296D081</div></td>
+<td><div align="center">24404000000</div></td>
+<td><div align="center">30200</div></td>
+<td><div align="center">302030200</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">10103%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">04-9月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">023E02E5D0C876D4E053EE171296D081</div></td>
+<td><div align="center">24408000000</div></td>
+<td><div align="center">10109</div></td>
+<td><div align="center">101090102</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">10103%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">04-9月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">023E02E5D0C976D4E053EE171296D081</div></td>
+<td><div align="center">24420000000</div></td>
+<td><div align="center">10109</div></td>
+<td><div align="center">101090102</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">10103%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">04-9月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">023E02E5D0CA76D4E053EE171296D081</div></td>
+<td><div align="center">24420000000</div></td>
+<td><div align="center">10109</div></td>
+<td><div align="center">101090202</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">10103%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">04-9月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">023E02E5D0E376D4E053EE171296D081</div></td>
+<td><div align="center">24400000000</div></td>
+<td><div align="center">10111</div></td>
+<td><div align="center">%        </div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">101030799</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">04-9月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">21-9月 -14</div></td>
+<td><div align="center">24400000000</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">023E02E5D09976D4E053EE171296D081</div></td>
+<td><div align="center">24400000000</div></td>
+<td><div align="center">10109</div></td>
+<td><div align="center">101090102</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">10103%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">04-9月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">023E02E5D0AC76D4E053EE171296D081</div></td>
+<td><div align="center">24400000000</div></td>
+<td><div align="center">10109</div></td>
+<td><div align="center">101090202</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">10103%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">04-9月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">023E02E5D0AD76D4E053EE171296D081</div></td>
+<td><div align="center">24400000000</div></td>
+<td><div align="center">10109</div></td>
+<td><div align="center">101090302</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">10103%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">04-9月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">023E02E5D0AE76D4E053EE171296D081</div></td>
+<td><div align="center">24400000000</div></td>
+<td><div align="center">30127</div></td>
+<td><div align="center">301270200</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">10103%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">04-9月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">023E02E5D0AF76D4E053EE171296D081</div></td>
+<td><div align="center">24400000000</div></td>
+<td><div align="center">30203</div></td>
+<td><div align="center">302030200</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">10103%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">04-9月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">023E02E5D0CB76D4E053EE171296D081</div></td>
+<td><div align="center">24420000000</div></td>
+<td><div align="center">30100</div></td>
+<td><div align="center">301270200</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">10103%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">04-9月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">023E02E5D0CC76D4E053EE171296D081</div></td>
+<td><div align="center">24420000000</div></td>
+<td><div align="center">30200</div></td>
+<td><div align="center">302030200</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">10103%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">04-9月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">023E02E5D0CD76D4E053EE171296D081</div></td>
+<td><div align="center">24420000000</div></td>
+<td><div align="center">10106</div></td>
+<td><div align="center">101060200</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">10103%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">04-9月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">023E02E5D0CE76D4E053EE171296D081</div></td>
+<td><div align="center">24420000000</div></td>
+<td><div align="center">30100</div></td>
+<td><div align="center">301260100</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">1010306% </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">04-9月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">01AD00289272321BE053EE171296951A</div></td>
+<td><div align="center">14415210000</div></td>
+<td><div align="center">30203</div></td>
+<td><div align="center">302030100</div></td>
+<td><div align="center">10101</div></td>
+<td><div align="center">10101%   </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">28-8月 -14</div></td>
+<td><div align="center">14400000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>

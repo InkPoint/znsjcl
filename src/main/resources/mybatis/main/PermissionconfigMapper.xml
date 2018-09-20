@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xalt.main.dao.permissionconfig">
+    <!--人员下拉框-->
+    <select id="selectry" parameterType="java.util.HashMap" resultType="com.xalt.main.model.PermissionVO">
+          select distinct a.user_code id,a.user_name||'('||a.user_code||')' text
+          from acl_user a
+    </select>
+    <!--模块下拉框-->
+    <select id="selectmk" parameterType="java.util.HashMap" resultType="com.xalt.main.model.PermissionVO">
+        select t.modeid id,t.modename text from  znsjcl_dm_modes t  where t.yxbz='Y'
+    </select>
+    <!--功能下拉框-->
+    <select id="selectgn" parameterType="java.util.HashMap" resultType="com.xalt.main.model.PermissionVO">
+         select t.menuid id,t.menuname text from znsjcl_dm_menus t where t.yxbz='Y' and t.moduleid='${svo.modeid}'
+    </select>
+    <!--基本查询-->
+    <select id="selectlist" parameterType="java.util.HashMap" resultType="com.xalt.main.model.PermissionVO">
+        select t4.datauuid  qxid,t1.user_code usercode, t1.user_name username,t3.modename, t2.menuname,t2.baks
+        from   acl_user        t1,
+                znsjcl_dm_menus t2,
+                znsjcl_dm_modes t3,
+                acl_user_qxglmenus  t4
+        where t2.yxbz = 'Y'
+                and t3.yxbz = 'Y'
+                and t4.yxbz = 'Y'
+                and t4.menuid = t2.menuid
+                and t2.moduleid = t3.modeid
+                and t4.userid = t1.user_code
+          <if test="svo.menuid != null">
+           and t2.menuid = #{svo.menuid}
+          </if>
+          <if test="svo.modeid != null">
+            and   t3.modeid = #{svo.modeid}
+          </if>
+          <if test="svo.usercode != null">
+            and  t1.user_code = #{svo.usercode}
+          </if>
+       order by t3.modeid
+    </select>
+    <!--删除方法-->
+    <update id="updatetab" parameterType="java.util.HashMap">
+        update acl_user_qxglmenus t set t.yxbz='N' where t.datauuid = '${qxids}'
+    </update>
+    <!--查看人员未分配的权限信息-->
+    <select id="selectwfplist" parameterType="java.util.HashMap" resultType="com.xalt.main.model.PermissionVO">
+        select a1.username,b1.modename,b1.menuid,b1.menuname ,modeid
+            from (
+            select '111' a,t.user_name username
+              from acl_user t
+             where t.user_code = #{svo.usercode}
+            ) a1,(
+            select '111' b,b.modename,b.modeid, a.menuid, a.menuname
+              from znsjcl_dm_menus a, znsjcl_dm_modes b
+             where a.yxbz = 'Y'
+               and b.yxbz = 'Y'
+               and a.moduleid = b.modeid
+               <if test="svo.modeid != null">
+                   and b.modeid = #{svo.modeid}
+               </if>
+
+                and a.menuid not in (
+                           select t1.menuid
+                            from acl_user_qxglmenus t1
+                            where t1.userid = #{svo.usercode}
+                            and t1.yxbz = 'Y'
+                 )
+             ) b1
+            where a1.a=b1.b
+        order by b1.modeid
+
+
+    </select>
+    <!--添加新的权限-->
+    <insert id="inserttab" parameterType="java.util.HashMap">
+         insert into  acl_user_qxglmenus  (datauuid,mainmenuid,menuid,userid,yxbz,adduser,insertdate)values(sys_guid(),#{mainmenuid},#{menuid},#{usercode},'Y',#{addusercode},sysdate)
+    </insert>
+</mapper>

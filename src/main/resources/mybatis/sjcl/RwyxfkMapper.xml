@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xalt.sjcl.dao.RwyxfkMapper">
+
+    <!--基本分页信息查询-->
+    <select id="selectlist" parameterType="java.util.HashMap" resultType="com.xalt.sjcl.model.RwyxfkVo">
+        select t.lcid,
+        t.rwid,
+        t.rwmc,
+        to_char(t.cjsj, 'yyyy-MM-dd HH24:mi:ss') cjsj,
+        t.cjr,
+        t.rwsm,
+        t.savepath,
+        t.bz,
+        t.wcjd,
+        to_char(t.jzrq,'yyyy-MM-dd HH24:mi:ss') jzrq,
+        t.xyhjid,
+        t.shzt,
+        a.user_name name
+        from znsjcl_sqsp_rwxx t,
+        acl_user a
+        where t.lcid = '103'
+        AND t.shzt='1'
+        and t.cjr = a.user_code
+        <if test="svo.rwmc!=null">
+            and t.rwmc like '%${svo.rwmc}%'
+        </if>
+
+    </select>
+
+
+</mapper>

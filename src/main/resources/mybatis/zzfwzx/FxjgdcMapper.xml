@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xalt.zzfwzx.dao.FxjgdcMapper">
+    <select id="selectList"  parameterType="java.util.HashMap" resultType="com.xalt.zzfwzx.model.FxjgdcVo">
+        select t.taxpayername,
+        t.nsrsbh,
+        t.addr,
+        t.hy,
+        t.zclx,
+        t.orgcode,
+        t.swgly,
+        t.pccode,
+        t.typecode,
+        t.classcode,
+        t.summary,
+        t.taskamount,
+        t.isadd,
+        t.isss,
+        t.bz,
+        t.resultid,
+        t2.SWJGMC
+        from znsjcl_yj_fxjg t,zhpt.dim_dm_gy_swjg t2
+        where t. yxbz = 'Y' and t.orgcode = t2.swjg_dm
+        <if test = "svo.pccode != null">
+            and t.pccode like '%${svo.pccode}%'
+        </if>
+        <if test = "svo.typecode != null">
+            and t.typecode like '%${svo.typecode}%'
+        </if>
+        <if test = "svo.classcode != null">
+            and t.classcode ='${svo.classcode}'
+        </if>
+        <if test = "svo.taxpayername != null">
+            and t.taxpayername like '%${svo.taxpayername}%'
+        </if>
+        <if test = "svo.nsrsbh != null">
+            and t.nsrsbh like '%${svo.nsrsbh}%'
+        </if>
+        <if test = "svo.swjgmc != null">
+            and t.orgcode like '${svo.swjgmc}%'
+        </if>
+    </select>
+
+    <!--指定单位下拉框查询-->
+    <select id="selectfj"  resultType="com.xalt.sjjh.model.DrrwdzVo">
+        select t.swjg_dm id,t.SWJGMC text
+        from zhpt.dim_dm_gy_swjg t
+        where t.JGJC_DM='42'
+        and  t.SWJGBZ='0'
+    </select>
+
+    <!--科所查询-->
+    <select id="selectKs" resultType="com.xalt.zzfwzx.model.FxjgdcVo">
+        SELECT t.swjg_dm id, t.swjgmc text
+        FROM zhpt.dim_dm_gy_swjg t
+        where t.JGJC_DM = '52'
+        and t.swjg_dm LIKE '${svo.fjid}%'
+    </select>
+
+    <!--下发批次下拉框查询-->
+    <select id="selectXfpc" parameterType="com.xalt.zzfwzx.model.FxjgdcVo" resultType="com.xalt.zzfwzx.model.FxjgdcVo">
+        SELECT distinct t.yxbz id, t.pccode text from znsjcl_yj_fxjg t  where t.yxbz='Y'
+    </select>
+
+    <!--分析大类下拉框查询-->
+    <select id="selectFxdl" resultType="com.xalt.zzfwzx.model.FxjgdcVo">
+        select distinct t.yxbz id,t.typecode text from znsjcl_yj_fxjg t  where t.yxbz='Y'
+    </select>
+
+    <!--分析小类下拉框查询-->
+    <select id="selectFxxl" resultType="com.xalt.zzfwzx.model.FxjgdcVo">
+       select distinct t.yxbz id ,t.classcode text from znsjcl_yj_fxjg t  where t.yxbz='Y'
+    </select>
+
+
+</mapper>

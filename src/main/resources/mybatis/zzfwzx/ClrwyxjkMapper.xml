@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xalt.zzfwzx.dao.ClrwyxjkMapper">
+    <select id="selectAll" parameterType="java.util.HashMap" resultType="com.xalt.zzfwzx.model.ClrwyxjkVo">
+        select t.rwid,
+        t.rwmc,
+        t.cjsj,
+        t.clmx clmxdm,
+        t4.mxmc clmx,
+        t1.dxid ybdm,
+        t1.dxmczw || '(' || upper(t1.dxmcyw) || ')' yb,
+        t1.dxmcyw ytable,
+        t3.pc_dm pcdm,
+        t.mbb,
+        t3.pcmc pc,
+        to_char(t.zxsj, 'yyyy-mm-dd HH:mi:ss') zxsj,
+        t.mxid,
+        t.sjx,
+        t5.ztmc yxzt,
+        t.bz
+        from znsjcl_zzfwzx_xtyxrw t,
+        znsjcl_dm_sjdx   t1,
+        znsjcl_dm_pc     t3,
+        znsjcl_dm_clmx   t4,
+        znsjcl_dm_yxzt   t5
+        where t.yb = t1.dxid
+        and t.pc = t3.pc_dm
+        and t.clmx = t4.mxdm
+        and t.yxzt=t5.ztid
+        and t.yxbz = 'Y'
+        <if test = "svo.rwid != null">
+            and t.rwid like '%${svo.rwid}%'
+        </if>
+        <if test = "svo.rwmc != null">
+            and t.rwmc like '%${svo.rwmc}%'
+        </if>
+        --      降序
+        order by t.cjsj desc
+    </select>
+    <!--查询数据(列名查询)-->
+    <select id="viewdata" parameterType="java.util.HashMap" resultType="com.xalt.sjzd.model.DymicVO">
+        select upper(t.sjxmcyw) field,
+        t.sjxmczw title,
+        'left' align,
+        'center' halign
+        from znsjcl_dm_sjx t
+        WHERE t.yxbz = 'Y'
+        and t.sjdxmcyw = '${svo.dxmcyw}'
+        order by t.sjxid desc
+    </select>
+
+    <!--查询数据(列数据查询)-->
+    <select id="querytab" parameterType="java.util.Map" resultType="java.util.Map">
+        select *   from  ${svo.dxmcyw}
+    </select>
+    <!--已匹配数据查看-->
+    <select id="thematcheda" parameterType="java.util.Map" resultType="java.util.Map">
+        select *   from  ${svo.dxmcyw} where djxh1 is not null
+    </select>
+    <select id="thematchedb" parameterType="java.util.Map" resultType="java.util.Map">
+        select *   from  ${svo.dxmcyw} where djxh is not null
+    </select>
+    <!--未匹配数据查看-->
+    <select id="didnotmatcha" parameterType="java.util.Map" resultType="java.util.Map">
+        select *   from  ${svo.dxmcyw} where djxh1 is null
+    </select>
+    <select id="didnotmatchb" parameterType="java.util.Map" resultType="java.util.Map">
+        select *   from  ${svo.dxmcyw} where djxh is null
+    </select>
+    <!--列名称_校检-->
+    <select id="checkcolumn" parameterType="java.util.HashMap" resultType="com.xalt.sjzd.model.SjdxglVo">
+        select t.COLUMN_NAME
+        from user_tab_columns t
+        where t.TABLE_NAME = '${svo.dxmcyw}'
+        and t.COLUMN_NAME = 'DJXH1'
+    </select>
+
+</mapper>

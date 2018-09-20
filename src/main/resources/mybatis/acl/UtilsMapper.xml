@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ts.acl.dao.UtilsMapper" >
+    <!--当前时间-->
+    <select id="getCurDate" resultType="java.util.Map">
+        select to_char(sysdate, 'yyyy-mm-dd') currtime from dual
+    </select>
+
+    <!--当月的第一天-->
+    <select id="getCurDateFd" resultType="java.util.Map">
+        select to_char(trunc(sysdate, 'mm'), 'yyyy-mm-dd') currtime from dual
+    </select>
+</mapper>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xalt.sjjh.dao.RwssfkMapper">
+
+    <!--任务实施进度反馈表格默认信息查询-->
+    <select id="selectlist" parameterType="java.util.HashMap" resultType="com.xalt.sjjh.model.RwssfkVo">
+        select distinct t.lcid,
+        t.rwid,
+        t.rwmc,
+        to_char(t.cjsj, 'yyyy-MM-dd HH24:mi:ss') cjsj,
+        t.rwsm,
+        t.bz,
+        t.wcjd,
+        t.xyhjid,
+        t.shzt,
+        to_char(t.jzrq,'yyyy-MM-dd HH24:mi:ss') jzrq,
+        a.user_name
+        from Znsjcl_Sqsp_Rwxx t, acl_user a
+        where t.lcid = '106'
+        and t.cjr = a.user_code
+        and t.yxbz='Y'
+        and t.shzt = '1'
+        <if test="svo.rwmc!=null">
+            and t.rwmc like '%${svo.rwmc}%'
+        </if>
+        order by cjsj desc
+    </select>
+
+    <!--任务实施细节默认信息查询-->
+    <select id="selectRwssxj_model" parameterType="java.util.HashMap" resultType="com.xalt.sjjh.model.RwssfkVo">
+
+           select t.sqid, t.bzwm, t.bywm, t.bz, t.gxsj, t2.rwid
+           from znsjcl_jh_rwssxj t, Znsjcl_Sqsp_Rwxx t2
+           where t.rwid = t2.rwid
+           and t.yxbz = 'Y'
+           and t2.rwid = '${svo.rwid}'
+        order by gxsj desc
+
+
+    </select>
+
+    <!--完成进度修改-->
+    <update id="updateWcjd" parameterType="java.util.HashMap">
+            update Znsjcl_Sqsp_Rwxx t
+            set t.wcjd =   #{sliding, jdbcType = VARCHAR}
+            where rwid =   #{rwid, jdbcType = VARCHAR}
+    </update>
+
+    <!--任务实施细节添加-->
+    <insert id="insertSsxj" parameterType="java.util.HashMap">
+
+                   insert into znsjcl_jh_rwssxj
+                      (sqid, bzwm, bywm, yxbz, bz, gxsj, rwid)
+                    values
+                      (znsjcl_sqsp_dc.nextval,
+                       '${svo.bzwm}',
+                       '${svo.bywm}',
+                       'Y',
+                       '${svo.bz}',
+                       sysdate,
+                       '${svo.rwid}')
+
+    </insert>
+
+    <!--删除任务实施细节-->
+    <update id="deleteRwssxj" parameterType="java.util.HashMap">
+           update znsjcl_jh_rwssxj t
+            set t.yxbz='N'
+            WHERE sqid='${svo.sqid}'
+    </update>
+
+    <!--表中文名下拉框-->
+    <select id="selectBmc" resultType="com.xalt.sjjh.model.RwssfkVo">
+        select t.dxmcyw id, t.dxmczw text from Znsjcl_Dm_Sjdx t
+        where t.yxbz ='Y'
+    </select>
+
+    <!--校检-->
+    <select id="nameValidation" parameterType="java.util.HashMap" resultType="com.xalt.sjjh.model.RwssfkVo">
+       select * from znsjcl_jh_rwssxj t where t.bzwm='${svo.bzwm}' and t.rwid='${svo.rwid}'
+    </select>
+</mapper>

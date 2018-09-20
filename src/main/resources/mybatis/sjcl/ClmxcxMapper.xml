@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xalt.sjcl.dao.ClmxcxMapper">
+    <select id="selectClmx" parameterType="java.util.HashMap" resultType="com.xalt.sjcl.model.ClmxcxVo">
+        select t.pc,
+        t.bm,
+        t4.dxmczw||'('||t.bm||')' zywbm,
+        t3.pcmc,
+        t4.dxmczw,
+        t.rwid,
+        t.cllx,
+        t.clsjl,
+        t.cll,
+        to_char(t.clsj, 'yyyy-MM-dd hh24:mi:ss') clsj,
+        t.swry_dm swrydm,
+        t1.org_name swjgmc,
+        t2.user_name username
+        from znsjcl_cl_clmxb t, acl_organize t1,acl_user t2,znsjcl_dm_pc t3,(select upper(a.dxmcyw) dxmcyw,a.dxmczw dxmczw from  znsjcl_dm_sjdx a WHERE a.yxbz='Y') t4
+        where t.SWJG_DM = t1.org_code(+)
+        and t.swry_dm =  t2.user_code(+)
+        and t.pc=t3.pc_dm(+)
+        and upper(t.bm)=t4.dxmcyw(+)
+        and t.rwid in(
+        select rwid from znsjcl_jh_xtyxrw where yxbz='Y'
+        )
+        <if test="svo.cllx != null">
+            and t.cllx like '%${svo.cllx}%'
+        </if>
+        <if test="svo.bm != null">
+            and t.bm like '%${svo.bm}%'
+        </if>
+        <if test="svo.dxmczw!=null">
+            and t4.dxmczw LIKE  '%${svo.dxmczw}%'
+        </if>
+        order by clsj desc
+    </select>
+
+
+    <!--根据批次(获取列数据)-->
+    <!--<select id="sjxinfo" parameterType="java.util.HashMap" resultType="com.xalt.sjcl.model.ClmxcxVo">-->
+            <!--select t.pc,-->
+                   <!--t.bm,-->
+                   <!--t.cllx,-->
+                   <!--t.clsj,-->
+                   <!--t.clsjl,-->
+                   <!--t.cll,-->
+                   <!--t.swry_dm,-->
+                   <!--t1.SWJGMC-->
+              <!--from znsjcl_cl_clmxb t, zhpt.dim_dm_gy_swjg t1-->
+
+             <!--where t.SWJG_DM = t1.SWJG_DM and  t.pc = '${svo.pc}'-->
+    <!--</select>-->
+<!--获取这个表的数据总量-->
+   <!-- <select id="sjzl" resultType="java.lang.Object">
+        select count(1) from znsjcl_cl_clmxb
+    </select>-->
+    <!--执行存储过程-->
+    <select id="callprocedure" statementType="CALLABLE">
+         {call  sp_znsjcl_clmxbhtsj()}
+    </select>
+    <!--判断表是否存在-->
+    <select id="hasywbm" parameterType="java.util.HashMap" resultType="java.lang.Object">
+         select count(1) from user_tables t where upper(t.table_name) = upper('${svo.bm}')
+    </select>
+    <!--查看原表的字段-->
+    <select id="ybzdz" parameterType="java.util.HashMap" resultType="com.xalt.sjcl.model.ClmxcxVo">
+        select t.column_name columnname from user_tab_columns t where upper(t.table_name)=upper('${svo.bm}')
+    </select>
+    <!--判断数据项里面是否有原表中的字段-->
+    <select id="sjxhas" parameterType="java.util.HashMap" resultType="java.lang.Object">
+        select count(1) from znsjcl_dm_sjx t where upper(t.sjdxmcyw)=upper('${svo.bm}') and upper(t.sjxmcyw) in (${columns})
+    </select>
+</mapper>

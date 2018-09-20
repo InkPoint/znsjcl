@@ -1,0 +1,880 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xalt.sjjg.dao.SjcpzxMapper">
+
+    <!--基本分页查询-->
+    <select id="selectAll" parameterType="java.util.HashMap" resultType="com.xalt.sjjg.model.CpzxVo">
+        select t.cpid,
+        t.cpmc,
+        t.cpms,
+        t.cpcxjb,
+        t.csid,
+        t.cjrdm  cjr,
+        to_char(t.cjsj, 'yyyy/mm/dd hh24:mi:ss') cjsj,
+        t.cpbtzw,
+        t.cpmxcxlj
+        from znsjcl_sjjg_sjcp t
+        where t.yxbz = 'Y'
+        and t.xssx is not null
+        <if test="svo.cpmc!=null">
+            and t.cpmc like '%${svo.cpmc}%'
+        </if>
+        <if test="svo.ztid!=null">
+            and t.csid = #{svo.ztid}
+        </if>
+        order by xssx
+    </select>
+
+    <!--数据产品处室首页查询-->
+    <select id="cpztlist" parameterType="java.util.HashMap" resultType="com.xalt.sjjg.model.CpzxVo">
+        select ztid,ztmc,ztms from znsjcl_sjjg_sjcpzt where yxbz='Y' ORDER  BY ztid
+    </select>
+
+    <!--查询有数据的处室-->
+    <select id="csidcx" parameterType="java.util.HashMap" resultType="java.lang.String">
+        select decode(count(distinct t.csid),1,'是',0,'否') sfygcs from znsjcl_sjjg_sjcp t where t.yxbz = 'Y' and t.csid=#{svo.ztid}
+    </select>
+
+    <!--产品查询路径-->
+    <select id="selectCpcxjb" parameterType="java.util.Map" resultType="java.util.Map">
+        select t.cpcxjb from znsjcl_sjjg_sjcp t where t.yxbz='Y' and t.cpid='${svo.cpid}'
+    </select>
+
+    <!--导出数据表头查询-->
+    <select id="selectSjbtcx" parameterType="java.util.HashMap" resultType="com.xalt.sjzd.model.SjxVo">
+        select t.sjxmczw,t.sjxmcyw from znsjcl_dm_sjx t where t.sjdxmcyw='${svo.cpid}' order by to_number(t.sjjd)
+    </select>
+
+    <!--查询表头-->
+    <select id="getheader" parameterType="java.util.Map" statementType="CALLABLE">
+        {call  SP_znsjcl_sjcpzx_btpj1(
+             #{svo.dxmcyw,mode=IN,jdbcType=VARCHAR}
+            ,#{svo.columnname,mode=OUT,jdbcType=VARCHAR}
+        )}
+    </select>
+
+    <!--分单位入库-->
+    <select id="selectFdwrk" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+        select rownum      row_number
+                ,swjgmc
+                ,sjje            skrk1
+                ,sjje_sntq    skrk1_sntq
+                ,sjje_1         skrk2
+                ,sjje_1_sntq skrk2_sntq
+        from (
+                    select swjg_dm
+                            ,swjgmc
+                            ,sjje
+                            ,sjje_sntq
+                            ,sjje_1
+                            ,sjje_1_sntq
+                    from (
+                                select c.swjg_dm
+                                        ,c.swjgmc
+                                        ,a.sjje
+                                        ,b.sjje_sntq
+                                        ,a.sjje_1
+                                        ,b.sjje_1_sntq
+                                from (
+                                        select t.swjg_dm
+                                                ,t.swjgmc
+                                                ,round(sum(t.sjje)/10000,2) sjje
+                                                ,round((sum(case when t.zspm_dm not like '1010708%' and t.zsxm_dm not in ('10121','30203') then t.dsbl else 0 end)+sum(case when t.zspm_dm not like '1010708%' and t.zsxm_dm not in ('10121','30203') then t.qxbl else 0 end))/10000,2) sjje_1
+                                        from v_zs_jks_wsz t
+                                        where t.rkrq &gt;= to_date('${svo.qsj}', 'yyyy/mm/dd')
+                                            and t.rkrq &lt;     to_date('${svo.zsj}', 'yyyy/mm/dd')+1
+                                        group by t.swjg_dm,t.swjgmc
+                                ) a,(
+                                        select t.swjg_dm
+                                                ,t.swjgmc
+                                                ,round(sum(t.sjje)/10000,2) sjje_sntq
+                                                ,round((sum(case when t.zspm_dm not like '1010708%' and t.zsxm_dm not in ('10121','30203') then t.dsbl else 0 end)+sum(case when t.zspm_dm not like '1010708%' and t.zsxm_dm not in ('10121','30203') then t.qxbl else 0 end))/10000,2) sjje_1_sntq
+                                        from v_zs_jks_wsz t
+                                        where t.rkrq &gt;= to_date('${svo.qsj}', 'yyyy/mm/dd')+(INTERVAL '-1' YEAR)
+                                            and t.rkrq &lt;     to_date('${svo.zsj}', 'yyyy/mm/dd')+1+(INTERVAL '-1' YEAR)
+                                        group by t.swjg_dm,t.swjgmc
+                                ) b,(
+                                        select t.swjg_dm,t.swjgmc from dim_dm_gy_swjg t where t.swjg_dm like '26101%0000' and t.jgjc_dm='42' and t.yxbz='Y'
+                                ) c
+                                where c.swjg_dm=a.swjg_dm(+)
+                                     and c.swjg_dm=b.swjg_dm(+)
+
+                                union all
+
+                                select '333333' swjg_dm
+                                            ,'合 计'  swjgmc
+                                            ,sum(a.sjje) sjje
+                                            ,sum(b.sjje_sntq) sjje_sntq
+                                            ,sum(a.sjje_1)
+                                            ,sum(b.sjje_1_sntq) sjje_1_sntq
+                                from (
+                                            select t.swjg_dm
+                                                    ,t.swjgmc
+                                                    ,round(sum(t.sjje)/10000,2) sjje
+                                                    ,round((sum(case when t.zspm_dm not like '1010708%' and t.zsxm_dm not in ('10121','30203') then t.dsbl else 0 end)+sum(case when t.zspm_dm not like '1010708%' and t.zsxm_dm not in ('10121','30203') then t.qxbl else 0 end))/10000,2) sjje_1
+                                            from v_zs_jks_wsz t
+                                            where t.rkrq &gt;= to_date('${svo.qsj}', 'yyyy/mm/dd')
+                                                and t.rkrq &lt;     to_date('${svo.zsj}', 'yyyy/mm/dd')+1
+                                            group by t.swjg_dm,t.swjgmc
+                                ) a,(
+                                            select t.swjg_dm
+                                                    ,t.swjgmc
+                                                    ,round(sum(t.sjje)/10000,2) sjje_sntq
+                                                    ,round((sum(case when t.zspm_dm not like '1010708%' and t.zsxm_dm not in ('10121','30203') then t.dsbl else 0 end)+sum(case when t.zspm_dm not like '1010708%' and t.zsxm_dm not in ('10121','30203') then t.qxbl else 0 end))/10000,2) sjje_1_sntq
+                                            from v_zs_jks_wsz t
+                                            where t.rkrq &gt;= to_date('${svo.qsj}', 'yyyy/mm/dd')+(INTERVAL '-1' YEAR)
+                                                and t.rkrq &lt;     to_date('${svo.zsj}', 'yyyy/mm/dd')+1+(INTERVAL '-1' YEAR)
+                                            group by t.swjg_dm,t.swjgmc
+                                ) b,(
+                                        select t.swjg_dm,t.swjgmc from dim_dm_gy_swjg t where t.swjg_dm like '26101%0000' and t.jgjc_dm='42' and t.yxbz='Y'
+                                ) c
+                                where c.swjg_dm=a.swjg_dm(+)
+                                     and c.swjg_dm=b.swjg_dm(+)
+                    )
+                    order by swjg_dm
+        )
+    </select>
+
+    <!--分单位开票-->
+    <select id="selectFdwkp" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+        select rownum      row_number
+                ,swjgmc
+                ,sjje              kpsk_shk
+                ,sjje_sntq     kpsk_shk_sntq
+                ,sjje_1          kpsk_sk
+                ,sjje_1_sntq kpsk_sk_sntq
+        from (
+                    select swjg_dm
+                            ,swjgmc
+                            ,sjje
+                            ,sjje_sntq
+                            ,sjje_1
+                            ,sjje_1_sntq
+                    from (
+                                select c.swjg_dm
+                                          ,c.swjgmc
+                                          ,a.sjje
+                                          ,b.sjje_sntq
+                                          ,a.sjje_1
+                                          ,b.sjje_1_sntq
+                                from (
+                                        select t.swjg_dm
+                                        ,t.swjgmc
+                                        ,round(sum(t.sjje)/10000,2) sjje
+                                        ,round((sum(case when t.zspm_dm not like '1010708%' and t.zsxm_dm not in ('10121','30203') then t.dsbl else 0 end)+sum(case when t.zspm_dm not like '1010708%' and t.zsxm_dm not in ('10121','30203') then t.qxbl else 0 end))/10000,2) sjje_1
+                                        from v_zs_jks_wsz t
+                                        where t.kjrq &gt;= to_date('${svo.qsj}', 'yyyy/mm/dd')
+                                        and t.kjrq &lt;   to_date('${svo.zsj}', 'yyyy/mm/dd')+1
+                                        group by t.swjg_dm,t.swjgmc
+                                ) a,(
+                                        select t.swjg_dm
+                                        ,t.swjgmc
+                                        ,round(sum(t.sjje)/10000,2) sjje_sntq
+                                        ,round((sum(case when t.zspm_dm not like '1010708%' and t.zsxm_dm not in ('10121','30203') then t.dsbl else 0 end)+sum(case when t.zspm_dm not like '1010708%' and t.zsxm_dm not in ('10121','30203') then t.qxbl else 0 end))/10000,2) sjje_1_sntq
+                                        from v_zs_jks_wsz t
+                                        where t.kjrq &gt;= to_date('${svo.qsj}', 'yyyy/mm/dd')+(INTERVAL '-1' YEAR)
+                                        and t.kjrq &lt;   to_date('${svo.zsj}', 'yyyy/mm/dd')+1+(INTERVAL '-1' YEAR)
+                                        group by t.swjg_dm,t.swjgmc
+                                ) b,(
+                                        select t.swjg_dm,t.swjgmc from dim_dm_gy_swjg t where t.swjg_dm like '26101%0000' and t.jgjc_dm='42' and t.yxbz='Y'
+                                ) c
+                                where c.swjg_dm=a.swjg_dm(+)
+                                     and c.swjg_dm=b.swjg_dm(+)
+
+                                union all
+
+                                select '333333' swjg_dm
+                                        ,'合 计'  swjgmc
+                                        ,sum(a.sjje) sjje
+                                        ,sum(b.sjje_sntq) sjje_sntq
+                                        ,sum(a.sjje_1)
+                                        ,sum(b.sjje_1_sntq) sjje_1_sntq
+                                from (
+                                        select t.swjg_dm
+                                        ,t.swjgmc
+                                        ,round(sum(t.sjje)/10000,2) sjje
+                                        ,round((sum(case when t.zspm_dm not like '1010708%' and t.zsxm_dm not in ('10121','30203') then t.dsbl else 0 end)+sum(case when t.zspm_dm not like '1010708%' and t.zsxm_dm not in ('10121','30203') then t.qxbl else 0 end))/10000,2) sjje_1
+                                        from v_zs_jks_wsz t
+                                        where t.kjrq &gt;= to_date('${svo.qsj}', 'yyyy/mm/dd')
+                                        and t.kjrq &lt;   to_date('${svo.zsj}', 'yyyy/mm/dd')+1
+                                        group by t.swjg_dm,t.swjgmc
+                                ) a,(
+                                select t.swjg_dm
+                                        ,t.swjgmc
+                                        ,round(sum(t.sjje)/10000,2) sjje_sntq
+                                        ,round((sum(case when t.zspm_dm not like '1010708%' and t.zsxm_dm not in ('10121','30203') then t.dsbl else 0 end)+sum(case when t.zspm_dm not like '1010708%' and t.zsxm_dm not in ('10121','30203') then t.qxbl else 0 end))/10000,2) sjje_1_sntq
+                                        from v_zs_jks_wsz t
+                                        where t.kjrq &gt;= to_date('${svo.qsj}', 'yyyy/mm/dd')+(INTERVAL '-1' YEAR)
+                                        and t.kjrq &lt;   to_date('${svo.zsj}', 'yyyy/mm/dd')+1+(INTERVAL '-1' YEAR)
+                                        group by t.swjg_dm,t.swjgmc
+                                ) b,(
+                                        select t.swjg_dm,t.swjgmc from dim_dm_gy_swjg t where t.swjg_dm like '26101%0000' and t.jgjc_dm='42' and t.yxbz='Y'
+                                ) c
+                                where c.swjg_dm=a.swjg_dm(+)
+                                     and c.swjg_dm=b.swjg_dm(+)
+                    )
+                    order by swjg_dm
+        )
+    </select>
+
+    <!--入库省口-->
+    <select id="selectRkshk" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+        select rownum   row_number
+                ,zsxmmc   zsxm
+                ,sjje         skrk_xj
+                ,sjje_sntq skrk_xj_sntq
+                ,zybl         skrk_zy
+                ,zybl_sntq skrk_zy_sntq
+                ,ssbl         skrk_ss
+                ,ssbl_sntq skrk_ss_sntq
+                ,dsbl         skrk_ds
+                ,dsbl_sntq skrk_ds_sntq
+                ,qxbl         skrk_qx
+                ,qxbl_sntq skrk_qx_sntq
+        from (
+                    select zsxm_dm,zsxmmc,sjje,sjje_sntq,zybl,zybl_sntq,ssbl,ssbl_sntq,dsbl,dsbl_sntq,qxbl,qxbl_sntq
+                    from (
+                                select a.zsxm_dm
+                                        ,a.zsxmmc
+                                        ,a.sjje
+                                        ,nvl(b.sjje_sntq,0) sjje_sntq
+                                        ,a.zybl
+                                        ,nvl(b.zybl_sntq,0) zybl_sntq
+                                        ,a.ssbl
+                                        ,nvl(b.ssbl_sntq,0) ssbl_sntq
+                                        ,a.dsbl
+                                        ,nvl(b.dsbl_sntq,0) dsbl_sntq
+                                        ,a.qxbl
+                                        ,nvl(b.qxbl_sntq,0) qxbl_sntq
+                                from (
+                                            select t.zsxm_dm
+                                                    ,t.zsxmmc
+                                                    ,round(sum(t.sjje)/10000,2) sjje
+                                                    ,round(sum(t.zybl)/10000,2) zybl
+                                                    ,round(sum(t.ssbl)/10000,2) ssbl
+                                                    ,round(sum(t.dsbl)/10000,2) dsbl
+                                                    ,round(sum(t.qxbl)/10000,2) qxbl
+                                            from v_zs_jks_wsz t
+                                            where t.rkrq &gt;= to_date('${svo.qsj}', 'yyyy/mm/dd')
+                                                and t.rkrq &lt;     to_date('${svo.zsj}', 'yyyy/mm/dd')+1
+                                            group by t.zsxm_dm,t.zsxmmc
+                                            union all
+                                            select substr(t.zspm_dm,1,7) zspm_dm
+                                                    ,'其中水资源税' zspmmc
+                                                    ,round(sum(t.sjje)/10000,2) sjje
+                                                    ,round(sum(t.zybl)/10000,2) zybl
+                                                    ,round(sum(t.ssbl)/10000,2) ssbl
+                                                    ,round(sum(t.dsbl)/10000,2) dsbl
+                                                    ,round(sum(t.qxbl)/10000,2) qxbl
+                                            from v_zs_jks_wsz t
+                                            where t.rkrq &gt;= to_date('${svo.qsj}', 'yyyy/mm/dd')
+                                                and t.rkrq &lt;     to_date('${svo.zsj}', 'yyyy/mm/dd')+1
+                                                and t.zspm_dm  like '1010708%'
+                                            group by substr(t.zspm_dm,1,7)
+                                ) a,(
+                                            select t.zsxm_dm
+                                                    ,t.zsxmmc
+                                                    ,round(sum(t.sjje)/10000,2) sjje_sntq
+                                                    ,round(sum(t.zybl)/10000,2) zybl_sntq
+                                                    ,round(sum(t.ssbl)/10000,2) ssbl_sntq
+                                                    ,round(sum(t.dsbl)/10000,2) dsbl_sntq
+                                                    ,round(sum(t.qxbl)/10000,2) qxbl_sntq
+                                            from v_zs_jks_wsz t
+                                            where t.rkrq &gt;= to_date('${svo.qsj}', 'yyyy/mm/dd')+(INTERVAL '-1' YEAR)
+                                                and t.rkrq &lt;     to_date('${svo.zsj}', 'yyyy/mm/dd')+1+(INTERVAL '-1' YEAR)
+                                            group by t.zsxm_dm,t.zsxmmc
+                                            union all
+                                            select substr(t.zspm_dm,1,7) zspm_dm
+                                                    ,'其中水资源税' zspmmc
+                                                    ,round(sum(t.sjje)/10000,2) sjje_sntq
+                                                    ,round(sum(t.zybl)/10000,2) zybl_sntq
+                                                    ,round(sum(t.ssbl)/10000,2) ssbl_sntq
+                                                    ,round(sum(t.dsbl)/10000,2) dsbl_sntq
+                                                    ,round(sum(t.qxbl)/10000,2) qxbl_sntq
+                                            from v_zs_jks_wsz t
+                                            where t.rkrq &gt;= to_date('${svo.qsj}', 'yyyy/mm/dd')+(INTERVAL '-1' YEAR)
+                                                and t.rkrq &lt;     to_date('${svo.zsj}', 'yyyy/mm/dd')+1+(INTERVAL '-1' YEAR)
+                                                and t.zspm_dm  like '1010708%'
+                                            group by substr(t.zspm_dm,1,7)
+                                ) b
+                                where a.zsxm_dm=b.zsxm_dm(+)
+                                union all
+                                select '333333' zsxm_dm
+                                            ,'合 计' zsxmmc
+                                            ,sum(a.sjje)
+                                            ,sum(nvl(b.sjje_sntq,0))
+                                            ,sum(a.zybl)
+                                            ,sum(nvl(b.zybl_sntq,0))
+                                            ,sum(a.ssbl)
+                                            ,sum(nvl(b.ssbl_sntq,0))
+                                            ,sum(a.dsbl)
+                                            ,sum(nvl(b.dsbl_sntq,0))
+                                            ,sum(a.qxbl)
+                                            ,sum(nvl(b.qxbl_sntq,0))
+                                from (
+                                            select t.zsxm_dm
+                                                    ,t.zsxmmc
+                                                    ,round(sum(t.sjje)/10000,2) sjje
+                                                    ,round(sum(t.zybl)/10000,2) zybl
+                                                    ,round(sum(t.ssbl)/10000,2) ssbl
+                                                    ,round(sum(t.dsbl)/10000,2) dsbl
+                                                    ,round(sum(t.qxbl)/10000,2) qxbl
+                                            from v_zs_jks_wsz t
+                                            where t.rkrq &gt;= to_date('${svo.qsj}', 'yyyy/mm/dd')
+                                                and t.rkrq &lt;     to_date('${svo.zsj}', 'yyyy/mm/dd')+1
+                                            group by t.zsxm_dm,t.zsxmmc
+                                ) a,(
+                                            select t.zsxm_dm
+                                                    ,t.zsxmmc
+                                                    ,round(sum(t.sjje)/10000,2) sjje_sntq
+                                                    ,round(sum(t.zybl)/10000,2) zybl_sntq
+                                                    ,round(sum(t.ssbl)/10000,2) ssbl_sntq
+                                                    ,round(sum(t.dsbl)/10000,2) dsbl_sntq
+                                                    ,round(sum(t.qxbl)/10000,2) qxbl_sntq
+                                            from v_zs_jks_wsz t
+                                            where t.rkrq &gt;= to_date('${svo.qsj}', 'yyyy/mm/dd')+(INTERVAL '-1' YEAR)
+                                                and t.rkrq &lt;     to_date('${svo.zsj}', 'yyyy/mm/dd')+1+(INTERVAL '-1' YEAR)
+                                            group by t.zsxm_dm,t.zsxmmc
+                                ) b
+                                where a.zsxm_dm=b.zsxm_dm(+)
+                    )
+                    order by zsxm_dm
+        )
+    </select>
+    <!--开票省口-->
+    <select id="selectKpshk" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+        select rownum   row_number
+                ,zsxmmc   zsxm
+                ,sjje         skrk_xj
+                ,sjje_sntq skrk_xj_sntq
+                ,zybl         skrk_zy
+                ,zybl_sntq skrk_zy_sntq
+                ,ssbl         skrk_ss
+                ,ssbl_sntq skrk_ss_sntq
+                ,dsbl         skrk_ds
+                ,dsbl_sntq skrk_ds_sntq
+                ,qxbl         skrk_qx
+                ,qxbl_sntq skrk_qx_sntq
+        from (
+                  select zsxm_dm,zsxmmc,sjje,sjje_sntq,zybl,zybl_sntq,ssbl,ssbl_sntq,dsbl,dsbl_sntq,qxbl,qxbl_sntq
+        from (
+                    select a.zsxm_dm
+                            ,a.zsxmmc
+                            ,a.sjje
+                            ,nvl(b.sjje_sntq,0) sjje_sntq
+                            ,a.zybl
+                            ,nvl(b.zybl_sntq,0) zybl_sntq
+                            ,a.ssbl
+                            ,nvl(b.ssbl_sntq,0) ssbl_sntq
+                            ,a.dsbl
+                            ,nvl(b.dsbl_sntq,0) dsbl_sntq
+                            ,a.qxbl
+                            ,nvl(b.qxbl_sntq,0) qxbl_sntq
+                    from (
+                                select t.zsxm_dm
+                                        ,t.zsxmmc
+                                        ,round(sum(t.sjje)/10000,2) sjje
+                                        ,round(sum(t.zybl)/10000,2) zybl
+                                        ,round(sum(t.ssbl)/10000,2) ssbl
+                                        ,round(sum(t.dsbl)/10000,2) dsbl
+                                        ,round(sum(t.qxbl)/10000,2) qxbl
+                                from v_zs_jks_wsz t
+                                where t.kjrq &gt;= to_date('${svo.qsj}', 'yyyy/mm/dd')
+                                  and t.kjrq &lt;       to_date('${svo.zsj}', 'yyyy/mm/dd')+1
+                                group by t.zsxm_dm,t.zsxmmc
+                                union all
+                                select substr(t.zspm_dm,1,7) zspm_dm
+                                        ,'其中水资源税' zspmmc
+                                        ,round(sum(t.sjje)/10000,2) sjje
+                                        ,round(sum(t.zybl)/10000,2) zybl
+                                        ,round(sum(t.ssbl)/10000,2) ssbl
+                                        ,round(sum(t.dsbl)/10000,2) dsbl
+                                        ,round(sum(t.qxbl)/10000,2) qxbl
+                                from v_zs_jks_wsz t
+                                where t.kjrq &gt;= to_date('${svo.qsj}', 'yyyy/mm/dd')
+                                    and t.kjrq &lt;     to_date('${svo.zsj}', 'yyyy/mm/dd')+1
+                                and t.zspm_dm  like '1010708%'
+                                group by substr(t.zspm_dm,1,7)
+                    ) a,(
+                                select t.zsxm_dm
+                                        ,t.zsxmmc
+                                        ,round(sum(t.sjje)/10000,2) sjje_sntq
+                                        ,round(sum(t.zybl)/10000,2) zybl_sntq
+                                        ,round(sum(t.ssbl)/10000,2) ssbl_sntq
+                                        ,round(sum(t.dsbl)/10000,2) dsbl_sntq
+                                        ,round(sum(t.qxbl)/10000,2) qxbl_sntq
+                                from v_zs_jks_wsz t
+                                where t.kjrq &gt;= to_date('${svo.qsj}', 'yyyy/mm/dd')+(INTERVAL '-1' YEAR)
+                                    and t.kjrq &lt;     to_date('${svo.zsj}', 'yyyy/mm/dd')+1+(INTERVAL '-1' YEAR)
+                                group by t.zsxm_dm,t.zsxmmc
+                                union all
+                                select substr(t.zspm_dm,1,7) zspm_dm
+                                        ,'其中水资源税' zspmmc
+                                        ,round(sum(t.sjje)/10000,2) sjje_sntq
+                                        ,round(sum(t.zybl)/10000,2) zybl_sntq
+                                        ,round(sum(t.ssbl)/10000,2) ssbl_sntq
+                                        ,round(sum(t.dsbl)/10000,2) dsbl_sntq
+                                        ,round(sum(t.qxbl)/10000,2) qxbl_sntq
+                                from v_zs_jks_wsz t
+                                where t.kjrq &gt;= to_date('${svo.qsj}', 'yyyy/mm/dd')+(INTERVAL '-1' YEAR)
+                                    and t.kjrq &lt;     to_date('${svo.zsj}', 'yyyy/mm/dd')+1+(INTERVAL '-1' YEAR)
+                                    and t.zspm_dm  like '1010708%'
+                                group by substr(t.zspm_dm,1,7)
+                    ) b
+                    where a.zsxm_dm=b.zsxm_dm(+)
+                    union all
+                    select '333333' zsxm_dm
+                            ,'合 计' zsxmmc
+                            ,sum(a.sjje)
+                            ,sum(nvl(b.sjje_sntq,0))
+                            ,sum(a.zybl)
+                            ,sum(nvl(b.zybl_sntq,0))
+                            ,sum(a.ssbl)
+                            ,sum(nvl(b.ssbl_sntq,0))
+                            ,sum(a.dsbl)
+                            ,sum(nvl(b.dsbl_sntq,0))
+                            ,sum(a.qxbl)
+                            ,sum(nvl(b.qxbl_sntq,0))
+                    from (
+                            select t.zsxm_dm
+                                    ,t.zsxmmc
+                                    ,round(sum(t.sjje)/10000,2) sjje
+                                    ,round(sum(t.zybl)/10000,2) zybl
+                                    ,round(sum(t.ssbl)/10000,2) ssbl
+                                    ,round(sum(t.dsbl)/10000,2) dsbl
+                                    ,round(sum(t.qxbl)/10000,2) qxbl
+                            from v_zs_jks_wsz t
+                            where t.kjrq &gt;= to_date('${svo.qsj}', 'yyyy/mm/dd')
+                                and t.kjrq &lt;     to_date('${svo.zsj}', 'yyyy/mm/dd')+1
+                            group by t.zsxm_dm,t.zsxmmc
+                    ) a,(
+                            select t.zsxm_dm
+                            ,t.zsxmmc
+                            ,round(sum(t.sjje)/10000,2) sjje_sntq
+                            ,round(sum(t.zybl)/10000,2) zybl_sntq
+                            ,round(sum(t.ssbl)/10000,2) ssbl_sntq
+                            ,round(sum(t.dsbl)/10000,2) dsbl_sntq
+                            ,round(sum(t.qxbl)/10000,2) qxbl_sntq
+                            from v_zs_jks_wsz t
+                            where t.kjrq &gt;= to_date('${svo.qsj}', 'yyyy/mm/dd')+(INTERVAL '-1' YEAR)
+                            and t.kjrq &lt;   to_date('${svo.zsj}', 'yyyy/mm/dd')+1+(INTERVAL '-1' YEAR)
+                            group by t.zsxm_dm,t.zsxmmc
+                    ) b
+                    where a.zsxm_dm=b.zsxm_dm(+)
+        )
+        order by zsxm_dm
+        )
+    </select>
+    <!--开票市口-->
+    <select id="selectKpsk" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+        select rownum     row_number
+        ,zsxmmc     zsxm
+        ,dsbl          skrk_ds
+        ,dsbl_sntq  skrk_ds_sntq
+        ,qxbl          skrk_qx
+        ,qxbl_sntq  skrk_qx_sntq
+        ,sjje1         skrk_sk
+        ,sjje1_sntq skrk_sk_sntq
+        from (
+        select a.zsxm_dm
+        ,a.zsxmmc
+        ,a.dsbl
+        ,nvl(b.dsbl,0) dsbl_sntq
+        ,a.qxbl
+        ,nvl(b.qxbl,0) qxbl_sntq
+        ,a.sjje1
+        ,nvl(b.sjje1,0) sjje1_sntq
+        from (
+        select t.zsxm_dm
+        ,t.zsxmmc
+        ,round(sum(dsbl)/10000,2) dsbl
+        ,round(sum(qxbl)/10000,2) qxbl
+        ,round((sum(dsbl)+sum(qxbl))/10000,2) sjje1
+        from v_zs_jks_wsz t
+        where t.kjrq &gt;= to_date('${svo.qsj}', 'yyyy/mm/dd')
+        and t.kjrq &lt;   to_date('${svo.zsj}', 'yyyy/mm/dd')+1
+        and t.zspm_dm not like '1010708%' 
+        and t.zsxm_dm not in ('10121','30203')
+        group by t.zsxm_dm,t.zsxmmc
+        ) a,(
+        select t.zsxm_dm
+        ,t.zsxmmc
+        ,round(sum(dsbl)/10000,2) dsbl
+        ,round(sum(qxbl)/10000,2) qxbl
+        ,round((sum(dsbl)+sum(qxbl))/10000,2) sjje1
+        from v_zs_jks_wsz t
+        where t.kjrq &gt;= to_date('${svo.qsj}', 'yyyy/mm/dd')+(INTERVAL '-1' YEAR)
+        and t.kjrq &lt;   to_date('${svo.zsj}', 'yyyy/mm/dd')+1+(INTERVAL '-1' YEAR)
+        and t.zspm_dm not like '1010708%' 
+        and t.zsxm_dm not in ('10121','30203')
+        group by t.zsxm_dm,t.zsxmmc
+        ) b
+        where a.zsxm_dm=b.zsxm_dm(+)
+        union all
+        select '333333' zsxm_dm
+        ,'合 计' zsxmmc
+        ,sum(a.dsbl)
+        ,sum(nvl(b.dsbl,0)) dsbl_sntq
+        ,sum(a.qxbl)
+        ,sum(nvl(b.qxbl,0)) qxbl_sntq
+        ,sum(a.sjje1)
+        ,sum(nvl(b.sjje1,0)) sjje1_sntq
+        from (
+        select t.zsxm_dm
+        ,t.zsxmmc
+        ,round(sum(dsbl)/10000,2) dsbl
+        ,round(sum(qxbl)/10000,2) qxbl
+        ,round((sum(dsbl)+sum(qxbl))/10000,2) sjje1
+        from v_zs_jks_wsz t
+        where t.kjrq &gt;= to_date('${svo.qsj}', 'yyyy/mm/dd')
+        and t.kjrq &lt;   to_date('${svo.zsj}', 'yyyy/mm/dd')+1
+        and t.zspm_dm not like '1010708%' 
+        and t.zsxm_dm not in ('10121','30203')
+        group by t.zsxm_dm,t.zsxmmc
+        ) a,(
+        select t.zsxm_dm
+        ,t.zsxmmc
+        ,round(sum(dsbl)/10000,2) dsbl
+        ,round(sum(qxbl)/10000,2) qxbl
+        ,round((sum(dsbl)+sum(qxbl))/10000,2) sjje1
+        from v_zs_jks_wsz t
+        where t.kjrq &gt;= to_date('${svo.qsj}', 'yyyy/mm/dd')+(INTERVAL '-1' YEAR)
+        and t.kjrq &lt;   to_date('${svo.zsj}', 'yyyy/mm/dd')+1+(INTERVAL '-1' YEAR)
+        and t.zspm_dm not like '1010708%' 
+        and t.zsxm_dm not in ('10121','30203')
+        group by t.zsxm_dm,t.zsxmmc
+        ) b
+        where a.zsxm_dm=b.zsxm_dm(+)
+        )
+    </select>
+    <!--入库市口-->
+    <select id="selectRksk" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+        select rownum     row_number
+        ,zsxmmc     zsxm
+        ,dsbl          skrk_ds
+        ,dsbl_sntq  skrk_ds_sntq
+        ,qxbl          skrk_qx
+        ,qxbl_sntq  skrk_qx_sntq
+        ,sjje1         skrk_sk
+        ,sjje1_sntq skrk_sk_sntq
+        from (
+        select a.zsxm_dm
+        ,a.zsxmmc
+        ,a.dsbl
+        ,nvl(b.dsbl,0) dsbl_sntq
+        ,a.qxbl
+        ,nvl(b.qxbl,0) qxbl_sntq
+        ,a.sjje1
+        ,nvl(b.sjje1,0) sjje1_sntq
+        from (
+        select t.zsxm_dm
+        ,t.zsxmmc
+        ,round(sum(dsbl)/10000,2) dsbl
+        ,round(sum(qxbl)/10000,2) qxbl
+        ,round((sum(dsbl)+sum(qxbl))/10000,2) sjje1
+        from v_zs_jks_wsz t
+        where t.rkrq &gt;= to_date('${svo.qsj}', 'yyyy/mm/dd')
+        and t.rkrq &lt;   to_date('${svo.zsj}', 'yyyy/mm/dd')+1
+        and t.zspm_dm not like '1010708%' 
+        and t.zsxm_dm not in ('10121','30203')
+        group by t.zsxm_dm,t.zsxmmc
+        ) a,(
+        select t.zsxm_dm
+        ,t.zsxmmc
+        ,round(sum(dsbl)/10000,2) dsbl
+        ,round(sum(qxbl)/10000,2) qxbl
+        ,round((sum(dsbl)+sum(qxbl))/10000,2) sjje1
+        from v_zs_jks_wsz t
+        where t.rkrq &gt;= to_date('${svo.qsj}', 'yyyy/mm/dd')+(INTERVAL '-1' YEAR)
+        and t.rkrq &lt;   to_date('${svo.zsj}', 'yyyy/mm/dd')+1+(INTERVAL '-1' YEAR)
+        and t.zspm_dm not like '1010708%' 
+        and t.zsxm_dm not in ('10121','30203')
+        group by t.zsxm_dm,t.zsxmmc
+        ) b
+        where a.zsxm_dm=b.zsxm_dm(+)
+        union all
+        select '333333' zsxm_dm
+        ,'合 计' zsxmmc
+        ,sum(a.dsbl)
+        ,sum(nvl(b.dsbl,0)) dsbl_sntq
+        ,sum(a.qxbl)
+        ,sum(nvl(b.qxbl,0)) qxbl_sntq
+        ,sum(a.sjje1)
+        ,sum(nvl(b.sjje1,0)) sjje1_sntq
+        from (
+        select t.zsxm_dm
+        ,t.zsxmmc
+        ,round(sum(dsbl)/10000,2) dsbl
+        ,round(sum(qxbl)/10000,2) qxbl
+        ,round((sum(dsbl)+sum(qxbl))/10000,2) sjje1
+        from v_zs_jks_wsz t
+        where t.rkrq &gt;= to_date('${svo.qsj}', 'yyyy/mm/dd')
+        and t.rkrq &lt;   to_date('${svo.zsj}', 'yyyy/mm/dd')+1
+        and t.zspm_dm not like '1010708%' 
+        and t.zsxm_dm not in ('10121','30203')
+        group by t.zsxm_dm,t.zsxmmc
+        ) a,(
+        select t.zsxm_dm
+        ,t.zsxmmc
+        ,round(sum(dsbl)/10000,2) dsbl
+        ,round(sum(qxbl)/10000,2) qxbl
+        ,round((sum(dsbl)+sum(qxbl))/10000,2) sjje1
+        from v_zs_jks_wsz t
+        where t.rkrq &gt;= to_date('${svo.qsj}', 'yyyy/mm/dd')+(INTERVAL '-1' YEAR)
+        and t.rkrq &lt;   to_date('${svo.zsj}', 'yyyy/mm/dd')+1+(INTERVAL '-1' YEAR)
+        and t.zspm_dm not like '1010708%' 
+        and t.zsxm_dm not in ('10121','30203')
+        group by t.zsxm_dm,t.zsxmmc
+        ) b
+        where a.zsxm_dm=b.zsxm_dm(+)
+        )
+    </select>
+    <!--水利基金低顶信息统计-->
+    <select id="selectSljjdxxxtj" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+        select swjg_dm
+                  ,swjgmc
+                  ,sbhs
+                  ,jcx_wy
+                  ,jme_wy
+        from(
+            select b.swjg_dm
+                      ,b.swjgmc
+                      ,count(distinct a.djxh)  sbhs
+                      ,round(sum(nvl(a.jcx,0))/10000,2)  jcx_wy
+                      ,round(sum(nvl(a.jcx,0)*a.sflhdwse)/10000,2) jme_wy
+            from znsjcl_sjcp_jjc_sljjddcx a
+                    ,dim_dm_gy_swjg b
+            where substr(a.zgswskfj_dm,1,7)||'0000' = b.swjg_dm(+)
+                and a.skssqq &gt;=to_date('${svo.qsj}', 'yyyy/mm/dd')
+                and a.skssqz &lt; to_date('${svo.zsj}', 'yyyy/mm/dd')+1
+            group by b.swjg_dm,b.swjgmc
+            union all
+            select '99999999999' swjg_dm
+                      ,'合计' swjgmc
+                      ,count(distinct a.djxh)  sbhs
+                      ,round(sum(nvl(a.jcx,0))/10000,2)  jcx_wy
+                      ,round(sum(nvl(a.jcx,0)*a.sflhdwse)/10000,2) jme_wy
+            from znsjcl_sjcp_jjc_sljjddcx a
+                     ,dim_dm_gy_swjg b
+            where substr(a.zgswskfj_dm,1,7)||'0000' = b.swjg_dm(+)
+                and a.skssqq &gt;=to_date('${svo.qsj}', 'yyyy/mm/dd')
+                and a.skssqz &lt; to_date('${svo.zsj}', 'yyyy/mm/dd')+1
+        ) order by swjg_dm
+    </select>
+    <!--按科所查询水利基金低顶信息统计-->
+    <select id="selectSljjdxxxtjKs" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+        select rownum row_number,a.*
+        from (
+              select swjg_dm,swjgmc,nsrsbh,nsrmc,swryxm,sbhs,jcx_wy,jme_wy
+              from (
+                    select b.swjg_dm
+                          ,b.swjgmc
+                          ,a.nsrsbh
+                          ,a.nsrmc
+                          ,c.SWRYXM
+                          ,count(distinct a.djxh)  sbhs
+                          ,sum(nvl(a.jcx,0))  jcx_wy
+                          ,sum(nvl(a.jcx,0)*a.sflhdwse) jme_wy
+                    from znsjcl_sjcp_jjc_sljjddcx a
+                        ,dim_dm_gy_swjg b
+                        ,dim_dm_gy_swry c
+                    where a.zgswskfj_dm = b.swjg_dm(+)
+                      and a.ssgly_dm=c.SWRY_DM(+)
+                      and a.skssqq &gt;=to_date('${svo.qsj}', 'yyyy/mm/dd')
+                      and a.skssqz &lt; to_date('${svo.zsj}', 'yyyy/mm/dd')+1
+                      and substr(a.zgswskfj_dm,0,7) = '${svo.swjg_dm}'
+                    group by b.swjg_dm,b.swjgmc,a.nsrsbh,a.nsrmc,c.SWRYXM
+                    union all
+                    select '99999999999' swjg_dm
+                          ,'小计' swjgmc
+                          ,'' nsrsbh
+                          ,'' nsrmc
+                          ,'' swryxm
+                          ,count(distinct a.djxh)  sbhs
+                          ,sum(nvl(a.jcx,0))  jcx_wy
+                          ,sum(nvl(a.jcx,0)*a.sflhdwse) jme_wy
+                    from znsjcl_sjcp_jjc_sljjddcx a
+                        ,dim_dm_gy_swjg b
+                        ,dim_dm_gy_swry c
+                    where a.zgswskfj_dm = b.swjg_dm(+)
+                      and a.ssgly_dm=c.SWRY_DM(+)
+                      and a.skssqq &gt;=to_date('${svo.qsj}', 'yyyy/mm/dd')
+                      and a.skssqz &lt; to_date('${svo.zsj}', 'yyyy/mm/dd')+1
+                      and substr(a.zgswskfj_dm,0,7) = '${svo.swjg_dm}'
+              ) order by swjg_dm
+        ) a
+    </select>
+    <!--水资源登记申报情况查询-->
+    <select id="selectSzydjsbqktj" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+        select swjg_dm
+                ,swjgmc
+                ,djhs
+                ,tsbbhs
+                ,tsbbse_y
+                ,kphs
+                ,kpse_y
+                ,rkhs
+                ,rkse_y
+        from (
+        select
+        dj.swjg_dm
+        ,dj.swjgmc
+        ,dj.djhs djhs
+        ,sb.sbhs tsbbhs
+        ,sb.sbse tsbbse_y
+        ,kprk.kphs kphs
+        ,kprk.kpse kpse_y
+        ,kprk.rkhs rkhs
+        ,kprk.rkse rkse_y
+        from (
+        -- 登记
+        select
+        t2.swjg_dm
+        ,t2.swjgmc
+        ,count(distinct t.djxh) djhs
+        from xads.zh_DJ_SZYSSYDJB@dbl_to_15xads t
+        ,xads.zh_dj_nsrxx@dbl_to_15xads t1
+        ,xads.dim_dm_gy_swjg@dbl_to_15xads t2
+        where t.zfbz_1='N'
+        and t.lrrq  &lt;   to_date('${svo.zsj}', 'yyyy/mm/dd')+1
+        and t.djxh = t1.djxh
+        and t1.zgswj_dm like '26101%'
+        and t1.zgswj_dm = t2.swjg_dm
+        group by   t2.swjg_dm,t2.swjgmc
+        )dj
+        ,(
+        -- 申报表
+        select
+        t2.swjg_dm
+        ,t2.swjgmc
+        ,count(distinct t.djxh) sbhs
+        ,sum(t0.BQYBTSE) sbse
+        from xads.zh_SB_SZYSSB@dbl_to_15xads t
+        ,xads.zh_SB_ZYSSB_MX@dbl_to_15xads t0
+        ,xads.zh_dj_nsrxx@dbl_to_15xads t1
+        ,xads.dim_dm_gy_swjg@dbl_to_15xads t2
+        ,(
+        select
+        distinct a.djxh
+        from xads.zh_DJ_SZYSSYDJB@dbl_to_15xads a
+        where a.zfbz_1='N'
+        and a.qsxkzbz='Y'
+        and a.lrrq  &lt;   to_date('${svo.zsj}', 'yyyy/mm/dd')+1
+        ) t3
+        where t.sbuuid = t0.sbuuid
+        and t.djxh = t1.djxh
+        and t1.zgswj_dm like '26101%'
+        and t.lrrq &gt;=to_date('${svo.qsj}', 'yyyy/mm/dd')
+        and t.lrrq  &lt;   to_date('${svo.zsj}', 'yyyy/mm/dd')+1
+        and t1.zgswj_dm = t2.swjg_dm
+        and t.djxh = t3.djxh(+)
+        group by   t2.swjg_dm,t2.swjgmc
+        ) sb
+        ,(
+        -- 开票\入库
+        select
+        t2.swjg_dm
+        ,t2.swjgmc
+        ,count(distinct t.djxh) kphs
+        ,sum(t.ybtse) kpse
+        ,count(distinct case when t.rkrq is not null then t.djxh else null end ) rkhs
+        ,sum(case when t.rkrq is not null then t.ybtse else 0 end ) rkse
+
+        from xads.Zh_Zs_Yjsf@dbl_to_15xads t
+        ,xads.zh_dj_nsrxx@dbl_to_15xads t1
+        ,xads.dim_dm_gy_swjg@dbl_to_15xads t2
+        where t.tzlx_dm in (1,4)
+        and t.nssbrq &gt;=to_date('${svo.qsj}', 'yyyy/mm/dd')
+        and t.nssbrq  &lt;   to_date('${svo.zsj}', 'yyyy/mm/dd')+1
+        and t.zspm_dm like '1010708%'
+        and t.djxh = t1.djxh
+        and t1.zgswj_dm like '26101%'
+        and t1.zgswj_dm = t2.swjg_dm
+        group by   t2.swjg_dm,t2.swjgmc
+        ) kprk
+        where dj.swjg_dm = sb.swjg_dm(+)
+        and dj.swjg_dm = kprk.swjg_dm(+)
+
+        union all
+
+        select
+        '99999999999'
+        ,'合计'
+        ,sum(dj.djhs) djhs
+        ,sum(sb.sbhs) tsbbhs
+        ,sum(sb.sbse) tsbbse_y
+        ,sum(kprk.kphs) kphs
+        ,sum(kprk.kpse) kpse_y
+        ,sum(kprk.rkhs) rkhs
+        ,sum(kprk.rkse) rkse_y
+        from (
+        -- 登记
+        select
+        t2.swjg_dm
+        ,t2.swjgmc
+        ,count(distinct t.djxh) djhs
+        from xads.zh_DJ_SZYSSYDJB@dbl_to_15xads t
+        ,xads.zh_dj_nsrxx@dbl_to_15xads t1
+        ,xads.dim_dm_gy_swjg@dbl_to_15xads t2
+        where t.zfbz_1='N'
+        and t.lrrq  &lt;   to_date('${svo.zsj}', 'yyyy/mm/dd')+1
+        and t.djxh = t1.djxh
+        and t1.zgswj_dm like '26101%'
+        and t1.zgswj_dm = t2.swjg_dm
+        group by   t2.swjg_dm,t2.swjgmc
+        )dj
+        ,(
+        -- 申报表
+        select
+        t2.swjg_dm
+        ,t2.swjgmc
+        ,count(distinct t.djxh) sbhs
+        ,sum(t0.BQYBTSE) sbse
+        from xads.zh_SB_SZYSSB@dbl_to_15xads t
+        ,xads.zh_SB_ZYSSB_MX@dbl_to_15xads t0
+        ,xads.zh_dj_nsrxx@dbl_to_15xads t1
+        ,xads.dim_dm_gy_swjg@dbl_to_15xads t2
+        ,(
+        select
+        distinct a.djxh
+        from xads.zh_DJ_SZYSSYDJB@dbl_to_15xads a
+        where a.zfbz_1='N'
+        and a.qsxkzbz='Y'
+        and a.lrrq  &lt;   to_date('${svo.zsj}', 'yyyy/mm/dd')+1
+        ) t3
+        where t.sbuuid = t0.sbuuid
+        and t.djxh = t1.djxh
+        and t1.zgswj_dm like '26101%'
+        and t.lrrq &gt;=to_date('${svo.qsj}', 'yyyy/mm/dd')
+        and t.lrrq  &lt;   to_date('${svo.zsj}', 'yyyy/mm/dd')+1
+        and t1.zgswj_dm = t2.swjg_dm
+        and t.djxh = t3.djxh(+)
+        group by   t2.swjg_dm,t2.swjgmc
+        ) sb
+        ,(
+        -- 开票\入库
+        select
+        t2.swjg_dm
+        ,t2.swjgmc
+        ,count(distinct t.djxh) kphs
+        ,sum(t.ybtse) kpse
+        ,count(distinct case when t.rkrq is not null then t.djxh else null end ) rkhs
+        ,sum(case when t.rkrq is not null then t.ybtse else 0 end ) rkse
+
+        from xads.Zh_Zs_Yjsf@dbl_to_15xads t
+        ,xads.zh_dj_nsrxx@dbl_to_15xads t1
+        ,xads.dim_dm_gy_swjg@dbl_to_15xads t2
+        where t.tzlx_dm in (1,4)
+        and t.nssbrq &gt;=to_date('${svo.qsj}', 'yyyy/mm/dd')
+        and t.nssbrq  &lt;   to_date('${svo.zsj}', 'yyyy/mm/dd')+1
+        and t.zspm_dm like '1010708%'
+        and t.djxh = t1.djxh
+        and t1.zgswj_dm like '26101%'
+        and t1.zgswj_dm = t2.swjg_dm
+        group by   t2.swjg_dm,t2.swjgmc
+        ) kprk
+        where dj.swjg_dm = sb.swjg_dm(+)
+        and dj.swjg_dm = kprk.swjg_dm(+)
+        ) order by swjg_dm
+    </select>
+</mapper>

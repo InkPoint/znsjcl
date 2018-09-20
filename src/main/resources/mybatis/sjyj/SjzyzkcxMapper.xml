@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xalt.sjyj.dao.SjzyzkcxMapper">
+    <!--查询结果-->
+    <!--MyBatis的传入参数parameterType类型分为两种 1.基本数据类型int、string、long、date 2.复杂数据类型 类和Map-->
+    <!--数据资源状况统计(表数据查询)-->
+    <select id="selectAll" parameterType="java.util.HashMap" resultType="com.xalt.sjyj.model.SjzyzkcxVo">
+        select t.BM dwmc,
+        t.SJLX||'('||t.sjyb||')' zywbm,
+        t.sjlx zwbm,
+        t.SJYB ywbm,
+        t.YBSJL sjl,
+        nvl(t.YDYPPL, 0) + nvl(t.RGPPL, 0) + nvl(t.QSIYDDPPL, 0) + nvl(t.QSYDDPPL, 0) ppsl,
+        t.PPSJX ppsjx,
+        t.ZXSJJHSJ tjsj,
+        t.PPLPPL ppl,
+        t.SFTGGSJGSPT,
+        t.SJLY,
+        t.sjjb
+        from sjzl_wbsjb_zyml t
+        where t.SJYB is not null
+        <if test = "svo.dwmc != null">
+            and t.bm like '%${svo.dwmc}%'
+        </if>
+        <if test = "svo.zwbm != null">
+            and t.sjlx like '%${svo.zwbm}%'
+        </if>
+        <if test = "svo.sjjb != null">
+            and t.sjjb =  '${svo.sjjb}'
+        </if>
+        <if test = "svo.sjly != null">
+            and t.sjly =  '${svo.sjly}'
+        </if>
+        order by t.sjly,t.sjyb
+    </select>
+    <!--查看是否有这个表-->
+    <select id="hasyb" parameterType="java.util.HashMap" resultType="java.lang.Object">
+        select count(1) from user_tables where table_name = upper('${svo.ywbm}')
+    </select>
+    <!--查看数据项里面这张表的字段-->
+    <select id="sjxAll" parameterType="java.util.HashMap" resultType="com.xalt.sjzd.model.SjxVo">
+--         select * from znsjcl_dm_sjx where upper(sjdxmcyw)=upper('${svo.sjdxmcyw}')
+        SELECT t.COLUMN_COMMENTS sjxmczw,t.COLUMN_NAME sjxmcyw FROM ZHZS_ALL_TABLES T WHERE t.TABLE_NAME=UPPER('${svo.sjdxmcyw}')
+    </select>
+    <!--下拉框级别-->
+    <select id="sjjbsel" resultType="com.xalt.sjyj.model.SjzyzkcxVo">
+        select rownum id,text from (select distinct sjjb text from sjzl_wbsjb_zyml)
+    </select>
+    <!--下拉框来源-->
+    <select id="sjlysel" resultType="com.xalt.sjyj.model.SjzyzkcxVo">
+        select rownum id,text from (select distinct sjly text from sjzl_wbsjb_zyml)
+    </select>
+    <!--导出-->
+    <select id="exportData"  parameterType="java.util.HashMap" resultType="java.util.HashMap">
+        select * from ${svo.ywbm}
+    </select>
+    <!--根据数据对象英文名查询数据项-->
+    <select id="sjxinfo" parameterType="java.util.HashMap" resultType="com.xalt.sjzd.model.SjxVo">
+        select t.sjxmczw,t.sjxmcyw from znsjcl_dm_sjx t where upper(t.sjdxmcyw)=upper('${svo.ywbm}')
+    </select>
+    <!--得到原表的表头-->
+    <select id="getybheader" parameterType="java.util.HashMap" resultType="com.xalt.sjyj.model.SjzyzkcxVo">
+--         select upper(t.sjxmcyw) field,t.sjxmczw title,'center' align   from znsjcl_dm_sjx t WHERE t.yxbz='Y' and upper(t.sjdxmcyw)=upper('${svo.ywbm}') order by t.sjxid desc
+            SELECT FIELD,TITLE,ALIGN
+            FROM (
+                    SELECT UPPER(T.COLUMN_NAME) FIELD,T.COLUMN_COMMENTS TITLE,'left' ALIGN FROM ZHZS_ALL_TABLES T WHERE t.TABLE_NAME=UPPER('${svo.ywbm}')
+                    UNION ALL
+                    SELECT 'DJXH' FIELD,'登记序号' TITLE,'left' ALIGN from dual
+            )
+    </select>
+    <!--查询表名称对应的原始表，匹配中间表，数据项-->
+    <select id="getTableMsg" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+        SELECT t.SJYB,t.PPZJB,t.PPSJX from sjzl_wbsjb_zyml t WHERE t.SJYB=LOWER('${svo.ywbm}') AND t.PPSJX=LOWER('${svo.ppsjx}')
+    </select>
+    <!--查看原表的信息-->
+    <select id="viewtabledata" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+--         select * from ${svo.ywbm}
+            SELECT t.*,t1.djxh
+            from sjqy.${SJYB}@sjqy_cx t
+                  ,${PPZJB}@dbl_dw66 t1
+            WHERE t.${PPSJX}=t1.nsrmc
+                AND t1.djxh IS NOT NULL
+    </select>
+    <!--数据总量-->
+    <select id="sjzl" parameterType="java.util.HashMap" resultType="java.lang.Integer">
+--         select count(1) from sjzl_wbsjb_zyml where SJYB is not null
+        select count(DISTINCT t.sjyb)
+        from sjzl_wbsjb_zyml t
+        where 1=1
+        <if test = "svo.dwmc != null">
+            and t.bm like '%${svo.dwmc}%'
+        </if>
+        <if test = "svo.zwbm != null">
+            and t.sjlx like '%${svo.zwbm}%'
+        </if>
+        <if test = "svo.sjjb != null">
+            and t.sjjb =  '${svo.sjjb}'
+        </if>
+        <if test = "svo.sjly != null">
+            and t.sjly =  '${svo.sjly}'
+        </if>
+    </select>
+</mapper>

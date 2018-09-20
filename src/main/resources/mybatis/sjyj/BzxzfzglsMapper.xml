@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xalt.sjyj.dao.BzxzfzglsMapper">
+
+    <!--清空数据-->
+     <delete id="deletedata" >
+           delete from znsjcl_jg_bzxzfzgls
+     </delete>
+
+    <!--插入身份证号码数据到表中-->
+    <insert id="inserlist" parameterType="java.util.HashMap">
+           insert into znsjcl_jg_bzxzfzgls(sfzhm)
+           <foreach collection="sfzhmlist"   item="item" index="index" separator="union all">
+               select #{item} from dual
+           </foreach>
+    </insert>
+
+    <!--查询所有身份证信息-->
+    <select id="selectalls" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+--         select
+--                 t2.sfzjhm
+--                 ,round(sum(t2.sre)/12,2) yjsre
+--                 ,sum(t2.ybtse) zsre
+--         from    xads.zh_sb_kjgrsdsbgb@dbl_to_15xads t
+--                 ,xads.zh_sb_kjgrsdsbgb_mx@dbl_to_15xads t2
+-- --                 ,znsjcl_jg_bzxzfzgls t3
+--         where t.YXBZ='Y'
+--                 and t.NSRLX_DM='2'
+--                 and t.JYLSH = t2.JYLSH
+--                 and t2.GRSDSSDXM_DM='0101' -- 正常工资薪金
+                select
+                                t.sfzjhm
+                                ,round(sum(t.yjsre)/12,2) yjsre
+                                ,sum(t.zsre) zsre
+                from znsjcl_kz_sdscdata201708201807  t  ,
+                      znsjcl_jg_bzxzfzgls t1   ----excel里面含有身份证号码的临时表，从上一步骤来    inserlist
+                where
+                  t.sfzjhm = t1.sfzhm
+                <if test="starttime!=null and starttime!=''">
+                    and t.sdqjq &gt;=to_date('${starttime}','yyyy-mm-dd')
+                </if>
+
+                <if test="endtime!=null and endtime!=''">
+                    and t.sdqjz &lt;=to_date('${endtime}','yyyy-mm-dd')
+                </if>
+        group by  t.sfzjhm
+    </select>
+
+    <!--根据身份证号查询信息-->
+    <select id="queryinfos" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+        select
+             t2.sfzjhm
+             ,round(sum(t2.sre)/12,2) yjsre
+             ,sum(t2.ybtse) zsre
+        from xads.zh_sb_kjgrsdsbgb@dbl_to_15xads t
+             ,xads.zh_sb_kjgrsdsbgb_mx@dbl_to_15xads t2
+        where t.YXBZ='Y'
+        and t.NSRLX_DM='2'
+        and t.JYLSH = t2.JYLSH
+        and t2.GRSDSSDXM_DM='0101' -- 正常工资薪金
+        <if test="starttime!=null and starttime!=''">
+            and t2.sdqjq &gt;=to_date('${starttime}','yyyy-mm-dd')
+        </if>
+
+        <if test="endtime!=null and endtime!=''">
+            and t2.sdqjz &lt;to_date('${endtime}','yyyy-mm-dd')
+        </if>
+        and  t2.sfzjhm = '${sfzhm}'
+        group by  t2.sfzjhm
+    </select>
+
+</mapper>

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xalt.demos.dao.BasicQueryMapper">
+   <parameterMap id="sendMap" type="java.util.HashMap">
+       <parameter property="NAME" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN"/>
+       <parameter property="SEX" jdbcType="NUMERIC" javaType="java.lang.Integer" mode="IN"/>
+       <parameter property="RS" jdbcType="VARCHAR" javaType="java.lang.String" mode="OUT"/>
+   </parameterMap>
+
+  <!--查询所有纳税人基本信息-->
+  <select id="selectAll" parameterType="java.util.HashMap" resultType="com.xalt.demos.model.NsrxxVO">
+    select
+       TAXPAYERNAME,TAXREGCODE,CHECKATTRIBUTE,JURPNAME
+    from tb_reg_lianxi
+    where 1=1
+    <if test="svo.wbkvalue != null">
+         and TAXPAYERNAME like   '%${svo.wbkvalue}%'
+    </if>
+  </select>
+
+    <!--测试使用含有分号的参数字符串能否传递过来-->
+    <select id="ceshi" parameterType="java.util.HashMap" >
+        select
+        TAXPAYERNAME,TAXREGCODE,CHECKATTRIBUTE,JURPNAME
+        from tb_reg_lianxi
+        where 1=1
+        <if test="svo.wbkvalue != null">
+            and TAXPAYERNAME like   '${mystr}'
+        </if>
+    </select>
+
+    <update id="createtable" parameterType="java.util.HashMap" >
+                ${mysql}
+    </update>
+
+    <!--执行job 方法一-->
+    <update id="calljobs" parameterType="java.util.HashMap" >
+                ${mysql}
+    </update>
+
+    <!--执行job 方法二-->
+    <update id="calljobs1" parameterType="java.util.HashMap" >
+           declare job number;
+            begin
+              sys.dbms_job.submit(job => job,
+                                  what => 'test_1120(''123456'',''653456'',''123416'');',
+                                  next_date => to_date('${plandate}','yyyy-mm-dd'),
+                                  interval => 'null');
+              commit;
+            end;
+    </update>
+
+    <!--调用存储过程-->
+    <select id="callprocedure" parameterType="java.util.Map"  statementType="CALLABLE">
+                 {call  test_20171121(#{NAME,mode=IN,jdbcType=VARCHAR},#{SEX,mode=IN,jdbcType=INTEGER},#{RS,mode=OUT,jdbcType=VARCHAR})}
+    </select>
+
+    <!--调用存储过程  svo参数-->
+    <select id="callprocedure2" parameterType="java.util.Map"  statementType="CALLABLE">
+                 {call  test_20171121(#{svo.name,mode=IN,jdbcType=VARCHAR},#{svo.sex,mode=IN,jdbcType=INTEGER},#{svo.rs,mode=OUT,jdbcType=VARCHAR})}
+    </select>
+
+    <!--调用存储过程1-->
+    <select id="callprocedure1" parameterType="java.util.Map"  statementType="CALLABLE">
+                 {call  Sp_znsjcl_Createjob(#{procename,mode=IN,jdbcType=VARCHAR}
+                                          ,#{paramstr,mode=IN,jdbcType=VARCHAR}
+                                          ,#{startdate,mode=IN,jdbcType=VARCHAR}
+                                          ,#{oprcycle,mode=IN,jdbcType=VARCHAR}
+                                          ,#{rwid,mode=IN,jdbcType=VARCHAR}
+                                          ,#{rwmc,mode=IN,jdbcType=VARCHAR}
+                                          ,#{pc,mode=IN,jdbcType=VARCHAR}
+                  )}
+    </select>
+
+    <!--多线程练习-->
+    <select id="mythreadinfo" parameterType="java.util.Map"  resultType="map">
+            select * from znsjcl_dm_sjdx           s
+    </select>
+
+    <!--保存blob字段和clob字段-->
+    <insert id="saveinfo" parameterType="java.util.HashMap">
+          insert into temp_180418(dataud,data1,data2,data3)
+             values(sys_guid(),#{data1},#{data2,jdbcType=CLOB},#{data3,jdbcType=BLOB})
+    </insert>
+
+    <!--读取clob和blob字段 读取字段-->
+    <select id="getclobs" parameterType="map" resultType="com.xalt.demos.model.DemoVO">
+             select dataud myuuid,data1 , data2,data3  from temp_180418
+    </select>
+
+    <!--查询含有lob值的数据 主要是测试wm_concat-->
+    <select id="qwmconcat" parameterType="map" resultType="java.util.HashMap">
+           select * from (
+                        select bm, to_char(replace(wm_concat(nvl(tabname,'')), ',', '.')) tabname
+                          from (select   r.bm,
+                                                r.sjyb || '@' || r.TABLE_COMMENTS || '(' ||
+                                                nvl(r.num_rows, 0) || ')' tabname
+                                  from
+                                      (
+                                         select
+                                                 t.bm, t.sjyb, t1.TABLE_COMMENTS, t2.num_rows
+                                            from (select distinct  sjyb,bm from znsjcl_sjyj_qbnsrmc) t,
+                                                 (select distinct TABLE_NAME,TABLE_COMMENTS from zhzs_all_tables) t1,
+                                                 (select distinct table_name,num_rows from user_tables) t2
+                                           where t.sjyb = t1.TABLE_NAME
+                                             and t.sjyb = t2.table_name(+)
+                                      ) r
+                              )
+
+                         group by bm
+                         )
+
+    </select>
+    <!--统计数据量sql-->
+    <select id="tjsql" parameterType="map"  resultType="map">
+             select  count(1) allnum,round(count(1)/#{pagesize},0) pages  from zh_dj_nsrxx t
+    </select>
+    <!--查询sql-->
+    <select id="bigdataexport"  parameterType="map"  resultType="map">
+        select a.DJXH, a.SSDABH, a.NSRMC, a.FDDBRXM
+        from (select t.DJXH, t.SSDABH, t.NSRMC, t.FDDBRXM, rownum rn
+        from zh_dj_nsrxx t) a
+        where a.rn &gt;= (#{pagenum} - 1) * #{pagesize} + 1
+        and a.rn &lt;= #{pagesize} * #{pagenum}
+
+    </select>
+
+
+    <!--查询sql-->
+    <select id="bigdataexport1"  parameterType="map"  resultType="map">
+           select t.DJXH, t.SSDABH, t.NSRMC, t.FDDBRXM       from zh_dj_nsrxx t
+    </select>
+
+
+
+    <!--查询sql-->
+    <select id="bigdataexport2"  parameterType="map"  resultType="map">
+                select  t.swjg_dm,t.swjgmc,t.zsxm_dm,t.zsxmmc,t.zspm_dm,t.sjje,t.zybl,t.ssbl,t.dsbl,t.qxbl,t.rkrq,t.kjrq,t.bz,t.nd  from  zs_jks_wsz_mx t
+    </select>
+
+</mapper>

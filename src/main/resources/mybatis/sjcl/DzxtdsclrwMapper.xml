@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xalt.sjcl.dao.DzxtdsclrwMapper">
+
+    <!--(模型名称)下拉菜单-->
+    <select id="modelname" parameterType="java.util.HashMap" resultType="com.xalt.sjcl.model.DzxtdsclrwVo">
+       select t.mxid id,t.mxmc text from znsjcl_cl_qxzhmx t where yxbz='Y'
+    </select>
+    <!--(执行周期)下拉菜单-->
+    <select id="cycle" parameterType="java.util.HashMap" resultType="com.xalt.sjcl.model.DzxtdsclrwVo">
+       select t.zqid id,t.zqmc text from znsjcl_dm_zxzq t where yxbz='Y'
+    </select>
+    <!--清洗模型(下拉菜单)-->
+    <select id="purging" parameterType="java.util.HashMap" resultType="com.xalt.sjcl.model.DzxtdsclrwVo">
+     select distinct t.mxid id,t.mxmc text from znsjcl_cl_qxzhmx t where t.yxbz='Y'
+    </select>
+    <!--匹配模型(下拉菜单)-->
+    <select id="matchmenu" parameterType="java.util.HashMap" resultType="com.xalt.sjcl.model.DzxtdsclrwVo">
+       select distinct t.mxid id,t.mxmc text from znsjcl_cl_glppmx t where t.yxbz='Y'
+    </select>
+  <!--查询所有(定制系统定时处理任务)基本信息-->
+  <select id="selectAll" parameterType="java.util.HashMap" resultType="com.xalt.sjcl.model.DzxtdsclrwVo">
+      select
+          t1.rwid,
+          t1.rwmc,
+          t2.zqmc,
+          to_char(t1.zxsj, 'yyyy-mm-dd HH:mi:ss') zxsj,
+          t1.bz,
+          t1.mxid,
+          t1.zqid,
+          t1.jobid,
+          t3.mxmc clmx
+      from znsjcl_jh_xtyxrw t1 inner join znsjcl_dm_zxzq t2 on t1.zqid=t2.zqid,znsjcl_dm_clmx t3
+         where  t1.yxbz='Y'
+        and t1.clmx=t3.mxdm
+      <if test = "svo.rwmc != null">
+      and t1.rwmc like '%${svo.rwmc}%'
+      </if>
+      <if test = "svo.clmx != null">
+          and t1.clmx like '%${svo.clmx}%'
+      </if>
+      --运行时间起
+      <if test="svo.zxsj != null">
+          and t1.zxsj &gt;= to_date('${svo.zxsj}','yyyy-mm-dd')
+      </if>
+      --运行时间止
+      <if test="svo.zxsjz != null">
+          and t1.zxsj &lt;= to_date('${svo.zxsjz}','yyyy-mm-dd')+1
+      </if>
+--      降序
+      order by t1.zxsj desc
+  </select>
+
+    <!--(新增)定制系统定时处理任务-->
+    <insert id="newaddition" parameterType="java.util.HashMap">
+           insert into znsjcl_jh_xtyxrw
+            (rwid, rwmc, clmx, mxid, zqid, zxsj, bz, yxbz)
+          values
+            (sys_guid(),
+             '${svo.rwmc}',
+             '${svo.clmx}',
+             '${svo.mxid}',
+             '${svo.zqid}',
+             sysdate,
+             '${svo.bz}',
+             'Y')
+    </insert>
+
+    <!--修改(定制系统定时处理任务)-->
+    <update id="modifyData" parameterType="java.util.HashMap" >
+      UPDATE znsjcl_jh_xtyxrw t
+               SET
+               t.rwmc = '${svo.rwmc}',
+               t.clmx = '${svo.clmx}',
+               t.mxid = '${svo.mxid}',
+               t.zqid = '${svo.zqid}',
+               t.bz = '${svo.bz}'
+             WHERE t.rwid = '${svo.rwid}'
+    </update>
+
+    <!--删除规则-->
+    <update id="deletesbyid" parameterType="java.util.HashMap">
+          update  znsjcl_jh_xtyxrw t set t.yxbz='N'  where    t.rwid='${svo.rwid}'
+    </update>
+    <!--创建job(每天执行一次)-->
+    <update id="everyday" parameterType="java.util.HashMap">
+               declare job number;
+        begin
+          sys.dbms_job.submit(job => job,--自动生成job_id
+                what => 'test_1120;',--需要执行的存储过程名称或SQL语句
+                next_date => sysdate+3/(24*60),--初次执行时间——下一个三分钟
+                 interval => 'sysdate+1'--每天执行一次
+                );
+          commit;
+        end;
+    </update>
+    <!--创建job(每周一凌晨2点执行)-->
+    <update id="perweek" parameterType="java.util.HashMap">
+         declare job number;
+      begin
+        sys.dbms_job.submit(job => job,--自动生成job_id
+              what => 'test_1120;',--需要执行的存储过程名称或SQL语句
+              next_date => sysdate+3/(24*60),--初次执行时间——下一个三分钟
+               --每周一凌晨2点执行
+               interval => 'TRUNC(next_day(sysdate,1))+2/24'
+              );
+        commit;
+      end;
+    </update>
+    <!--创建job(每月一日凌晨1点执行)-->
+    <update id="amonth" parameterType="java.util.HashMap">
+         declare job number;
+      begin
+        sys.dbms_job.submit(job => job,--自动生成job_id
+              what => 'test_1120;',--需要执行的存储过程名称或SQL语句
+              next_date => sysdate+3/(24*60),--初次执行时间——下一个三分钟
+               --每月一日凌晨1点执行
+               interval => 'TRUNC(LAST_DAY(sysdate)+1)'
+              );
+        commit;
+      end;
+    </update>
+    <!--创建job(季度的第一天凌晨0点执行)-->
+    <update id="everyquarter" parameterType="java.util.HashMap">
+           declare job number;
+      begin
+        sys.dbms_job.submit(job => job,--自动生成job_id
+              what => 'test_1120;',--需要执行的存储过程名称或SQL语句
+              next_date => sysdate+3/(24*60),--初次执行时间——下一个三分钟
+               --每季度的第一天凌晨0点执行
+               interval => 'TRUNC(ADD_MONTHS(SYSDATE,3),''q'')'
+              );
+        commit;
+      end;
+    </update>
+    <!--删除job-->
+    <update id="deletejob" parameterType="java.util.HashMap">
+         begin
+      dbms_job.remove('${svo.jobid}');
+        commit;
+     end;
+    </update>
+    <!--查询job ID-->
+    <select id="viewid" parameterType="java.util.HashMap" resultType="com.xalt.sjcl.model.DzxtdsclrwVo">
+     select t.job
+      from user_jobs t
+     where t.LAST_DATE = (select max(last_date) from user_jobs)
+    </select>
+
+    <!--更新任务(正在运行)-->
+    <update id="starttask" parameterType="java.util.HashMap" >
+        UPDATE znsjcl_jh_xtyxrw t
+        SET
+        t.jobid = '${svo.jobid}',
+        t.yxzt='1'
+        WHERE t.rwid = '${svo.rwid}'
+    </update>
+    <!--任务开始-->
+    <update id="taskstart" parameterType="java.util.HashMap" >
+       begin
+      dbms_job.run('${svo.jobid}');
+      end;
+    </update>
+    <!--任务结束-->
+    <update id="endtask" parameterType="java.util.HashMap" >
+        UPDATE znsjcl_jh_xtyxrw t
+        SET
+        t.yxzt='运行完成'
+        WHERE t.rwid = '${svo.rwid}'
+    </update>
+    <!--根据任务名称查(任务ID)-->
+    <select id="missionid" parameterType="java.util.HashMap" resultType="com.xalt.sjcl.model.DzxtdsclrwVo">
+        select t.rwid from znsjcl_jh_xtyxrw t where t.rwmc='${nametak}' and t.yxbz='Y'
+    </select>
+</mapper>

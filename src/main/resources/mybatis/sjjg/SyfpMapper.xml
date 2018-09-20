@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xalt.sjjg.dao.SyfpMapper">
+    <!--工伤对账单-->
+    <select id="selectAll" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+
+        select
+          t.社保经办机构 sbjbjg
+         ,sum(case when t.征收品目='失业保险(单位缴纳)' then nvl(t.缴费基数,0) else 0 end ) dwjfjs  --单位缴费基数
+         ,sum(case when t.征收品目='失业保险(个人缴纳)' then nvl(t.缴费基数,0) else 0 end ) grjfjs  --个人缴费基数
+
+         ,sum(case when t.征收品目='失业保险(单位缴纳)' then nvl(t.实缴金额,0) else 0 end ) dwsjje   --单位实缴金额
+         ,sum(case when t.征收品目='失业保险(个人缴纳)' then nvl(t.实缴金额,0) else 0 end ) grsjje    --个人实缴金额
+
+         ,sum(case when t.征收品目 in ('失业保险(单位缴纳)滞纳金' ,'失业保险(个人缴纳)滞纳金' )then nvl(t.实缴金额,0) else 0 end )znj --滞纳金
+         ,sum(0) fk --罚款
+
+         ,sum(case when t.征收品目 in ('失业保险(单位缴纳)利息' ,'失业保险(个人缴纳)利息' )then nvl(t.实缴金额,0) else 0 end )lx  --利息
+         ,sum(nvl(t.实缴金额,0)) rke --入库额
+
+        from DM_ZS_SBF_JKS_ex_shy t
+        group by t.社保经办机构
+
+    </select>
+
+
+</mapper>

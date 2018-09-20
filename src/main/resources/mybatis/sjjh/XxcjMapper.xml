@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xalt.xxcj.dao.XxcjMapper">
+    <!--水源类型(下拉菜单)-->
+    <select id="sylxcd" parameterType="java.util.HashMap" resultType="com.xalt.sjjh.model.XxcjVO">
+        select t.lxid id, t.lxmc text from znsjcl_jh_sylx t where t.yxbz = 'Y'
+    </select>
+    <!--取用水行业(下拉菜单)-->
+    <select id="qyshycd" parameterType="java.util.HashMap" resultType="com.xalt.sjjh.model.XxcjVO">
+    select t.hyid id, t.hymc text from znsjcl_jh_qyshy t where t.yxbz = 'Y'
+    </select>
+    <!--地下水超采类型(下拉菜单)-->
+    <select id="dxscclxcd" parameterType="java.util.HashMap" resultType="com.xalt.sjjh.model.XxcjVO">
+      select t.ccqid id, t.ccqmc text from znsjcl_jh_dxscclx t where t.yxbz = 'Y'
+    </select>
+    <!--地下水取水地点供水管网(下拉菜单)-->
+    <select id="gsgwcd" parameterType="java.util.HashMap" resultType="com.xalt.sjjh.model.XxcjVO">
+        select t.gsid id, t.gsmc text from znsjcl_jh_gsgw t where t.yxbz = 'Y'
+    </select>
+    <!--特殊用水类别(下拉菜单)-->
+    <select id="tsyslbcd" parameterType="java.util.HashMap" resultType="com.xalt.sjjh.model.XxcjVO">
+        select t.lbid id, t.lbmc text from znsjcl_jh_tsyslb t where t.yxbz = 'Y'
+    </select>
+    <!--纳税人信息-->
+    <select id="taxdata" parameterType="java.util.HashMap" resultType="com.xalt.sjjh.model.XxcjVO">
+        select x1.djxh,
+                x1.nsrmc,
+                x1.nsrsbh,
+                x1.fddbrxm,
+                x7.nsrztmc,
+                x1.zcdz,
+                x1.scjydz,
+                x5.djzclxmc,
+                x4.hymc,
+                x2.swjgmc fj,
+                x3.swjgmc ks,
+                x8.swryxm,
+                x1.kqccsztdjbz
+        from zh_dj_nsrxx      x1,
+            dim_dm_gy_swjg   x2,
+            dim_dm_gy_swjg   x3,
+            dim_dm_gy_hy     x4,
+            dim_dm_dj_djzclx x5,
+            dim_dm_gy_nsrzt  x7,
+            dim_dm_gy_swry   x8
+        where x1.zgswj_dm = x2.swjg_dm(+)
+        and x1.zgswskfj_dm = x3.swjg_dm(+)
+        and x1.hy_dm = x4.hy_dm(+)
+        and x1.djzclx_dm = x5.djzclx_dm(+)
+        and x1.nsrzt_dm = x7.nsrzt_dm(+)
+        and x1.ssgly_dm = x8.swry_dm(+)
+        and x1.YXBZ = 'Y'
+        <if test="svo.nsrsbh != null">
+            and x1.nsrsbh like '%${svo.nsrsbh}%'
+        </if>
+        <if test="svo.nsrmc != null">
+            and x1.nsrmc like '%${svo.nsrmc}%'
+        </if>
+    </select>
+    <!--信息录入-->
+    <insert id="newaddition" parameterType="java.util.HashMap">
+        insert into znsjcl_jh_xxcj
+              (xxcjid,
+               sxzzgbm,
+               qslssqq,
+               qslssqz,
+               cbrq,
+               nsrsbh,
+               lxr,
+               lxfs,
+               nsrmc,
+               qsjh,
+               sylx,
+               qyshy,
+               dxsccqlx,
+               dxsqsddgsgw,
+               tsyslb,
+               lrr,
+               lrsj,
+               yxbz,
+               djxh,
+               nsrqz,
+               slhdrqz,
+               swjgslr,
+               slrq)
+            values
+              (sys_guid(),
+               '${svo.sxzzgbm}',
+               '${svo.qslssqq}',
+               '${svo.qslssqz}',
+               '${svo.cbrq}',
+               '${svo.nsrsbh}',
+               '${svo.lxr}',
+               '${svo.lxfs}',
+               '${svo.nsrmc}',
+               '${svo.qsjh}',
+               '${svo.sylx}',
+               '${svo.qyshy}',
+               '${svo.dxsccqlx}',
+               '${svo.dxsqsddgsgw}',
+               '${svo.tsyslb}',
+               '${svo.lrr}',
+               sysdate,
+               'Y',
+               '${svo.djxh}',
+               '${svo.nsrqz}',
+               '${svo.slhdrqz}',
+               '${svo.swjgslr}',
+               '${svo.slrq}')
+    </insert>
+    <!--查询 ID-->
+    <select id="getid" parameterType="java.util.HashMap" resultType="com.xalt.sjjh.model.XxcjVO">
+        select t.xxcjid from znsjcl_jh_xxcj t  where t.lrsj=(select max(lrsj)from znsjcl_jh_xxcj)
+    </select>
+    <!--导入明细信息-->
+    <insert id="theDetailData" parameterType="map">
+        insert into znsjcl_jh_xxmx (xxcjid,qskdd,bh,sqbds,bqbds,bqqsl,ljqsl,jhqsl,hddjhnqsl,hddcjhqsl,yxbz,mxxh,lrsj)
+        <foreach collection="xxmxlist" item="svo" separator="union all">
+            select '${xxcjid}','${svo.qskdd}','${svo.bh}','${svo.sqbds}','${svo.bqbds}','${svo.bqqsl}','${svo.ljqsl}','${svo.jhqsl}','${svo.hddjhnqsl}','${svo.hddcjhqsl}','Y',sys_guid(),sysdate from dual
+        </foreach>
+    </insert>
+    <!--信息采集(表数据)-->
+    <select id="selectAll" parameterType="java.util.HashMap" resultType="com.xalt.sjjh.model.XxcjVO">
+        select t.xxcjid,
+                t.nsrsbh,
+                t.nsrmc,
+                t.lxr,
+                to_char(t.lrsj, 'yyyy-mm-dd HH:mm:ss') lrsj
+        from znsjcl_jh_xxcj t
+        where t.yxbz = 'Y'
+        <if test="svo.nsrsbh != null">
+            and t.nsrsbh like '%${svo.nsrsbh}%'
+        </if>
+        <if test="svo.nsrmc != null">
+            and t.nsrmc like '%${svo.nsrmc}%'
+        </if>
+        order by t.lrsj desc
+    </select>
+    <!--信息明细(表数据)-->
+    <select id="querytab" parameterType="java.util.Map" resultType="com.xalt.sjjh.model.XxcjVO">
+        select *from znsjcl_jh_xxmx t where t.xxcjid='${svo.xxcjid}' and t.yxbz='Y' order by t.lrsj desc
+    </select>
+    <!--删除-->
+    <update id="deletesbyid" parameterType="java.util.HashMap">
+        update  znsjcl_jh_xxcj t set t.yxbz='N' where t.xxcjid='${svo.xxcjid}'
+    </update>
+    <!--根据信息采集ID查询（编辑）-->
+    <select id="editTable" parameterType="java.util.HashMap" resultType="com.xalt.sjjh.model.XxcjVO">
+        select * from znsjcl_jh_xxcj t where t.xxcjid ='${svo.xxcjid}'
+    </select>
+    <!--信息明细（添加）-->
+    <insert id="adddata" parameterType="java.util.HashMap">
+       insert into znsjcl_jh_xxmx t
+       (t.xxcjid,
+        t.mxxh,
+        t.qskdd,
+        t.bh,
+        t.sqbds,
+        t.bqbds,
+        t.bqqsl,
+        t.ljqsl,
+        t.jhqsl,
+        t.hddjhnqsl,
+        t.hddcjhqsl,
+        t.yxbz,
+        t.lrsj)
+     values
+       ('${svo.xxcjid}',
+        sys_guid(),
+        '${svo.qskdd}',
+        '${svo.bh}',
+        '${svo.sqbds}',
+        '${svo.bqbds}',
+        '${svo.bqqsl}',
+        '${svo.ljqsl}',
+        '${svo.jhqsl}',
+        '${svo.hddjhnqsl}',
+        '${svo.hddjhnqsl}',
+        'Y',
+        sysdate)
+    </insert>
+    <!--信息明细(修改)-->
+    <update id="editdata" parameterType="java.util.HashMap">
+        UPDATE znsjcl_jh_xxmx
+           SET qskdd     = '${svo.qskdd}',
+               bh        = '${svo.bh}',
+               sqbds     = '${svo.sqbds}',
+               bqbds     = '${svo.bqbds}',
+               bqqsl     = '${svo.bqqsl}',
+               ljqsl     = '${svo.ljqsl}',
+               jhqsl     = '${svo.jhqsl}',
+               hddjhnqsl = '${svo.hddjhnqsl}',
+               hddcjhqsl = '${svo.hddcjhqsl}'
+         WHERE mxxh = '${svo.mxxh}'
+    </update>
+    <!--信息采集(表头修改)-->
+    <update id="modifytheheader" parameterType="java.util.HashMap">
+        update znsjcl_jh_xxcj
+           set  sxzzgbm       = '${svo.sxzzgbm}',
+                qslssqq       = '${svo.qslssqq}',
+                qslssqz       = '${svo.qslssqz}',
+                cbrq          = '${svo.cbrq}',
+                nsrsbh        = '${svo.nsrsbh}',
+                lxr           = '${svo.lxr}',
+                lxfs          = '${svo.lxfs}',
+                nsrmc         = '${svo.nsrmc}',
+                qsjh          = '${svo.qsjh}',
+                sylx          = '${svo.sylx}',
+                qyshy         = '${svo.qyshy}',
+                dxsccqlx      = '${svo.dxsccqlx}',
+                dxsqsddgsgw   = '${svo.dxsqsddgsgw}',
+                tsyslb        = '${svo.tsyslb}',
+                nsrqz         = '${svo.nsrqz}',
+                slhdrqz       = '${svo.slhdrqz}',
+                swjgslr       = '${svo.swjgslr}',
+                slrq          = '${svo.slrq}',
+                xgsj          = sysdate
+            where xxcjid='${svo.xxcjid}'
+    </update>
+    <!--删除(明细)-->
+    <update id="deletethedetail" parameterType="java.util.HashMap">
+        update  znsjcl_jh_xxmx t set t.yxbz='N' where t.mxxh='${svo.mxxh}'
+    </update>
+    <!--校验 是否是 金三数据-->
+    <select id="checkthenum" parameterType="java.util.Map" resultType="com.xalt.sjjh.model.XxcjVO">
+        select x1.djxh,
+               x1.nsrmc,
+               x1.nsrsbh,
+               x1.fddbrxm,
+               x7.nsrztmc,
+               x1.zcdz,
+               x1.scjydz,
+               x5.djzclxmc,
+               x4.hymc,
+               x2.swjgmc fj,
+               x3.swjgmc ks,
+               x8.swryxm,
+               x1.kqccsztdjbz
+          from zh_dj_nsrxx      x1,
+               dim_dm_gy_swjg   x2,
+               dim_dm_gy_swjg   x3,
+               dim_dm_gy_hy     x4,
+               dim_dm_dj_djzclx x5,
+               dim_dm_gy_nsrzt  x7,
+               dim_dm_gy_swry   x8
+         where x1.zgswj_dm = x2.swjg_dm(+)
+           and x1.zgswskfj_dm = x3.swjg_dm(+)
+           and x1.hy_dm = x4.hy_dm(+)
+           and x1.djzclx_dm = x5.djzclx_dm(+)
+           and x1.nsrzt_dm = x7.nsrzt_dm(+)
+           and x1.ssgly_dm = x8.swry_dm(+)
+           and x1.YXBZ = 'Y'
+           and x1.NSRSBH='${svo.nsrsbh}'
+    </select>
+</mapper>

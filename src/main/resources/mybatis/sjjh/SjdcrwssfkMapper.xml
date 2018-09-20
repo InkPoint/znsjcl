@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xalt.sjdc.dao.SjdcrwssfkMapper">
+    <resultMap id="BaseResultMap" type="com.xalt.sjjh.model.sjdcrwssfk">
+        <result column="DRID" jdbcType="VARCHAR" property="drid" />
+        <result column="WJMC" jdbcType="VARCHAR" property="wjmc" />
+        <result column="SCSJ" jdbcType="VARCHAR" property="scsj" />
+        <result column="WJLX" jdbcType="VARCHAR" property="wjlx" />
+        <result column="SCR_DM" jdbcType="VARCHAR" property="scr_dm" />
+        <result column="SHR" jdbcType="VARCHAR" property="shr" />
+        <result column="WJDX" jdbcType="VARCHAR" property="wjdx" />
+        <result column="BZ" jdbcType="VARCHAR" property="bz" />
+        <result column="YXBZ" jdbcType="VARCHAR" property="yxbz" />
+        <result column="DRFS" jdbcType="VARCHAR" property="drfs" />
+        <result column="PC" jdbcType="VARCHAR" property="pc" />
+        <result column="SHJG" jdbcType="VARCHAR" property="shjg" />
+        <result column="SHYJ" jdbcType="VARCHAR" property="shyj" />
+        <result column="SHSJ" jdbcType="VARCHAR" property="shsj" />
+        <result column="DXMC" jdbcType="VARCHAR" property="dxmc" />
+        <result column="DRRY" jdbcType="VARCHAR" property="drry" />
+        <result column="DRSJL" jdbcType="VARCHAR" property="drsjl" />
+        <result column="SJDRSJ" jdbcType="VARCHAR" property="sjdrsj" />
+    </resultMap>
+
+    <sql id="Base_Column_List">
+
+        SQID,SQBT,SQNR,SHR_DM,SHYJ,WCJD,BZ,YXBZ,BMDM,PC,SHSJ,JDFKSJ,WCSJ,FKRY,SQSJ,SQR_DM,SQLXID
+    </sql>
+
+    <!--查询信息-->
+    <select id="search" parameterType="java.util.HashMap" resultType="com.xalt.sjjh.model.sjdcrwssfk">
+
+--         select t.sqid,
+--         t.sqbt,
+--         t.sqnr,
+--         to_char(t.sqsj, 'yyyy-mm-dd') sqsj,
+--         t.shyj,
+--         t.wcjd,
+--         t1.bz
+--         from znsjcl_jh_sjsq t,
+--         (select t1.sqid, t1.bz
+--         from znsjcl_jh_rwssxj t1,
+--         (select t2.sqid, max(t2.gxsj) gxsj
+--         from znsjcl_jh_rwssxj t2
+--         group by t2.sqid) t3
+--         where t1.sqid = t3.sqid
+--         and t1.gxsj = t3.gxsj) t1
+--         where t.sqid = t1.sqid
+
+                select t.rwmc,
+                t.lcid,
+                t.xyhjid,
+                t.rwsm,
+                to_char(t.cjsj, 'yyyy-mm-dd HH:MM:SS') cjsj,
+                to_char(t.jzrq,'yyyy-mm-dd HH:MM:SS') jzrq,
+                a.user_name name
+                from znsjcl_sqsp_rwxx t,
+                acl_user a
+                where t.cjr = a.user_code
+                and t.lcid = '101'
+
+        <!--<if test='sqbt != null and ""!=sqbt'>-->
+            <!--and t.sqbt like   '%${sqbt}%'-->
+        <!--</if>-->
+        <!--<if test='sqsjbegin != null and ""!=sqsjbegin'>-->
+            <!--and t.sqsj &gt;=  to_date('${sqsjbegin}','yyyy-mm-dd')-->
+        <!--</if>-->
+        <!--<if test='sqsjend != null and ""!=sqsjend'>-->
+            <!--and t.sqsj &lt;=   to_date('${sqsjend}','yyyy-mm-dd')-->
+        <!--</if>-->
+    </select>
+    <!--更新任务进度-->
+    <select id="saveWcjdData" parameterType="java.util.HashMap" >
+        update znsjcl_jh_sjsq
+        set wcjd='${wcjd}'
+        where sqid='${sqid}'
+    </select>
+    <!--获取任务实施细节-->
+    <select id="getRwssjx" parameterType="java.util.HashMap" resultType="com.xalt.sjjh.model.Rwssxj">
+        select sqid,bz,to_char(gxsj,'yyyy-MM-dd') gxsj from znsjcl_jh_rwssxj
+        where  sqid='${sqid}'
+        order by gxsj desc
+    </select>
+    <!--删除任务实施细节-->
+    <select id="delRwssjx" parameterType="java.util.HashMap" >
+        delete from znsjcl_jh_rwssxj
+        where sqid='${sqid}'
+    </select>
+    <!--新增任务实施细节-->
+    <select id="insertRwssjx" parameterType="java.util.HashMap" >
+        insert into znsjcl_jh_rwssxj(sqid,bz,gxsj) values('${sqid}','${bz}',sysdate)
+    </select>
+
+</mapper>

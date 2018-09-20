@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xalt.sjzd.dao.SjdxglMapper">
+    <!--查询结果-->
+    <!--MyBatis的传入参数parameterType类型分为两种 1.基本数据类型int、string、long、date 2.复杂数据类型 类和Map-->
+    <!--<select id="selectAll" parameterType="java.util.HashMap" resultType="">-->
+    <!--</select>-->
+
+    <!--查询数据分区下拉菜单-->
+    <select id="fqlist" parameterType="java.util.HashMap" resultType="com.xalt.sjzd.model.DropDownlistVo">
+        select t.fqid id, t.fqmc text from znsjcl_dm_sjfq t where t.yxbz = 'Y'
+    </select>
+    <!--查询数据来源下拉树形菜单-->
+    <select id="lylist" parameterType="java.util.HashMap" resultType="com.xalt.sjzd.model.DropDownlistVo">
+    select t.lyid id,t.lymc text,t.plyid pid from znsjcl_dm_sjly t where t.yxbz='Y'
+    </select>
+    <!--数据级别(下拉菜单)-->
+    <select id="jblist" parameterType="java.util.HashMap" resultType="com.xalt.sjzd.model.DropDownlistVo">
+       select t.jbid id, t.jbmc text from znsjcl_dm_sjjb t where t.yxbz = 'Y'
+    </select>
+    <!--业务标签(下拉菜单)-->
+    <select id="businessTag" parameterType="java.util.HashMap" resultType="com.xalt.sjzd.model.DropDownlistVo">
+    select t.bqid id, t.bqmc text
+      from znsjcl_dm_ywbq t
+     where t.yxbz = 'Y'
+       and t.pbqid != '233'
+    </select>
+    <!--数据对象管理表数据查询-->
+    <select id="selectAll" parameterType="java.util.HashMap" resultType="com.xalt.sjzd.model.SjdxglVo">
+        select
+        t.dxid,
+        t.dxmczw,
+        t.lxid,
+        t.dxms,
+        t.bqid,
+        t.lyid,
+        t.fqid,
+        t.fdxid,
+        t.bz,
+        t.yxbz,
+        t.cjr,
+        to_char(t.cjsj, 'yyyy-mm-dd HH:MM:SS') cjsj,
+        t.dxmcyw,
+        t.sjjb
+        from znsjcl_dm_sjdx t
+        where 1=1
+        and t.dxid in(
+        select t1.dxid from znsjcl_dm_sjx t1
+        where 1=1
+        <if test="svo.sjxmczw != null">
+            and t1.sjxmczw like '%${svo.sjxmczw}%'
+        </if>
+        <if test="svo.sjxmcyw != null">
+            and t1.sjxmcyw like '%${svo.sjxmcyw}%'
+        </if>
+        )
+        <if test="svo.dxmczw != null">
+            and t.dxmczw like trim('%${svo.dxmczw}%')
+        </if>
+        <if test="svo.dxmcyw != null">
+            and t.dxmcyw like trim('%${svo.dxmcyw}%')
+        </if>
+        <if test="svo.fqid != null">
+            and t.fqid like '%${svo.fqid}%'
+        </if>
+        <if test="svo.lyid != null">
+            and t.lyid like '%${svo.lyid}%'
+        </if>
+        and t.yxbz='Y'
+        order by t.cjsj DESC
+    </select>
+    <!--业务标签管理ZTree树-->
+    <select id="ywbqList" parameterType="java.util.HashMap" resultType="com.xalt.sjzd.model.YwbqglTree">
+      select  t.bqid bqid,t.bqmc bqmc,t.pbqid pbqid from znsjcl_dm_ywbq t where yxbz='Y'
+    </select>
+    <!--实体类型下拉菜单-->
+    <select id="stlist" parameterType="java.util.HashMap" resultType="com.xalt.sjzd.model.DropDownlistVo">
+       select t.lxid id,t.lxmc text from znsjcl_dm_stlx t where yxbz='Y'
+    </select>
+    <!--数据项(表数据查询)-->
+    <select id="sjxAll" parameterType="java.util.HashMap" resultType="com.xalt.sjzd.model.SjxVo">
+        -- select t.sjxmczw sjxmczw,t.sjxmcyw sjxmcyw,t.sjxlx sjxlx,t.isnulls isnulls,t.iskey iskey from znsjcl_dm_sjx t
+        -- where yxbz='Y'
+
+        select *from znsjcl_dm_sjx t
+        where 1=1 and t.dxid='${svo.dxid}'
+        and t.dxid in(
+        select t1.dxid from znsjcl_dm_sjdx t1
+        where 1=1
+        <if test="svo.lxid !=null">
+            and t1.lxid like '%${svo.lxid}%'
+        </if>
+        <if test="svo.lyid !=null">
+            and t1.lyid like '%${svo.lyid}%'
+        </if>
+        <if test="svo.fqid != null">
+            and t1.fqid like '%${svo.fqid}%'
+        </if>
+        )
+        <if test="svo.sjxmczw != null">
+            and t.sjxmczw like '%${svo.sjxmczw}%'
+        </if>
+        <if test="svo.sjxmcyw != null">
+            and t.sjxmcyw like '%${svo.sjxmcyw}%'
+        </if>
+        and t.yxbz='Y'
+    </select>
+    <!--数据项(表数据修改)-->
+    <update id="updatedata" parameterType="java.util.HashMap">
+        UPDATE znsjcl_dm_sjx SET SJXMCZW='${svo.sjxmczw}',SJXMCYW='${svo.sjxmcyw}',SJXLX='${svo.sjxlx}',ISNULLS='${svo.isnulls}',ISKEY='${svo.iskey}'WHERE SJXID='${svo.sjxid}'AND  yxbz='Y'
+            </update>
+    <!--修改列名-->
+    <insert id="editcolumn" parameterType="java.util.HashMap">
+        alter table ${svo.sjdxmcyw} rename column ${svo.oldcolumn} TO ${svo.sjxmcyw}
+    </insert>
+    <!--修改列类型-->
+    <insert id="editcolumntype" parameterType="java.util.HashMap">
+        alter table ${svo.sjdxmcyw} modify (${svo.sjxmcyw} ${svo.sjxlx})
+    </insert>
+    <!--数据对象(表信息修改)-->
+    <update id="updatetable" parameterType="java.util.HashMap">
+        UPDATE znsjcl_dm_sjdx SET DXMCZW='${svo.dxmczw}',FQID='${svo.fqid}',LYID='${svo.lyid}',LXID='${svo.lxid}',SJJB='${svo.sjjb}',BQID='${svo.bqid}' WHERE DXMCYW='${svo.dxmcyw}'AND  YXBZ='Y'
+    </update>
+    <!--数据对象(删除)-->
+    <update id="deleteList" parameterType="java.util.HashMap">
+        --delete from znsjcl_dm_sjdx t where t.dxmcyw='${svo.dxmcyw}'
+         update znsjcl_dm_sjdx t set t.yxbz = 'N' where t.dxmcyw = '${svo.dxmcyw}'
+    </update>
+    <!--删除源表-->
+    <update id="deletetable" parameterType="java.util.HashMap">
+        drop table ${svo.dxmcyw}
+    </update>
+    <!--<update id="deleteList" parameterType="java.util.HashMap">-->
+    <!--update  znsjcl_dm_sjdx t set t.yxbz='N'  where t.dxmcyw='${svo.dxmcyw}'-->
+    <!--</update>-->
+    <!--数据项(删除)-->
+    <update id="deletesjxdata" parameterType="java.util.HashMap">
+--          delete from znsjcl_dm_sjx t where t.dxid in (select t1.dxid from znsjcl_dm_sjdx t1 where t1.dxmcyw = '${svo.dxmcyw}')
+      update znsjcl_dm_sjx t
+          set t.yxbz = 'N'
+        where t.dxid in
+              (select t1.dxid
+                 from znsjcl_dm_sjdx t1
+                where t1.dxmcyw = '${svo.dxmcyw}')
+    </update>
+
+    <!--创建表-->
+    <update id="createdx" parameterType="java.lang.String">
+         ${mysql}
+    </update>
+
+    <!--保存数据对象-->
+    <insert id="insertsjdx" parameterType="java.util.HashMap">
+        insert into znsjcl_dm_sjdx(dxid,dxmczw,dxmcyw,dxms,lxid,bqid,lyid,fqid,bz,yxbz,cjr,cjsj,sjjb)
+         values(SJDX_INDEX.NEXTVAL,'${svo.dxmczw}','${svo.dxmcyw}','${svo.dxms}','${svo.lxid}','${svo.bqid}','${svo.lyid}','${svo.fqid}','${svo.bz}','Y','${svo.cjr}',sysdate,'${svo.sjjb}')
+
+    </insert>
+
+
+    <!--保存数据项-->
+    <insert id="insertsjx" parameterType="java.util.HashMap">
+        insert into znsjcl_dm_sjx(sjxid,sjxmczw,sjxms,sjxlx,iskey,cjsj,bqid,dxid,isnulls,updatetime,sjxmcyw,yxbz,bz,sjdxmcyw)
+        values(SJDX_INDEX.NEXTVAL,'${svo.sjxmczw}','${svo.sjxms}','${svo.sjxlx}','${svo.iskey}',sysdate,'${bqid}','${svo.dxid}','${svo.isnulls}',sysdate,'${svo.sjxmcyw}','Y','${svo.bz}','${svo.sjdxmcyw}')
+    </insert>
+
+
+    <!--通过表英文名称查询数据对象id-->
+    <select id="sjdxbyname" parameterType="java.util.HashMap" resultType="com.xalt.sjzd.model.SjdxglVo">
+         select * from znsjcl_dm_sjdx t where t.dxmcyw ='${svo.dxmcyw}'
+    </select>
+
+    <!--查询结果集-->
+    <select id="resultList" parameterType="com.xalt.sjzd.model.SjdxglVo" resultType="java.util.HashMap">
+        select * from znsjcl_dm_sjdx t where t.yxbz='Y'
+        <if test="svo.dxmczw != null">
+            and t.dxmczw='${svo.dxmczw}'
+        </if>
+        <if test="svo.dxmcyw != null">
+            and t.dxmcyw='${svo.dxmcyw}'
+        </if>
+        <if test="svo.lyid != null">
+            and t.lyid='${svo.lyid}'
+        </if>
+        <if test="svo.fqid != null">
+            and t.fqid='${svo.fqid}'
+        </if>
+        order by t.fqid
+    </select>
+    <!--获取表名(中文)、表名(英文)-->
+    <select id="editTable" parameterType="java.util.HashMap" resultType="com.xalt.sjzd.model.SjdxglVo">
+        select * from znsjcl_dm_sjdx t where t.dxid ='${svo.dxid}'
+    </select>
+
+    <!--查询数据(列名查询)-->
+    <select id="viewdata" parameterType="java.util.HashMap" resultType="com.xalt.sjzd.model.DymicVO">
+        select upper(t.sjxmcyw) field,
+               t.sjxmczw title,
+               'left' align,
+               'center' halign
+          from znsjcl_dm_sjx t
+         WHERE t.yxbz = 'Y'
+           and t.sjdxmcyw = '${svo.dxmcyw}'
+         order by t.sjxid desc
+    </select>
+
+    <!--查询数据(列数据查询)-->
+    <select id="querytab" parameterType="java.util.Map" resultType="java.util.Map">
+        select *   from  ${svo.dxmcyw}
+    </select>
+    <!--导出-->
+    <select id="exportData" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+        select * from ${svo.dxmcyw}
+    </select>
+    <!--根据数据对象英文名查询数据项  order by t.sjxmczw desc-->
+    <select id="sjxinfo" parameterType="java.util.HashMap" resultType="com.xalt.sjzd.model.SjxVo">
+        select t.sjxmczw,t.sjxmcyw from znsjcl_dm_sjx t where t.sjdxmcyw='${svo.dxmcyw}' and t.yxbz='Y'
+    </select>
+    <!--数据来源下拉菜单-->
+    <select id="datasurce" parameterType="java.util.HashMap" resultType="com.xalt.sjzd.model.DropDownlistVo">
+         select t.lyid id,t.lymc text from znsjcl_dm_sjly t where t.yxbz='Y' and t.plyid!='1'
+    </select>
+    <!--表名称_校检-->
+    <select id="namevalidation" parameterType="java.util.HashMap" resultType="com.xalt.sjzd.model.SjdxglVo">
+        select *
+          from user_objects t
+         where t.object_type in ('TABLE', 'VIEW')
+           and upper(t.object_name) = upper('${svo.dxmcyw}')
+    </select>
+    <!--数据项（添加）-->
+    <insert id="adddata" parameterType="java.util.HashMap">
+         insert into znsjcl_dm_sjx t
+      (t.bz,
+       t.yxbz,
+       t.sjxid,
+       t.sjxmczw,
+       t.sjxms,
+       t.sjxlx,
+       t.sjjd,
+       t.iskey,
+       t.cjsj,
+       t.bqid,
+       t.dxid,
+       t.isnulls,
+       t.updatetime,
+       t.sjxmcyw,
+       t.kjbz,
+       t.sjdxmcyw)
+    values
+      ('',
+       'Y',
+       SJDX_INDEX.NEXTVAL,
+       '${svo.sjxmczw}',
+       '',
+       '${svo.sjxlx}',
+       '',
+       '${svo.iskey}',
+       sysdate,
+       '',
+       '${svo.dxid}',
+       '${svo.isnulls}',
+       sysdate,
+       '${svo.sjxmcyw}',
+       '',
+       '${svo.sjdxmcyw}')
+    </insert>
+    <!--新增—列-->
+    <insert id="addcolumn" parameterType="java.util.HashMap">
+        alter table ${svo.sjdxmcyw} add(${svo.sjxmcyw} ${svo.sjxlx})
+    </insert>
+    <!--数据项(列数据)删除-->
+    <update id="delsjxdata" parameterType="java.util.HashMap">
+         UPDATE znsjcl_dm_sjx t SET t.yxbz='N' WHERE t.sjxid='${svo.sjxid}'
+    </update>
+    <!--列_删除-->
+    <update id="removecolumn" parameterType="java.util.HashMap">
+    --置为不可用
+    alter table ${svo.dxmcyw} set unused column ${svo.sjxmcyw}
+    </update>
+    <!--释放-->
+    <update id="release" parameterType="java.util.HashMap">
+         alter table ${svo.dxmcyw} drop unused columns
+    </update>
+</mapper>

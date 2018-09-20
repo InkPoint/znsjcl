@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xalt.sjjh.dao.DrrwjkMapper">
+    <select id="selectAll" parameterType="java.util.HashMap" resultType="com.xalt.sjjh.model.DrrwdzVo">
+        select  t.rwid,
+        t.rwmc,
+        t.yb,
+        t.mbb,
+        t.zqid,
+        to_char(t.zxsj, 'yyyy-MM-dd HH24:mi:ss') zxsj,
+        t.ztid,
+        t.bz,
+        t.zxr,
+        t.jobid,
+        t.yxzt,
+        t1.dxmczw ybzwm,
+        t5.dxmczw  mbbzwm,
+        t2.zqmc,
+        t3.ztmc,
+        t6.user_name name
+        from znsjcl_jh_xtyxrw t,
+        znsjcl_dm_sjdx t1,
+        znsjcl_dm_zxzq t2,
+        znsjcl_dm_yxzt t3,
+        znsjcl_dm_rwlx t4,
+        znsjcl_dm_sjdx  t5,
+        acl_user t6 ---当前登录用户
+        where t.yxbz='Y'
+        and t.yb=t1.dxid
+        and t.zqid=t2.zqid
+        and t.ztid = t3.ztid
+        and t.rwlx=t4.lxid
+        and t.zxr='26100016035'
+        and t.mbb=t5.dxid(+)
+        and t6.user_code=t.zxr
+        --任务名称
+        <if test="svo.rwmc != null">
+            and t.rwmc like '%${svo.rwmc}%'
+        </if>
+        --目标表
+        <if test="svo.mbb != null">
+            and t.mbb like '%${svo.mbb}%'
+        </if>
+        order by zxsj desc
+    </select>
+
+    <!--查询日志-->
+    <select id="selectRz" parameterType="java.util.HashMap" resultType="com.xalt.sjjh.model.DrrwdzVo">
+                   select t.job,
+                        to_char( t.LAST_DATE, 'yyyy-MM-dd HH24:mi:ss') sctime,
+                        --to_char(  t.last_sec, ' HH24:mi:ss') scjstime,
+                        t.last_sec scjstime,
+                        T1.rwmc,
+                        to_char(t1.cjsj, 'yyyy-MM-dd HH24:mi:ss') cjsj
+                  from user_jobs t,
+                       ZNSJCL_JH_XTYXRW T1
+                 where t.BROKEN = 'N'
+                   AND T.JOB = T1.JOBID
+                   AND jobid='${svo.jobid}'
+    </select>
+
+
+
+</mapper>

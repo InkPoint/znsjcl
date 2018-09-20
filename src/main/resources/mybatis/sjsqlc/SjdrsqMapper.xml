@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xalt.sjsplc.dao.SjdrsqMapper">
+
+    <!--需求分类查询-->
+    <select id="selecTittle" parameterType="java.util.HashMap" resultType="com.xalt.sjsplc.model.SjdrsqVo">
+       select t.lcmc text,t.lcid id  from znsjcl_sqsp_lcxx  t where t.lcid in(select a.lcid from znsjcl_sqsp_hjxx a where a.clgw ='${clgw}')     and yxbz = 'Y'
+     </select>
+
+    <!--申请   表数据项查询-->
+    <select id="selectAll" parameterType="java.util.HashMap" resultType="com.xalt.sjsplc.model.SjdrsqVo">
+        select distinct t.rwid,
+        t.rwmc,
+        to_char(t.cjsj, 'yyyy-MM-dd HH24:mi:ss') cjsj,
+        t.dqhjid,
+        t.rwsm,
+        t.cjr,
+        t.savepath,
+        t.bz,
+        t.xyhjid,
+        t.wcjd,
+        to_char(t.jzrq, 'yyyy-MM-dd HH24:mi:ss') jzrq,
+        t1.hjmc,
+        t.yxbz,
+        t2.lcmc,
+        t.shzt
+        from Znsjcl_Sqsp_Rwxx t,
+        Znsjcl_Sqsp_Lcxx t2,
+        znsjcl_sqsp_hjxx t1
+        where t.lcid = t2.lcid
+        and t.dqhjid = t1.hjid
+        and t.yxbz='Y'
+        and t.cjr='${cjr}'
+        <if test="svo.rwmc!=null">
+            and t.rwmc like '%${svo.rwmc}%'
+        </if>
+        <if test="svo.lcmc!=null">
+            and t.lcid like '%${svo.lcmc}%'
+        </if>
+        <if test="svo.rwsm!=null">
+            and t.rwsm like '%${svo.rwsm}%'
+        </if>
+        <if test="svo.cjsjbegin!=null and svo.cjsjend!=null">
+            and cjsj &gt; to_date('${svo.cjsjbegin}','yyyy-MM-dd')
+            and cjsj &lt; to_date('${svo.cjsjend}','yyyy-MM-dd')+1
+        </if>
+        and t.dqhjid in(
+        select hjid from ( select a.lcid ,min(a.hjid) hjid from znsjcl_sqsp_hjxx a group by a.lcid)
+        )
+        order by cjsj desc
+
+    </select>
+
+    <!--审核  表数据项-->
+    <select id="selectshmodel" parameterType="java.util.HashMap" resultType="com.xalt.sjsplc.model.SjdrsqVo">
+        select t.lcid,
+        t.rwid,
+        t.rwmc,
+        to_char(t.cjsj, 'yyyy-MM-dd HH24:mi:ss') cjsj,
+        t.cjr,
+        t.dqhjid,
+        t.rwsm,
+        t.savepath wjmc,
+        t.bz,
+        t.xyhjid,
+        t.sqrscwj,
+        to_char(t.jzrq,'yyyy-MM-dd HH24:mi:ss') jzrq,
+        t1.hjid,
+        t1.hjmc,
+        t2.clgw,
+        t1.scbz,
+        t1.xzbz,
+        t1.shjid,
+        t3.lcmc,
+        t4.user_name,
+        t4.user_code,
+        t.shzt
+        from znsjcl_sqsp_rwxx t
+        ,znsjcl_sqsp_hjxx t1 --申请环节信息表
+        ,znsjcl_sqsp_hjxx t2 --审核环节信息表
+        ,znsjcl_sqsp_lcxx t3 ---流程表
+        ,acl_user t4 ---当前登录用户
+        where
+        t.dqhjid = t1.hjid ----申请信息id
+        and t.xyhjid= t2.hjid ----审核环节信息
+        and t.lcid =t3.lcid ----流程id
+        and t2.clgw = '${clgw}' ---审核岗位
+        and t.xyhjid is not null
+        and t.cjr=t4.user_code(+) ----关联当前登录人
+       and t.shzt='0'
+        <if test="svo.rwmc!=null">
+            and t.rwmc like '%${svo.rwmc}%'
+        </if>
+        <if test="svo.lcmc!=null">
+            and t.lcid like '%${svo.lcmc}%'
+        </if>
+        <if test="svo.rwsm!=null">
+            and t.rwsm like '%${svo.rwsm}%'
+        </if>
+        <if test="svo.cjsjbegin!=null and svo.cjsjend!=null">
+            and cjsj &gt; to_date('${svo.cjsjbegin}','yyyy-MM-dd')
+            and cjsj &lt; to_date('${svo.cjsjend}','yyyy-MM-dd')+1
+        </if>
+        ---任务表中当前环节id必须是该流程中的最小环节id
+        and t.dqhjid in(
+        select hjid from ( select a.lcid ,min(a.hjid) hjid from znsjcl_sqsp_hjxx a group by a.lcid)
+        )
+        order by cjsj desc
+
+    </select>
+
+
+    <!--数据导入申请添加-->
+    <insert id="insertlable" parameterType="java.util.HashMap">
+          insert into znsjcl_sqsp_rwxx
+            (rwid, rwmc, cjsj, cjr, rwsm, yxbz, bz, lcid, dqhjid,sqrscwj,savepath,sqrscwjsj,xyhjid,jzrq,shzt)
+          values
+            (sqsp_rwxx.nextval,
+             '${svo.rwmc}',
+             sysdate,
+             '${svo.cjr}',
+             '${svo.rwsm}',
+             'Y',
+             '${svo.bz}',
+             '${svo.lcid}',
+             '${svo.minhjid}',
+             '${svo.wjmc}',
+             '${svo.wjmc}',
+             sysdate,
+             '${svo.xyhjid}',
+             to_date ('${svo.jzrq}','yyyy-mm-dd'),
+            '${svo.shzt}'
+             )
+
+    </insert>
+
+    <!--任务名称名称_校检-->
+    <select id="nameValidation" parameterType="java.util.HashMap" resultType="com.xalt.sjzd.model.YwbqglVo">
+        select t.rwmc from znsjcl_sqsp_rwxx t where t.rwmc='${svo.rwmc}' and t.yxbz='Y'
+    </select>
+
+    <!--删除导入申请-->
+    <update id="deleteInformation" parameterType="java.util.HashMap">
+        UPDATE znsjcl_sqsp_rwxx  SET yxbz='N' WHERE  rwid='${svo.rwid}'
+    </update>
+
+    <!--编辑导入申请-->
+    <update id="updateInformation" parameterType="java.util.HashMap">
+        UPDATE znsjcl_sqsp_rwxx SET rwmc='${svo.rwmc}',rwsm='${svo.rwsm}',bz='${svo.bz}',cjsj=sysdate where rwid = '${svo.rwid}'
+    </update>
+
+    <!--查询当前岗位对应的流程id下所有最小的环节id-->
+    <select id="selectHjidmin" parameterType="java.util.HashMap" resultType="com.xalt.sjsplc.model.SjdrsqVo">
+              select t1.hjid minhjid
+                from znsjcl_sqsp_hjxx t1,
+                    (select t.lcid ,min(t.hjid) hjid
+                     from znsjcl_sqsp_hjxx t
+                   group by t.lcid
+                    ) t2
+            where t1.hjid=t2.hjid
+                  and t1.clgw='${clgw}'
+    </select>
+
+
+    <select id="selectLc" parameterType="java.util.HashMap" resultType="com.xalt.sjsplc.model.SjdrsqVo">
+         select min(t1.hjid) minhjid
+              from znsjcl_sqsp_hjxx t1
+              where t1.lcid ='${svo.lcid}'
+    </select>
+
+    <!--文件上传标志判断-->
+    <select id="selectscbz" parameterType="java.lang.String" resultType="java.util.HashMap">
+            select r.*
+            from znsjcl_sqsp_hjxx r
+            where r.hjid in (select min(t.hjid)
+                                from znsjcl_sqsp_hjxx t
+                               where t.lcid = #{lcid,jdbcType=VARCHAR})
+    </select>
+
+    <!--审核通过修改任务信息-->
+    <update id="updateInformation1" parameterType="java.util.HashMap">
+              UPDATE znsjcl_sqsp_rwxx t
+              SET t.xyhjid = '${svo.xyhjid}'
+              where rwid = '${svo.rwid}'
+    </update>
+
+    <!--添加日志-->
+    <insert id="addlogs" parameterType="java.util.HashMap">
+         insert into znsjcl_sqsp_clrz
+         (lcid, rwid, hjid, clyj, rlsj, clsj, xhjid, clrid)
+          values
+         ('${svo1.lcid}',
+          '${svo1.rwid}',
+          '${svo1.hjid}',
+          '${svo1.clyj}',
+          sysdate,
+          sysdate,
+          '${svo1.xhjid}',
+          '${svo1.clrid}')
+    </insert>
+
+    <!--获取上个环节的id-->
+    <select id="getSyhjid" parameterType="java.lang.String" resultType="java.util.HashMap">
+         select t.dqhjid
+         from znsjcl_sqsp_rwxx t
+         where t.xyhjid = #{xyhjid, jdbcType = VARCHAR}
+         AND t.rwid = #{rwid, jdbcType = VARCHAR}
+
+
+    </select>
+
+    <!--审核通过 下一环节id=999999-->
+    <update id="updateshbz" parameterType="java.util.HashMap">
+          update znsjcl_sqsp_rwxx t
+          SET
+            t.xyhjid='999999',
+            t.shzt='1'
+        where rwid = '${svo.rwid}'
+    </update>
+
+    <!--审核不通过 下一环节id为最小环节id-->
+    <update id="updateShbtg" parameterType="java.util.HashMap">
+              update znsjcl_sqsp_rwxx t
+              set t.xyhjid = '${svo.xyhjid}',
+              t.shzt='2'
+              where rwid = '${svo.rwid}'
+    </update>
+
+</mapper>

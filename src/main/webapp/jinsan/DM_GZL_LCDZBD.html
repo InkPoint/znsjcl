@@ -1,0 +1,928 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>流程电子表单(DM_GZL_LCDZBD)</title><style type="text/css">
+<!--body {background-color: #EFECDD;}td{ font-family:"宋体"; font-size:9pt; color=#666666;}.style9 {color: #FFFFFF}-->
+</style></head><body>
+<table width="300" height="100" border="0" cellpadding="0" cellspacing="0">
+<tr><td><p align="center">流程电子表单(DM_GZL_LCDZBD)</p></td></tr></table>
+<table width="760" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#FF8800">
+<tr bgcolor="#FFAC75">
+<td width="80" height="26"><div align="center" class="style9">列名</div></td>
+<td width="80"><div align="center" class="style9">汉字名</div></td>
+<td width="80"><div align="center" class="style9">数据类型</div></td>
+<td width="80"><div align="center" class="style9">长度</div></td>
+<td width="80"><div align="center" class="style9">精度</div></td>
+<td width="80"><div align="center" class="style9">非空</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center"><a href="DM_GY_YWFL.html">YWFL_DM</div></td>
+<td><div align="center">业务分类代码</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">3</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center"><a href="DM_GY_YWLC.html">YWLC_DM</div></td>
+<td><div align="center">业务流程代码</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">9</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center"><a href="DM_GY_DZBZDSZL.html">DZBZDSZL_DM</div></td>
+<td><div align="center">电子表证单书种类代码</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">10</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">DZBZDSZLMC</div></td>
+<td><div align="center">电子表证单书种类名称</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">300</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">XYBZ</div></td>
+<td><div align="center">选用标志</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">YXBZ</div></td>
+<td><div align="center">有效标志</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+</table>
+
+
+   
+<table width="300" height="100" border="0" cellpadding="0" cellspacing="0">
+<tr><td><p align="center">流程电子表单(数据)</p></td></tr></table>
+<table width="760" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#FF8800">
+<tr bgcolor="#FFAC75">
+<td width="80" height="26"><div align="center" class="style9">业务分类代码</div></td>
+<td width="80" height="26"><div align="center" class="style9">业务流程代码</div></td>
+<td width="80" height="26"><div align="center" class="style9">电子表证单书种类代码</div></td>
+<td width="80" height="26"><div align="center" class="style9">电子表证单书种类名称</div></td>
+<td width="80" height="26"><div align="center" class="style9">选用标志</div></td>
+<td width="80" height="26"><div align="center" class="style9">有效标志</div></td>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">A12</div></td>
+<td><div align="center">LCA122003</div></td>
+<td><div align="center">BDA1220004</div></td>
+<td><div align="center">《纳税担保到期登记表》</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">A12</div></td>
+<td><div align="center">LCA122003</div></td>
+<td><div align="center">BDA1220005</div></td>
+<td><div align="center">《税务事项通知书（通知履行担保责任）》</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">A12</div></td>
+<td><div align="center">LCA122003</div></td>
+<td><div align="center">BDA1220114</div></td>
+<td><div align="center">《强制执行登记表》</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">A12</div></td>
+<td><div align="center">LCA122003</div></td>
+<td><div align="center">BDA1220003</div></td>
+<td><div align="center">《解除纳税担保通知书》</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">A12</div></td>
+<td><div align="center">LCA122003</div></td>
+<td><div align="center">BDA1220006</div></td>
+<td><div align="center">《税务事项通知书（限期缴纳税款通知）》</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">A12</div></td>
+<td><div align="center">LCA122048</div></td>
+<td><div align="center">BDA1220144</div></td>
+<td><div align="center">《重大税务案件审理意见书》</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">A12</div></td>
+<td><div align="center">LCA122048</div></td>
+<td><div align="center">BDA1220146</div></td>
+<td><div align="center">《重大税务案件审理纪要》</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">A12</div></td>
+<td><div align="center">LCA122048</div></td>
+<td><div align="center">BDA1120141</div></td>
+<td><div align="center">《税务处理决定情况表》</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">A12</div></td>
+<td><div align="center">LCA122048</div></td>
+<td><div align="center">BDA1120142</div></td>
+<td><div align="center">《税务处罚决定情况表》</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">A12</div></td>
+<td><div align="center">LCA122048</div></td>
+<td><div align="center">BDA1120040</div></td>
+<td><div align="center">《补充调查通知书》</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">A12</div></td>
+<td><div align="center">LCA122048</div></td>
+<td><div align="center">BDA1120037</div></td>
+<td><div align="center">《税务处理决定书》</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">A11</div></td>
+<td><div align="center">LCA112005</div></td>
+<td><div align="center">BDA1120043</div></td>
+<td><div align="center">《重大税务案件审理案卷交接单》</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">A11</div></td>
+<td><div align="center">LCA112005</div></td>
+<td><div align="center">BDA1120025</div></td>
+<td><div align="center">《检查存款账户许可证明》</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">A11</div></td>
+<td><div align="center">LCA112005</div></td>
+<td><div align="center">BDA1120036</div></td>
+<td><div align="center">《稽查结论》</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">A11</div></td>
+<td><div align="center">LCA112005</div></td>
+<td><div align="center">BDA1120044</div></td>
+<td><div align="center">《重大税务案件审理提请书》</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">A12</div></td>
+<td><div align="center">LCA112005</div></td>
+<td><div align="center">BDALC00001</div></td>
+<td><div align="center">《一般行政处罚处理实施（流程）》</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">A11</div></td>
+<td><div align="center">LCA112005</div></td>
+<td><div align="center">BDA1220088</div></td>
+<td><div align="center">《税务行政处罚事项告知书》</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">A12</div></td>
+<td><div align="center">LCA122030</div></td>
+<td><div align="center">BDALC00001</div></td>
+<td><div align="center">《一般行政处罚处理（流程）》</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">Y91</div></td>
+<td><div align="center">LCY912003</div></td>
+<td><div align="center">BDALC00001</div></td>
+<td><div align="center">《询问通知书》</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">Y91</div></td>
+<td><div align="center">LCY912003</div></td>
+<td><div align="center">BDY9120032</div></td>
+<td><div align="center">《询问（调查）笔录》</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">Y91</div></td>
+<td><div align="center">LCY912003</div></td>
+<td><div align="center">BDY9120033</div></td>
+<td><div align="center">《纳税评估自查报告》</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">Y91</div></td>
+<td><div align="center">LCY912003</div></td>
+<td><div align="center">BDY9120034</div></td>
+<td><div align="center">《税务检查通知书》</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">A12</div></td>
+<td><div align="center">LCA122049</div></td>
+<td><div align="center">BDA1120141</div></td>
+<td><div align="center">《税务处理决定情况表》</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">A12</div></td>
+<td><div align="center">LCA122049</div></td>
+<td><div align="center">BDA1120142</div></td>
+<td><div align="center">《税务处罚决定情况表》</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">A12</div></td>
+<td><div align="center">LCA122049</div></td>
+<td><div align="center">BDALC00002</div></td>
+<td><div align="center">《简易程序处罚》</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">A12</div></td>
+<td><div align="center">LCA122049</div></td>
+<td><div align="center">BDALC00001</div></td>
+<td><div align="center">《一般行政处罚处理（流程）》</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">A12</div></td>
+<td><div align="center">LCA122049</div></td>
+<td><div align="center">BDA1120037</div></td>
+<td><div align="center">《税务处理决定书》</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">A11</div></td>
+<td><div align="center">LCA112005</div></td>
+<td><div align="center">BDA1120017</div></td>
+<td><div align="center">《调取账簿资料通知书》</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">A12</div></td>
+<td><div align="center">LCA112005</div></td>
+<td><div align="center">BDA1220144</div></td>
+<td><div align="center">《重大税务案件审理意见书》</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">A12</div></td>
+<td><div align="center">LCA112005</div></td>
+<td><div align="center">BDA1220146</div></td>
+<td><div align="center">《重大税务案件审理纪要》</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">A12</div></td>
+<td><div align="center">LCA112005</div></td>
+<td><div align="center">BDA1120141</div></td>
+<td><div align="center">《税务处理决定情况表》</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">A12</div></td>
+<td><div align="center">LCA112005</div></td>
+<td><div align="center">BDA1120142</div></td>
+<td><div align="center">《税务处罚决定情况表》</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">A12</div></td>
+<td><div align="center">LCA112005</div></td>
+<td><div align="center">BDA1120040</div></td>
+<td><div align="center">《补充调查通知书》</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">A12</div></td>
+<td><div align="center">LCA112005</div></td>
+<td><div align="center">BDA1120037</div></td>
+<td><div align="center">《税务处理决定书》</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">A12</div></td>
+<td><div align="center">LCA122003</div></td>
+<td><div align="center">BDA1220182</div></td>
+<td><div align="center">《税务事项通知书（限期缴纳社会保险费通知）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">A12</div></td>
+<td><div align="center">LCA122003</div></td>
+<td><div align="center">BDA1220181</div></td>
+<td><div align="center">《税务事项通知书（通知履行社会保险费担保责任）》</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">A10</div></td>
+<td><div align="center">LCA102020</div></td>
+<td><div align="center">BDA1020054</div></td>
+<td><div align="center">《应纳税所得额调整项目表》</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">A10</div></td>
+<td><div align="center">LCA102020</div></td>
+<td><div align="center">BDA1020052</div></td>
+<td><div align="center">《各项税收应补（退）明细表》</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">A11</div></td>
+<td><div align="center">LCA112015</div></td>
+<td><div align="center">BDA1120160</div></td>
+<td><div align="center">《重大税收违法案件情况报告表》</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">A11</div></td>
+<td><div align="center">LCA112015</div></td>
+<td><div align="center">BDA1120049</div></td>
+<td><div align="center">《大案要案情况报告表》</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">A10</div></td>
+<td><div align="center">LCA102020</div></td>
+<td><div align="center">BDA1020061</div></td>
+<td><div align="center">《协商审议内容记录》</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">Y91</div></td>
+<td><div align="center">LCY912003</div></td>
+<td><div align="center">BDY9120036</div></td>
+<td><div align="center">《纳税评估税(费)缴纳统计表》</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">Y91</div></td>
+<td><div align="center">LCY912003</div></td>
+<td><div align="center">BDY9120035</div></td>
+<td><div align="center">《移交稽查建议书》</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">Y91</div></td>
+<td><div align="center">LCY912003</div></td>
+<td><div align="center">BDY9120005</div></td>
+<td><div align="center">《税务事项通知书(纳税评估适用)》</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">A10</div></td>
+<td><div align="center">LCA101001</div></td>
+<td><div align="center">BDA1010002</div></td>
+<td><div align="center">《单边预约定价安排受理正式申请申请表》</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">A10</div></td>
+<td><div align="center">LCA101001</div></td>
+<td><div align="center">BDA1010004</div></td>
+<td><div align="center">《预约定价安排会谈记录》</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">A12</div></td>
+<td><div align="center">LCA122036</div></td>
+<td><div align="center">BDA1120037</div></td>
+<td><div align="center">《税务处理决定书》</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">A12</div></td>
+<td><div align="center">LCA122036</div></td>
+<td><div align="center">BDA1220084</div></td>
+<td><div align="center">《不予税务行政处罚决定书》</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">A12</div></td>
+<td><div align="center">LCA122036</div></td>
+<td><div align="center">BDA1220085</div></td>
+<td><div align="center">《税收违法行为行政处罚审查报告（非稽查处罚）》</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">A12</div></td>
+<td><div align="center">LCA122036</div></td>
+<td><div align="center">BDA1220086</div></td>
+<td><div align="center">《税收违法行为行政处罚审查报告附表》</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">A12</div></td>
+<td><div align="center">LCA122036</div></td>
+<td><div align="center">BDA1220087</div></td>
+<td><div align="center">《税务违法事实不成立通知书》</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">A12</div></td>
+<td><div align="center">LCA122036</div></td>
+<td><div align="center">BDA1220088</div></td>
+<td><div align="center">《税务行政处罚事项告知书》</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">A12</div></td>
+<td><div align="center">LCA122036</div></td>
+<td><div align="center">BDA1220089</div></td>
+<td><div align="center">《稽查案件行政处罚审查报告》</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">A12</div></td>
+<td><div align="center">LCA122036</div></td>
+<td><div align="center">BDA1220090</div></td>
+<td><div align="center">《税务行政处罚决定书》</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">A12</div></td>
+<td><div align="center">LCA122036</div></td>
+<td><div align="center">BDA1220173</div></td>
+<td><div align="center">《社会保险费行政处罚决定书》</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">A12</div></td>
+<td><div align="center">LCA122036</div></td>
+<td><div align="center">BDA1220174</div></td>
+<td><div align="center">《社会保险费行政处罚审查报告》</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">A12</div></td>
+<td><div align="center">LCA122036</div></td>
+<td><div align="center">BDA1220175</div></td>
+<td><div align="center">《社会保险费行政处罚事项告知书》</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">A11</div></td>
+<td><div align="center">LCA112005</div></td>
+<td><div align="center">BDA1220084</div></td>
+<td><div align="center">《不予税务行政处罚决定书》</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">A11</div></td>
+<td><div align="center">LCA112005</div></td>
+<td><div align="center">BDA1220087</div></td>
+<td><div align="center">《税务违法事实不成立通知书》</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">A11</div></td>
+<td><div align="center">LCA112005</div></td>
+<td><div align="center">BDA1220089</div></td>
+<td><div align="center">《稽查案件行政处罚审查报告》</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">A11</div></td>
+<td><div align="center">LCA112005</div></td>
+<td><div align="center">BDA1220090</div></td>
+<td><div align="center">《税务行政处罚决定书》</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">A12</div></td>
+<td><div align="center">LCA122030</div></td>
+<td><div align="center">BDA1120037</div></td>
+<td><div align="center">《税务处理决定书》</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">A11</div></td>
+<td><div align="center">LCA111001</div></td>
+<td><div align="center">BDA1110010</div></td>
+<td><div align="center">《税收违法检举事项交办函》</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">A11</div></td>
+<td><div align="center">LCA111001</div></td>
+<td><div align="center">BDA1120076</div></td>
+<td><div align="center">《转办函》</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">A11</div></td>
+<td><div align="center">LCA112001</div></td>
+<td><div align="center">BDA1120076</div></td>
+<td><div align="center">《转办函》</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">A11</div></td>
+<td><div align="center">LCA112001</div></td>
+<td><div align="center">BDA1120077</div></td>
+<td><div align="center">《税收违法案件交办函》</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">A10</div></td>
+<td><div align="center">LCA102001</div></td>
+<td><div align="center">BDA1020010</div></td>
+<td><div align="center">《纳税评估税务事项通知书（纳税人自行补正）》</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">A10</div></td>
+<td><div align="center">LCA102001</div></td>
+<td><div align="center">BDA1020011</div></td>
+<td><div align="center">《纳税评估报告》</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">A10</div></td>
+<td><div align="center">LCA102001</div></td>
+<td><div align="center">BDA1020003</div></td>
+<td><div align="center">《纳税情况自查报告表》</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">A10</div></td>
+<td><div align="center">LCA102001</div></td>
+<td><div align="center">BDA1020009</div></td>
+<td><div align="center">《纳税自查执行情况确认表》</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">A10</div></td>
+<td><div align="center">LCA102001</div></td>
+<td><div align="center">BDD0520020</div></td>
+<td><div align="center">《指标有效性验证分析报告》</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">A12</div></td>
+<td><div align="center">LCA122030</div></td>
+<td><div align="center">BDA1210012</div></td>
+<td><div align="center">《纳税担保书》</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">A12</div></td>
+<td><div align="center">LCA122030</div></td>
+<td><div align="center">BDA1210057</div></td>
+<td><div align="center">《缴费担保书》</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">A11</div></td>
+<td><div align="center">LCA112005</div></td>
+<td><div align="center">BLCA016008</div></td>
+<td><div align="center">稽查案件延期审理</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">A11</div></td>
+<td><div align="center">LCA112005</div></td>
+<td><div align="center">BLCA016015</div></td>
+<td><div align="center">重大税务案件审理延期</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">A11</div></td>
+<td><div align="center">LCA112005</div></td>
+<td><div align="center">BLCA003004</div></td>
+<td><div align="center">重大税收违法案件拟处理意见报告</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">A11</div></td>
+<td><div align="center">LCA112005</div></td>
+<td><div align="center">BDA1120255</div></td>
+<td><div align="center">《延长税收违法案件检查时限申请》</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">A11</div></td>
+<td><div align="center">LCA112005</div></td>
+<td><div align="center">BDA1120126</div></td>
+<td><div align="center">《税收违法案件中止检查申请》</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">A11</div></td>
+<td><div align="center">LCA112005</div></td>
+<td><div align="center">BDA1120128</div></td>
+<td><div align="center">《税收违法案件终结检查申请》</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">A11</div></td>
+<td><div align="center">LCA112005</div></td>
+<td><div align="center">BDA1120168</div></td>
+<td><div align="center">《重大税收违法案件中止检查》</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">A11</div></td>
+<td><div align="center">LCA112005</div></td>
+<td><div align="center">BDA1120164</div></td>
+<td><div align="center">《重大税收违法案件终结检查申请》</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">A12</div></td>
+<td><div align="center">LCA112005</div></td>
+<td><div align="center">BDA1120295</div></td>
+<td><div align="center">《税务稽查案卷（按照_卷管理）》</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">A11</div></td>
+<td><div align="center">LCA112005</div></td>
+<td><div align="center">BDA1120162</div></td>
+<td><div align="center">《重大税收违法案件延期查处申请》</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">A11</div></td>
+<td><div align="center">LCA112005</div></td>
+<td><div align="center">BLCA112012</div></td>
+<td><div align="center">涉嫌犯罪案件移送</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">A12</div></td>
+<td><div align="center">LCA122016</div></td>
+<td><div align="center">BDA1220029</div></td>
+<td><div align="center">《答辩状》</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">A12</div></td>
+<td><div align="center">LCA112005</div></td>
+<td><div align="center">BDA1120116</div></td>
+<td><div align="center">《税务稽查案卷（正卷）》</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">A11</div></td>
+<td><div align="center">LCA112005</div></td>
+<td><div align="center">BDA1120287</div></td>
+<td><div align="center">《税收违法检举案件延期查处申请表》</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">A11</div></td>
+<td><div align="center">LCA112005</div></td>
+<td><div align="center">BLCA122036</div></td>
+<td><div align="center">一般程序处罚决定处理（稽查）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">A12</div></td>
+<td><div align="center">LCA121005</div></td>
+<td><div align="center">BDA1220159</div></td>
+<td><div align="center">《驳回行政复议申请决定书》</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">A12</div></td>
+<td><div align="center">LCA121005</div></td>
+<td><div align="center">BDA1210021</div></td>
+<td><div align="center">《税务行政复议决定书》</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">A12</div></td>
+<td><div align="center">LCA112005</div></td>
+<td><div align="center">BDA1120290</div></td>
+<td><div align="center">《税务处理决定情况表（增值税）》</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">A11</div></td>
+<td><div align="center">LCA112005</div></td>
+<td><div align="center">BDA1220264</div></td>
+<td><div align="center">《重大税务案件终止审理申请表》</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">A11</div></td>
+<td><div align="center">LCA112005</div></td>
+<td><div align="center">BLCA016005</div></td>
+<td><div align="center">税收违法案件中止执行</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">A11</div></td>
+<td><div align="center">LCA112005</div></td>
+<td><div align="center">BLCA016007</div></td>
+<td><div align="center">税收违法案件终结执行</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">A11</div></td>
+<td><div align="center">LCA112005</div></td>
+<td><div align="center">BLCA016012</div></td>
+<td><div align="center">重大税收违法案件中止执行</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">A11</div></td>
+<td><div align="center">LCA112005</div></td>
+<td><div align="center">BLCA016013</div></td>
+<td><div align="center">重大税收违法案件终结执行</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>

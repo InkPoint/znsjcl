@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xalt.sjcl.dao.GzfpMapper">
+    <!--查看所有人工匹配数据总量-->
+    <select id="wppzl" resultType="java.lang.Object">
+        select count(1) from znsjcl_cl_wppxx a where a.yxbz='Y'
+    </select>
+    <!--查看所有未分配信息数据总量-->
+    <select id="wfpsj" resultType="java.lang.Object">
+        select count(1) from znsjcl_cl_wppxx where  (ppr is  null and ppdw is  null) and yxbz = 'Y'
+    </select>
+    <!--查看所有已分配数据总量-->
+    <select id="yfpsj" resultType="java.lang.Object">
+        select count(1) from znsjcl_cl_wppxx where  (ppr is not null or ppdw is not null)  and yxbz = 'Y'
+    </select>
+    <!--分配起始-->
+    <select id="fpbegin" resultType="com.xalt.sjcl.model.RgppVo">
+        select wid from
+        (select wid
+          from znsjcl_cl_wppxx
+         where yxbz = 'Y'
+           and djxh is null
+           and (ppr is null   or ppdw is not null)
+         order by wid asc
+        )where rownum=1
+    </select>
+    <!--分配结束-->
+    <!--<select id="fpend" resultType="com.xalt.sjcl.model.GzfpVO">
+        select wid id,wid text from znsjcl_cl_wppxx  where rownum &gt;=1 and yxbz = 'Y' and djxh is null and ppr is null order by wid asc
+    </select>-->
+    <!--基本的分页查询-->
+    <select id="list" parameterType="java.util.HashMap" resultType="com.xalt.sjcl.model.RgppVo">
+        select rownum wid,ybywm,ybzd,ppz from znsjcl_cl_wppxx where djxh is null and yxbz = 'Y' and  ppdw is null  and ppr is  null order by wid asc
+    </select>
+    <!--查看匹配人下拉框-->
+    <select id="ckppr" resultType="com.xalt.sjcl.model.GzfpVO">
+        select distinct a.user_code id,a.user_name text
+          from acl_organize org, acl_user_group g, acl_organize_station_xref gou,acl_user a
+         where org.org_id = gou.org_id
+           and g.xref_id = gou.xref_id
+           and g.user_id = a.user_id
+           and org.org_code like '2610100%'
+           and a.user_name not  like '%测试%'
+    </select>
+    <!--更新未匹配信息表里面的匹配人-->
+    <update id="updatappr" parameterType="java.util.HashMap">
+        UPDATE znsjcl_cl_wppxx t
+        set t.ppr = '${ppr}'
+        where exists(
+              select 1 from (
+                     select * from (
+                            select t1.znsjcl_id,rownum rn from znsjcl_cl_wppxx t1 where t1.ppr is null and t1.ppdw is null
+                            <if test="sjbywm !=null ">
+                                and t1.ybywm = '${sjbywm}'
+                            </if>
+                     ) t2
+                     where  1=1
+                     <if test="fpend != null">
+                       and  t2.rn &lt;= ${fpend}
+                     </if>
+              ) t3
+              where t3.znsjcl_id=t.znsjcl_id
+        ) and t.ppr is null
+          and t.ppdw is null
+    </update>
+    <!--查询几条数据后的wid-->
+    <select id="sjlwid" parameterType="java.util.HashMap" resultType="com.xalt.sjcl.model.RgppVo">
+         select wid from
+            (select wid,rownum rr
+              from (select wid
+                      from znsjcl_cl_wppxx
+                     where wid >= '${fpbegin}'
+                       and yxbz = 'Y'
+                       and djxh is null
+                       and ppr is null order by wid asc
+                    ))
+             where rr = '${fpend}'
+    </select>
+    <!--查看原表个数-->
+    <select id="selectyb" parameterType="java.util.HashMap" resultType="com.xalt.sjcl.model.RgppVo">
+        select distinct t.ybywm id,t1.dxmczw text from znsjcl_cl_wppxx t
+                         ,znsjcl_dm_sjdx t1
+                        where t1.yxbz='Y'
+                        and t.yxbz = 'Y'
+                        and (t.ppr is  null and t.ppdw is  null)
+                        and t.ybywm=t1.dxmcyw
+
+    </select>
+    <!--查看原表的未分配数据量-->
+    <select id="ybwfpsjl" parameterType="java.util.HashMap" resultType="java.lang.Integer">
+    select count(1) from znsjcl_cl_wppxx t
+        where t.ybywm = '${ybywm}'
+              and t.yxbz='Y'
+              and (t.ppr is  null and t.ppdw is  null)
+    </select>
+</mapper>

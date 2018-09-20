@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xalt.demos.dao.DemoQueryMapper">
+   <parameterMap id="sendMap" type="java.util.HashMap">
+       <parameter property="NAME" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN"/>
+       <parameter property="SEX" jdbcType="NUMERIC" javaType="java.lang.Integer" mode="IN"/>
+       <parameter property="RS" jdbcType="VARCHAR" javaType="java.lang.String" mode="OUT"/>
+   </parameterMap>
+
+  <!--查询满足条件的所有纳税人基本信息-->
+  <select id="selectAll" parameterType="java.util.HashMap" resultType="com.xalt.demos.model.NsrxxVO">
+        select
+           TAXPAYERNAME,TAXREGCODE,ACCEPTDATE,JURPNAME
+        from tb_reg_lianxi
+        where 1=1
+        <if test="svo.nsrmc != null">
+          and TAXPAYERNAME like   '%${svo.nsrmc}%'
+        </if>
+        <if test="svo.gldm != null">
+          and TAXREGCODE like   '%${svo.gldm}%'
+        </if>
+        <if test="svo.fr != null">
+          and JURPNAME like   '%${svo.fr}%'
+        </if>
+        ORDER BY  ACCEPTDATE DESC
+  </select>
+
+  <!--查询满足条件的所有纳税人个数-->
+  <select id="selectNum" parameterType="java.util.HashMap"  resultType="java.lang.Integer">
+        select count(DISTINCT t.taxregcode)
+        from tb_reg_lianxi t
+        where 1=1
+        <if test="svo.nsrmc != null">
+          and t.TAXPAYERNAME like   '%${svo.nsrmc}%'
+        </if>
+        <if test="svo.gldm != null">
+          and t.TAXREGCODE like   '%${svo.gldm}%'
+        </if>
+        <if test="svo.fr != null">
+          and t.JURPNAME like   '%${svo.fr}%'
+        </if>
+        ORDER BY  t.ACCEPTDATE DESC
+  </select>
+
+</mapper>

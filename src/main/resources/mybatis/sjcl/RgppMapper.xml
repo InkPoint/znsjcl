@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xalt.sjcl.dao.RgppMapper">
+
+   <!-- 人工匹配默认信息查询-->
+    <select id="selecttAll"  parameterType="java.util.HashMap" resultType="com.xalt.sjcl.model.RgppVo">
+    select distinct t2.sjxmczw,
+                t2.dxmczw,
+                t.djxh,
+                t.ybywm,
+                t.ybzd,
+                t.ppz,
+                t.orgcode,
+                t.ppr,
+                t4.user_name pprname,
+                t1.swjgmc,
+                t.wid
+  from (select c.djxh,
+                upper(c.ybywm) ybywm,
+                upper(c.ybzd) ybzd,
+                c.ppz,
+                c.orgcode,
+                c.wid,
+                c.ppr from znsjcl_cl_wppxx c where yxbz='Y' and c.djxh is null) t,
+      dim_dm_gy_swjg t1,
+       (select a.sjxmczw,
+               b.dxmczw,
+               upper(b.dxmcyw) dxmcyw,
+               upper(a.sjxmcyw) sjxmcyw
+          from znsjcl_dm_sjx a,znsjcl_dm_sjdx b where a.yxbz='Y' and b.yxbz='Y' and b.dxid = a.dxid) t2,
+       acl_user t4
+ where t.orgcode = t1.SWJG_DM(+)
+   and t.ybzd = t2.sjxmcyw(+)
+   and t.ybywm = t2.dxmcyw(+)
+   and t.ppr = t4.user_code(+)
+ order by t.wid
+    </select>
+
+    <!--指定单位下拉框查询-->
+    <select id="selectZddw" resultType="com.xalt.sjjh.model.DrrwdzVo">
+        select t.swjg_dm id,t.SWJGMC text
+        from dim_dm_gy_swjg t
+        where t.JGJC_DM='42'
+        and  t.SWJGBZ='0'
+    </select>
+
+    <!--匹配源基本数据查询-->
+    <select id="selectPpy" parameterType="java.util.HashMap" resultType="com.xalt.sjcl.model.PpyVo">
+        select
+        to_char(x1.DJXH) djxh
+        ,x1.shxydm
+        ,x1.nsrmc
+        ,x1.ssdabh
+        ,x1.nsrsbh
+        ,x1.fddbrxm
+        ,x1.fddbrsfzjhm
+        ,x7.nsrztmc
+        ,x4.hymc
+        ,x1.fjmqybz
+        ,x9.gdslxmc
+        ,x10.kzztdjlxmc
+        ,x1.scjydz
+        ,x21.jyfw
+        ,x11.xzqhmc
+        ,x1.ZCDZ
+        ,x12.xzqhmc xzqhmc1
+        ,x5.djzclxmc
+        ,x20.jdxzmc
+        ,x14.dwlsgxmc
+        ,x15.gdghlxmc
+        ,x16.swjgmc
+        ,to_char(DJRQ,'yyyy-mm-dd hh24:mi:ss')  djrq
+        ,x17.zzjglxmc
+        ,x1.kqccsztdjbz
+        ,x2.swjgmc swjgmc1
+        ,x3.swjgmc swjgmc2
+        ,x8.swryxm
+        ,x18.swryxm swryxm1
+        ,to_char(x1.LRRQ,'yyyy-mm-dd hh24:mi:ss')  lrrq
+        ,x19.swryxm swryxm2
+        ,to_char(x1.XGRQ,'yyyy-mm-dd hh24:mi:ss')  xgrq
+        ,x1.zgswj_dm
+        from  xads.zh_dj_nsrxx@dbl_to_15xads      x1
+        ,xads.dim_dm_gy_swjg@dbl_to_15xads   x2
+        ,xads.dim_dm_gy_swjg@dbl_to_15xads   x3
+        ,xads.dim_dm_gy_hy@dbl_to_15xads     x4
+        ,xads.dim_dm_dj_djzclx@dbl_to_15xads x5
+        ,xads.dim_dm_gy_nsrzt@dbl_to_15xads x7
+        ,xads.dim_dm_gy_swry@dbl_to_15xads x8
+        ,xads.dim_DM_DJ_GDSLX@dbl_to_15xads x9
+        ,xads.dim_DM_DJ_KZZTDJLX@dbl_to_15xads x10
+        ,xads.dim_DM_GY_XZQH@dbl_to_15xads x11
+        ,xads.dim_DM_GY_XZQH@dbl_to_15xads x12
+        ,xads.dim_DM_GY_DWLSGX@dbl_to_15xads x14
+        ,xads.dim_DM_DJ_GDGHLX@dbl_to_15xads x15
+        ,xads.dim_DM_GY_SWJG@dbl_to_15xads x16
+        ,xads.dim_DM_GY_ZZJGLX@dbl_to_15xads x17
+        ,xads.dim_dm_gy_swry@dbl_to_15xads x18
+        ,xads.dim_dm_gy_swry@dbl_to_15xads x19
+        ,xads.dim_DM_GY_JDXZ@dbl_to_15xads x20
+        ,xads.zh_dj_nsrxx_kz@dbl_to_15xads x21
+        where x1.zgswj_dm = x2.swjg_dm(+)
+        and x1.zgswskfj_dm = x3.swjg_dm(+)
+        and x1.hy_dm = x4.hy_dm(+)
+        and x1.djzclx_dm = x5.djzclx_dm(+)
+        and x1.nsrzt_dm = x7.nsrzt_dm(+)
+        and x1.ssgly_dm = x8.swry_dm(+)
+        and x1.GDSLX_DM = x9.GDSLX_DM(+)
+        and x1.KZZTDJLX_DM = x10.KZZTDJLX_DM(+)
+        and x1.SCJYDZXZQHSZ_DM = x11.XZQHZM_DM(+)
+        and x1.ZCDZXZQHSZ_DM = x12.XZQHZM_DM(+)
+        and x1.DWLSGX_DM = x14.DWLSGX_DM(+)
+        and x1.GDGHLX_DM = x15.GDGHLX_DM(+)
+        and x1.DJJG_DM = x16.SWJG_DM(+)
+        and x1.ZZJG_DM = x17.ZZJGLX_DM(+)
+        and x1.LRR_DM = x18.swry_dm(+)
+        and x1.XGR_DM = x19.swry_dm(+)
+        and x1.jdxz_dm = x20.jdxz_dm(+)
+        and x1.djxh = x21.djxh(+)
+        <if test="svo.nsrmc != null">
+            and x1.nsrmc like '%${svo.nsrmc}%'
+        </if>
+    </select>
+
+    <!--指定单位-->
+    <update id="updateZddw"  parameterType="java.util.HashMap">
+            update znsjcl_cl_wppxx
+            set orgcode = '${svo.orgcode}'
+            where wid = '${svo.wid}'
+    </update>
+
+    <!--纳税人原始信息列名称查询-->
+    <select id="selectLm"  parameterType="java.util.HashMap" resultType="com.xalt.sjzd.model.SjxVo">
+             select distinct t1.sjxmczw ,t1.sjxmcyw
+             from znsjcl_dm_sjx t1,
+                 znsjcl_cl_wppxx t2
+             where   upper(t1.sjdxmcyw)=upper(t2.ybywm)
+             and  t1.yxbz = 'Y'   and upper(t1.sjdxmcyw) = upper('${svo.ybywm}')
+    </select>
+
+    <!--纳税人原始信息列名称查询-->
+    <select id="selectysb"  parameterType="java.util.HashMap"   resultType="java.util.HashMap">
+        ${ysbsql}
+    </select>
+
+
+    <!--纳税人信息确认匹配-->
+    <update id="qrpp"  parameterType="java.util.HashMap">
+         update znsjcl_cl_wppxx t
+                set
+               t.djxh = '${svo.djxh}',
+               t.ppsj=sysdate,
+               t.cgbz = 'Y'
+               where wid = '${svo.wid}'
+    </update>
+    <!--查询出匹配值相同信息-->
+    <select id="modalview" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+        select * from ${svo.ybywm} where ${svo.ybzd} = '${svo.ppz}' and djxh is NULL
+    </select>
+    <!--给已经存在字段的原表更新-->
+    <update id="sdupdatedjxh" parameterType="java.util.HashMap">
+        UPDATE ${ybywm}
+              SET
+              ${ybzddjxh} = '${srdjxh}'
+              where ${bxx}
+    </update>
+    <!--判断原表中是否有djxh这个字段-->
+    <select id="hasdjxh" parameterType="java.util.HashMap" resultType="java.lang.Integer">
+        select count(1) from USER_TAB_COLUMNS where TABLE_NAME=UPPER('${svo.ybywm}') and COLUMN_NAME = UPPER('${djxh}')
+    </select>
+    <!--给原表添加登记序号字段-->
+    <update id="adddjxh" parameterType="java.util.HashMap">
+        alter table ${svo.ybywm} add  ${djxh} VARCHAR(200)
+    </update>
+    <!--回填数据给原表-->
+    <update id="htdjxh" parameterType="java.util.HashMap">
+        UPDATE ${ybywm}
+              SET
+              djxh = '${srdjxh}'
+              where znsjcl_id = '${ybid}'
+    </update>
+    <!--给数据项添加djxh字段-->
+    <insert id="insertsjx" parameterType="java.util.HashMap">
+        insert into znsjcl_dm_sjx
+        (sjxid,yxbz,sjxmczw,sjxmcyw,sjdxmcyw)
+        VALUES
+        (sysdate,
+         'Y',
+         '登记序号',
+         'djxh',
+         '${svo.ybywm}')
+
+    </insert>
+</mapper>

@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xalt.sjjg.dao.JgrwglMapper">
+
+    <!--基本分页查询-->
+    <select id="selectAll" parameterType="java.util.HashMap" resultType="com.xalt.sjjg.model.JgrwglVo">
+        select t.rwid,
+        t.rwmc,
+        t.rwms,
+        to_char(t.kssj, 'yyyy-mm-dd HH:MM:SS') kssj,
+        t.lasttime,
+        t.zt,
+        t.jobid,
+        t.zxr,
+        t.jgmx,
+        t1.ztmc,
+        t2.mxmc,
+        t3.zqmc,
+        t3.zqid,
+        a.yjly ywbm
+        from znsjcl_jg_jgrw t,
+        znsjcl_dm_yxzt t1,
+        znsjcl_jg_jgmx t2,
+        znsjcl_dm_zxzq t3,
+        znsjcl_jg_sjyj a,
+        znsjcl_jg_jgmx a1
+        where t.yxbz = 'Y'
+        and t.zt = t1.ztid(+)
+        and t.jgmx = t2.mxid
+        and t.zqid = t3.zqid(+)
+        and t.jgmx = a1.mxid
+        and a1.sjyj = a.yjid
+        <if test="svo.rwmc!=null">
+            and t.rwmc like '%${svo.rwmc}%'
+        </if>
+        order by kssj desc
+    </select>
+
+    <!--下拉框执行周期查询-->
+    <select id="selectZxzq" resultType="com.xalt.sjjg.model.JgrwglVo">
+        select distinct t.zqid id,t.zqmc text from znsjcl_dm_zxzq t
+    </select>
+
+    <!--加工模型下拉框-->
+    <select id="selectjgmx" resultType="com.xalt.sjjg.model.JgrwglVo">
+        select t.mxid id,t.mxmc text from znsjcl_jg_jgmx t where t.yxbz='Y'
+    </select>
+
+    <!--加工任务添加-->
+    <insert id="insertJgrw" parameterType="java.util.HashMap">
+       insert into znsjcl_jg_jgrw
+        (rwid, rwmc, rwms, kssj,  zxr, jgmx, yxbz, zqid)
+       values(
+          '${rwid}',
+          '${svo.rwmc}',
+          '${svo.rwms}',
+          sysdate,
+
+          '',
+          '${svo.jgmx}',
+          'Y',
+          '${svo.zqid}')
+
+    </insert>
+
+    <!--加工任务名称名称_校检-->
+    <select id="nameValidation" parameterType="java.util.HashMap" resultType="com.xalt.sjjg.model.JgmxglVo">
+        select t.rwmc from znsjcl_jg_jgrw t where t.rwmc='${svo.rwmc}' and t.yxbz='Y'
+    </select>
+
+    <!--加工任务编辑-->
+    <update id="updateJgmx" parameterType="java.util.HashMap">
+         update znsjcl_jg_jgrw
+         set rwmc = '${svo.rwmc}',
+              rwms ='${svo.rwms}',
+              zqid = '${svo.zqid}',
+              jgmx = '${svo.jgmx}'
+        where rwid = '${svo.rwid}'
+    </update>
+
+    <!--加工任务删除-->
+    <update id="deleteJgrw" parameterType="java.util.HashMap">
+            update znsjcl_jg_jgrw
+            SET yxbz='N'
+            where rwid = '${svo.rwid}'
+    </update>
+
+    <!--删除job-->
+    <update id="deletejob" parameterType="java.util.HashMap">
+        begin
+        dbms_job.remove('${svo.jobid}');
+        commit;
+        end;
+    </update>
+
+    <!--加工任务启动-->
+    <update id="starttask" parameterType="java.util.HashMap">
+            update  znsjcl_jg_jgrw t  set t.zt = '1' where t.rwid='${svo.rwid}'
+    </update>
+
+
+    <!--调用存储过程  启动定时任务-->
+    <select id="calltask" parameterType="java.util.Map"  statementType="CALLABLE">
+           {call  pre_znsjcl_sjjgrw(#{svo.rwid,mode=IN,jdbcType=VARCHAR})}
+    </select>
+
+
+    <!--创建job(每天执行一次)-->
+    <update id="everyday" parameterType="java.util.HashMap">
+        declare job number;
+        begin
+        sys.dbms_job.submit(job => job,--自动生成job_id
+        what => 'pre_znsjcl_sjjg_sjyj_jgrw(''${rwid}'');',--需要执行的存储过程名称或SQL语句
+        next_date => sysdate+3/(24*60),--初次执行时间——下一个三分钟
+        interval => 'sysdate+1'--每天执行一次
+        );
+        commit;
+        end;
+    </update>
+    <!--创建job(每周一凌晨2点执行)-->
+    <update id="perweek" parameterType="java.util.HashMap">
+        declare job number;
+        begin
+        sys.dbms_job.submit(job => job,--自动生成job_id
+        what => 'pre_znsjcl_sjjg_sjyj_jgrw(''${rwid}'');',--需要执行的存储过程名称或SQL语句
+        next_date => sysdate+3/(24*60),--初次执行时间——下一个三分钟
+        --每周一凌晨2点执行
+        interval => 'TRUNC(next_day(sysdate,1))+2/24'
+        );
+        commit;
+        end;
+    </update>
+    <!--创建job(每月一日凌晨1点执行)-->
+    <update id="amonth" parameterType="java.util.HashMap">
+        declare job number;
+        begin
+        sys.dbms_job.submit(job => job,--自动生成job_id
+        what => 'pre_znsjcl_sjjg_sjyj_jgrw(''${rwid}'');',--需要执行的存储过程名称或SQL语句
+        next_date => sysdate+3/(24*60),--初次执行时间——下一个三分钟
+        --每月一日凌晨1点执行
+        interval => 'TRUNC(LAST_DAY(sysdate)+1)'
+        );
+        commit;
+        end;
+    </update>
+    <!--创建job(季度的第一天凌晨0点执行)-->
+    <update id="everyquarter" parameterType="java.util.HashMap">
+        declare job number;
+        begin
+        sys.dbms_job.submit(job => job,--自动生成job_id
+        what => 'pre_znsjcl_sjjg_sjyj_jgrw(''${rwid}'');',--需要执行的存储过程名称或SQL语句
+        next_date => sysdate+3/(24*60),--初次执行时间——下一个三分钟
+        --每季度的第一天凌晨0点执行
+        interval => 'TRUNC(ADD_MONTHS(SYSDATE,3),''q'')'
+        );
+        commit;
+        end;
+    </update>
+
+    <!--查询job ID-->
+    <select id="viewid" parameterType="java.util.HashMap" resultType="com.xalt.sjjg.model.JgrwglVo">
+        select t.job
+        from dba_jobs t
+        where t.PRIV_USER = 'ZNSJCL'
+        and t.WHAT like '%'||'${rwid}'||'%'
+
+    </select>
+
+    <!--插入jobid-->
+    <update id="updateJobid" parameterType="java.util.HashMap">
+        UPDATE znsjcl_jg_jgrw
+        set jobid = '${jobid}'
+        WHERE rwid='${rwid}'
+
+    </update>
+
+</mapper>

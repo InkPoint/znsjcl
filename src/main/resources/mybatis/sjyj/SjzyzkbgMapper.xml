@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xalt.sjyj.dao.SjzyzkbgMapper">
+<select id="selectall" parameterType="java.util.HashMap" resultType="com.xalt.sjyj.model.SjzyzkbgVO">
+    select t.zyid,
+       t.zylj,
+       t.filename,
+       to_char(t.uploadtime,'yyyy-mm-dd hh24:mi:ss') uploadtime,
+       t1.user_name username,
+       t.bgbt,
+       t.bgms
+  from znsjcl_sjyj_zyzkbg t,
+       acl_user t1
+  where t.yxbz='Y'
+        and t1.user_code(+)=t.uploaduser
+        <if test="svo.bgbt!=null">
+            and t.bgbt like '%${svo.bgbt}%'
+        </if>
+        <if test="svo.filename!=null">
+            and t.filename like '%${svo.filename}%'
+        </if>
+    order by t.uploadtime desc
+</select>
+    <!--添加数据-->
+<insert id="addzybgdata" parameterType="java.util.HashMap">
+    insert into ZNSJCL_SJYJ_ZYZKBG
+    (   ZYID,
+        ZYLJ,
+        FILENAME,
+        UPLOADTIME,
+        UPLOADUSER,
+        YXBZ,
+        BGBT,
+        BGMS)
+    VALUES
+    (
+        '${zyid}',
+        '${zylj}',
+        '${svo.filename}',
+        sysdate,
+        '${usercode}',
+        'Y',
+        '${svo.bgbt}',
+        '${svo.bgms}'
+    )
+</insert>
+    <!--编辑数据-->
+<update id="updatezybgdata" parameterType="java.util.HashMap">
+    update ZNSJCL_SJYJ_ZYZKBG set FILENAME='${svo.filename}', BGBT='${svo.bgbt}',BGMS='${svo.bgms}'
+    where zyid='${svo.zyid}'
+</update>
+    <!--删除数据 有效标志改变-->
+<update id="delzybgdata" parameterType="java.util.HashMap">
+    UPDATE ZNSJCL_SJYJ_ZYZKBG set yxbz='N' where zyid='${svo.zyid}'
+</update>
+</mapper>

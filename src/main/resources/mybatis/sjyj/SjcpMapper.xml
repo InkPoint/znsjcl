@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xalt.sjyj.dao.SjcpMapper">
+    <!--数据产品的基本分页查询-->
+    <select id="selectList" parameterType="java.util.HashMap" resultType="com.xalt.sjyj.model.SjcpVO">
+        select cpid, cpmc, cpms, cpcxjb, cpbt, cjrdm,
+               to_char(cjsj,'yyyy-MM-dd HH24:mi:ss') cjsj,cpbtzw
+        from znsjcl_sjjg_sjcp
+        where yxbz = 'Y'
+        <if test="svo.cpmc!=null">
+            and cpmc like '%${svo.cpmc}%'
+        </if>
+        <if test="svo.cpms!=null">
+            and cpms like '%${svo.cpms}%'
+        </if>
+        <if test="svo.cjsjbegin!=null and svo.cjsjend!=null">
+            and cjsj &gt; to_date('${svo.cjsjbegin}','yyyy-MM-dd HH24:mi:ss')
+            and cjsj &lt; to_date('${svo.cjsjend}','yyyy-MM-dd HH24:mi:ss')
+        </if>
+    </select>
+    <!--数据产品页面中查看的分页查询-->
+    <select id="viewList" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+        ${svo.cpcxjb}
+    </select>
+
+</mapper>

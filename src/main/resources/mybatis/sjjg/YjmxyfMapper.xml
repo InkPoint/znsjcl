@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xalt.sjjg.dao.YjmxyfMapper">
+
+    <!--表数据-->
+    <select id="selectlist" parameterType="java.util.HashMap" resultType="com.xalt.sjjg.model.YjmxyfVO">
+
+        select t.lcid,
+                t.rwid,
+                t.rwmc,
+                to_char(t.cjsj, 'yyyy-MM-dd HH24:mi:ss') cjsj,
+                t.cjr,
+                t.rwsm,
+                t.bz,
+                t.wcjd,
+                t.xyhjid,
+                a1.yjmc,
+                a1.yjid,
+                to_char(t.jzrq, 'yyyy-MM-dd HH24:mi:ss') jzrq,
+                t.shzt,
+                a.user_name name
+                from Znsjcl_Sqsp_Rwxx t, acl_user a
+                ,(select t1.sqid,t2.yjmc,t2.yjid  from znsjcl_jg_yjmxyf t1  ,znsjcl_jg_sjyj t2 where t1.yjid=t2.yjid(+)  and t2.yxbz='Y') a1
+                where t.cjr = a.user_code
+                and t.lcid = '104'
+                and t.yxbz='Y'
+                and t.shzt = '1'
+                and t.rwid=a1.sqid(+)
+
+
+        <if test = "svo.rwmc != null">
+            and t1.rwmc like '%${svo.rwmc}%'
+        </if>
+        order by cjsj desc
+    </select>
+    <!--修改-->
+    <update id="editthedata" parameterType="java.util.HashMap" >
+       UPDATE znsjcl_jg_yjmxyf t
+               SET
+               t.yfzt = '${svo.yfzt}',
+               t.yfjd = '${svo.yfjd}',
+               t.yfjg = '${svo.yfjg}'
+             WHERE t.sqid = '${svo.sqid}'
+    </update>
+    <!--研发状态（下拉菜单）-->
+    <select id="menu" parameterType="java.util.HashMap" resultType="com.xalt.sjjg.model.YjmxyfVO">
+        select t.ztid id,t.ztmc text from znsjcl_dm_yxzt t where t.yxbz='Y'
+    </select>
+    <!--元件列表-->
+    <select id="yjlistdata" parameterType="java.util.HashMap" resultType="com.xalt.sjcl.model.DownlistVO">
+            select t.yjid id ,t.yjmc text from znsjcl_jg_sjyj  t  where t.yxbz ='Y'
+    </select>
+
+
+    <!--更新元件模型对应的元件信息-->
+    <delete id="delylinfo" parameterType="java.util.HashMap" >
+           delete  from znsjcl_jg_yjmxyf  t  where   t.sqid='${sqid}'
+    </delete>
+
+    <!--更新元件模型对应的元件信息-->
+    <insert id="updateylinfo" parameterType="java.util.HashMap" >
+           insert into  znsjcl_jg_yjmxyf(sqid,yjid)
+             values('${sqid}','${yjid}')
+    </insert>
+
+    <!--添加元件模型结果表信息-->
+    <update id="updatejgb" parameterType="java.util.HashMap">
+          update  znsjcl_jg_yjmxyf  t  set t.jgb ='znsjcl_jg_yjtab'||JG_SJYJSEQ.NEXTVAL  where t.sqid ='${sqid}'
+    </update>
+</mapper>

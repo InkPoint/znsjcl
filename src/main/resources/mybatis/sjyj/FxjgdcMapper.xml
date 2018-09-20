@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xalt.sjyj.dao.FxjgdcMapper">
+    <!--基本分页查询-->
+    <select id="selectList"  parameterType="java.util.HashMap" resultType="com.xalt.sjyj.model.FxjgdcVo">
+        select decode(t.addflag,'0','未添加','1','已添加') isadd
+                    ,t.djxh
+                    ,t.nsrmc taxpayername
+                    ,t.nsrsbh
+                    ,t.scjydz addr
+                    ,t.hy
+                    ,t.djzclx zclx
+                    ,t1.SWJGJC swjgmc
+                    ,t.ssglymc swgly
+                    ,t.pc_dm pccode
+                    ,t.dl_dm typecode
+                    ,t.xl_dm classcode
+                    ,t2.pcmc
+                    ,t3.dlmc
+                    ,t4.xlmc
+                    ,t.ydgs summary
+                    ,t.yslz taskamount
+                    ,t.ydms1 summarycontent
+        from sjfx_hzjg t
+                ,dim_dm_gy_swjg t1
+                ,sjfx_dm_pc t2
+                ,sjfx_dm_dl t3
+                ,sjfx_dm_xl t4
+        where t.zgswskfj_dm=t1.swjg_dm
+            and t.pc_dm=t2.pc_dm
+            and t.dl_dm=t3.dl_dm
+            and t.pc_dm=t3.pc_dm
+            and t.xl_dm=t4.xl_dm
+            and t.dl_dm=t4.dl_dm
+            and t.yxbz='Y'
+        <if test = "svo.orgcode != null">
+            and t.zgswskfj_dm like '${svo.orgcode}%'
+        </if>
+        <if test = "svo.taxpayername != null">
+            and t.nsrmc like '%${svo.taxpayername}%'
+        </if>
+        <if test = "svo.pccode != null">
+            and t.pc_dm = #{svo.pccode}
+        </if>
+        <if test = "svo.typecode != null">
+            and t.dl_dm = #{svo.typecode}
+        </if>
+        <if test = "svo.classcode != null">
+            and t.xl_dm = #{svo.classcode}
+        </if>
+        <if test = "svo.nsrsbh != null">
+            and t.nsrsbh= #{svo.nsrsbh}
+        </if>
+        <if test = "svo.djxh != null">
+            and t.djxh= #{svo.djxh}
+        </if>
+        order by t.djxh,t.dl_dm,t.xl_dm asc
+    </select>
+
+    <!--指定单位下拉框查询-->
+    <select id="selectfj"  resultType="com.xalt.sjjh.model.DrrwdzVo">
+        select t.swjg_dm id
+                  ,t.SWJGJC text
+        from dim_dm_gy_swjg t
+        where t.JGJC_DM='42'
+            and t.SWJGBZ='0'
+            and t.SWJG_DM like '26101%0000'
+            and t.yxbz='Y'
+        order by t.SWJG_DM
+    </select>
+
+    <!--科所查询-->
+    <select id="selectKs" resultType="com.xalt.sjyj.model.FxjgdcVo">
+      SELECT t.swjg_dm id,
+                   t.SWJGJC text
+      FROM dim_dm_gy_swjg t
+      where t.JGJC_DM = '52'
+          and t.swjg_dm LIKE '${svo.fjid}%'
+          and t.YXBZ='Y'
+      order by t.SWJG_DM
+    </select>
+
+    <!--下发批次下拉框查询-->
+    <select id="selectXfpc" parameterType="com.xalt.sjyj.model.FxjgdcVo" resultType="com.xalt.sjyj.model.FxjgdcVo">
+         SELECT t.pc_dm id,t.pcmc text from sjfx_dm_pc t  where t.yxbz='Y'
+    </select>
+
+    <!--分析大类下拉框查询-->
+    <select id="selectFxdl" parameterType="com.xalt.sjyj.model.FxjgdcVo" resultType="com.xalt.sjyj.model.FxjgdcVo">
+        SELECT t.DL_DM id,t.DLMC text from sjfx_dm_dl t  where t.yxbz='Y' and t.PC_DM=#{svo.pccode}
+    </select>
+
+    <!--分析小类下拉框查询-->
+    <select id="selectFxxl" parameterType="com.xalt.sjyj.model.FxjgdcVo" resultType="com.xalt.sjyj.model.FxjgdcVo">
+       select t.XL_DM id,t.XLMC text from sjfx_dm_xl t where t.yxbz='Y' and t.DL_DM=#{svo.typecode}
+    </select>
+
+
+</mapper>

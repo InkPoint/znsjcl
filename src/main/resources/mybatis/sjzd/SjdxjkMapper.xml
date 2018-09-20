@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xalt.sjzd.dao.SjdxjkMapper">
+    <!--基本信息查询-->
+    <select id="selectList" parameterType="java.util.HashMap" resultType="com.xalt.sjzd.model.SjdxjkVo">
+        select   nvl( t.fqid,'未知分区') fqid,
+        nvl(t.wjgl, '') wjgl,
+        nvl(t.wzbsl, '') wzbsl,
+        nvl(t.ycbsl, '') ycbsl,
+        nvl(t2.fqmc, '未知分区') fqmc
+   FROM znsjcl_dm_dxjk t, znsjcl_dm_sjfq t2
+   WHERE 1 = 1
+    AND t.fqid = t2.fqid(+)
+    </select>
+
+    <!--表信息查询-->
+    <select id="selectBxx" parameterType="java.util.HashMap" resultType="com.xalt.sjzd.model.SjdxjkVo">
+
+       <if test="svo.bs==1">
+           <if test="svo.fqid==null or svo.fqid==''">
+               select  table_name,nvl(table_type,'无') table_type ,comments from znsjcl_dm_jkwzb_v
+               WHERE TABLE_NAME NOT LIKE 'ACL%'
+           </if>
+           <if test="svo.fqid!=null and svo.fqid!=''">
+               select  table_name,table_type,a1.dxmczw comments
+               from znsjcl_dm_jkycb_v   a,
+               (select upper(dxmcyw) dxmcyw,dxmczw  from znsjcl_dm_sjdx where fqid='${svo.fqid}')  a1
+               where a.table_name=a1.dxmcyw
+           </if>
+       </if>
+
+        <if test="svo.bs==2">
+            select  table_name,nvl(table_type,'无') table_type ,comments from znsjcl_dm_jkwzb_v
+        </if>
+
+        <if test="svo.bs==3">
+            select  table_name,table_type,a1.dxmczw comments
+            from znsjcl_dm_jkycb_v   a,
+            (select upper(dxmcyw) dxmcyw,dxmczw  from znsjcl_dm_sjdx where fqid='${svo.fqid}')  a1
+            where a.table_name=a1.dxmcyw
+        </if>
+
+
+
+    </select>
+
+    <!--数据项信息查询-->
+    <!--
+     select  table_name,column_name,comments from  znsjcl_dm_jkycbzd_v  where table_name='${svo.tablename}'
+      union
+      select  table_name,column_name,comments from  znsjcl_dm_jkwzbzd_v  where table_name='${svo.tablename}'
+     -->
+    <select id="selectSjx" parameterType="com.xalt.sjzd.model.SjdxjkVo" resultType="com.xalt.sjzd.model.SjdxjkVo">
+     select  t.table_name,t.column_name,t.DATA_TYPE,t1.comments comments
+      from user_tab_columns t,user_col_comments t1
+      where 1=1
+       and upper(t.table_name)=upper('${svo.tablename}')
+       and t.COLUMN_NAME=t1.column_name
+       and t.TABLE_NAME=t1.table_name
+    </select>
+
+    <select id="callprocedure" statementType="CALLABLE">
+        {call  SP_ZNSJCL_sjdxjk()}
+    </select>
+
+
+
+
+</mapper>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xalt.sjjh.dao.DrmxcxMapper">
+    <!--查询结果-->
+    <!--MyBatis的传入参数parameterType类型分为两种 1.基本数据类型int、string、long、date 2.复杂数据类型 类和Map-->
+    <!--导入明细查询(表数据查询)-->
+    <select id="drmxcxAll" parameterType="java.util.HashMap" resultType="com.xalt.sjjh.model.DrzktjVo">
+        select
+        t.pcdm,
+        t.sjb,
+        to_char(t.drsj,'yyyy-mm-dd hh:mm:ss') drsj,
+        t.drsjl,
+        t.drrmc,
+        t.bmmc,
+        t.jbmc
+        from znsjcl_jh_drzktj t
+        where t.yxbz='Y'
+        --批次代码
+        <if test="svo.pcdm != null">
+            and t.pcdm like '%${svo.pcdm}%'
+        </if>
+        --导入时间
+        <if test="svo.drsj != null">
+            and t.drsj like to_date('${svo.drsj}','yyyy-mm-dd')
+        </if>
+        order by t.drsj desc
+    </select>
+
+    <!--查询数据-->
+    <select id="viewthedata" parameterType="java.util.HashMap" resultType="com.xalt.sjjh.model.ViewdataVo">
+        select *   from  ${svo.sjb}
+    </select>
+</mapper>

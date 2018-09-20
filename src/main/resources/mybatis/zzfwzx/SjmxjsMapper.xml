@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xalt.zzfwzx.dao.SjmxjsMapper">
+    <select id="selectAll" parameterType="java.util.HashMap" resultType="com.xalt.zzfwzx.model.SjmxjsVo">
+        select t.mxid, t. mxmc, t.mxms, t.sjyj, t.zdygs, t.fxjg, t.cjsj
+        from znsjcl_zzfwzx_yj_zdymx t where 1=1
+        <if test = "svo.mxmc != null">
+            and t.mxmc like '%${svo.mxmc}%'
+        </if>
+        order by t.cjsj desc
+    </select>
+</mapper>

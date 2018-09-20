@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xalt.zzfwzx.dao.QxmxglMapper">
+
+    <!--根据id查询具体的模型-->
+    <select id="basicinfo" parameterType="java.util.HashMap" resultType="com.xalt.zzfwzx.model.QxmxglVo">
+        select t.mxid, t.mxmc, t.mxms, t.zb, t.bz, t.qxfs, to_char(t.cjsj,'yyyy-mm-dd hh:mi:ss') cjsj, t.cjr, t.bbh
+        from znsjcl_zzfwzx_qxzhmx t
+        where (t.qxfs = '0' or t.qxfs is null)   and t.yxbz='Y'
+        <if test="svo.mxid != null">
+            and t.mxid =   '${svo.mxid}'
+        </if>
+    </select>
+  <!--查询所有模型-->
+  <select id="selectAll" parameterType="java.util.HashMap" resultType="com.xalt.zzfwzx.model.QxmxglVo">
+      select t.mxid, t.mxmc, t.mxms, t.zb, t.bz, t.qxfs, to_char(t.cjsj,'yyyy-mm-dd hh:mi:ss') cjsj, t1.user_name cjr, t.bbh
+      from znsjcl_zzfwzx_qxzhmx t  ,acl_user  t1
+      where (t.qxfs = '0' or t.qxfs is null)  and t.yxbz='Y'    and t.cjr=t1.user_code(+)
+            <if test="svo.con_mxmc != null">
+                 and t.mxmc like   '%${svo.con_mxmc}%'
+            </if>
+      order by  t.cjsj desc
+  </select>
+
+
+    <!--查询模型对应指标关联字段表-->
+    <select id="zbgzlist" parameterType="java.util.HashMap" resultType="com.xalt.zzfwzx.model.QxmxglVo">
+                 select distinct t.mxid, t.xh, t1.zbmc, t1.zbid
+                 from znsjcl_zzfwzx_qxmxzb t, znsjcl_zzfwzx_qxzhzb t1
+                 where 1 = 1
+                 and t.zbid = t1.zbid(+)
+                 and t.mxid = '${svo.mxid}'
+                 and t.yxbz = 'Y'
+
+    </select>
+
+    <!--添加新模型-->
+    <insert id="insertdata" parameterType="java.util.HashMap">
+           insert into znsjcl_zzfwzx_qxzhmx
+              (mxid, mxmc, mxms, zb, bz, yxbz, qxfs, cjsj, cjr, bbh)
+            values
+              ('${svo.mxid}',
+               '${svo.mxmc}',
+               '${svo.mxms}',
+               '${svo.zb}',
+               '${svo.bz}',
+               'Y',
+               '${svo.qxfs}',
+               sysdate,
+               '${curuser}',
+               '0')
+
+    </insert>
+
+    <!--修改模型-->
+     <update id="updatedata"  parameterType="java.util.HashMap">
+             update znsjcl_zzfwzx_qxzhmx  t
+                set
+                    t.mxmc='${svo.mxmc}',t.mxms='${svo.mxms}',
+                    t.zb='${svo.zb}',t.bz='${svo.bz}'
+                where t.mxid='${svo.mxid}'
+     </update>
+
+    <!--删除模型-->
+    <update id="deletes" parameterType="java.util.HashMap">
+          update  znsjcl_zzfwzx_qxzhmx t set t.yxbz='N'  where    t.mxid='${svo.mxid}'
+    </update>
+
+    <!--删除模型下所有关系链接-->
+    <update id="deleteschildren" parameterType="java.util.HashMap">
+          update  znsjcl_zzfwzx_qxmxzb t set t.yxbz='N'  where    t.mxid='${svo.mxid}'
+    </update> 
+
+    <!--指标列表-->
+    <select id="zblist" parameterType="java.util.HashMap" resultType="com.xalt.zzfwzx.model.QxmxglVo">
+          select distinct r.zbid id,r.zbmc text from znsjcl_zzfwzx_qxzhzb r where   1=1      and r.yxbz='Y'           -- and r.cjr ='${curuser}'
+    </select>
+
+     <!--插入模型规关系数据-->
+    <insert id="insertzbgz" parameterType="java.util.HashMap">
+                insert into znsjcl_zzfwzx_qxmxzb
+              (mxzbid, mxid, zbid, yb, ybzd, mbb, mbbzd, xh, bz, yxbz)
+            values
+              ('${svo.mxzbid}',
+               '${svo.mxid}',
+               '${svo.zbid}',
+               '${svo.yb}',
+               '${svo.ybzd}',
+               '${svo.mbb}',
+               '${svo.mbbzd}',
+               '${svo.xh}',
+               '${svo.bz}',
+               'Y')
+
+    </insert>
+
+    <!--修改模型指标关系数据-->
+    <update id="updatezbgz" parameterType="java.util.HashMap">
+           update znsjcl_zzfwzx_qxmxzb t
+           set
+                       t.zbid='${svo.zbid}',
+                       t.yb='${svo.yb}',
+                       t.ybzd='${svo.ybzd}',
+                       t.mbb='${svo.mbb}',
+                       t.mbbzd='${svo.mbbzd}'  ,
+                       t.xh='${svo.xh}'  ,
+                       t.bz='${svo.bz}'
+          where t.mxzbid  ='${svo.mxzbid}'
+    </update>
+
+    <delete id="delmxzb" parameterType="java.util.HashMap">
+          delete from znsjcl_zzfwzx_qxmxzb  t where t.mxid='${svo.mxid}'
+    </delete>
+</mapper>

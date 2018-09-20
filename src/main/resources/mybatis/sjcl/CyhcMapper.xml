@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xalt.sjcl.dao.CyhcMapper">
+
+    <!--指定单位下拉框查询-->
+    <select id="selectZddw" resultType="com.xalt.sjcl.model.RgppVo">
+        select t.swjg_dm id,t.SWJGMC text
+          from zhpt.dim_dm_gy_swjg t
+          where t.JGJC_DM='42'
+          and  t.SWJGBZ='0'
+    </select>
+
+    <!--默认匹配信息查询-->
+    <select id="selectall" parameterType="java.util.HashMap" resultType="com.xalt.sjcl.model.RgppVo">
+       select distinct t.wid,
+                t.ybywm,
+                t2.dxmczw,
+                t.ybzd,
+                t1.sjxmczw,
+                t.ppz,
+                t.djxh,
+                t.hcdm,
+                t3.user_name pprname,
+                t4.SWJGMC
+          from znsjcl_cl_wppxx     t,
+               znsjcl_dm_sjx       t1,
+               znsjcl_dm_sjdx      t2,
+               acl_user            t3,
+               zhpt.dim_dm_gy_swjg t4
+          where t.yxbz = 'Y'
+           and t.orgcode = t4.SWJG_DM(+)
+           and t.ppr = t3.user_code(+)
+           and upper(t.ybywm) = upper(t2.dxmcyw)
+           and upper(t.ybzd) = upper(t1.sjxmcyw)
+           and t.djxh is not null
+        <if test="svo.orgcode!=null">
+           and t.orgcode = '${svo.orgcode}'
+        </if>
+        <if test="svo.hcdm!=null">
+            and t.hcdm = '${svo.hcdm}'
+        </if>
+        <if test="svo.pprname!=null">
+            and t3.user_name LIKE '%${svo.pprname}%'
+        </if>
+         order by wid
+    </select>
+
+   <!-- 模态框原始信息查询
+    <select id="selectYsb" parameterType="java.util.Map" resultType="java.util.Map">
+       SELECT distinct taxpayername, residence, jurpname
+         from ${svo.ysb}
+        where TAXPAYERNAME = '${svo.nsrmc}'
+    </select>-->
+
+    <!--反馈意见  是否通过-->
+    <update id="updateFkyj"  parameterType="java.util.HashMap">
+         UPDATE znsjcl_cl_wppxx
+         set cgbz='${svo.cgbz}',
+             bz='${svo.bz}',
+             hcdm='已核查'
+         where  wid = ${svo.wid} and yxbz = 'Y'
+    </update>
+    <!--获取纳税人名称-->
+    <select id="getnsrmc" parameterType="java.util.HashMap" resultType="com.xalt.sjcl.model.RgppVo">
+        select t.nsrmc from xads.zh_dj_nsrxx@dbl_to_15xads t where t.djxh = '${djxh}'
+    </select>
+
+</mapper>

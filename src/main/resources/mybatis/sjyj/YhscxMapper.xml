@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xalt.sjyj.dao.YhscxMapper">
+    <!--纳税人信息-->
+    <select id="taxdata" parameterType="java.util.HashMap" resultType="com.xalt.sjyj.model.YhscxVO">
+        select * from (
+        select x1.djxh,
+                x1.nsrmc,
+                x1.nsrsbh,
+                x1.fddbrxm,
+                x7.nsrztmc,
+                x1.zcdz,
+                x1.scjydz,
+                x5.djzclxmc,
+                x4.hymc,
+                x2.swjgmc fj,
+                x3.swjgmc ks,
+                x8.swryxm,
+                x1.kqccsztdjbz
+        from zh_dj_nsrxx x1,
+            dim_dm_gy_swjg x2,
+            dim_dm_gy_swjg x3,
+            dim_dm_gy_hy x4,
+            dim_dm_dj_djzclx x5,
+            dim_dm_gy_nsrzt x7,
+            dim_dm_gy_swry x8
+        where x1.zgswj_dm = x2.swjg_dm(+)
+            and x1.zgswskfj_dm = x3.swjg_dm(+)
+            and x1.hy_dm = x4.hy_dm(+)
+            and x1.djzclx_dm = x5.djzclx_dm(+)
+            and x1.nsrzt_dm = x7.nsrzt_dm(+)
+            and x1.ssgly_dm = x8.swry_dm(+)
+            and x1.YXBZ = 'Y')
+        <if test="svo.nsrmc != null">
+            where ${svo.nsrmc}
+        </if>
+    </select>
+
+    <!--获取表名-->
+    <select id="getTableName" parameterType="java.util.HashMap" resultType="com.xalt.sjyj.model.YhscxVO">
+       select t.sjyb tabname from znsjcl_sjyj_qbnsrmc t where t.djxh = '${svo.djxh}'
+    </select>
+
+    <!--一户式查询(明细)-->
+    <select id="checkTheDetails" parameterType="map" resultType="java.util.HashMap">
+        select bm, tabname
+          from (select bm,
+                       to_char(replace(wm_concat(nvl(tabname, '')), ',', '.')) tabname
+                  from (select r.bm,
+                       r.sjyb || '@' || r.TABLE_COMMENTS || '(' ||
+                       nvl(r.num_rows, 0) || ')' tabname
+                  from (select r.bm, r.sjyb, r1.TABLE_COMMENTS, r1.num_rows
+                          from (select distinct sjyb, bm
+                                  from znsjcl_sjyj_qbnsrmc) r,
+
+                               (select t.bm,
+                                       t.sjyb,
+                                       t1.TABLE_COMMENTS,
+                                       t2.num_rows
+                                  from (select distinct sjyb, bm
+                                          from znsjcl_sjyj_qbnsrmc
+                                         where djxh = '${svo.djxh}') t,
+                                       (select distinct TABLE_NAME,
+                                                        TABLE_COMMENTS
+                                          from zhzs_all_tables) t1,
+                                       (select distinct table_name, num_rows
+                                          from user_tables) t2
+                                 where t.sjyb = t1.TABLE_NAME(+)
+                                   and t.sjyb = t2.table_name(+)) r1
+                         where r.sjyb = r1.sjyb(+)
+                           and r.bm = r1.bm(+)) r
+                )
+         group by bm)
+    </select>
+
+    <!--查询数据(列名查询)-->
+    <select id="columnName" parameterType="java.util.HashMap" resultType="com.xalt.sjzd.model.DymicVO">
+       select upper(t.column_comments) title,
+             upper(t.column_name) field,
+             'left' align,
+             'center' halign
+        from zhzs_all_tables t
+       WHERE t.table_name = '${svo.tabname}'
+              order by field desc
+    </select>
+
+    <!--查询数据(列数据查询)-->
+    <select id="presentData" parameterType="java.util.Map" resultType="java.util.Map">
+        select *   from  ${svo.tabname}
+    </select>
+</mapper>

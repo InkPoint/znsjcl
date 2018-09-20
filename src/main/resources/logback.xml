@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <appender name="RootConsoleAppender" class="ch.qos.logback.core.ConsoleAppender">
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>debug</level>
+        </filter>
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <pattern>[%date] %level %file:[%line] %logger %msg%n</pattern>
+        </layout>
+    </appender>
+
+    <appender name="TxtFileAppender"
+              class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <append>true</append>
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>debug</level>
+        </filter>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>../logs/logic.%d{yyyy-MM-dd}.txt</fileNamePattern>
+        </rollingPolicy>
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <pattern>%date, %level, %logger, %msg%n</pattern>
+        </layout>
+    </appender>
+
+    <logger name="com.gxhs.gat" level="debug"/>
+    <logger name="com.ts.acl" level="debug"/>
+    <logger name="com.xalt.analysis" level="debug"/>
+    <logger name="com.xalt.zyk" level="debug"/>
+    <logger name="java.sql" level="debug"/>
+    <!--数据字典-->
+    <logger name="com.xalt.sjzd" level="debug"/>
+    <!--数据处理-->
+    <logger name="com.xalt.sjcl" level="debug"/>
+    <!--数据加工-->
+    <logger name="com.xalt.sjjg" level="debug"/>
+    <!--数据交换-->
+    <logger name="com.xalt.sjjh" level="debug"/>
+    <!--数据研究-->
+    <logger name="com.xalt.sjyj" level="debug"/>
+    <!--申请审批-->
+    <logger name="com.xalt.sjsqlc" level="debug"/>
+    <logger name="com.xalt.zmyzygl" level="debug"/>
+    <logger name="org.apache.ibatis" level="info"/>
+    <logger name="org.mybatis.spring" level="info"/>
+
+    <root>
+        <level value="info"/>
+        <appender-ref ref="RootConsoleAppender"/>
+        <appender-ref ref="TxtFileAppender"/>
+    </root>
+</configuration>
+

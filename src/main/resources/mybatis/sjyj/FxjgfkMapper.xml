@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xalt.sjyj.dao.FxjgfkMapper">
+    <!--分析结果反馈-->
+    <update id="updatefxjg"  parameterType="java.util.HashMap">
+          UPDATE znsjcl_yj_fxjg
+          set isadd='${svo.isadd}',isss='${svo.isss}'
+          where resultid = '${svo.resultid}'
+    </update>
+
+    <!--数据查询路径-->
+    <select id="selectSjcxlj" parameterType="java.util.HashMap" resultType="java.lang.String">
+      select t.cxlj from znsjcl_dm_sjcxlj t where t.yxbz='Y' and t.flag=#{svo.queryFlag}
+    </select>
+    <!--导出数据表头查询-->
+    <select id="selectSjbtcx" parameterType="java.util.HashMap" resultType="com.xalt.sjzd.model.SjxVo">
+        select t.sjxmczw,t.sjxmcyw from znsjcl_dm_sjx t where t.sjdxmcyw=#{svo.queryFlag} order by to_number(t.sjjd)
+    </select>
+    <!--房地产行业_房管备案信息-->
+    <select id="selectfdc_01_mx2_htba" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+        select t.analystaxpayername
+                  ,t.lpmc
+                  ,t.bsrq
+                  ,t.zts
+                  ,t.xszje
+                  ,t.pc_dm
+                  ,t2.pcmc
+                  ,t.djxh
+                  ,t.analysbatch
+                  ,t.fcdz
+                  ,t.yxbz
+        from sjfx_fdc_yj_fgxm t
+                 ,sjfx_dm_pc t2
+        where t.pc_dm=t2.pc_dm
+            and t.yxbz='Y'
+            and t.djxh=#{svo.djxhOrNsrmc}
+            and t.pc_dm=#{svo.pcdm}
+         order by t.bsrq
+    </select>
+    <!--房地产行业_国、地税缴纳“销售不动产”相关品目增值税（营业税）信息-->
+    <select id="selectfdc_01_mx2_gsyzyj" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+        select t.nsrsbh
+                  ,t.nsrmc
+                  ,t.ssdabh
+                  ,t.shxydm
+                  ,t.zsxmmc
+                  ,t.zspmmc
+                  ,to_char(t.nssbrq,'yyyy/mm/dd') nssbrq
+                  ,to_char(t.rkrq,'yyyy/mm/dd') rkrq
+                  ,to_char(t.skssqq,'yyyy/mm/dd') skssqq
+                  ,to_char(t.skssqz,'yyyy/mm/dd') skssqz
+                  ,t.jsyj
+                  ,t.ynse
+                  ,t.jmse
+                  ,t.ybtse
+                  ,t.djxh
+        from sjfx_fdc_yj_gsyzyj t
+        where t.yxbz='Y'
+            and t.djxh=#{svo.djxhOrNsrmc}
+            and t.pc_dm=#{svo.pcdm}
+         order by t.nssbrq
+    </select>
+    <!--房地产行业_国税开具“销售不动产”相关发票-->
+    <select id="selectfdc_01_mx2_zkfp" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+        select t.nsrsbh
+                  ,t.nsrmc
+                  ,t.ssdabh
+                  ,t.fddbrxm
+                  ,t.scjydz
+                  ,t.fpdm
+                  ,t.fphm
+                  ,t.kprq
+                  ,t.je
+                  ,t.se
+                  ,t.gfsbh
+                  ,t.gfmc
+                  ,t.swjgmc
+        from sjfx_fdc_yj_gszkp t
+        where t.yxbz='Y'
+            and t.djxh=#{svo.djxhOrNsrmc}
+            and t.pc_dm=#{svo.pcdm}
+        order by t.kprq
+    </select>
+    <!--城镇土地使用税_疑似未申报城镇土地使用税-->
+    <select id="selectcztdsys_201801_ysxx" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+        select t.zybh
+                  ,t.cjj
+                  ,t.jdr
+                  ,to_char(t.cjsj,'yyyy/mm/dd') cjsj
+                  ,t.dkwz
+                  ,t.sjly
+                  ,t.djxh
+        from sjfx_cztdsys_tdcr t
+        where t.yxbz='Y'
+            and t.djxh=#{svo.djxhOrNsrmc}
+            and t.pc_dm=#{svo.pcdm}
+        order by t.cjsj
+    </select>
+    <!--契税（土地）_疑似取得土地后未足额申报契税-->
+    <select id="selectqs_td_201801_ysxx" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+        select t.zybh
+                  ,t.cjj
+                  ,t.jdr
+                  ,to_char(t.cjsj,'yyyy/mm/dd') cjsj
+                  ,t.dkwz
+                  ,t.sjly
+                  ,t.djxh
+        from sjfx_qs_tdcr t
+        where t.yxbz='Y'
+           and t.djxh=#{svo.djxhOrNsrmc}
+           and t.pc_dm=#{svo.pcdm}
+        order by t.cjsj
+    </select>
+    <!--“资金账簿“印花税漏征分析_原始信息-->
+    <select id="selectgqbg_zz_ysxx" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+        select t.taxpayername
+                  ,t.regnumber
+                  ,t.updatetime
+                 ,t.beforchangecon
+                 ,t.afterchangecon
+                 ,t.djxh
+        from sjfx_gqbg_zz_ysxx t
+       where t.yxbz='Y'
+           and t.djxh='${svo.djxhOrNsrmc}'
+           and t.pc_dm='${svo.pcdm}'
+        order by t.updatetime
+    </select>
+    <!--“资金账簿“印花税漏征分析_拆分信息-->
+    <select id="selectgqbg_zz_cfxx" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+        select t.taxpayername
+                  ,t.updatedate
+                  ,t.payperson
+                  ,t.confirmpay
+                  ,t.finalpay
+                  ,t.payperson1
+                  ,t.confirmpay1
+                  ,t.finalpay1
+                  ,t.djxh
+        from sjfx_gqbg_zz_cfxx t
+        where t.yxbz='Y'
+            and t.djxh=#{svo.djxhOrNsrmc}
+            and t.pc_dm=#{svo.pcdm}
+        order by t.updatedate
+    </select>
+    <!--“产权转移书据”印花税漏征分析_原始信息-->
+    <select id="selectgqbg_zr_ysxx" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+        select t.taxpayername
+                  ,t.regnumber
+                  ,t.updatetime
+                  ,t.beforchangecon
+                  ,t.afterchangecon
+        from sjfx_gqbg_zr_ysxx t
+        where t.yxbz='Y'
+           and (t.beforchangecon like '%${svo.djxhOrNsrmc}%' or t.afterchangecon like '%${svo.djxhOrNsrmc}%')
+           and t.pc_dm=#{svo.pcdm}
+         order by t.updatetime
+    </select>
+    <!--“产权转移书据”印花税漏征分析_拆分信息-->
+    <select id="selectgqbg_zr_cfxx" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+        select t.taxpayername
+                  ,t.updatedate
+                  ,t.payperson
+                  ,t.confirmpay
+                  ,t.finalpay
+                  ,t.payperson1
+                  ,t.confirmpay1
+                  ,t.finalpay1
+                  ,t.datastatus
+                  ,t.mre
+                  ,t.mce
+        from sjfx_gqbg_zr_cfxx t
+        where t.yxbz='Y'
+           and (t.payperson like '%${svo.djxhOrNsrmc}%' or t.payperson1 like '%${svo.djxhOrNsrmc}%')
+           and t.pc_dm=#{svo.pcdm}
+        order by t.updatedate
+    </select>
+</mapper>

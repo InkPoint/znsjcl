@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xalt.sjzd.dao.SjfqglMapper">
+    <!--基本分页查询-->
+    <select id="selectList" parameterType="java.util.HashMap" resultType="com.xalt.sjzd.model.SjfqglVo">
+        select t.fqmc,
+        t.fqms,
+        to_char(t.cjsj, 'yyyy-MM-dd HH24:mi:ss') cjsj,
+        t.bz,
+        t.fqid
+        from znsjcl_dm_sjfq t
+        where yxbz = 'Y'
+        <if test="svo.fqmc!=null">
+            and t.fqmc like '%${svo.fqmc}%'
+        </if>
+        ORDER BY cjsj DESC
+    </select>
+
+    <!--数据分区下拉框查询-->
+    <select id="selectsjfq" parameterType="java.util.HashMap" resultType="com.xalt.sjzd.model.SjfqglVo">
+           select t. fqid id, t.fqmc text
+           from znsjcl_dm_sjfq t
+           where yxbz = 'Y'
+    </select>
+
+    <!--添加-->
+    <insert id="insertSjfq" parameterType="java.util.HashMap">
+     insert into znsjcl_dm_sjfq(fqid,fqmc,fqms,cjsj,bz,yxbz,cjr)
+     values(znsjcl_dm_fq.NEXTVAL,'${svo.fqmc}','${svo.fqms}',sysdate,'${svo.bz}','Y','${cjr}')
+    </insert>
+
+    <!--编辑-->
+    <update id="updateSjfq" parameterType="java.util.HashMap">
+        UPDATE znsjcl_dm_sjfq
+        set fqmc='${svo.fqmc}',fqms='${svo.fqms}',bz='${svo.bz}',cjsj=sysdate
+        where fqid = '${svo.fqid}'
+    </update>
+
+    <!--删除-->
+    <update id="deleteSjfq" parameterType="java.util.HashMap">
+        UPDATE  znsjcl_dm_sjfq
+        set yxbz='N'
+        WHERE fqid='${svo.fqid}' and (sybz!='1' or sybz is null)
+    </update>
+
+    <!--分区名称名称_校检-->
+    <select id="nameValidation" parameterType="java.util.HashMap" resultType="com.xalt.sjzd.model.SjfqglVo">
+        select t.fqmc from znsjcl_dm_sjfq t where t.fqmc='${svo.fqmc}' and t.yxbz='Y'
+    </select>
+</mapper>

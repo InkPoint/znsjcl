@@ -1,0 +1,421 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>税库银发送方式配置表(CS_ZS_SKY_JRFS)</title><style type="text/css">
+<!--body {background-color: #EFECDD;}td{ font-family:"宋体"; font-size:9pt; color=#666666;}.style9 {color: #FFFFFF}-->
+</style></head><body>
+<table width="300" height="100" border="0" cellpadding="0" cellspacing="0">
+<tr><td><p align="center">税库银发送方式配置表(CS_ZS_SKY_JRFS)</p></td></tr></table>
+<table width="760" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#FF8800">
+<tr bgcolor="#FFAC75">
+<td width="80" height="26"><div align="center" class="style9">列名</div></td>
+<td width="80"><div align="center" class="style9">汉字名</div></td>
+<td width="80"><div align="center" class="style9">数据类型</div></td>
+<td width="80"><div align="center" class="style9">长度</div></td>
+<td width="80"><div align="center" class="style9">精度</div></td>
+<td width="80"><div align="center" class="style9">非空</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">UUID</div></td>
+<td><div align="center">UUID</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">32</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center"><a href="DM_GY_SWJG.html">SWJG_DM</div></td>
+<td><div align="center">税务机关代码</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">11</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">JYLX</div></td>
+<td><div align="center">交易类型</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">6</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center"><a href="DM_ZS_JRFS.html">JRFS_DM</div></td>
+<td><div align="center">接入方式代码</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">FWBM</div></td>
+<td><div align="center">服务编码</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">100</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">XYBZ</div></td>
+<td><div align="center">选用标志</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">YXBZ</div></td>
+<td><div align="center">有效标志</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center"><a href="DM_GY_SWRY.html">LRR_DM</div></td>
+<td><div align="center">录入人代码</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">11</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center"><a href="DM_GY_SWRY.html">XGR_DM</div></td>
+<td><div align="center">修改人代码</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">11</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+</table>
+
+
+   
+<table width="300" height="100" border="0" cellpadding="0" cellspacing="0">
+<tr><td><p align="center">税库银发送方式配置表(数据)</p></td></tr></table>
+<table width="760" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#FF8800">
+<tr bgcolor="#FFAC75">
+<td width="80" height="26"><div align="center" class="style9">UUID</div></td>
+<td width="80" height="26"><div align="center" class="style9">税务机关代码</div></td>
+<td width="80" height="26"><div align="center" class="style9">交易类型</div></td>
+<td width="80" height="26"><div align="center" class="style9">接入方式代码</div></td>
+<td width="80" height="26"><div align="center" class="style9">服务编码</div></td>
+<td width="80" height="26"><div align="center" class="style9">选用标志</div></td>
+<td width="80" height="26"><div align="center" class="style9">有效标志</div></td>
+<td width="80" height="26"><div align="center" class="style9">录入人代码</div></td>
+<td width="80" height="26"><div align="center" class="style9">修改人代码</div></td>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">QLKONFKQTZEVONYKMDLSHSEXBVVEDCPD</div></td>
+<td><div align="center">24400000000</div></td>
+<td><div align="center">SKSFA1</div></td>
+<td><div align="center">02</div></td>
+<td><div align="center">Gt3TransformerServer_hxzgToSkydlpt</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">KRHEVLNKJTFIHBPRFONYKEJSGGSQIAUD</div></td>
+<td><div align="center">24400000000</div></td>
+<td><div align="center">SKKKA1</div></td>
+<td><div align="center">02</div></td>
+<td><div align="center">Gt3TransformerServer_hxzgToSkydlpt</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">QLAJYMVWWQBPTTPHJJCNHZWQXZVELIOA</div></td>
+<td><div align="center">24400000000</div></td>
+<td><div align="center">SKKKAA</div></td>
+<td><div align="center">02</div></td>
+<td><div align="center">Gt3TransformerServer_hxzgToSkydlpt</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">FFSGNKNCFONEXYZPPVEPZQUOLVOKUJWB</div></td>
+<td><div align="center">24400000000</div></td>
+<td><div align="center">SKKKA3</div></td>
+<td><div align="center">02</div></td>
+<td><div align="center">Gt3TransformerServer_hxzgToSkydlpt</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">WTVHDCJOXQREXVGNVAULYJORAGRHUJEB</div></td>
+<td><div align="center">24400000000</div></td>
+<td><div align="center">SKCXZH</div></td>
+<td><div align="center">02</div></td>
+<td><div align="center">Gt3TransformerServer_hxzgToSkydlpt</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">IJLBBJEMMWUXMBBHVIVSSLSWAMPXMOQF</div></td>
+<td><div align="center">24400000000</div></td>
+<td><div align="center">SKTKA1</div></td>
+<td><div align="center">02</div></td>
+<td><div align="center">Gt3TransformerServer_hxzgToSkydlpt</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZDGYFLAIWOIKKQYWPMAMUXYIWBZNXVSL</div></td>
+<td><div align="center">24400000000</div></td>
+<td><div align="center">SKCXTK</div></td>
+<td><div align="center">02</div></td>
+<td><div align="center">Gt3TransformerServer_hxzgToSkydlpt</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">AAVRNBPSWDDDBRTPZQKGLOOVFFLDGSUW</div></td>
+<td><div align="center">24400000000</div></td>
+<td><div align="center">SKMDA1</div></td>
+<td><div align="center">02</div></td>
+<td><div align="center">Gt3TransformerServer_hxzgToSkydlpt</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ODCXSOOLQEQWORYVRKUIJHHFFHVTUJOL</div></td>
+<td><div align="center">24400000000</div></td>
+<td><div align="center">SKCXMD</div></td>
+<td><div align="center">02</div></td>
+<td><div align="center">Gt3TransformerServer_hxzgToSkydlpt</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">HGBTFIBPUBDAGMRXPFMQABCULXRMYDXX</div></td>
+<td><div align="center">24400000000</div></td>
+<td><div align="center">SKGZA1</div></td>
+<td><div align="center">02</div></td>
+<td><div align="center">Gt3TransformerServer_hxzgToSkydlpt</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">KRPUAZLMLXJPUYCVNHJULRGTESGELYNF</div></td>
+<td><div align="center">24400000000</div></td>
+<td><div align="center">SKCXGZ</div></td>
+<td><div align="center">02</div></td>
+<td><div align="center">Gt3TransformerServer_hxzgToSkydlpt</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">TTVGMCJBDVFUAFQZFAHJVDRPJWZMYYRE</div></td>
+<td><div align="center">24400000000</div></td>
+<td><div align="center">SKTZCX</div></td>
+<td><div align="center">02</div></td>
+<td><div align="center">Gt3TransformerServer_hxzgToSkydlpt</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">QEVGAMWQCPOLWWSJTNNHCFUDPUSKBBFT</div></td>
+<td><div align="center">24400000000</div></td>
+<td><div align="center">SKLSA1</div></td>
+<td><div align="center">02</div></td>
+<td><div align="center">Gt3TransformerServer_hxzgToSkydlpt</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZBBBSMQHQWVRAKYDJMTADLHFYORCNCKC</div></td>
+<td><div align="center">24400000000</div></td>
+<td><div align="center">SKBBA1</div></td>
+<td><div align="center">02</div></td>
+<td><div align="center">Gt3TransformerServer_hxzgToSkydlpt</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">F03AFFC68A887A3DE040170A820464F2</div></td>
+<td><div align="center">24200000000</div></td>
+<td><div align="center">SKSFA1</div></td>
+<td><div align="center">02</div></td>
+<td><div align="center">SKYDL_SKSFA1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">F03AFFC68A897A3DE040170A820464F2</div></td>
+<td><div align="center">24200000000</div></td>
+<td><div align="center">SKKKA1</div></td>
+<td><div align="center">02</div></td>
+<td><div align="center">SKYDL_SKKKA1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">F03AFFC68A8A7A3DE040170A820464F2</div></td>
+<td><div align="center">24200000000</div></td>
+<td><div align="center">SKKKAA</div></td>
+<td><div align="center">02</div></td>
+<td><div align="center">SKYDL_SKKKAA</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">F03AFFC68A8B7A3DE040170A820464F2</div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">SKKKA3</div></td>
+<td><div align="center">02</div></td>
+<td><div align="center">SKYDL_SKKKA3</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">F03AFFC68A8C7A3DE040170A820464F2</div></td>
+<td><div align="center">24200000000</div></td>
+<td><div align="center">SKKKA3</div></td>
+<td><div align="center">02</div></td>
+<td><div align="center">SKYDL_SKKKA3</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">F03AFFC68A8D7A3DE040170A820464F2</div></td>
+<td><div align="center">24200000000</div></td>
+<td><div align="center">SKTKA1</div></td>
+<td><div align="center">02</div></td>
+<td><div align="center">SKYDL_SKTKA1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">F03AFFC68A8E7A3DE040170A820464F2</div></td>
+<td><div align="center">24200000000</div></td>
+<td><div align="center">SKCXTK</div></td>
+<td><div align="center">02</div></td>
+<td><div align="center">SKYDL_SKCXTK</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">F03AFFC68A957A3DE040170A820464F2</div></td>
+<td><div align="center">24200000000</div></td>
+<td><div align="center">SKMDA1</div></td>
+<td><div align="center">02</div></td>
+<td><div align="center">SKYDL_SKMDA1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">F03AFFC68A8F7A3DE040170A820464F2</div></td>
+<td><div align="center">24200000000</div></td>
+<td><div align="center">SKCXMD</div></td>
+<td><div align="center">02</div></td>
+<td><div align="center">SKYDL_SKCXMD</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">F03AFFC68A907A3DE040170A820464F2</div></td>
+<td><div align="center">24200000000</div></td>
+<td><div align="center">SKGZA1</div></td>
+<td><div align="center">02</div></td>
+<td><div align="center">SKYDL_SKGZA1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">F03AFFC68A917A3DE040170A820464F2</div></td>
+<td><div align="center">24200000000</div></td>
+<td><div align="center">SKCXGZ</div></td>
+<td><div align="center">02</div></td>
+<td><div align="center">SKYDL_SKCXGZ</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">F03AFFC68A927A3DE040170A820464F2</div></td>
+<td><div align="center">24200000000</div></td>
+<td><div align="center">SKTZCX</div></td>
+<td><div align="center">02</div></td>
+<td><div align="center">SKYDL_SKTZCX</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">F03AFFC68A937A3DE040170A820464F2</div></td>
+<td><div align="center">24200000000</div></td>
+<td><div align="center">SKLSA1</div></td>
+<td><div align="center">02</div></td>
+<td><div align="center">SKYDL_SKLSA1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">F03AFFC68A947A3DE040170A820464F2</div></td>
+<td><div align="center">24200000000</div></td>
+<td><div align="center">SKBBA1</div></td>
+<td><div align="center">02</div></td>
+<td><div align="center">SKYDL_SKBBA1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">00000000000</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>

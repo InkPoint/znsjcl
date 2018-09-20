@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xalt.sjyj.dao.SjbqwhMapper">
+
+    <!--数据来源下拉框查询-->
+    <select id="selectSjlb" parameterType="java.util.HashMap" resultType="com.xalt.sjyj.model.SjywbqwhVo">
+    select a.lbid id ,a.lbmc text
+    from znsjcl_sjyj_sjlb a
+    where a.yxbz = 'Y'
+    </select>
+
+
+    <!--业务标签查询 行内编辑-->
+    <select id="selectYwbqhn"  parameterType="java.util.HashMap" resultType="com.xalt.sjyj.model.SjywbqwhVo">
+            select bqid id,pbqid pId,bqmc name from ZNSJCL_DM_YWBQ where  yxbz='Y'
+    </select>
+
+    <!--默认表数据查询-->
+    <select id="selectAll"  parameterType="java.util.HashMap" resultType="com.xalt.sjyj.model.SjywbqwhVo" >
+                   select k1.bzwm bzwmc,
+                   k1.bywm bywmc,
+                   k1.bsjl,
+                   k1.sjly,
+                   to_char(k2.tjsj, 'yyyy-mm-dd HH:MM:SS') tjsj,
+                   to_char(k2.bqmc) bqmc,
+                   a1.user_name name
+              from (select t2.TABLE_COMMENTS bzwm,
+                           t1.tabname_en bywm,
+                           t1.tabnum bsjl,
+                           '外部门数据' sjly
+                      from zhzs_all_tables_tj t1,
+                           (select distinct k.TABLE_COMMENTS, k.TABLE_NAME
+                              from zhzs_all_tables k) t2
+                     where t1.tabname_en = t2.TABLE_NAME
+
+                    union
+                    ----金三数据统计
+                    select t3.zwbm bzwm, t3.ywbm bywm, t3.sjl bsjl, '金三数据' sjly
+                      from znsjcl_yj_jssjb t3) k1,
+                   acl_user a1,
+                   (select r1.bywmc, r1.tjr, r1.tjsj, wm_concat(nvl(r3.bqmc, '')) bqmc
+                      from znsjcl_sjyj_ywbqwh    r1,
+                           znsjcl_sjyj_ywbqwh_fb r2,
+                           znsjcl_dm_ywbq        r3
+                     where r1.bid = r2.bid
+                       and r2.bqid = r3.bqid(+)
+                     group by r1.bywmc, r1.tjr, r1.tjsj) k2
+             where k1.bywm = k2.bywmc(+)
+            <if test="svo.bqmc != null">
+                and k2.bqmc like '%${svo.bqmc}%'
+            </if>
+            <if test="svo.sjly != null">
+                OR k1.sjly like '%${svo.sjly}%'
+            </if>
+            <if test="svo.bzwmc != null">
+                and k1.bzwm like '%${svo.bzwmc}%'
+            </if>
+               and k2.tjr = a1.user_code(+)
+
+    </select>
+
+
+    <!--添加标签主表信息  -->
+    <insert id="insertmaininfo" parameterType="java.util.HashMap">
+        insert into ZNSJCL_SJYJ_YWBQWH(bid,bzwmc,bywmc,tjr,tjsj,yxbz)
+        values('${svo.bid}','${svo.bzwmc}','${svo.bywmc}','${svo.tjr}',sysdate,'Y')
+    </insert>
+
+    <!--添加标签   保存在附表中-->
+    <insert id="insertbqid" parameterType="java.util.HashMap">
+       insert into znsjcl_sjyj_ywbqwh_fb(sjid,bqid,bid)
+       values('${sjid}','${bqid}','${pid}')
+    </insert>
+
+
+    <!--根据英文表名删除标签维护表附表信息-->
+    <delete id="delfbinfo" parameterType="java.util.HashMap">
+        delete from znsjcl_sjyj_ywbqwh_fb t1
+        where exists (select 1
+           from znsjcl_sjyj_ywbqwh t
+          where t.bid = t1.bid
+          AND t.bywmc = '${svo.bywmc}')
+</delete>
+
+    <!--根据英文表名删除标签维护表主表信息 -->
+    <delete id="delmaininfo" parameterType="java.util.HashMap">
+        delete  from znsjcl_sjyj_ywbqwh  t  where t.bywmc='${svo.bywmc}'
+    </delete>
+
+</mapper>

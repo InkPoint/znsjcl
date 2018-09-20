@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xalt.sjcl.dao.QxgzMapper">
+
+
+  <!--查询所有清洗规则信息-->
+  <select id="selectAll" parameterType="java.util.HashMap" resultType="com.xalt.sjcl.model.QxgzVO">
+      select t.gzid,t.gzmc,t.gzms,t.gzjb,t.qxsf,t.bz,t1.user_name cjr,to_char(t.cjsj,'yyyy-mm-dd hh:mi:ss') cjsj  from znsjcl_cl_qxzhgz  t   ,acl_user t1
+      where 1=1  and yxbz='Y'          and  t.cjr=t1.user_code(+)
+        <if test="svo.con_gzmc != null">
+             and t.gzmc like   '%${svo.con_gzmc}%'
+        </if>
+      order by  t.cjsj desc
+  </select>
+
+    <!--根据规则id查询规则信息-->
+    <select id="selectAllbygzid" parameterType="java.lang.String" resultType="com.xalt.sjcl.model.QxgzVO">
+       select t.gzid,t.gzmc,t.gzms,t.gzjb,t.qxsf,t.bz,t.cjr,to_char(t.cjsj,'yyyy-mm-dd hh:mi:ss') cjsj  from znsjcl_cl_qxzhgz  t
+        where 1=1  and yxbz='Y'
+              and t.gzid =#{zgid,jdbcType=VARCHAR}
+        order by  t.cjsj desc
+    </select>
+
+    <!--添加新清洗规则-->
+    <insert id="insertdata" parameterType="java.util.HashMap">
+         insert into znsjcl_cl_qxzhgz
+              (gzid,gzmc,gzms,gzjb,qxsf,bz,cjr,cjsj, yxbz)
+            values
+              (to_char(sysdate, 'yyyymmdd')||all_indexes.nextval,
+              '${svo.gzmc}',
+              '${svo.gzms}',
+              '${svo.gzjb}',
+              '${svo.qxsf}',
+              '${svo.bz}',
+              '${curuser}',
+                sysdate,
+              'Y')
+    </insert>
+
+    <!--修改规则-->
+     <update id="updatedata"  parameterType="java.util.HashMap">
+             update znsjcl_cl_qxzhgz t
+             set
+                 t.gzmc='${svo.gzmc}', t.gzms='${svo.gzms}',
+                 t.gzjb='${svo.gzjb}', t.qxsf='${svo.qxsf}',
+                 t.bz='${svo.bz}', t.cjr='weijunyuan',
+                 t.cjsj=sysdate
+
+             where  t.gzid='${svo.gzid}'
+     </update>
+
+    <!--删除规则-->
+    <update id="deletes" parameterType="java.util.HashMap">
+          update  znsjcl_cl_qxzhgz t set t.yxbz='N'  where    t.gzid='${svo.gzid}'
+    </update>
+
+
+    <!--算法列表-->
+    <select id="sflist" resultType="com.xalt.sjcl.model.DownlistVO">
+         select t.sfgs id,t.sfmc text from znsjcl_dm_qxsf t where t.yxbz='Y'
+    </select>
+
+
+</mapper>

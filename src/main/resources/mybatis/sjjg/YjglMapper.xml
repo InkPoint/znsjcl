@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xalt.sjjg.dao.YjglMapper">
+
+    <!--数据元件分类(树)-->
+    <select id="getZtree" resultType="com.xalt.sjjg.model.YjglVo">
+        select t.yjid,t.yjmc,t.pyjdm from znsjcl_jg_sjyj t where t.yxbz='Y'
+    </select>
+    <!--指定标签详细信息查询-->
+    <select id="gettargetinfo" parameterType="java.util.HashMap" resultType="com.xalt.sjjg.model.YjglVo">
+        select t.* from znsjcl_jg_sjyj t
+        where 1=1
+        and t.yjid='${svo.yjid}'
+        and t.yxbz='Y'
+    </select>
+
+    <!--父标签 默认子节点查询-->
+    <select id="selectAll" resultType="com.xalt.sjjg.model.YjglVo">
+              select t.yjid,
+               t2.bqmc,
+               t.yjmc,
+               t.pyjdm,
+               t.yjkj,
+               t.gjz,
+               t.bqid,
+               t.bz,
+               t.yxbz,
+               t.cjsj,
+               t.cjr,
+               t.yjly ywbm,
+               t.lybm,
+               t.gxbs
+          from znsjcl_jg_sjyj t, znsjcl_dm_ywbq t2
+         where t.pyjdm in
+               (select t1.yjid from znsjcl_jg_sjyj t1 where t1.pyjdm is null)
+           and t.yxbz = 'Y'
+           and t.bqid = t2.bqid
+         order by t.cjsj desc
+
+
+    </select>
+
+    <!--指定标签子节点详细信息查询-->
+    <select id="getchildrens" parameterType="java.util.HashMap" resultType="com.xalt.sjjg.model.YjglVo">
+        select t.*,t2.bqmc from znsjcl_jg_sjyj t,znsjcl_dm_ywbq t2
+        where t.pyjdm='${svo.yjid}' and t.yxbz='Y' and t.bqid=t2.bqid
+    </select>
+
+    <!--添加数据-->
+    <insert id="insertlable"  parameterType="java.util.HashMap"  >
+         insert into znsjcl_jg_sjyj t
+          (t.yjid,
+           t.yjmc,
+           t.pyjdm,
+           t.yjkj,
+           t.gjz,
+           t.bqid,
+           t.yxbz,
+           t.cjsj,
+           t.cjr)
+        values
+          (SJDX_INDEX.NEXTVAL,
+           '${svo.yjmc}',
+           '${svo.pyjdm}',
+           '${svo.yjkj}',
+           '${svo.gjz}',
+           '${svo.bqid}',
+           'Y',sysdate,
+           '${svo.cjr}')
+    </insert>
+    <!--删除节点-->
+    <update id="deleteByid" parameterType="java.util.HashMap">
+        update  znsjcl_jg_sjyj t set t.yxbz='N'  where t.yjid='${svo.yjid}'
+    </update>
+    <!--节点编辑-->
+    <update id="modifydata" parameterType="java.util.HashMap">
+        update znsjcl_jg_sjyj t set t.yjmc='${svo.yjmc}',t.gjz='${svo.gjz}',t.bqid='${svo.bqid}',t.yjkj='${svo.yjkj}' where  t.yjid='${svo.yjid}'
+    </update>
+    <!--查看描述-->
+    <select id="viewDescribe" parameterType="java.util.HashMap" resultType="com.xalt.sjjg.model.YjglVo">
+        select t.yjkj from znsjcl_jg_sjyj t where t.yjid='${svo.yjid}'
+    </select>
+    <!--业务标签_下拉树形菜单-->
+    <select id="ywbqztree" parameterType="java.util.HashMap" resultType="com.xalt.sjzd.model.DropDownlistVo">
+      --select t.bqid id,t.bqmc text,t.pbqid pid from znsjcl_dm_ywbq t where t.yxbz='Y'
+        select  t.bqid id,t.bqmc text from znsjcl_dm_ywbq t where t.yxbz='Y' and t.pbqid is not null and t.pbqid!='233'
+    </select>
+</mapper>

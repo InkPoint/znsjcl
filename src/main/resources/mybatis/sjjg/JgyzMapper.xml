@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xalt.sjjg.dao.JgyzMapper">
+
+    <!--(业务类型)下拉菜单-->
+    <select id="downmenu" parameterType="java.util.HashMap" resultType="com.xalt.sjjg.model.JgyzVO">
+      select t.lxid id,t.lxmc text from znsjcl_yj_ywlx t where yxbz='Y'
+    </select>
+  <!--查询所有(定制系统定时处理任务)基本信息-->
+  <select id="selectAll" parameterType="java.util.HashMap" resultType="com.xalt.sjjg.model.JgyzVO">
+      select
+      t1.rwid,
+      t1.yzmc,
+      t2.lxmc,
+      t1.yzjl,
+      t1.lxid,
+      to_char(t1.yzsj, 'yyyy-mm-dd HH:mi:ss') yzsj
+      from znsjcl_yj_sjyz t1 inner join znsjcl_yj_ywlx t2 on t1.lxid=t2.lxid
+      where  t1.yxbz='Y'
+      <if test = "svo.lxid != null">
+          and t1.lxid like '%${svo.lxid}%'
+      </if>
+      --降序
+      order by t1.yzsj desc
+  </select>
+
+    <!--(新增)结果验证-->
+    <insert id="newaddition" parameterType="java.util.HashMap">
+           insert into znsjcl_yj_sjyz
+            (rwid, yzmc, yzjl, yxbz, yzsj,lxid)
+          values
+            (SJDX_INDEX.NEXTVAL,
+             '${svo.yzmc}',
+             '${svo.yzjl}',
+             'Y',
+             sysdate,
+             '${svo.lxid}')
+    </insert>
+
+    <!--修改-->
+    <update id="modifyData" parameterType="java.util.HashMap" >
+       UPDATE znsjcl_yj_sjyz t
+               SET
+               t.yzmc = '${svo.yzmc}',
+               t.yzjl = '${svo.yzjl}',
+               t.lxid = '${svo.lxid}',
+               t.yzsj = sysdate
+             WHERE t.rwid = '${svo.rwid}'
+    </update>
+
+    <!--删除-->
+    <update id="deletesbyid" parameterType="java.util.HashMap">
+          update  znsjcl_yj_sjyz t set t.yxbz='N'  where    t.rwid='${svo.rwid}'
+    </update>
+</mapper>

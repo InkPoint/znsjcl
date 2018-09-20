@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xalt.sjyj.dao.FxrwjkMapper">
+    <!--基本分页查询-->
+    <select id="selectAll" parameterType="java.util.HashMap" resultType="com.xalt.sjyj.model.FxrwdzVo">
+        select t.rwmc,
+                t.rwms,
+                t1.mxmc,
+                to_char(t.zxsj, 'yyyy-mm-dd HH:MM:SS') zxsj,
+                t.mxid,
+                t.rwid,
+                t5.ztmc yxzt
+        from znsjcl_jh_xtdr t
+          left join znsjcl_dm_yxzt t5 on t.yxzt = t5.ztid, znsjcl_yj_zdymx t1
+        where t.mxid = t1.mxid
+          and t.yxbz = 'Y'
+        <if test="svo.rwmc!=null">
+            and t.rwmc like '%${svo.rwmc}%'
+        </if>
+        order by t.zxsj desc
+    </select>
+</mapper>

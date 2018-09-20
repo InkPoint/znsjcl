@@ -1,0 +1,236 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>风险应对评价反馈表(TD_FXYD_PJFKB)</title><style type="text/css">
+<!--body {background-color: #EFECDD;}td{ font-family:"宋体"; font-size:9pt; color=#666666;}.style9 {color: #FFFFFF}-->
+</style></head><body>
+<table width="300" height="100" border="0" cellpadding="0" cellspacing="0">
+<tr><td><p align="center">风险应对评价反馈表(TD_FXYD_PJFKB)</p></td></tr></table>
+<table width="760" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#FF8800">
+<tr bgcolor="#FFAC75">
+<td width="80" height="26"><div align="center" class="style9">列名</div></td>
+<td width="80"><div align="center" class="style9">汉字名</div></td>
+<td width="80"><div align="center" class="style9">数据类型</div></td>
+<td width="80"><div align="center" class="style9">长度</div></td>
+<td width="80"><div align="center" class="style9">精度</div></td>
+<td width="80"><div align="center" class="style9">非空</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">SFZJC</div></td>
+<td><div align="center">是否转稽查</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">JCRWLAZT</div></td>
+<td><div align="center">稽查任务立案状态</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">10</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">JCAJBH</div></td>
+<td><div align="center">稽查案件编号</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">20</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">JCAJYYSM</div></td>
+<td><div align="center">稽查案件原因说明</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">4000</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">SCSJ</div></td>
+<td><div align="center">生成时间</div></td>
+<td><div align="center">DATE</div></td>
+<td><div align="center">7</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">BJSJ</div></td>
+<td><div align="center">办结时间</div></td>
+<td><div align="center">DATE</div></td>
+<td><div align="center">7</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">FXYDQK</div></td>
+<td><div align="center">风险应对情况</div></td>
+<td><div align="center">CLOB</div></td>
+<td><div align="center">4000</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">YDCLYJ</div></td>
+<td><div align="center">应对处理意见||属于决策二包的数据元，稍后维护，需由决策二包方发起</div></td>
+<td><div align="center">CLOB</div></td>
+<td><div align="center">4000</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">FXYDXH</div></td>
+<td><div align="center">风险应对序号</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">20</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">FXYDCLXH</div></td>
+<td><div align="center">风险应对处理序号||风险应对处理序号（即应对措施对应编号，一般为纳税评估案卷编号、稽查案件编号、特别</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">20</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">YWWTBZ</div></td>
+<td><div align="center">有无问题标志||00：无问题、10：有问题，纳税人原始数据有误、11：有问题，特殊情况下的数据异常</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">FXFXQK</div></td>
+<td><div align="center">风险分析情况</div></td>
+<td><div align="center">CLOB</div></td>
+<td><div align="center">4000</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">NSRSYFXPJ</div></td>
+<td><div align="center">纳税人剩余风险评价||属于决策二包的数据元，稍后维护，需由决策二包方发起</div></td>
+<td><div align="center">NUMBER</div></td>
+<td><div align="center">18</div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">NSRZCDPJ</div></td>
+<td><div align="center">纳税人遵从度评价||属于决策二包的数据元，稍后维护，需由决策二包方发起</div></td>
+<td><div align="center">NUMBER</div></td>
+<td><div align="center">18</div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">SWRYBZCYYSWJG</div></td>
+<td><div align="center">税务人员_不遵从原因_税务机关||属于决策二包的数据元，稍后维护，需由决策二包方发起</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">4000</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">SWRYBZCYYNSR</div></td>
+<td><div align="center">税务人员_不遵从原因_纳税人||属于决策二包的数据元，稍后维护，需由决策二包方发起</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">4000</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">NSRBZCYYSWJG</div></td>
+<td><div align="center">纳税人_不遵从原因_税务机关||属于决策二包的数据元，稍后维护，需由决策二包方发起</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">4000</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">NSRBZCYYNSR</div></td>
+<td><div align="center">纳税人_不遵从原因_纳税人||属于决策二包的数据元，稍后维护，需由决策二包方发起</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">4000</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">GGJYNB</div></td>
+<td><div align="center">工作建议_内部||属于决策二包的数据元，稍后维护，需由决策二包方发起</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">4000</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">GGJYNSR</div></td>
+<td><div align="center">工作建议_纳税人||属于决策二包的数据元，稍后维护，需由决策二包方发起</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">4000</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">CLSSQ</div></td>
+<td><div align="center">处理时间起||风险应对处理时间起（应对实施时间始）</div></td>
+<td><div align="center">DATE</div></td>
+<td><div align="center">7</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">CLSSZ</div></td>
+<td><div align="center">处理时间止||风险应对处理时间止（应对实施时间止）</div></td>
+<td><div align="center">DATE</div></td>
+<td><div align="center">7</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">YDRY_DM</div></td>
+<td><div align="center">应对人员代码||属于决策二包的数据元，稍后维护，需由决策二包方发起</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">11</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">YDRYXM</div></td>
+<td><div align="center">应对人员姓名||属于决策二包的数据元，稍后维护，需由决策二包方发起</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">75</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">YDBM_DM</div></td>
+<td><div align="center">应对部门代码||属于决策二包的数据元，稍后维护，需由决策二包方发起</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">11</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">YDBMMC</div></td>
+<td><div align="center">应对部门名称||属于决策二包的数据元，稍后维护，需由决策二包方发起</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">150</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">YDSWJG_DM</div></td>
+<td><div align="center">应对税务机关代码||属于决策二包的数据元，稍后维护，需由决策二包方发起</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">11</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">YDSWJGMC</div></td>
+<td><div align="center">应对税务机关名称||属于决策二包的数据元，稍后维护，需由决策二包方发起</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">150</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">FKSJ</div></td>
+<td><div align="center">反馈时间</div></td>
+<td><div align="center">DATE</div></td>
+<td><div align="center">7</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">CLZT</div></td>
+<td><div align="center">处理状态||处理状态（消费方使用字段，0：未处理；1：已处理）</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">CLSJ</div></td>
+<td><div align="center">处理时间||处理时间（消费方使用字段）</div></td>
+<td><div align="center">DATE</div></td>
+<td><div align="center">7</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center"><a href="DM_GY_SWRY.html">LRR_DM</div></td>
+<td><div align="center">录入人代码</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">11</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">LRRQ</div></td>
+<td><div align="center">录入日期</div></td>
+<td><div align="center">DATE</div></td>
+<td><div align="center">7</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center"><a href="DM_GY_SWRY.html">XGR_DM</div></td>
+<td><div align="center">修改人代码</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">11</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">XGRQ</div></td>
+<td><div align="center">修改日期</div></td>
+<td><div align="center">DATE</div></td>
+<td><div align="center">7</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">SJGSDQ</div></td>
+<td><div align="center">数据归属地区</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">11</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">SJTB_SJ</div></td>
+<td><div align="center">数据同步时间</div></td>
+<td><div align="center">TIMESTAMP(6)</div></td>
+<td><div align="center">11</div></td>
+<td><div align="center">6</div></td>
+<td><div align="center">Y</div></td></tr>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xalt.sjjg.dao.RwssfkMapper">
+
+    <!--表数据-->
+    <select id="selectlist" parameterType="java.util.HashMap" resultType="com.xalt.sjjg.model.YjmxyfVO">
+        select t.lcid,
+        t.rwid,
+        t.rwmc,
+        to_char(t.cjsj, 'yyyy-MM-dd HH24:mi:ss') cjsj,
+        t.cjr,
+        t.rwsm,
+        t.bz,
+        t.wcjd,
+        t.xyhjid,
+        to_char(t.jzrq, 'yyyy-MM-dd HH24:mi:ss') jzrq,
+        t.shzt,
+        t1.sjb,
+        t1.ccgc,
+        a.user_name name
+        from Znsjcl_Sqsp_Rwxx t,
+        znsjcl_jg_rwssfk t1,
+        acl_user a
+        where t.cjr = a.user_code
+        and t.lcid = '105'
+        and t.yxbz = 'Y'
+        and t.shzt != '0'
+        and t.rwid = t1.sqid
+        <if test = "svo.rwmc != null">
+            and t1.rwmc like '%${svo.rwmc}%'
+        </if>
+        order by cjsj desc
+    </select>
+
+
+    <!--完成进度修改-->
+    <update id="updateWcjd" parameterType="java.util.HashMap">
+        update Znsjcl_Sqsp_Rwxx t
+        set t.wcjd =   #{sliding, jdbcType = VARCHAR}
+        where rwid =   #{rwid, jdbcType = VARCHAR}
+    </update>
+
+
+</mapper>

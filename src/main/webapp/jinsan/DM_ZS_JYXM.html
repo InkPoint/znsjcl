@@ -1,0 +1,1981 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>经营项目(DM_ZS_JYXM)</title><style type="text/css">
+<!--body {background-color: #EFECDD;}td{ font-family:"宋体"; font-size:9pt; color=#666666;}.style9 {color: #FFFFFF}-->
+</style></head><body>
+<table width="300" height="100" border="0" cellpadding="0" cellspacing="0">
+<tr><td><p align="center">经营项目(DM_ZS_JYXM)</p></td></tr></table>
+<table width="760" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#FF8800">
+<tr bgcolor="#FFAC75">
+<td width="80" height="26"><div align="center" class="style9">列名</div></td>
+<td width="80"><div align="center" class="style9">汉字名</div></td>
+<td width="80"><div align="center" class="style9">数据类型</div></td>
+<td width="80"><div align="center" class="style9">长度</div></td>
+<td width="80"><div align="center" class="style9">精度</div></td>
+<td width="80"><div align="center" class="style9">非空</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center"><a href="DM_GY_GSXZGLJG.html">GLJG_DM</div></td>
+<td><div align="center">管理机关代码</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">11</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center"><a href="DM_GY_ZSXM.html">ZSXM_DM</div></td>
+<td><div align="center">征收项目代码</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">5</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center"><a href="DM_GY_ZSPM.html">ZSPM_DM</div></td>
+<td><div align="center">征收品目代码</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">9</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center"><a href="DM_ZS_JYXM.html">JYXM_DM</div></td>
+<td><div align="center">经营项目代码</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">16</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">JYXMMC</div></td>
+<td><div align="center">经营项目名称</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">300</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">SX</div></td>
+<td><div align="center">上限</div></td>
+<td><div align="center">NUMBER</div></td>
+<td><div align="center">16</div></td>
+<td><div align="center">6</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">XX</div></td>
+<td><div align="center">下限</div></td>
+<td><div align="center">NUMBER</div></td>
+<td><div align="center">16</div></td>
+<td><div align="center">6</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">KCSE</div></td>
+<td><div align="center">扣除税额</div></td>
+<td><div align="center">NUMBER</div></td>
+<td><div align="center">18</div></td>
+<td><div align="center">6</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">JYXMJSLX</div></td>
+<td><div align="center">经营项目计算类型</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">JSBZ_1</div></td>
+<td><div align="center">计税标志||0税率 1征收率 2应税所得率 3广东所得率 4阶梯税率</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">YXBZ</div></td>
+<td><div align="center">有效标志</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">XYBZ</div></td>
+<td><div align="center">选用标志</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+</table>
+
+
+   
+<table width="300" height="100" border="0" cellpadding="0" cellspacing="0">
+<tr><td><p align="center">经营项目(数据)</p></td></tr></table>
+<table width="760" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#FF8800">
+<tr bgcolor="#FFAC75">
+<td width="80" height="26"><div align="center" class="style9">管理机关代码</div></td>
+<td width="80" height="26"><div align="center" class="style9">征收项目代码</div></td>
+<td width="80" height="26"><div align="center" class="style9">征收品目代码</div></td>
+<td width="80" height="26"><div align="center" class="style9">经营项目代码</div></td>
+<td width="80" height="26"><div align="center" class="style9">经营项目名称</div></td>
+<td width="80" height="26"><div align="center" class="style9">上限</div></td>
+<td width="80" height="26"><div align="center" class="style9">下限</div></td>
+<td width="80" height="26"><div align="center" class="style9">扣除税额</div></td>
+<td width="80" height="26"><div align="center" class="style9">经营项目计算类型</div></td>
+<td width="80" height="26"><div align="center" class="style9">计税标志||0税率 1征收率 2应税所得率 3广东所得率 4阶梯税率</div></td>
+<td width="80" height="26"><div align="center" class="style9">有效标志</div></td>
+<td width="80" height="26"><div align="center" class="style9">选用标志</div></td>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">25001070000</div></td>
+<td><div align="center">10106</div></td>
+<td><div align="center">101060200</div></td>
+<td><div align="center">250010200080    </div></td>
+<td><div align="center">饮食业(应税所得率8%)</div></td>
+<td><div align="center">.08</div></td>
+<td><div align="center">.08</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">25001070000</div></td>
+<td><div align="center">10106</div></td>
+<td><div align="center">101060200</div></td>
+<td><div align="center">250010200081    </div></td>
+<td><div align="center">娱乐业(应税所得率20%)</div></td>
+<td><div align="center">.2</div></td>
+<td><div align="center">.2</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">25001020000</div></td>
+<td><div align="center">10106</div></td>
+<td><div align="center">101060200</div></td>
+<td><div align="center">250010200082    </div></td>
+<td><div align="center">其他行业(应税所得率15%)</div></td>
+<td><div align="center">.15</div></td>
+<td><div align="center">.15</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">25001020000</div></td>
+<td><div align="center">10106</div></td>
+<td><div align="center">101060200</div></td>
+<td><div align="center">250010200083    </div></td>
+<td><div align="center">商品零售3%(应税所得率4%)</div></td>
+<td><div align="center">.04</div></td>
+<td><div align="center">.04</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">25001020000</div></td>
+<td><div align="center">10106</div></td>
+<td><div align="center">101060200</div></td>
+<td><div align="center">250010200084    </div></td>
+<td><div align="center">煤炭采掘业(应税所得率10%)</div></td>
+<td><div align="center">.1</div></td>
+<td><div align="center">.1</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">25001020000</div></td>
+<td><div align="center">10106</div></td>
+<td><div align="center">101060200</div></td>
+<td><div align="center">250010200085    </div></td>
+<td><div align="center">房地产开发业(应税所得率13%)</div></td>
+<td><div align="center">.13</div></td>
+<td><div align="center">.13</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">25001020000</div></td>
+<td><div align="center">10106</div></td>
+<td><div align="center">101060200</div></td>
+<td><div align="center">250010200086    </div></td>
+<td><div align="center">中介服务业(应税所得率12%)</div></td>
+<td><div align="center">.12</div></td>
+<td><div align="center">.12</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">25001020000</div></td>
+<td><div align="center">10106</div></td>
+<td><div align="center">101060200</div></td>
+<td><div align="center">250010200087    </div></td>
+<td><div align="center">转让财产收入(应税所得率15%)</div></td>
+<td><div align="center">.15</div></td>
+<td><div align="center">.15</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">25001020000</div></td>
+<td><div align="center">10106</div></td>
+<td><div align="center">101060200</div></td>
+<td><div align="center">250010200088    </div></td>
+<td><div align="center">律师行业4%-8%</div></td>
+<td><div align="center">.04</div></td>
+<td><div align="center">.04</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">25001020000</div></td>
+<td><div align="center">10106</div></td>
+<td><div align="center">101060200</div></td>
+<td><div align="center">250010200089    </div></td>
+<td><div align="center">典当(2%)</div></td>
+<td><div align="center">.02</div></td>
+<td><div align="center">.02</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">25001020000</div></td>
+<td><div align="center">10106</div></td>
+<td><div align="center">101060200</div></td>
+<td><div align="center">250010200090    </div></td>
+<td><div align="center">邮电通讯业(1.5%)</div></td>
+<td><div align="center">.015</div></td>
+<td><div align="center">.015</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">25001020000</div></td>
+<td><div align="center">10106</div></td>
+<td><div align="center">101060200</div></td>
+<td><div align="center">250010200091    </div></td>
+<td><div align="center">文化、体育、歌舞(1.55%)</div></td>
+<td><div align="center">.0155</div></td>
+<td><div align="center">.0155</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">25001020000</div></td>
+<td><div align="center">10106</div></td>
+<td><div align="center">101060200</div></td>
+<td><div align="center">250010200092    </div></td>
+<td><div align="center">歌厅、舞厅、电子游戏(1%)</div></td>
+<td><div align="center">.01</div></td>
+<td><div align="center">.01</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">25001020000</div></td>
+<td><div align="center">10106</div></td>
+<td><div align="center">101060200</div></td>
+<td><div align="center">250010200093    </div></td>
+<td><div align="center">音乐茶座</div></td>
+<td><div align="center">.01</div></td>
+<td><div align="center">.01</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">25001020000</div></td>
+<td><div align="center">10106</div></td>
+<td><div align="center">101060200</div></td>
+<td><div align="center">250010200094    </div></td>
+<td><div align="center">保龄球、台球</div></td>
+<td><div align="center">.01</div></td>
+<td><div align="center">.01</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">25001020000</div></td>
+<td><div align="center">10106</div></td>
+<td><div align="center">101060300</div></td>
+<td><div align="center">250010200095    </div></td>
+<td><div align="center">外来建安（预征1%）</div></td>
+<td><div align="center">.01</div></td>
+<td><div align="center">.01</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">25001020000</div></td>
+<td><div align="center">10106</div></td>
+<td><div align="center">101060701</div></td>
+<td><div align="center">250010200096    </div></td>
+<td><div align="center">非居民个人所得税股息红利所得10%</div></td>
+<td><div align="center">.1</div></td>
+<td><div align="center">.1</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">25001020000</div></td>
+<td><div align="center">10106</div></td>
+<td><div align="center">101060800</div></td>
+<td><div align="center">250010200097    </div></td>
+<td><div align="center">个人房屋出租0.05%</div></td>
+<td><div align="center">.0005</div></td>
+<td><div align="center">.0005</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">25001022200</div></td>
+<td><div align="center">10106</div></td>
+<td><div align="center">101060101</div></td>
+<td><div align="center">100206          </div></td>
+<td><div align="center">吕波测试4</div></td>
+<td><div align="center">.2</div></td>
+<td><div align="center">.02</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">251100200  </div></td>
+<td><div align="center">10106</div></td>
+<td><div align="center">101060102</div></td>
+<td><div align="center">100203          </div></td>
+<td><div align="center">吕波测试1</div></td>
+<td><div align="center">.2</div></td>
+<td><div align="center">.02</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">25001022200</div></td>
+<td><div align="center">10106</div></td>
+<td><div align="center">101060102</div></td>
+<td><div align="center">100204          </div></td>
+<td><div align="center">吕波测试2</div></td>
+<td><div align="center">.2</div></td>
+<td><div align="center">.02</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">25001022200</div></td>
+<td><div align="center">10106</div></td>
+<td><div align="center">101060101</div></td>
+<td><div align="center">100205          </div></td>
+<td><div align="center">吕波测试3</div></td>
+<td><div align="center">.2</div></td>
+<td><div align="center">.02</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">25001070700</div></td>
+<td><div align="center">10106</div></td>
+<td><div align="center">101030703</div></td>
+<td><div align="center">250010200123    </div></td>
+<td><div align="center">饮食业(应税所得率8%)</div></td>
+<td><div align="center">.08</div></td>
+<td><div align="center">.08</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">15001093600</div></td>
+<td><div align="center">10106</div></td>
+<td><div align="center">101060100</div></td>
+<td><div align="center">150010900001    </div></td>
+<td><div align="center">3</div></td>
+<td><div align="center">.1</div></td>
+<td><div align="center">.1</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">15001093600</div></td>
+<td><div align="center">10106</div></td>
+<td><div align="center">101060900</div></td>
+<td><div align="center">150010900002    </div></td>
+<td><div align="center">吕波测试2</div></td>
+<td><div align="center">.2</div></td>
+<td><div align="center">.1</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">15001093600</div></td>
+<td><div align="center">10106</div></td>
+<td><div align="center">101060400</div></td>
+<td><div align="center">150010900003    </div></td>
+<td><div align="center">123.123</div></td>
+<td><div align="center">.1</div></td>
+<td><div align="center">.3</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">15001093600</div></td>
+<td><div align="center">10106</div></td>
+<td><div align="center">101060799</div></td>
+<td><div align="center">150010900004    </div></td>
+<td><div align="center">ws test</div></td>
+<td><div align="center">.1</div></td>
+<td><div align="center">.1</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">15001093600</div></td>
+<td><div align="center">10106</div></td>
+<td><div align="center">101060400</div></td>
+<td><div align="center">150010900005    </div></td>
+<td><div align="center">ws test</div></td>
+<td><div align="center">.1</div></td>
+<td><div align="center">.1</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">15001093600</div></td>
+<td><div align="center">10106</div></td>
+<td><div align="center">101060303</div></td>
+<td><div align="center">150010900008    </div></td>
+<td><div align="center">12123</div></td>
+<td><div align="center">.2</div></td>
+<td><div align="center">.2</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">15001093600</div></td>
+<td><div align="center">10106</div></td>
+<td><div align="center">101060400</div></td>
+<td><div align="center">150010900015    </div></td>
+<td><div align="center">111</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">15001093600</div></td>
+<td><div align="center">10106</div></td>
+<td><div align="center">101060400</div></td>
+<td><div align="center">150010900016    </div></td>
+<td><div align="center">45</div></td>
+<td><div align="center">3</div></td>
+<td><div align="center">3</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">15001093600</div></td>
+<td><div align="center">10106</div></td>
+<td><div align="center">101069901</div></td>
+<td><div align="center">150010900017    </div></td>
+<td><div align="center">5</div></td>
+<td><div align="center">4</div></td>
+<td><div align="center">4</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">15001093500</div></td>
+<td><div align="center">10106</div></td>
+<td><div align="center">101060400</div></td>
+<td><div align="center">150010900018    </div></td>
+<td><div align="center">111</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">15001093600</div></td>
+<td><div align="center">10106</div></td>
+<td><div align="center">101060400</div></td>
+<td><div align="center">150010900013    </div></td>
+<td><div align="center">123</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">15001093600</div></td>
+<td><div align="center">10106</div></td>
+<td><div align="center">101069901</div></td>
+<td><div align="center">150010900014    </div></td>
+<td><div align="center">11111</div></td>
+<td><div align="center">11</div></td>
+<td><div align="center">11</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">15001090000</div></td>
+<td><div align="center">10106</div></td>
+<td><div align="center">101060799</div></td>
+<td><div align="center">150010900019    </div></td>
+<td><div align="center">22</div></td>
+<td><div align="center">22</div></td>
+<td><div align="center">22</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">15001090000</div></td>
+<td><div align="center">10106</div></td>
+<td><div align="center">101069901</div></td>
+<td><div align="center">150010900020    </div></td>
+<td><div align="center">lxc</div></td>
+<td><div align="center">.1</div></td>
+<td><div align="center">.03</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">15001093600</div></td>
+<td><div align="center">10106</div></td>
+<td><div align="center">101060105</div></td>
+<td><div align="center">150010900010    </div></td>
+<td><div align="center">3</div></td>
+<td><div align="center">.6</div></td>
+<td><div align="center">.2</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">15001093600</div></td>
+<td><div align="center">10106</div></td>
+<td><div align="center">101060400</div></td>
+<td><div align="center">150010900011    </div></td>
+<td><div align="center">ws test</div></td>
+<td><div align="center">.9</div></td>
+<td><div align="center">.3</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">15001093600</div></td>
+<td><div align="center">10106</div></td>
+<td><div align="center">101060402</div></td>
+<td><div align="center">150010900006    </div></td>
+<td><div align="center">123123</div></td>
+<td><div align="center">.5</div></td>
+<td><div align="center">.1</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">15001093600</div></td>
+<td><div align="center">10106</div></td>
+<td><div align="center">101060202</div></td>
+<td><div align="center">150010900007    </div></td>
+<td><div align="center">3213123</div></td>
+<td><div align="center">.6</div></td>
+<td><div align="center">.1</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">15001093600</div></td>
+<td><div align="center">10106</div></td>
+<td><div align="center">101060400</div></td>
+<td><div align="center">150010900009    </div></td>
+<td><div align="center">test</div></td>
+<td><div align="center">.5</div></td>
+<td><div align="center">.1</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">15001093600</div></td>
+<td><div align="center">10106</div></td>
+<td><div align="center">101069901</div></td>
+<td><div align="center">150010900012    </div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">.2</div></td>
+<td><div align="center">.2</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">15001090000</div></td>
+<td><div align="center">10106</div></td>
+<td><div align="center">101060799</div></td>
+<td><div align="center">150010900021    </div></td>
+<td><div align="center">112</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">251100200  </div></td>
+<td><div align="center">10106</div></td>
+<td><div align="center">101060102</div></td>
+<td><div align="center">100201          </div></td>
+<td><div align="center">工业、商业、工业性加工、修理修配</div></td>
+<td><div align="center">.2</div></td>
+<td><div align="center">.02</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">25001022200</div></td>
+<td><div align="center">10106</div></td>
+<td><div align="center">101060102</div></td>
+<td><div align="center">100202          </div></td>
+<td><div align="center">工业、商业、工业性加工、修理修配</div></td>
+<td><div align="center">.2</div></td>
+<td><div align="center">.02</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">25001020000</div></td>
+<td><div align="center">10104</div></td>
+<td><div align="center">101040001</div></td>
+<td><div align="center">250010200001    </div></td>
+<td><div align="center">建筑企业跨区经营预征（0.2%）</div></td>
+<td><div align="center">.002</div></td>
+<td><div align="center">.002</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">25001020000</div></td>
+<td><div align="center">10104</div></td>
+<td><div align="center">101040001</div></td>
+<td><div align="center">250010200002    </div></td>
+<td><div align="center">制造业</div></td>
+<td><div align="center">.05</div></td>
+<td><div align="center">.05</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">25001020000</div></td>
+<td><div align="center">10104</div></td>
+<td><div align="center">101040001</div></td>
+<td><div align="center">250010200003    </div></td>
+<td><div align="center">房地产开发业20%</div></td>
+<td><div align="center">.2</div></td>
+<td><div align="center">.2</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">25001020000</div></td>
+<td><div align="center">10104</div></td>
+<td><div align="center">101040001</div></td>
+<td><div align="center">250010200004    </div></td>
+<td><div align="center">煤炭采掘业</div></td>
+<td><div align="center">.1</div></td>
+<td><div align="center">.1</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">25001020000</div></td>
+<td><div align="center">10104</div></td>
+<td><div align="center">101040001</div></td>
+<td><div align="center">250010200005    </div></td>
+<td><div align="center">批发和零售贸易业</div></td>
+<td><div align="center">.04</div></td>
+<td><div align="center">.04</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">25001020000</div></td>
+<td><div align="center">10104</div></td>
+<td><div align="center">101040001</div></td>
+<td><div align="center">250010200006    </div></td>
+<td><div align="center">交通运输业</div></td>
+<td><div align="center">.07</div></td>
+<td><div align="center">.07</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">25001020000</div></td>
+<td><div align="center">10104</div></td>
+<td><div align="center">101040001</div></td>
+<td><div align="center">250010200007    </div></td>
+<td><div align="center">建筑业</div></td>
+<td><div align="center">.08</div></td>
+<td><div align="center">.08</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">25001020000</div></td>
+<td><div align="center">10104</div></td>
+<td><div align="center">101040001</div></td>
+<td><div align="center">250010200008    </div></td>
+<td><div align="center">饮食业</div></td>
+<td><div align="center">.08</div></td>
+<td><div align="center">.08</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">25001020000</div></td>
+<td><div align="center">10104</div></td>
+<td><div align="center">101040001</div></td>
+<td><div align="center">250010200009    </div></td>
+<td><div align="center">娱乐业</div></td>
+<td><div align="center">.15</div></td>
+<td><div align="center">.15</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">25001020000</div></td>
+<td><div align="center">10104</div></td>
+<td><div align="center">101040001</div></td>
+<td><div align="center">250010200010    </div></td>
+<td><div align="center">房地产开发业</div></td>
+<td><div align="center">.1</div></td>
+<td><div align="center">.1</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">25001020000</div></td>
+<td><div align="center">10104</div></td>
+<td><div align="center">101040001</div></td>
+<td><div align="center">250010200011    </div></td>
+<td><div align="center">中介服务业</div></td>
+<td><div align="center">.12</div></td>
+<td><div align="center">.12</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">25001020000</div></td>
+<td><div align="center">10104</div></td>
+<td><div align="center">101040001</div></td>
+<td><div align="center">250010200012    </div></td>
+<td><div align="center">其他行业</div></td>
+<td><div align="center">.1</div></td>
+<td><div align="center">.1</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">25001020000</div></td>
+<td><div align="center">10104</div></td>
+<td><div align="center">101040001</div></td>
+<td><div align="center">250010200013    </div></td>
+<td><div align="center">转让财产收入</div></td>
+<td><div align="center">.15</div></td>
+<td><div align="center">.15</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">25001020000</div></td>
+<td><div align="center">10104</div></td>
+<td><div align="center">101040001</div></td>
+<td><div align="center">250010200014    </div></td>
+<td><div align="center">受付汇</div></td>
+<td><div align="center">.1</div></td>
+<td><div align="center">.1</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">25001020000</div></td>
+<td><div align="center">10104</div></td>
+<td><div align="center">101040001</div></td>
+<td><div align="center">250010200015    </div></td>
+<td><div align="center">农、林、牧、渔业</div></td>
+<td><div align="center">.03</div></td>
+<td><div align="center">.03</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">25001020000</div></td>
+<td><div align="center">10104</div></td>
+<td><div align="center">101040001</div></td>
+<td><div align="center">250010200016    </div></td>
+<td><div align="center">外国企业预计10%</div></td>
+<td><div align="center">.1</div></td>
+<td><div align="center">.1</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">25001020000</div></td>
+<td><div align="center">10106</div></td>
+<td><div align="center">101060200</div></td>
+<td><div align="center">250010200017    </div></td>
+<td><div align="center">游艺</div></td>
+<td><div align="center">.01</div></td>
+<td><div align="center">.01</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">25001020000</div></td>
+<td><div align="center">10106</div></td>
+<td><div align="center">101060200</div></td>
+<td><div align="center">250010200018    </div></td>
+<td><div align="center">其它娱乐业</div></td>
+<td><div align="center">.008</div></td>
+<td><div align="center">.008</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">25001020000</div></td>
+<td><div align="center">10106</div></td>
+<td><div align="center">101060200</div></td>
+<td><div align="center">250010200019    </div></td>
+<td><div align="center">旅店业、茶馆</div></td>
+<td><div align="center">.0125</div></td>
+<td><div align="center">.0125</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">25001020000</div></td>
+<td><div align="center">10106</div></td>
+<td><div align="center">101060200</div></td>
+<td><div align="center">250010200020    </div></td>
+<td><div align="center">工业、交通运输业、商业10%</div></td>
+<td><div align="center">.1</div></td>
+<td><div align="center">.1</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">25001020000</div></td>
+<td><div align="center">10106</div></td>
+<td><div align="center">101060200</div></td>
+<td><div align="center">250010200021    </div></td>
+<td><div align="center">二手房交易3%</div></td>
+<td><div align="center">.03</div></td>
+<td><div align="center">.03</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">25001020000</div></td>
+<td><div align="center">10106</div></td>
+<td><div align="center">101060200</div></td>
+<td><div align="center">250010200022    </div></td>
+<td><div align="center">二手房交易1%</div></td>
+<td><div align="center">.01</div></td>
+<td><div align="center">.01</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">25001020000</div></td>
+<td><div align="center">10106</div></td>
+<td><div align="center">101060200</div></td>
+<td><div align="center">250010200023    </div></td>
+<td><div align="center">服务业3%</div></td>
+<td><div align="center">.03</div></td>
+<td><div align="center">.03</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">25001020000</div></td>
+<td><div align="center">10106</div></td>
+<td><div align="center">101060200</div></td>
+<td><div align="center">250010200024    </div></td>
+<td><div align="center">非主宅0.7%</div></td>
+<td><div align="center">.007</div></td>
+<td><div align="center">.007</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">25001020000</div></td>
+<td><div align="center">10106</div></td>
+<td><div align="center">101060200</div></td>
+<td><div align="center">250010200025    </div></td>
+<td><div align="center">个人房屋装修2.5%</div></td>
+<td><div align="center">.025</div></td>
+<td><div align="center">.025</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">25001020000</div></td>
+<td><div align="center">10106</div></td>
+<td><div align="center">101060200</div></td>
+<td><div align="center">250010200026    </div></td>
+<td><div align="center">建筑业10%</div></td>
+<td><div align="center">.1</div></td>
+<td><div align="center">.1</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">25001020000</div></td>
+<td><div align="center">10106</div></td>
+<td><div align="center">101060200</div></td>
+<td><div align="center">250010200027    </div></td>
+<td><div align="center">房地产开发业13%</div></td>
+<td><div align="center">.13</div></td>
+<td><div align="center">.13</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">25001020000</div></td>
+<td><div align="center">10106</div></td>
+<td><div align="center">101060200</div></td>
+<td><div align="center">250010200028    </div></td>
+<td><div align="center">服务业13%</div></td>
+<td><div align="center">.13</div></td>
+<td><div align="center">.13</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">25001020000</div></td>
+<td><div align="center">10106</div></td>
+<td><div align="center">101060200</div></td>
+<td><div align="center">250010200029    </div></td>
+<td><div align="center">娱乐业20%</div></td>
+<td><div align="center">.2</div></td>
+<td><div align="center">.2</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">25001020000</div></td>
+<td><div align="center">10106</div></td>
+<td><div align="center">101060200</div></td>
+<td><div align="center">250010200030    </div></td>
+<td><div align="center">其他行业15%</div></td>
+<td><div align="center">.15</div></td>
+<td><div align="center">.15</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">25001020000</div></td>
+<td><div align="center">10106</div></td>
+<td><div align="center">101060200</div></td>
+<td><div align="center">250010200031    </div></td>
+<td><div align="center">人力运输(1.5%)</div></td>
+<td><div align="center">.015</div></td>
+<td><div align="center">.015</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">25001020000</div></td>
+<td><div align="center">10106</div></td>
+<td><div align="center">101060200</div></td>
+<td><div align="center">250010200032    </div></td>
+<td><div align="center">歌厅、舞厅、卡拉OK歌舞厅(包括夜总会、练歌房、恋歌房)、音乐茶座(包括酒吧)、台球、高尔夫球、保龄球、游艺(射击、狩猎、跑马、游戏机、蹦极、卡丁车、热气球、动力伞、射箭、飞镖等)、网吧（无证）(0.06%)</div></td>
+<td><div align="center">.0006</div></td>
+<td><div align="center">.0006</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">25001020000</div></td>
+<td><div align="center">10106</div></td>
+<td><div align="center">101060200</div></td>
+<td><div align="center">250010200033    </div></td>
+<td><div align="center">帆船、游艇、碰碰船、漂流、游艇拖伞、彩弹对抗射击、攀岩、划船、有奖猜字谜等(0.06%)</div></td>
+<td><div align="center">.0006</div></td>
+<td><div align="center">.0006</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">25001020000</div></td>
+<td><div align="center">10106</div></td>
+<td><div align="center">101060200</div></td>
+<td><div align="center">250010200034    </div></td>
+<td><div align="center">饮食业、旅店业、代理业、仓储业、租赁业、其他服务(0.75%)</div></td>
+<td><div align="center">.0075</div></td>
+<td><div align="center">.0075</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">25001020000</div></td>
+<td><div align="center">10106</div></td>
+<td><div align="center">101060200</div></td>
+<td><div align="center">250010200035    </div></td>
+<td><div align="center">网吧（有证）(0.75%)</div></td>
+<td><div align="center">.0075</div></td>
+<td><div align="center">.0075</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">25001020000</div></td>
+<td><div align="center">10106</div></td>
+<td><div align="center">101060200</div></td>
+<td><div align="center">250010200036    </div></td>
+<td><div align="center">广告业(0.75%)</div></td>
+<td><div align="center">.0075</div></td>
+<td><div align="center">.0075</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">25001020000</div></td>
+<td><div align="center">10106</div></td>
+<td><div align="center">101060200</div></td>
+<td><div align="center">250010200037    </div></td>
+<td><div align="center">提供建筑、安装、修缮、装饰或其它工程劳务(0.75%)</div></td>
+<td><div align="center">.0075</div></td>
+<td><div align="center">.0075</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">25001020000</div></td>
+<td><div align="center">10106</div></td>
+<td><div align="center">101060200</div></td>
+<td><div align="center">250010200038    </div></td>
+<td><div align="center">从事商业的以缴纳增值税为主的个体纳税人(0.66%)</div></td>
+<td><div align="center">.0066</div></td>
+<td><div align="center">.0066</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">25001020000</div></td>
+<td><div align="center">10106</div></td>
+<td><div align="center">101060200</div></td>
+<td><div align="center">250010200039    </div></td>
+<td><div align="center">从事制造业的以缴纳增值税为主的个体纳税人(0.84%)</div></td>
+<td><div align="center">.0084</div></td>
+<td><div align="center">.0084</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">25001020000</div></td>
+<td><div align="center">10106</div></td>
+<td><div align="center">101060200</div></td>
+<td><div align="center">250010200040    </div></td>
+<td><div align="center">管道运输(1.5%)</div></td>
+<td><div align="center">.015</div></td>
+<td><div align="center">.015</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">25001020000</div></td>
+<td><div align="center">10106</div></td>
+<td><div align="center">101060200</div></td>
+<td><div align="center">250010200041    </div></td>
+<td><div align="center">水路运输(1.5%)</div></td>
+<td><div align="center">.015</div></td>
+<td><div align="center">.015</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">25001020000</div></td>
+<td><div align="center">10106</div></td>
+<td><div align="center">101060200</div></td>
+<td><div align="center">250010200042    </div></td>
+<td><div align="center">航空运输(1.5%)</div></td>
+<td><div align="center">.015</div></td>
+<td><div align="center">.015</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">25001020000</div></td>
+<td><div align="center">10106</div></td>
+<td><div align="center">101060200</div></td>
+<td><div align="center">250010200043    </div></td>
+<td><div align="center">装卸、人力三轮(1.5%)</div></td>
+<td><div align="center">.015</div></td>
+<td><div align="center">.015</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">25001020000</div></td>
+<td><div align="center">10106</div></td>
+<td><div align="center">101060200</div></td>
+<td><div align="center">250010200044    </div></td>
+<td><div align="center">其它交通运输(1.5%)</div></td>
+<td><div align="center">.015</div></td>
+<td><div align="center">.015</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">25001020000</div></td>
+<td><div align="center">10106</div></td>
+<td><div align="center">101060200</div></td>
+<td><div align="center">250010200045    </div></td>
+<td><div align="center">建筑物、构筑物、其它土地附着物(1.25%)</div></td>
+<td><div align="center">.0125</div></td>
+<td><div align="center">.0125</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">25001020000</div></td>
+<td><div align="center">10106</div></td>
+<td><div align="center">101060200</div></td>
+<td><div align="center">250010200046    </div></td>
+<td><div align="center">私房出租(0.05%)</div></td>
+<td><div align="center">.0005</div></td>
+<td><div align="center">.0005</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">25001020000</div></td>
+<td><div align="center">10106</div></td>
+<td><div align="center">101060200</div></td>
+<td><div align="center">250010200047    </div></td>
+<td><div align="center">建筑安装<500万(1.55%)</div></td>
+<td><div align="center">.0155</div></td>
+<td><div align="center">.0155</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">25001020000</div></td>
+<td><div align="center">10106</div></td>
+<td><div align="center">101060200</div></td>
+<td><div align="center">250010200048    </div></td>
+<td><div align="center">建筑安装>500万(1.55%)</div></td>
+<td><div align="center">.0155</div></td>
+<td><div align="center">.0155</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">25001020000</div></td>
+<td><div align="center">10106</div></td>
+<td><div align="center">101060200</div></td>
+<td><div align="center">250010200049    </div></td>
+<td><div align="center">装饰<100万(1.55%)</div></td>
+<td><div align="center">.0155</div></td>
+<td><div align="center">.0155</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">25001020000</div></td>
+<td><div align="center">10106</div></td>
+<td><div align="center">101060200</div></td>
+<td><div align="center">250010200050    </div></td>
+<td><div align="center">装饰>100万(1.55%)</div></td>
+<td><div align="center">.0155</div></td>
+<td><div align="center">.0155</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">25001020000</div></td>
+<td><div align="center">10106</div></td>
+<td><div align="center">101060200</div></td>
+<td><div align="center">250010200051    </div></td>
+<td><div align="center">其他工程作业(1.55%)</div></td>
+<td><div align="center">.0155</div></td>
+<td><div align="center">.0155</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">25001020000</div></td>
+<td><div align="center">10106</div></td>
+<td><div align="center">101060200</div></td>
+<td><div align="center">250010200052    </div></td>
+<td><div align="center">金融</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">25001020000</div></td>
+<td><div align="center">10106</div></td>
+<td><div align="center">101060200</div></td>
+<td><div align="center">250010200053    </div></td>
+<td><div align="center">保险</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">25001020000</div></td>
+<td><div align="center">10106</div></td>
+<td><div align="center">101060200</div></td>
+<td><div align="center">250010200054    </div></td>
+<td><div align="center">转让土地使用权</div></td>
+<td><div align="center">.04</div></td>
+<td><div align="center">.04</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">25001020000</div></td>
+<td><div align="center">10106</div></td>
+<td><div align="center">101060200</div></td>
+<td><div align="center">250010200055    </div></td>
+<td><div align="center">专利权</div></td>
+<td><div align="center">.04</div></td>
+<td><div align="center">.04</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">25001020000</div></td>
+<td><div align="center">10106</div></td>
+<td><div align="center">101060200</div></td>
+<td><div align="center">250010200056    </div></td>
+<td><div align="center">非专利技术</div></td>
+<td><div align="center">.04</div></td>
+<td><div align="center">.04</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">25001020000</div></td>
+<td><div align="center">10106</div></td>
+<td><div align="center">101060200</div></td>
+<td><div align="center">250010200057    </div></td>
+<td><div align="center">商标权</div></td>
+<td><div align="center">.04</div></td>
+<td><div align="center">.04</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">25001020000</div></td>
+<td><div align="center">10106</div></td>
+<td><div align="center">101060200</div></td>
+<td><div align="center">250010200058    </div></td>
+<td><div align="center">著作权</div></td>
+<td><div align="center">.04</div></td>
+<td><div align="center">.04</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">25001020000</div></td>
+<td><div align="center">10106</div></td>
+<td><div align="center">101060200</div></td>
+<td><div align="center">250010200059    </div></td>
+<td><div align="center">商誉</div></td>
+<td><div align="center">.04</div></td>
+<td><div align="center">.04</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">25001020000</div></td>
+<td><div align="center">10106</div></td>
+<td><div align="center">101060200</div></td>
+<td><div align="center">250010200060    </div></td>
+<td><div align="center">其它经济权益</div></td>
+<td><div align="center">.04</div></td>
+<td><div align="center">.04</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">25001020000</div></td>
+<td><div align="center">10106</div></td>
+<td><div align="center">101060200</div></td>
+<td><div align="center">250010200061    </div></td>
+<td><div align="center">售建筑物及土地附着物</div></td>
+<td><div align="center">.02</div></td>
+<td><div align="center">.02</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">25001020000</div></td>
+<td><div align="center">10106</div></td>
+<td><div align="center">101060200</div></td>
+<td><div align="center">250010200062    </div></td>
+<td><div align="center">其它行业</div></td>
+<td><div align="center">.0125</div></td>
+<td><div align="center">.0125</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">25001020000</div></td>
+<td><div align="center">10106</div></td>
+<td><div align="center">101060200</div></td>
+<td><div align="center">250010200063    </div></td>
+<td><div align="center">修理加工(4%)</div></td>
+<td><div align="center">.015</div></td>
+<td><div align="center">.015</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">25001020000</div></td>
+<td><div align="center">10106</div></td>
+<td><div align="center">101060200</div></td>
+<td><div align="center">250010200064    </div></td>
+<td><div align="center">商品零售(3%)</div></td>
+<td><div align="center">.007</div></td>
+<td><div align="center">.007</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">25001020000</div></td>
+<td><div align="center">10106</div></td>
+<td><div align="center">101060200</div></td>
+<td><div align="center">250010200065    </div></td>
+<td><div align="center">修理加工(4%)</div></td>
+<td><div align="center">.015</div></td>
+<td><div align="center">.015</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">25001020000</div></td>
+<td><div align="center">10106</div></td>
+<td><div align="center">101060200</div></td>
+<td><div align="center">250010200066    </div></td>
+<td><div align="center">商品零售(3%)</div></td>
+<td><div align="center">.007</div></td>
+<td><div align="center">.007</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">25001020000</div></td>
+<td><div align="center">10106</div></td>
+<td><div align="center">101060200</div></td>
+<td><div align="center">250010200067    </div></td>
+<td><div align="center">铁路运输</div></td>
+<td><div align="center">.02</div></td>
+<td><div align="center">.02</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">25001020000</div></td>
+<td><div align="center">10106</div></td>
+<td><div align="center">101060200</div></td>
+<td><div align="center">250010200068    </div></td>
+<td><div align="center">公共交通</div></td>
+<td><div align="center">.02</div></td>
+<td><div align="center">.02</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">25001020000</div></td>
+<td><div align="center">10106</div></td>
+<td><div align="center">101060200</div></td>
+<td><div align="center">250010200069    </div></td>
+<td><div align="center">公路运输(2.5%)</div></td>
+<td><div align="center">.025</div></td>
+<td><div align="center">.025</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">25001020000</div></td>
+<td><div align="center">10106</div></td>
+<td><div align="center">101060200</div></td>
+<td><div align="center">250010200070    </div></td>
+<td><div align="center">律师行业(100万以下)(4%)</div></td>
+<td><div align="center">.04</div></td>
+<td><div align="center">.04</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">25001020000</div></td>
+<td><div align="center">10106</div></td>
+<td><div align="center">101060200</div></td>
+<td><div align="center">250010200071    </div></td>
+<td><div align="center">律师行业(100-500万)(5%)</div></td>
+<td><div align="center">.05</div></td>
+<td><div align="center">.05</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">25001020000</div></td>
+<td><div align="center">10106</div></td>
+<td><div align="center">101060200</div></td>
+<td><div align="center">250010200072    </div></td>
+<td><div align="center">律师行业(500-1000万)(6%)</div></td>
+<td><div align="center">.06</div></td>
+<td><div align="center">.06</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">25001020000</div></td>
+<td><div align="center">10106</div></td>
+<td><div align="center">101060200</div></td>
+<td><div align="center">250010200073    </div></td>
+<td><div align="center">律师行业(1000-1500万)(7%)</div></td>
+<td><div align="center">.07</div></td>
+<td><div align="center">.07</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">25001020000</div></td>
+<td><div align="center">10106</div></td>
+<td><div align="center">101060200</div></td>
+<td><div align="center">250010200074    </div></td>
+<td><div align="center">律师行业(1500万以上)(8%)</div></td>
+<td><div align="center">.08</div></td>
+<td><div align="center">.08</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">25001020000</div></td>
+<td><div align="center">10106</div></td>
+<td><div align="center">101060200</div></td>
+<td><div align="center">250010200075    </div></td>
+<td><div align="center">农、林、牧、渔业(应税所得率3%)</div></td>
+<td><div align="center">.03</div></td>
+<td><div align="center">.03</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">25001020000</div></td>
+<td><div align="center">10106</div></td>
+<td><div align="center">101060200</div></td>
+<td><div align="center">250010200076    </div></td>
+<td><div align="center">制造业(应税所得率5%)</div></td>
+<td><div align="center">.05</div></td>
+<td><div align="center">.05</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">25001020000</div></td>
+<td><div align="center">10106</div></td>
+<td><div align="center">101060200</div></td>
+<td><div align="center">250010200077    </div></td>
+<td><div align="center">批发和零售贸易业(应税所得率4%)</div></td>
+<td><div align="center">.04</div></td>
+<td><div align="center">.04</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">25001020000</div></td>
+<td><div align="center">10106</div></td>
+<td><div align="center">101060200</div></td>
+<td><div align="center">250010200078    </div></td>
+<td><div align="center">交通运输业(应税所得率10%)</div></td>
+<td><div align="center">.1</div></td>
+<td><div align="center">.1</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">25001020000</div></td>
+<td><div align="center">10106</div></td>
+<td><div align="center">101060200</div></td>
+<td><div align="center">250010200079    </div></td>
+<td><div align="center">建筑业(应税所得率10%)</div></td>
+<td><div align="center">.1</div></td>
+<td><div align="center">.1</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>

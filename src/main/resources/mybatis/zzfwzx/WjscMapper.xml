@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xalt.zzfwzx.dao.WjscMapper">
+    <resultMap id="BaseResultMap" type="com.xalt.sjjh.model.sjdcrwssfk">
+        <result column="SQID" jdbcType="VARCHAR" property="sqid"/>
+        <result column="SQBT" jdbcType="VARCHAR" property="sqbt"/>
+        <result column="SQNR" jdbcType="VARCHAR" property="sqnr"/>
+        <result column="SHR_DM" jdbcType="VARCHAR" property="sqr_dm"/>
+        <result column="SHYJ" jdbcType="VARCHAR" property="shyj"/>
+        <result column="WCJD" jdbcType="VARCHAR" property="wcsj"/>
+        <result column="BZ" jdbcType="VARCHAR" property="bz"/>
+        <result column="YXBZ" jdbcType="VARCHAR" property="yxbz"/>
+        <result column="BMDM" jdbcType="VARCHAR" property="bmdm"/>
+        <result column="PC" jdbcType="VARCHAR" property="pc"/>
+        <result column="SHSJ" jdbcType="VARCHAR" property="shsj"/>
+        <result column="JDFKSJ" jdbcType="VARCHAR" property="jdfksj"/>
+        <result column="WCSJ" jdbcType="VARCHAR" property="wcsj"/>
+        <result column="FKRY" jdbcType="VARCHAR" property="fkry"/>
+        <result column="SQSJ" jdbcType="VARCHAR" property="sqsj"/>
+        <result column="SQR_DM" jdbcType="VARCHAR" property="sqr_dm"/>
+        <result column="SQLXID" jdbcType="VARCHAR" property="sqlxid"/>
+    </resultMap>
+
+    <!--查询信息-->
+    <select id="search" parameterType="java.util.HashMap" resultType="com.xalt.zzfwzx.model.WjscVo">
+
+        select distinct t.rwid,
+        t.rwmc,
+        to_char(t.cjsj, 'yyyy-MM-dd HH24:mi:ss') cjsj,
+        t.cjr,
+        t.rwsm,
+        t.rwmc,
+        t.savepath,
+        t.sqrscwjsj,
+        t.bz,
+        t.xyhjid,
+        t.shzt,
+        t.wjsczt,
+        t1.ywbm,
+        t2.dxmczw,
+        a.user_name name
+        from znsjcl_zzfwzx_Sqsp_Rwxx t,
+        znsjcl_zzfwzx_sjjh_wjsjdr t1,
+        znsjcl_dm_sjdx t2,
+        acl_user a
+        where
+
+        t.cjr = a.user_code
+        and t1.rwid(+) = t.rwid
+        and t1.ywbm = t2.dxmcyw(+)
+        and a.user_code = #{cjr,jdbcType = VARCHAR}
+        <if test="svo.rwmc != null">
+            and t.rwmc like '%${svo.rwmc}%'
+        </if>
+        order by cjsj desc
+
+
+    </select>
+
+    <!--删除页面信息-->
+    <select id="delete" parameterType="java.util.HashMap">
+     update znsjcl_zzfwzx_Sqsp_Rwxx  set yxbz='N'  where rwid='${rwid}' and shzt!='2'
+    </select>
+
+    <!--查询数据来源下拉树形菜单-->
+    <select id="sjlylist" parameterType="java.util.HashMap" resultType="com.xalt.zzfwzx.model.DropDownlistVo">
+        select t.lyid id,t.lymc text,t.plyid pid from znsjcl_dm_sjly t where t.yxbz='Y'
+    </select>
+
+    <!--插入文件信息到数据库-->
+    <insert id="insertwjxx" parameterType="java.util.HashMap">
+       insert into znsjcl_zzfwzx_jh_zzsjdr
+      (drid, wjmc, wjlx, wjdx, yxbz, scsj, sjdrsj, scr_dm)
+         values
+           (to_char(sysdate, 'yyyymmddhh24miss'),
+            '${wjmc}',
+            '${wjlx}',
+            '${wjdx}',
+            'Y',
+            sysdate,
+            sysdate,
+            '${scr}')
+    </insert>
+
+    <!--查询数据对象下拉列表数据-->
+    <select id="initsjdx" parameterType="java.util.HashMap" resultType="com.xalt.zzfwzx.model.DropDownlistVo">
+        select t.dxmcyw id,t.dxmczw text from znsjcl_dm_sjdx  t where t.yxbz ='Y' order by t.dxmcyw asc
+    </select>
+
+    <!--更新导入标志-->
+    <update id="updatedrbz" parameterType="java.util.HashMap">
+                update znsjcl_zzfwzx_jh_zzsjdr  t set t.drbz='1'  where drid='${drid}'
+    </update>
+
+    <!--查询数据对象数据项数据-->
+    <select id="getsjxinfo" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+        select distinct a.sjxmcyw from znsjcl_dm_sjx  a  where a.yxbz='Y'  and a.sjdxmcyw ='${mbb}'
+    </select>
+
+    <!--查询批次数据-->
+    <select id="initpc" parameterType="java.util.HashMap" resultType="com.xalt.zzfwzx.model.DropDownlistVo">
+             select t.pc_dm id,t.pcmc text from znsjcl_dm_pc  t where t.yxbz ='Y'
+    </select>
+
+    <!--执行纯粹过程  增加id-->
+    <select id="addcolum" parameterType="java.util.HashMap" statementType="CALLABLE">
+        {call  znsjcl_sp_alltab_adddata (
+        #{bm,mode=IN,jdbcType=VARCHAR}
+        )}
+    </select>
+
+    <!--更改文件上传状态-->
+    <update id="updatewjsczt" parameterType="java.util.HashMap">
+         update znsjcl_zzfwzx_Sqsp_Rwxx  t set t.wjsczt='1'  where rwid='${rwid}'
+    </update>
+
+    <!--临时表中增加表英文名称-->
+    <insert id="insertbywmc" parameterType="java.util.HashMap">
+        insert into znsjcl_zzfwzx_sjjh_wjsjdr
+        (rwid, ywbm)
+        values
+        ('${rwid}', '${mbbmc}')
+    </insert>
+
+    <!--保存信息到 znsjcl_zzfwzx_Sqsp_Rwxx 中-->
+    <insert id="jbxx" parameterType="java.util.HashMap">
+            insert into znsjcl_zzfwzx_Sqsp_Rwxx
+              (rwid, cjsj, cjr, rwsm,savepath, Bz,rwmc)
+            values
+              (sqsp_rwxx.nextval,
+               sysdate,
+               '${scr}',
+               '${rwsm}',
+               '${wjmc}',
+               '${bz}',
+               '${dxmcyw}'
+               )
+    </insert>
+
+</mapper>

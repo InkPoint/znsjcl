@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xalt.zzfwzx.dao.ZdyrwclMapper">
+
+    <select id="selectAll" parameterType="java.util.HashMap" resultType="com.xalt.zzfwzx.model.ZdyrwclVo">
+        select t.rwid,
+        t.rwmc,
+        t.clmx clmxdm,
+        t4.mxmc clmx,
+        t1.dxid ybdm,
+        t1.dxmczw || '(' || upper(t1.dxmcyw) || ')' yb,
+        t1.dxmcyw ytable,
+        t3.pc_dm pcdm,
+        t.mbb,
+        t3.pcmc pc,
+        to_char(t.zxsj, 'yyyy-mm-dd HH24:mi:ss') zxsj,
+        t.mxid,
+        t.cjsj,
+        t.sjx,
+        t5.ztmc yxzt,
+        t.bz
+        from znsjcl_zzfwzx_xtyxrw t left join znsjcl_dm_yxzt t5 on t.yxzt=t5.ztid,
+        znsjcl_dm_sjdx t1,
+        znsjcl_dm_pc t3,
+        znsjcl_dm_clmx t4
+        where t.yb = t1.dxid
+        and t.pc = t3.pc_dm
+        and t.clmx = t4.mxdm
+        and t.yxbz = 'Y'
+        and t.rwlx='sjcl_zdyclrw'
+        <if test="svo.pc != null">
+            and t.pc like '%${svo.pc}%'
+        </if>
+        <if test="svo.rwmc != null">
+            and t.rwmc like '%${svo.rwmc}%'
+        </if>
+        -- 降序
+        order by t.cjsj desc
+    </select>
+
+    <!--(新增)自定义处理任务-->
+    <insert id="newaddition" parameterType="java.util.HashMap">
+      insert into znsjcl_zzfwzx_xtyxrw
+          (rwid,
+           rwmc,
+           yb,
+           mbb,
+           cjsj,
+           bz,
+           yxbz,
+           clmx,
+           pc,
+           yxzt,
+           mxid,
+           sjx,
+           zxr,
+           zxjgdm,
+           rwlx)
+        values
+          (sys_guid(),
+           '${svo.rwmc}',
+           '${svo.yb}',
+           '${svo.mbb}',
+           sysdate,
+           '${svo.bz}',
+           'Y',
+           '${svo.clmx}',
+           '${svo.pc}',
+           '3',
+           '${svo.mxid}',
+           '${svo.sjx}',
+           '${svo.zxr}',
+           '${svo.zxjgdm}',
+           'sjcl_zdyclrw')
+    </insert>
+    <!--(新增)批次-->
+    <insert id="addbatch" parameterType="java.util.HashMap">
+        insert into znsjcl_dm_pc t
+        (t.pc_dm, t.pcmc, t.yxbz,t.cjsj)
+        values ('${svo.pcdm}', '${svo.pcmc}', 'Y', sysdate)
+    </insert>
+
+    <!--修改(自定义处理任务)-->
+    <update id="modifyData" parameterType="java.util.HashMap">
+        UPDATE znsjcl_zzfwzx_xtyxrw t
+          SET
+          t.rwmc = '${svo.rwmc}',
+          t.clmx = '${svo.clmx}',
+          t.yb = '${svo.yb}',
+          t.pc = '${svo.pc}',
+          t.mbb = '${svo.mbb}',
+          t.bz = '${svo.bz}',
+          t.mxid='${svo.mxid}',
+          t.sjx='${svo.sjx}'
+          WHERE t.rwid = '${svo.rwid}'
+    </update>
+
+    <!--删除规则-->
+    <update id="deletesbyid" parameterType="java.util.HashMap">
+        update  znsjcl_zzfwzx_xtyxrw t set t.yxbz='N'  where    t.rwid='${svo.rwid}'
+    </update>
+    <!--执行时间-->
+    <update id="performtime" parameterType="java.util.HashMap">
+        update znsjcl_zzfwzx_xtyxrw t set t.zxsj=sysdate where t.rwid='${svo.rwid}'
+    </update>
+    <!--清洗模型-->
+    <select id="cleaning" parameterType="java.util.HashMap" statementType="CALLABLE">
+        {call  sp_znsjcl_zzcl_zdyclrw_qxmx2(
+        #{rwid,mode=IN,jdbcType=VARCHAR}
+        )}
+    </select>
+    <!--匹配模型-->
+    <select id="matching" parameterType="java.util.HashMap" statementType="CALLABLE">
+        {call  sp_znsjcl_zzcl_zdyclrw_ppmx2(
+        #{rwid,mode=IN,jdbcType=VARCHAR}
+        )}
+    </select>
+    <!--删除job-->
+    <update id="deletejob" parameterType="java.util.HashMap">
+        begin
+        dbms_job.remove('${svo.jobid}');
+        commit;
+        end;
+    </update>
+    <!--查询job ID-->
+    <select id="viewid" parameterType="java.util.HashMap" resultType="com.xalt.zzfwzx.model.ZdyrwclVo">
+        select t.JOB from dba_jobs t  where t.job=(select max(job)from dba_jobs)
+    </select>
+
+    <!--更改运行状态(运行失败)-->
+    <update id="runfailed" parameterType="java.util.HashMap">
+        UPDATE znsjcl_zzfwzx_xtyxrw t
+        SET
+        t.yxzt='4'
+        WHERE t.rwid = '${svo.rwid}'
+    </update>
+    <!--更改目标表表名-->
+    <update id="editname" parameterType="java.util.HashMap">
+        UPDATE znsjcl_zzfwzx_xtyxrw t
+        SET
+        t.mbb='${svo.mtable}'
+        WHERE t.rwid = '${svo.rwid}'
+    </update>
+    <!--任务开始-->
+    <update id="taskstart" parameterType="java.util.HashMap">
+        begin
+        dbms_job.run('${svo.jobid}');
+        end;
+    </update>
+    <!--任务结束-->
+    <update id="endtask" parameterType="java.util.HashMap">
+        UPDATE znsjcl_zzfwzx_xtyxrw t
+        SET
+        t.yxzt='运行完成'
+        WHERE t.rwid = '${svo.rwid}'
+    </update>
+    <!--源数据表、目标数据表（下拉菜单）-->
+    <select id="tablemenu" parameterType="java.util.HashMap" resultType="com.xalt.zzfwzx.model.ZdyrwclVo">
+        select t.dxid id, t.dxmczw text from znsjcl_dm_sjdx t where t.yxbz = 'Y' order by t.cjsj desc
+    </select>
+    <!--批次（下拉菜单）-->
+    <select id="batch" parameterType="java.util.HashMap" resultType="com.xalt.zzfwzx.model.ZdyrwclVo">
+        select t.pc_dm id, t.pcmc text from znsjcl_dm_pc t where t.yxbz = 'Y' order by t.cjsj desc
+    </select>
+    <!--处理模型（下拉菜单）-->
+    <select id="processingmodel" parameterType="java.util.HashMap" resultType="com.xalt.zzfwzx.model.ZdyrwclVo">
+        select t.mxdm id, t.mxmc text from znsjcl_dm_clmx t where t.yxbz = 'Y'
+    </select>
+    <!--模型（下拉菜单）-->
+    <select id="sjxmenu" parameterType="java.util.HashMap" resultType="com.xalt.zzfwzx.model.ZdyrwclVo">
+        select t.sjxmcyw id, t.sjxmczw text
+        from znsjcl_dm_sjx t
+        where t.yxbz = 'Y'
+        and t.dxid = '${svo.dxid}'
+    </select>
+    <!--获取模型ID-->
+    <select id="getzb" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+        select to_char(wm_concat(t.zb)) zb from znsjcl_zzfwzx_qxzhmx t where t.mxid='${svo.mxid}'
+    </select>
+    <!--获取指标-->
+    <select id="getqxzhzb" parameterType="java.util.HashMap" resultType="com.xalt.sjzd.model.DropDownlistVo">
+        select distinct t.zbid id,t.zbmc text from znsjcl_zzfwzx_qxzhzb t where t.zbid='${svo.zbid}'
+    </select>
+    <!--查询任务 ID-->
+    <select id="viewRwid" parameterType="java.util.HashMap" resultType="com.xalt.zzfwzx.model.ZdyrwclVo">
+        select t.rwid
+      from znsjcl_zzfwzx_xtyxrw t
+     where t.cjsj = (select max(cjsj) from znsjcl_zzfwzx_xtyxrw)
+    </select>
+    <!--往临时表里面添加(清洗)数据-->
+    <insert id="addTempdata" parameterType="map">
+        insert into znsjcl_zzfwzx_rwcltmp (rwid,mxid,ysbmcyw,zb,sjx)
+        <foreach collection="zbzdlist" item="svo" separator="union all">
+            select '${rwid}','${mxid}','${dxmcyw}','${svo.zbid}','${svo.sjx}' from dual
+        </foreach>
+    </insert>
+    <!--获取原始表名英文-->
+    <select id="viewYb" parameterType="java.util.HashMap" resultType="com.xalt.zzfwzx.model.ZdyrwclVo">
+        select t.dxmcyw from znsjcl_dm_sjdx t where t.dxid='${svo.yb}'
+    </select>
+    <!--获取模型数据项-->
+    <select id="getamatch" parameterType="java.util.HashMap" resultType="com.xalt.zzfwzx.model.ZdyrwclVo">
+        select distinct t.ppxzw,t.ppxyw from znsjcl_zzfwzx_ref_ppmx  t  where 1=1  and t.mxid ='${svo.mxid}'
+    </select>
+    <!--匹配模型(下拉菜单)-->
+    <select id="matchmenu" parameterType="java.util.HashMap" resultType="com.xalt.sjcl.model.DzxtdsclrwVo">
+         select distinct t.mxid id, t.mxmc text
+        from znsjcl_zzfwzx_glppmx t,znsjcl_zzfwzx_ref_ppmx t1
+        where t.yxbz = 'Y'
+        and t.mxid = t1.mxid
+    </select>
+    <!--获取源数据表数据项-->
+    <select id="getdataitem" parameterType="java.util.HashMap" resultType="com.xalt.sjzd.model.SjxVo">
+        --         select t.sjxmczw,t.sjxmcyw
+        --         from znsjcl_dm_sjx t
+        --         where t.yxbz = 'Y'
+        --         and t.dxid = '${svo.dxid}'
+        select  t.sjxmcyw id,t.sjxmczw || '(' || t.sjxmcyw || ')' text
+        from znsjcl_dm_sjx t
+        where t.yxbz = 'Y'
+        and t.dxid = '${svo.dxid}'
+        and t.sjxmcyw not in ('bz', 'nsrmc2_1', 'nsrmc2', 'nsrmc1', 'djxh')
+    </select>
+    <!--往临时表里面添加(匹配)数据-->
+    <insert id="newamatching" parameterType="map">
+        insert into znsjcl_zzfwzx_temp_pp (rwid,mxid,ppxzw,ppxyw,ysbyw,sjx)
+        <foreach collection="zbzdlist" item="svo" separator="union all">
+            select '${rwid}','${mxid}','${svo.ppxzw}','${svo.ppxyw}','${dxmcyw}','${svo.sjx}' from dual
+        </foreach>
+    </insert>
+    <!--获取匹配说明-->
+    <select id="getmatchthat" parameterType="java.util.HashMap" resultType="com.xalt.zzfwzx.model.ZdyrwclVo">
+        select t.ppsm from znsjcl_zzfwzx_glppmx t where t.mxid='${svo.mxid}'
+    </select>
+</mapper>

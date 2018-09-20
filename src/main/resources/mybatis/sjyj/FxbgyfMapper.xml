@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xalt.sjyj.dao.FxbgyfMapper">
+    <!--快捷报告类型列表查询-->
+    <select id="bglxlist" resultType="com.xalt.common.model.DropDownlistVo">
+       select t.tjlxdm id,t.tjlxmc text from znsjcl_dm_bgtjlx  t  where t.yxbz='Y'
+    </select>
+    <!--已生成报告(表数据)-->
+    <select id="selectAll" parameterType="java.util.HashMap" resultType="com.xalt.sjyj.model.FxbgyfVO">
+        select t.bgid,
+           t.bgmc,
+           t.mbdm,
+           t.cjr,
+           t.bgsqq,
+           t.bgsqz,
+           to_char(t.scsj, 'yyyy-mm-dd HH:mm:ss') scsj
+          from znsjcl_dm_bg t
+         where t.yxbz = 'Y'
+         order by t.scsj desc
+    </select>
+    <!--根据属期代码查询属期起-->
+    <select id="theDateOfSince" parameterType="java.util.HashMap" resultType="com.xalt.sjyj.model.FxbgyfVO">
+    select t.sqq
+          from znsjcl_dm_bgtjlx t
+         where t.tjlxdm like '%${svo.kjsq}%'
+    </select>
+    <!--根据属期代码查询属期止-->
+    <select id="theDateOfCheck" parameterType="java.util.HashMap" resultType="com.xalt.sjyj.model.FxbgyfVO">
+        select t.sqz
+            from znsjcl_dm_bgtjlx t
+            where t.tjlxdm like '%${svo.kjsq}%'
+    </select>
+    <!--快捷查询(柱形图)-->
+    <select id="theReport" parameterType="java.util.HashMap" resultType="com.xalt.sjyj.model.FxbgyfVO">
+        select * from (
+              select b.swjg_dm swjgdm,                                --税务机关代码
+                              b.swjgjc swjgmc,                        --税务机关名称
+                              round(sum(a.company_tax + a.person_tax + a.town_land_tax +
+                                 a.city_maintenance_tax + a.stamps_tax +
+                                 a.land_appreciationtax + a.house_tax),2) taxrelated,--应用涉税信息增加的税收收入（万元）
+                              round(sum(a.company_tax),2) qysds,               --企业所得税(万元)
+                              round(sum(a.land_appreciationtax),2) tdzzs,      --土地增值税(万元)
+                              round(sum(a.house_tax),2) fcs,                   --房产税(万元)
+                              round(sum(a.person_tax),2) grsds,                --个人所得税(万元)
+                              round(sum(a.stamps_tax),2) yhs,                  --印花税(万元)
+                              round(sum(a.city_maintenance_tax),2) cswhjss,    --城市维护建设税(万元)
+                              round(sum(a.town_land_tax),2) cztdsys            --城镇土地使用税(万元)
+                      from resourcedb.zt_fxcgtjb@dbl_to_15xads a, dim_dm_gy_swjg b
+                      where substr(a.deptcodemini, 0, 7) || '0000' = b.swjg_dm
+                              and b.jgjc_dm = '42'
+                              and a.month &gt;= '${svo.sqq}'
+                              and a.month &lt;= '${svo.sqz}'
+                              group by b.swjg_dm, b.swjgjc
+                              union all
+                      select '99999999999' swjg_dm,
+                             '合计' swjgjc,
+                      round(sum(a.company_tax + a.person_tax + a.town_land_tax +
+                                 a.city_maintenance_tax + a.stamps_tax +
+                                 a.land_appreciationtax + a.house_tax),2) taxrelated,--应用涉税信息增加的税收收入（万元）
+                              round(sum(a.company_tax),2) qysds,               --企业所得税(万元)
+                              round(sum(a.land_appreciationtax),2) tdzzs,      --土地增值税(万元)
+                              round(sum(a.house_tax),2) fcs,                   --房产税(万元)
+                              round(sum(a.person_tax),2) grsds,                --个人所得税(万元)
+                              round(sum(a.stamps_tax),2) yhs,                  --印花税(万元)
+                              round(sum(a.city_maintenance_tax),2) cswhjss,    --城市维护建设税(万元)
+                              round(sum(a.town_land_tax),2) cztdsys            --城镇土地使用税(万元)
+                      from resourcedb.zt_fxcgtjb@dbl_to_15xads a, dim_dm_gy_swjg b
+                      where substr(a.deptcodemini, 0, 7) || '0000' = b.swjg_dm
+                              and b.jgjc_dm = '42'
+                              and a.month &gt;= '${svo.sqq}'
+                              and a.month &lt;= '${svo.sqz}')
+                              order by swjgdm
+    </select>
+    <!--表一-->
+    <select id="tableA" parameterType="java.util.HashMap" resultType="com.xalt.sjyj.model.FxbgyfVO">
+        select *
+        from (select '商品房买卖合同备案信息' externaltaxinfname,
+                        '西安市房管局' providinginfdept,
+                        '西安市综合治税保障条例' infacquisitionbasis,
+                        to_char(sum(a.company_tax + a.land_appreciationtax +
+                        a.house_tax)) taxrelated,
+                        '' businesstax,
+                        to_char(sum(a.company_tax)) companytax,
+                        '' persontax,
+                        '' resourcetax,
+                        '' townlandtax,
+                        '' citymaintenancetax,
+                        '' stampstax,
+                        to_char(sum(a.land_appreciationtax)) landappreciationtax,
+                        to_char(sum(a.house_tax)) housetax,
+                        '' shiptax,
+                        '' farmlandtax,
+                        '' deedtax,
+                        '' othertax
+        from resourcedb.zt_fxcgtjb@dbl_to_15xads a
+        where a.month &gt;= '${svo.sqq}'
+        and a.month &lt;= '${svo.sqz}'
+        union all
+        select '市工商股权变更信息' externaltaxinfname,
+                '西安市工商局' providinginfdept,
+                '西安市综合治税保障条例' infacquisitionbasis,
+                to_char(sum(a.person_tax + a.stamps_tax)) taxrelated,
+                '' businesstax,
+                '' companytax,
+                to_char(sum(a.person_tax)) persontax,
+                '' resourcetax,
+                '' townlandtax,
+                '' citymaintenancetax,
+                to_char(sum(a.stamps_tax)) stampstax,
+                '' landappreciationtax,
+                '' housetax,
+                '' shiptax,
+                '' farmlandtax,
+                '' deedtax,
+                '' othertax
+        from resourcedb.zt_fxcgtjb@dbl_to_15xads a
+        where a.month &gt;= '${svo.sqq}'
+        and a.month &lt;= '${svo.sqz}'
+        union all
+        select '市国税税款申报入库信息' externaltaxinfname,
+                '西安市国税局' providinginfdept,
+                '西安市综合治税保障条例' infacquisitionbasis,
+                to_char(sum(a.city_maintenance_tax)) taxrelated,
+                '' businesstax,
+                '' companytax,
+                '' persontax,
+                '' resourcetax,
+                '' townlandtax,
+                to_char(sum(a.city_maintenance_tax)) citymaintenancetax,
+                '' stampstax,
+                '' landappreciationtax,
+                '' housetax,
+                '' shiptax,
+                '' farmlandtax,
+                '' deedtax,
+                '' othertax
+        from resourcedb.zt_fxcgtjb@dbl_to_15xads a
+        where a.month &gt;= '${svo.sqq}'
+        and a.month &lt;= '${svo.sqz}'
+        union all
+        select '国土局土地出让信息' externaltaxinfname,
+                '西安市国土局' providinginfdept,
+                '西安市综合治税保障条例' infacquisitionbasis,
+                to_char(sum(a.town_land_tax + a.deed_tax)) taxrelated,
+                '' businesstax,
+                '' companytax,
+                '' persontax,
+                '' resourcetax,
+                to_char(sum(a.town_land_tax)) townlandtax,
+                '' citymaintenancetax,
+                '' stampstax,
+                '' landappreciationtax,
+                '' housetax,
+                '' shiptax,
+                '' farmlandtax,
+                to_char(sum(a.deed_tax)) deedtax,
+                '' othertax
+        from resourcedb.zt_fxcgtjb@dbl_to_15xads a
+        where a.month &gt;= '${svo.sqq}'
+        and a.month &lt;= '${svo.sqz}'
+        union all
+        select     '' externaltaxinfname,
+                    '' providinginfdept,
+                    '合计' infacquisitionbasis,
+                    to_char(sum(a.company_tax + a.person_tax + a.town_land_tax +
+                    a.city_maintenance_tax + a.stamps_tax +
+                    a.land_appreciationtax + a.house_tax + a.deed_tax)) taxrelated,
+                    '' businesstax,
+                    to_char(sum(a.company_tax)) companytax,
+                    to_char(sum(a.person_tax)) persontax,
+                    '' resourcetax,
+                    to_char(sum(a.town_land_tax)) townlandtax,
+                    to_char(sum(a.city_maintenance_tax)) citymaintenancetax,
+                    to_char(sum(a.stamps_tax)) stampstax,
+                    to_char(sum(a.land_appreciationtax)) landappreciationtax,
+                    to_char(sum(a.house_tax)) housetax,
+                    '' shiptax,
+                    '' farmlandtax,
+                    to_char(sum(a.deed_tax)) deedtax,
+                    '' othertax
+        from resourcedb.zt_fxcgtjb@dbl_to_15xads a
+            where a.month &gt;= '${svo.sqq}'
+            and a.month &lt;= '${svo.sqz}')
+    </select>
+    <!--保存报告-->
+    <insert id="svaeTheReport" parameterType="java.util.HashMap">
+         insert into znsjcl_dm_bg t
+              (t.bgid,
+               t.yxbz,
+               t.cjr,
+               t.bgsqq,
+               t.bgsqz,
+               t.scsj,
+               t.bgmc)
+        values
+              ('${svo.bgid}',
+              'Y',
+               '${svo.cjr}',
+               '${svo.sqq}',
+               '${svo.sqz}',
+               sysdate,
+               '西安市税务局分析报告')
+    </insert>
+    <!--查询属期-->
+    <select id="queryIsperiod" parameterType="java.util.HashMap" resultType="com.xalt.sjyj.model.FxbgyfVO">
+        select * from  znsjcl_dm_bg t order by t.scsj desc
+    </select>
+</mapper>

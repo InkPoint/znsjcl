@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xalt.sjjg.dao.SyylhtjdMapper">
+
+    <select id="selectAll" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+
+                select * from (
+                select
+                 核算机关 hsjg
+                 -- 医疗保险
+                ,sum(case when 征收品目代码 in ('102031101','102031102') then  nvl(实缴金额,0) else 0 end ) /*基本医疗保险*/ jbylbx
+                ,sum(case when 征收品目代码 in ('102031601','102031602') then  nvl(实缴金额,0) else 0 end ) /*大额医疗保险*/ deylbx
+                ,sum(case when 征收品目代码 in ('102031105','102031106') then  nvl(实缴金额,0) else 0 end ) /*滞纳金 */znj
+                ,sum(case when 征收品目代码 in ('102031104','102031103') then  nvl(实缴金额,0) else 0 end ) /*利息*/ lx
+
+
+                ,sum(case when 征收品目代码 in ('102031101','102031102') then  nvl(实缴金额,0) else 0 end )
+                +sum(case when 征收品目代码 in ('102031601','102031602') then  nvl(实缴金额,0) else 0 end )
+                +sum(case when 征收品目代码 in ('102031105','102031106') then  nvl(实缴金额,0) else 0 end )
+                +sum(case when 征收品目代码 in ('102031104','102031103') then  nvl(实缴金额,0) else 0 end ) /*医疗保险费合计*/ ylbxhj
+
+
+                -- 生育保险
+                ,sum(case when 征收品目代码 in ('102050101') then  nvl(实缴金额,0) else 0 end ) /*生育保险*/ sybx
+                ,sum(case when 征收品目代码 in ('102050103') then  nvl(实缴金额,0) else 0 end ) /*生育保险滞纳金*/ sybxznj
+                ,sum(case when 征收品目代码 in ('102050102') then  nvl(实缴金额,0) else 0 end ) /*生育保险利息*/ sybxlx
+
+
+                ,sum(case when 征收品目代码 in ('102050101') then  nvl(实缴金额,0) else 0 end )
+                +sum(case when 征收品目代码 in ('102050103') then  nvl(实缴金额,0) else 0 end )
+                +sum(case when 征收品目代码 in ('102050102') then  nvl(实缴金额,0) else 0 end ) /*生育保险合计*/  sybxhj
+                from (
+                    -- 生育
+                    select * from DM_ZS_SBF_JKS_ex_syqy t
+                    union all
+                    -- 医疗
+                    select * from DM_ZS_SBF_JKS_ex_yilqy t
+                ) t1
+                where t1.社保经办机构='西安市航天基地社保中心'
+                group by 核算机关
+                order by 核算机关
+                ) a
+                union all
+                select '合计' hj
+                      ,sum(jbylbx)
+                      ,sum(deylbx)
+                      ,sum(znj)
+                      ,sum(lx)
+                      ,sum(ylbxhj)
+                      ,sum(sybx)
+                      ,sum(sybxznj)
+                      ,sum(sybxlx)
+                      ,sum(sybxhj)
+                from (
+                select
+                 核算机关 hsjg
+                 -- 医疗保险
+                ,sum(case when 征收品目代码 in ('102031101','102031102') then  nvl(实缴金额,0) else 0 end ) /*基本医疗保险*/jbylbx
+                ,sum(case when 征收品目代码 in ('102031601','102031602') then  nvl(实缴金额,0) else 0 end ) /*大额医疗保险*/deylbx
+                ,sum(case when 征收品目代码 in ('102031105','102031106') then  nvl(实缴金额,0) else 0 end ) /*滞纳金*/znj
+                ,sum(case when 征收品目代码 in ('102031104','102031103') then  nvl(实缴金额,0) else 0 end ) /*利息*/lx
+
+
+                ,sum(case when 征收品目代码 in ('102031101','102031102') then  nvl(实缴金额,0) else 0 end )
+                +sum(case when 征收品目代码 in ('102031601','102031602') then  nvl(实缴金额,0) else 0 end )
+                +sum(case when 征收品目代码 in ('102031105','102031106') then  nvl(实缴金额,0) else 0 end )
+                +sum(case when 征收品目代码 in ('102031104','102031103') then  nvl(实缴金额,0) else 0 end ) /*医疗保险费合计*/ylbxhj
+
+
+                -- 生育保险
+                ,sum(case when 征收品目代码 in ('102050101') then  nvl(实缴金额,0) else 0 end ) /*生育保险*/sybx
+                ,sum(case when 征收品目代码 in ('102050103') then  nvl(实缴金额,0) else 0 end ) /*生育保险滞纳金*/sybxznj
+                ,sum(case when 征收品目代码 in ('102050102') then  nvl(实缴金额,0) else 0 end ) /*生育保险利息*/sybxlx
+
+
+                ,sum(case when 征收品目代码 in ('102050101') then  nvl(实缴金额,0) else 0 end )
+                +sum(case when 征收品目代码 in ('102050103') then  nvl(实缴金额,0) else 0 end )
+                +sum(case when 征收品目代码 in ('102050102') then  nvl(实缴金额,0) else 0 end ) /*生育保险合计*/sybxhj
+                from (
+                    -- 生育
+                    select * from DM_ZS_SBF_JKS_ex_syqy t
+                    union all
+                    -- 医疗
+                    select * from DM_ZS_SBF_JKS_ex_yilqy t
+                ) t1
+                where t1.社保经办机构='西安市航天基地社保中心'
+                group by 核算机关
+                )
+
+
+
+    </select>
+
+</mapper>

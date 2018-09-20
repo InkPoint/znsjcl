@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xalt.sjyj.dao.JgyzMapper">
+    <!--基本分页查询-->
+    <select id="selectList" parameterType="java.util.HashMap" resultType="com.xalt.sjyj.model.JgyzVo">
+        select t.rwid,
+        t.yzmc,
+        t.yzjl,
+        t.uploadpath,
+        to_char(t.yzsj, 'yyyy-mm-dd HH:MM:SS') yzsj
+        from znsjcl_yj_sjyz t
+        where t.yxbz = 'Y'
+        and t.dyyw = '数据研究'
+        <if test="svo.rwmc!=null">
+            and t.rwmc like '%${svo.rwmc}%'
+        </if>
+    </select>
+
+    <!--分析任务下拉框查询-->
+    <select id="selectFxrw" parameterType="java.util.HashMap" resultType="com.xalt.sjyj.model.JgyzVo">
+       select t.rwid id,t.rwmc text from znsjcl_jh_xtdr t where t.yxbz='Y'
+    </select>
+
+    <!--添加分析任务-->
+        <insert id="insertFxrw" parameterType="java.util.HashMap">
+             insert into znsjcl_yj_sjyz
+                      (rwid, yzmc, yzjl, uploadpath, dyyw, yxbz, yzsj)
+                      values
+                      (SJDX_INDEX.NEXTVAL,
+                         '${svo.yzmc}',
+                         '${svo.yzjl}',
+                         '${svo.uploadpath}',
+                         '数据研究',
+                         'Y',
+                         sysdate)
+        </insert>
+
+    <!--编辑分析任务-->
+        <update id="updateFxrw" parameterType="java.util.HashMap">
+            UPDATE znsjcl_yj_sjyz t
+            set
+              t.yzjl = '${svo.yzjl}',
+--               t.uploadpath = '${svo.uploadpath}',
+              t.yzsj = sysdate
+            WHERE t.rwid = '${svo.rwid}'
+        </update>
+
+        <!--删除任务-->
+        <update id="deleteFxrw" parameterType="java.util.HashMap">
+              update znsjcl_yj_sjyz t
+              set t.yxbz = 'N'
+              where t.rwid = '${svo.rwid}'
+        </update>
+
+    <!--任务名称名称_校检-->
+    <select id="nameValidation" parameterType="java.util.HashMap" resultType="com.xalt.sjyj.model.JgyzVo">
+        select t.yzmc from znsjcl_yj_sjyz t where t.yzmc='${svo.yzmc}' and t.yxbz='Y'
+    </select>
+</mapper>

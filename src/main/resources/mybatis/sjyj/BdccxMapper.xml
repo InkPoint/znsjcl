@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xalt.sjyj.dao.BdccxMapper">
+
+            <!--不动产查询-->
+            <select id="selectAll"  parameterType="java.util.HashMap" resultType="java.util.HashMap">
+               select
+               t. XH,
+               t. DH,
+               t.DY,
+               t. C,
+               t. FH,
+               t. CQZH,
+               t. CQR,
+               t. GYQK,
+               t. FWZL,
+               t. SPFCSDJSJ,
+               t. SPFZYDJSJ,
+               t. ESFZYDJSJ,
+               t. SPFJYJE,
+               t. ESFJYJE,
+               t. FWLY,
+               t. FWYT,
+               t. JZJG,
+               t. JZMJ,
+               t. SPFWQMSR,
+               t. SPFWQBASJ,
+               t. CQR_DJXH cqrdjxh,
+               t. MSR_DJXH msrdjxh
+          from temp_20180802_fzzsj t
+                where 1=1
+
+            <if test = "svo.cqr != null">
+                   and   t.cqr like '%${svo.cqr}%'
+            </if>
+            </select>
+
+
+
+</mapper>

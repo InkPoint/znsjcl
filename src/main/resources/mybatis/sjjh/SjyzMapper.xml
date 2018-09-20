@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xalt.sjjh.dao.SjyzMapper">
+    <!--基本的分页查询-->
+    <select id="list" parameterType="java.util.HashMap" resultType="com.xalt.sjjh.model.SjyzVO">
+        select t.rwid,
+        t.yzmc,
+        t.yzjl,
+        t.uploadpath,
+        t.yzrdm,
+        t.bz,
+        to_char(t.yzsj, 'yyyy-mm-dd HH24:MM:SS') yzsj
+        from znsjcl_yj_sjyz t
+        where t.lxid = '1'
+        and t.dyyw = '数据交换'
+        and t.yxbz = 'Y'
+        <if test='svo.yzmc!=null'>
+            and t.yzmc like '%${svo.yzmc}%'
+        </if>
+        order by yzsj desc
+    </select>
+    <!--删除-->
+    <update id="del" parameterType="java.util.HashMap">
+        UPDATE znsjcl_yj_sjyz t SET
+        t.yxbz = 'N'
+        where t.rwid = '${svo.rwid}'
+    </update>
+    <!--插入-->
+    <insert id="insertsjjh" parameterType="java.util.HashMap">
+        insert into znsjcl_yj_sjyz
+                      (rwid, yzmc, yzjl, uploadpath, dyyw, yxbz, yzsj ,lxid)
+                      values
+                      (SJDX_INDEX.NEXTVAL,
+                         '${svo.yzmc}',
+                         '${svo.yzjl}',
+                         '${svo.uploadpath}',
+                         '数据交换',
+                         'Y',
+                         sysdate,
+                         '1')
+    </insert>
+</mapper>

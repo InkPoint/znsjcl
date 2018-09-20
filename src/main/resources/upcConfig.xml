@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="GB2312"?>
+<upcConfig>
+    <!-- 包含以下名字的方法都将启用事物 -->
+	<transactionMethods>
+        <methodName>save</methodName>
+        <methodName>add</methodName>
+        <methodName>modify</methodName>
+        <methodName>delete</methodName>
+        <methodName>insert</methodName>
+        <methodName>update</methodName>
+        <methodName>remove</methodName>
+	</transactionMethods>
+
+    <!--  admin 菜单配置 -->
+	<adminMenu>
+		<menu name="用户与机构管理">
+            <menuItem>
+                <name>用户管理</name>
+                <uri>/acl/user/manager</uri>
+                <path></path>
+            </menuItem>
+			<menuItem>
+				<name>机构管理</name>
+				<uri>/acl/organize/manager</uri>
+				<path></path>
+			</menuItem>
+		</menu>
+		<menu name="角色与岗位管理">
+            <menuItem>
+                <name>用户岗位管理</name>
+                <uri>/acl/station/manager</uri>
+                <path></path>
+            </menuItem>
+			<menuItem>
+				<name>角色管理</name>
+				<uri>/acl/role/manager</uri>
+                <path></path>
+			</menuItem>
+		</menu>
+		<menu name="资源管理">
+			<menuItem>
+				<name>菜单资源管理</name>
+				<uri>/acl/menuResource/manager</uri>
+                <path></path>
+			</menuItem>
+			<menuItem>
+				<name>数据资源管理</name>
+				<uri>/acl/dataResource/manager</uri>
+                <path></path>
+			</menuItem>
+		</menu>
+	</adminMenu>
+</upcConfig>

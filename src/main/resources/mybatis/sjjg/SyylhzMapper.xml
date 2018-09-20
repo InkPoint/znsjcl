@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xalt.sjjg.dao.SyylhzMapper">
+
+    <select id="selectAll" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+              select
+         /*征收品目*/zspm
+        ,nvl(htjdsb,0) /*西安市航天基地社保中心*/ htjdsb
+        ,nvl(gxsb,0) /*高新区社会保险基金管理中心*/ gxsb
+        ,nvl(jksb,0) /*经开区社会保障基金管理中心*/ jksb
+        ,htjdsb+gxsb+jksb xj
+        from
+        (
+
+      select
+       '基本医疗保险' /*征收品目*/ zspm
+      ,sum(case when 社保经办机构='西安市航天基地社保中心' then nvl(实缴金额,0) else 0 end ) /*西安市航天基地社保中心*/htjdsb
+      ,sum(case when 社保经办机构='高新区社会保险基金管理中心' then nvl(实缴金额,0) else 0 end ) /*高新区社会保险基金管理中心*/gxsb
+      ,sum(case when 社保经办机构='经开区社会保障基金管理中心' then nvl(实缴金额,0) else 0 end ) /*经开区社会保障基金管理中心*/jksb
+
+      from (
+          -- 生育
+          select * from DM_ZS_SBF_JKS_ex_syqy t
+          union all
+          -- 医疗
+          select * from DM_ZS_SBF_JKS_ex_yilqy t
+      ) t1
+      where 征收品目代码 in ('102031101','102031102')
+
+      union all
+
+      select
+       '大额医疗保险' /*征收品目*/ zspm
+      ,sum(case when 社保经办机构='西安市航天基地社保中心' then nvl(实缴金额,0) else 0 end ) /*西安市航天基地社保中心*/htjdsb
+      ,sum(case when 社保经办机构='高新区社会保险基金管理中心' then nvl(实缴金额,0) else 0 end ) /*高新区社会保险基金管理中心*/gxsb
+      ,sum(case when 社保经办机构='经开区社会保障基金管理中心' then nvl(实缴金额,0) else 0 end ) /*经开区社会保障基金管理中心*/jksb
+
+      from (
+          -- 生育
+          select * from DM_ZS_SBF_JKS_ex_syqy t
+          union all
+          -- 医疗
+          select * from DM_ZS_SBF_JKS_ex_yilqy t
+      ) t1
+      where 征收品目代码 in ('102031601','102031602')
+
+      union all
+
+      select
+       '滞纳金' /*征收品目*/ zspm
+      ,sum(case when 社保经办机构='西安市航天基地社保中心' then nvl(实缴金额,0) else 0 end ) /*西安市航天基地社保中心*/htjdsb
+      ,sum(case when 社保经办机构='高新区社会保险基金管理中心' then nvl(实缴金额,0) else 0 end ) /*高新区社会保险基金管理中心*/gxsb
+      ,sum(case when 社保经办机构='经开区社会保障基金管理中心' then nvl(实缴金额,0) else 0 end ) /*经开区社会保障基金管理中心*/jksb
+
+      from (
+          -- 生育
+          select * from DM_ZS_SBF_JKS_ex_syqy t
+          union all
+          -- 医疗
+          select * from DM_ZS_SBF_JKS_ex_yilqy t
+      ) t1
+      where 征收品目代码 in ('102031105','102031106')
+
+      union all
+
+      select
+       '利息' /*征收品目*/ zspm
+      ,sum(case when 社保经办机构='西安市航天基地社保中心' then nvl(实缴金额,0) else 0 end ) /*西安市航天基地社保中心*/htjdsb
+      ,sum(case when 社保经办机构='高新区社会保险基金管理中心' then nvl(实缴金额,0) else 0 end )/* 高新区社会保险基金管理中心*/gxsb
+      ,sum(case when 社保经办机构='经开区社会保障基金管理中心' then nvl(实缴金额,0) else 0 end ) /*经开区社会保障基金管理中心*/jksb
+
+      from (
+          -- 生育
+          select * from DM_ZS_SBF_JKS_ex_syqy t
+          union all
+          -- 医疗
+          select * from DM_ZS_SBF_JKS_ex_yilqy t
+      ) t1
+      where 征收品目代码 in ('102031104','102031103')
+
+      union all
+
+      select
+       '医疗保险费合计' /*征收品目*/ zspm
+      ,sum(case when 社保经办机构='西安市航天基地社保中心' then nvl(实缴金额,0) else 0 end )/* 西安市航天基地社保中心*/htjdsb
+      ,sum(case when 社保经办机构='高新区社会保险基金管理中心' then nvl(实缴金额,0) else 0 end ) /*高新区社会保险基金管理中心*/gxsb
+      ,sum(case when 社保经办机构='经开区社会保障基金管理中心' then nvl(实缴金额,0) else 0 end ) /*经开区社会保障基金管理中心*/jksb
+
+      from (
+          -- 生育
+          select * from DM_ZS_SBF_JKS_ex_syqy t
+          union all
+          -- 医疗
+          select * from DM_ZS_SBF_JKS_ex_yilqy t
+      ) t1
+      where 征收品目代码 in ('102031101','102031102','102031601','102031602','102031105','102031106','102031104','102031103')
+
+      union all
+
+      select
+       '生育保险' /*征收品目*/ zspm
+      ,sum(case when 社保经办机构='西安市航天基地社保中心' then nvl(实缴金额,0) else 0 end ) /*西安市航天基地社保中心*/htjdsb
+      ,sum(case when 社保经办机构='高新区社会保险基金管理中心' then nvl(实缴金额,0) else 0 end ) /*高新区社会保险基金管理中心*/gxsb
+      ,sum(case when 社保经办机构='经开区社会保障基金管理中心' then nvl(实缴金额,0) else 0 end ) /*经开区社会保障基金管理中心*/jksb
+
+      from (
+          -- 生育
+          select * from DM_ZS_SBF_JKS_ex_syqy t
+          union all
+          -- 医疗
+          select * from DM_ZS_SBF_JKS_ex_yilqy t
+      ) t1
+      where 征收品目代码 in ('102050101')
+
+      union all
+
+      select
+       '生育保险滞纳金' /*征收品目*/ zspm
+      ,sum(case when 社保经办机构='西安市航天基地社保中心' then nvl(实缴金额,0) else 0 end ) /*西安市航天基地社保中心*/htjdsb
+      ,sum(case when 社保经办机构='高新区社会保险基金管理中心' then nvl(实缴金额,0) else 0 end ) /*高新区社会保险基金管理中心*/gxsb
+      ,sum(case when 社保经办机构='经开区社会保障基金管理中心' then nvl(实缴金额,0) else 0 end ) /*经开区社会保障基金管理中心*/jksb
+
+      from (
+          -- 生育
+          select * from DM_ZS_SBF_JKS_ex_syqy t
+          union all
+          -- 医疗
+          select * from DM_ZS_SBF_JKS_ex_yilqy t
+      ) t1
+      where 征收品目代码 in ('102050103')
+
+      union all
+
+      select
+       '生育保险利息' /*征收品目*/ zspm
+      ,sum(case when 社保经办机构='西安市航天基地社保中心' then nvl(实缴金额,0) else 0 end )/* 西安市航天基地社保中心*/htjdsb
+      ,sum(case when 社保经办机构='高新区社会保险基金管理中心' then nvl(实缴金额,0) else 0 end ) /*高新区社会保险基金管理中心*/gxsb
+      ,sum(case when 社保经办机构='经开区社会保障基金管理中心' then nvl(实缴金额,0) else 0 end ) /*经开区社会保障基金管理中心*/jksb
+
+      from (
+          -- 生育
+          select * from DM_ZS_SBF_JKS_ex_syqy t
+          union all
+          -- 医疗
+          select * from DM_ZS_SBF_JKS_ex_yilqy t
+      ) t1
+      where 征收品目代码 in ('102050102')
+
+      union all
+
+      select
+       '生育保险合计' /*征收品目*/ zspm
+      ,sum(case when 社保经办机构='西安市航天基地社保中心' then nvl(实缴金额,0) else 0 end ) /*西安市航天基地社保中心*/htjdsb
+      ,sum(case when 社保经办机构='高新区社会保险基金管理中心' then nvl(实缴金额,0) else 0 end ) /*高新区社会保险基金管理中心*/gxsb
+      ,sum(case when 社保经办机构='经开区社会保障基金管理中心' then nvl(实缴金额,0) else 0 end ) /*经开区社会保障基金管理中心*/jksb
+
+      from (
+          -- 生育
+          select * from DM_ZS_SBF_JKS_ex_syqy t
+          union all
+          -- 医疗
+          select * from DM_ZS_SBF_JKS_ex_yilqy t
+      ) t1
+      where 征收品目代码 in ('102050101','102050103','102050102')
+)
+
+
+
+    </select>
+
+</mapper>

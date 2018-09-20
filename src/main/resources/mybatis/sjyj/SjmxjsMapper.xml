@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xalt.sjyj.dao.SjmxjsMapper">
+    <select id="selectAll" parameterType="java.util.HashMap" resultType="com.xalt.sjyj.model.SjmxjsVo">
+        select distinct t.rwid,
+        t.rwmc,
+        to_char( t.cjsj, 'yyyy-mm-dd HH:MM:SS') cjsj,
+        t.rwsm,
+        t2.sjyj,
+        t2.fxgs,
+        t2.fxjg,
+        a.user_name cjr
+        from znsjcl_sqsp_rwxx t,
+        znsjcl_yj_ywzb t2,
+        acl_user a
+        where t.rwid = t2.rwid
+        and t.cjr = a.user_code
+        and t.lcid = '107'
+        <if test = "svo.rwmc != null">
+            and t.rwmc like '%${svo.rwmc}%'
+        </if>
+        order by cjsj desc
+    </select>
+</mapper>

@@ -1,0 +1,967 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>单证审核疑点代码(DM_SB_DZSHYD)</title><style type="text/css">
+<!--body {background-color: #EFECDD;}td{ font-family:"宋体"; font-size:9pt; color=#666666;}.style9 {color: #FFFFFF}-->
+</style></head><body>
+<table width="300" height="100" border="0" cellpadding="0" cellspacing="0">
+<tr><td><p align="center">单证审核疑点代码(DM_SB_DZSHYD)</p></td></tr></table>
+<table width="760" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#FF8800">
+<tr bgcolor="#FFAC75">
+<td width="80" height="26"><div align="center" class="style9">列名</div></td>
+<td width="80"><div align="center" class="style9">汉字名</div></td>
+<td width="80"><div align="center" class="style9">数据类型</div></td>
+<td width="80"><div align="center" class="style9">长度</div></td>
+<td width="80"><div align="center" class="style9">精度</div></td>
+<td width="80"><div align="center" class="style9">非空</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center"><a href="DM_SB_DZSHYD.html">DZSHYD_DM</div></td>
+<td><div align="center">单证审核疑点代码</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">4</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">DZSHYDMC</div></td>
+<td><div align="center">单证审核疑点名称</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">150</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">XYBZ</div></td>
+<td><div align="center">选用标志</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">YXBZ</div></td>
+<td><div align="center">有效标志</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+</table>
+
+
+   
+<table width="300" height="100" border="0" cellpadding="0" cellspacing="0">
+<tr><td><p align="center">单证审核疑点代码(数据)</p></td></tr></table>
+<table width="760" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#FF8800">
+<tr bgcolor="#FFAC75">
+<td width="80" height="26"><div align="center" class="style9">单证审核疑点代码</div></td>
+<td width="80" height="26"><div align="center" class="style9">单证审核疑点名称</div></td>
+<td width="80" height="26"><div align="center" class="style9">选用标志</div></td>
+<td width="80" height="26"><div align="center" class="style9">有效标志</div></td>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">BB01</div></td>
+<td><div align="center">出口报关单中无此（XXX）报关单号</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">BB02</div></td>
+<td><div align="center">该报关单（XXX）已经申报办理过退税</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">BB03</div></td>
+<td><div align="center">该报关单（XXX）已开具代理证明</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">BB04</div></td>
+<td><div align="center">该报关单（XXX）已开具退运已补税证</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">BB05</div></td>
+<td><div align="center">该代理出口证明原编号（XXX）不存在</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">BB06</div></td>
+<td><div align="center">该代理证明（XXX）已申报办理过退税</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">BB07</div></td>
+<td><div align="center">该代理证明（XXX）已开具退运已补税证明</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">BB08</div></td>
+<td><div align="center">企业申报的核销单号（XXX）在出口收汇核销单信息中不存在</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">BB09</div></td>
+<td><div align="center">企业申报的此核销单信息（XXX）已办理过退税</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">BB10</div></td>
+<td><div align="center">补办代理进口证明原编号（XXX）不存在</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">DL00</div></td>
+<td><div align="center">暂停退税权期间代理出口的货物不予开具代理证明</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">DL01</div></td>
+<td><div align="center">企业申报的出口报关单（XXX）不存在</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">DL02</div></td>
+<td><div align="center">企业申报的出口日期（XXX）与报关单中（YYY）不一致</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">DL04</div></td>
+<td><div align="center">企业申报的核销单号（XXX）与报关单中（YYY）不一致</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">DL05</div></td>
+<td><div align="center">企业申报的商品代码（XXX）与报关单中（YYY）不一致</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">DL06</div></td>
+<td><div align="center">企业申报的计量单位（XXX）与报关单中（YYY）不一致</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">DL07</div></td>
+<td><div align="center">企业申报的数量、金额（XXX）大于报关单中数量、金额（YYY）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">DL08</div></td>
+<td><div align="center">企业申报的申报日期（XXX）超过最后调允许期限（YYY）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">DL09</div></td>
+<td><div align="center">企业申报+已开代理证明+已退运数量,金额（XXX）大于报关单中数量金额（YYY）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">DL10</div></td>
+<td><div align="center">受托方是生产企业</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">DL11</div></td>
+<td><div align="center">海关信息中贸易性质为进料加工，对应手册没有办理代理进口证明</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">HJ01</div></td>
+<td><div align="center">出口报关单中无此（XXX）报关单号</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">HJ02</div></td>
+<td><div align="center">企业申报的海关企业代码（XXX）与关单电子信息中的（YYY）不一致</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">HJ03</div></td>
+<td><div align="center">企业申报的出口日期（XXX）与 出口报关单电子信息中的（YYY）不一致</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">HJ04</div></td>
+<td><div align="center">企业申报的商品代码（XXX）与 出口报关单电子信息中的（YYY）不一致</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">HJ05</div></td>
+<td><div align="center">企业申报的核销单（XXX）与 出口报关单电子信息中的（YYY）不一致</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">HJ06</div></td>
+<td><div align="center">企业申报的关单号（XXX）在出口报关单电子信息中已被挑中（YYY）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">HJ07</div></td>
+<td><div align="center">企业申报的出口数量（XXX）大于出口报关单信息对应项目的可用数量（YYY）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">HJ08</div></td>
+<td><div align="center">企业申报的出口美元金额（XXX）大于出口报关单信息对应项目的可用金额（YYY）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">HJ09</div></td>
+<td><div align="center">代理证明信息中无此（XXX）代理证明号</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">HJ10</div></td>
+<td><div align="center">代理证明数据已被（YYY）审核使用</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">HJ11</div></td>
+<td><div align="center">申报企业的纳税人识别号（XXX）与代理证明信息中委托方纳税人识别号（YYY）不一致</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">HJ12</div></td>
+<td><div align="center">企业申报的出口日期（XXX）与 代理证明电子信息中的（YYY）不一致</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">HJ13</div></td>
+<td><div align="center">企业申报的商品代码（XXX）与 代理证明电子信息中的（YYY）不一致</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">HJ14</div></td>
+<td><div align="center">企业申报的核销单（XXX）与代理证明电子信息中的（YYY）不一致</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">HJ15</div></td>
+<td><div align="center">企业申报的出口数量（XXX）大于出口报关单信息对应项目的可用数量（YYY）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">HJ16</div></td>
+<td><div align="center">企业申报的出口美元金额（XXX）大于出口报关单信息对应项目的可用金额（YYY）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">HJ17</div></td>
+<td><div align="center">企业申报的报关单号（XXX）与核销单信息中的关单（YYY）的不一致</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">HJ18</div></td>
+<td><div align="center">申报的企业代码（XXX）与核销单信息中的（YYY）不一致疑点</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">HJ19</div></td>
+<td><div align="center">（XXX）核销单逾期未核销</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">HJ20</div></td>
+<td><div align="center">申报的核销单号码（XXX）在电子信息中不存在</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">HJ21</div></td>
+<td><div align="center">该核销单号（XXX）逾期核销申报</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">HX10</div></td>
+<td><div align="center">该海关登记册号（XXX）尚未登记</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">HX20</div></td>
+<td><div align="center">该海关登记册号（XXX）已核销</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">HX30</div></td>
+<td><div align="center">进口料件实际进口额（XXX）与企业申报（YYY）不符</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">HX40</div></td>
+<td><div align="center">复出口货物实际出口额（XXX）与实际申报（YYY）不符</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">HX50</div></td>
+<td><div align="center">实际分配率（XXX）异常</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">HX60</div></td>
+<td><div align="center">该海关登记册号（XXX）下有尚未审核的免抵退税明细数据</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">HX70</div></td>
+<td><div align="center">该海关登记册号（XXX）下有尚未审核通过的免抵退税明细数据</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">HX80</div></td>
+<td><div align="center">该海关登记册号（XXX）下有尚未审核通过的进口料件明细数据</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">HX90</div></td>
+<td><div align="center">该海关登记册号（XXX）下有出口未收齐单证</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">HXA0</div></td>
+<td><div align="center">该海关登记册号（XXX）已进行过（YYY）次核销</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">JG01</div></td>
+<td><div align="center">出口报关单中无此（XXX）报关单号</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">JG02</div></td>
+<td><div align="center">企业申报的企业代码（XXX）与 进口报关单电子信息中的（YYY）不一致</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">JG03</div></td>
+<td><div align="center">企业申报的商品代码（XXX）与 进口报关单电子信息中的（YYY）不一致</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">JG04</div></td>
+<td><div align="center">企业申报的计量单位（XXX）与 进口报关单电子信息中的（YYY）不一致</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">JG05</div></td>
+<td><div align="center">企业申报的备案号（XXX）与 进口报关单电子信息中的（YYY）不一致</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">JG06</div></td>
+<td><div align="center">企业申报的关单号（XXX）在进口报关单电子信息中已被挑中（YYY）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">JG07</div></td>
+<td><div align="center">企业申报的手册号中数量（XXX）大于进口报关单信息对应项目的可用数量</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">JG08</div></td>
+<td><div align="center">企业申报的手册号中数量（XXX）大于手册登记时申请的数量</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">JH01</div></td>
+<td><div align="center">报关单号码（XXX）不在海关电子信息中</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">JH02</div></td>
+<td><div align="center">申报的贸易性质（XXX）与电子信息中的（YYY）不一致</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">JH03</div></td>
+<td><div align="center">申报的出口口岸（XXX）与电子信息中的（YYY）不一致</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">JH04</div></td>
+<td><div align="center">申报的数量（XXX）与电子信息中的（YYY）不一致</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">JH05</div></td>
+<td><div align="center">申报的金额（XXX）与电子信息中的（YYY）不一致</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">JH06</div></td>
+<td><div align="center">本年出口卷烟已经超过总局下达计划（YYY）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">JH07</div></td>
+<td><div align="center">本年出口卷烟数量已经超过《出口卷烟已免税证明》已免税数量（YYY）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">JH08</div></td>
+<td><div align="center">申报免税核销时间（XXX）距出口日期（YYY）不超过90天</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">JH09</div></td>
+<td><div align="center">出口卷烟牌号（XXX）与免税出口卷烟计划中的（YYY）不一致</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">JH10</div></td>
+<td><div align="center">出口卷烟出口国别（XXX）与免税出口卷烟计划中的（YYY）不一致</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">JH11</div></td>
+<td><div align="center">出口卷烟数量（XXX）大于免税出口卷烟计划中该合同项下的剩余数量（YYY）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">JH12</div></td>
+<td><div align="center">出口卷烟未在指定口岸（XXX）报关出口</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">JZ01</div></td>
+<td><div align="center">申报免税购进的卷烟牌号（XXX）与总局下达免税出口卷烟计划中的牌号（YYY）不一致</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">JZ02</div></td>
+<td><div align="center">总局下发的免税出口卷烟计划中不包括该出口企业（XXX）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">JZ03</div></td>
+<td><div align="center">总局下发的免税出口卷烟计划中不包括该生产企业（XXX）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">JZ04</div></td>
+<td><div align="center">本次申报数量（XXX）大于国家税务总局下达的免税出口卷烟计划剩余数（YYY）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">LH01</div></td>
+<td><div align="center">来料登记手册号（XXX）未登记</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">LH02</div></td>
+<td><div align="center">手册核销时间（XXX）超过登记手册规定的核销期限（YYY）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">LH03</div></td>
+<td><div align="center">出口报关单中无此（XXX）报关单号</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">LH04</div></td>
+<td><div align="center">企业申报的企业代码（XXX）与 进口报关单电子信息中的（YYY）不一致</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">LH05</div></td>
+<td><div align="center">企业申报的计量单位（XXX）与 进口报关单电子信息中的（YYY）不一致</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">LH06</div></td>
+<td><div align="center">企业申报的关单号（XXX）在进口报关单电子信息中已被挑中（YYY）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">LH07</div></td>
+<td><div align="center">企业申报的进口数量（XXX）大于进口报关单信息对应项目的数量</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">LH08</div></td>
+<td><div align="center">企业申报的进口金额（XXX）大于进口报关单信息对应项目的美元金额</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">LJ10</div></td>
+<td><div align="center">海关登记册号（XXX）尚未登记</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">LJ20</div></td>
+<td><div align="center">进口报关单号（XXX）发生重复申报</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">LJ30</div></td>
+<td><div align="center">海关信息中无此报关单号（XXX）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">LJ40</div></td>
+<td><div align="center">该进口报关单号（XXX）已申报</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">LJ50</div></td>
+<td><div align="center">海关数据中贸易性质（XXX）非进料加工</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">LJ60</div></td>
+<td><div align="center">申报海关登记册号（XXX）与海关信息中的（YYY）不符</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">LJ70</div></td>
+<td><div align="center">申报商品代码（XXX）与海关信息中的（YYY）不符</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">LJ80</div></td>
+<td><div align="center">组成计税价格（XXX）不等于人民币到岸价+海关实征税额（YYY）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">LJ90</div></td>
+<td><div align="center">申报美元到岸价（XXX）与海关信息（YYY）不一致</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">LJA0</div></td>
+<td><div align="center">美元汇率不在规定范围内</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">LM01</div></td>
+<td><div align="center">来料登记手册号（XXX）未登记</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">LM02</div></td>
+<td><div align="center">来料登记手册号（XXX）已经核销</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">LM03</div></td>
+<td><div align="center">进口报关单中无此（XXX）报关单号</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">LM04</div></td>
+<td><div align="center">企业申报的企业代码（XXX）与 进口报关单电子信息中的（YYY）不一致</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">LM05</div></td>
+<td><div align="center">企业申报的商品代码（XXX）与 进口报关单电子信息中的（YYY）不一致</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">LM06</div></td>
+<td><div align="center">企业申报的计量单位（XXX）与 进口报关单电子信息中的（YYY）不一致</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">LM07</div></td>
+<td><div align="center">企业申报的关单号（XXX）在进口报关单电子信息中已被挑中（YYY）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">LM08</div></td>
+<td><div align="center">企业申报的进口数量（XXX）大于进口报关单信息对应项目的数量</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">LM09</div></td>
+<td><div align="center">企业申报的进口金额（XXX）大于进口报关单信息对应项目的美元金额</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">LM10</div></td>
+<td><div align="center">出口报关单中无此（XXX）报关单号</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">LM11</div></td>
+<td><div align="center">企业申报的企业代码（XXX）与 出口报关单电子信息中的（YYY）不一致</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">LM12</div></td>
+<td><div align="center">企业申报的商品代码（XXX）与 出口报关单电子信息中的（YYY）不一致</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">LM13</div></td>
+<td><div align="center">企业申报的计量单位（XXX）与 出口报关单电子信息中的（YYY）不一致</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">LM14</div></td>
+<td><div align="center">企业申报的关单号（XXX）在出口报关单电子信息中已被挑中（YYY）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">LM15</div></td>
+<td><div align="center">企业申报的进口数量（XXX）大于出口报关单信息对应项目的数量</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">LM16</div></td>
+<td><div align="center">企业申报的进口金额（XXX）大于出口报关单信息对应项目的美元金额</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">MS01</div></td>
+<td><div align="center">进料加工手册（XXX）未登记备案</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">MS02</div></td>
+<td><div align="center">企业申报商品代码（XXX）不在商品码库中</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">MS03</div></td>
+<td><div align="center">企业申报商品（XXX）不是基本商品</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">MS04</div></td>
+<td><div align="center">出口退税应抵扣税额数据计算关系（XXX）不正确</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">MS05</div></td>
+<td><div align="center">申报的抵扣税率（XXX）不是复出口商品代码征税率和商品征税率中的的最小税率（YYY）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">SD10</div></td>
+<td><div align="center">海关登记册号（XXX）重复登记</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">SD20</div></td>
+<td><div align="center">币别代码（XXX）不存在</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">SD30</div></td>
+<td><div align="center">计划进、出口总值小于等于零</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">SD40</div></td>
+<td><div align="center">登记的计划分配率（XXX）异常</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">SD50</div></td>
+<td><div align="center">购进法且复出口商品代码（XXX）不是基本商品代码</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">SD60</div></td>
+<td><div align="center">审核复出口商品的征税率（XXX）与商品码库（YYY）不符</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">SD70</div></td>
+<td><div align="center">审核复出口商品的退税率（XXX）与商品码库（YYY）不符</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">TY01</div></td>
+<td><div align="center">企业申报+已开代理证明+已退运数量（XXX）大于报关单中数量（YYY）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">TY02</div></td>
+<td><div align="center">申报已退税额为0，报关单/代理证明（XXX）否已审核退税</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">TY03</div></td>
+<td><div align="center">申报已退税额为（XXX），与退税审核通过（YYY）不相符</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZN01</div></td>
+<td><div align="center">企业申报的专用发票（XXX）在发票信息中已被退税审核调中（YYY）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZN02</div></td>
+<td><div align="center">企业申报的退运补税证明号（XXX）在退运补税证明信息中不存在</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZN03</div></td>
+<td><div align="center">企业申报的出口转内销的数量（XXX）大于退运补税证明中的退运数量（YYY）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZN04</div></td>
+<td><div align="center">出口报关单信息中对应报关单（XXX）无退运补税标志</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZN05</div></td>
+<td><div align="center">外汇核销单中（XXX）无退运补税标志</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZN06</div></td>
+<td><div align="center">代理证明信息中对应代理证明号（XXX）无退运补税标志</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>

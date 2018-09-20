@@ -1,0 +1,3457 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>资料报送表单参数表(CS_SB_ZLBSBD)</title><style type="text/css">
+<!--body {background-color: #EFECDD;}td{ font-family:"宋体"; font-size:9pt; color=#666666;}.style9 {color: #FFFFFF}-->
+</style></head><body>
+<table width="300" height="100" border="0" cellpadding="0" cellspacing="0">
+<tr><td><p align="center">资料报送表单参数表(CS_SB_ZLBSBD)</p></td></tr></table>
+<table width="760" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#FF8800">
+<tr bgcolor="#FFAC75">
+<td width="80" height="26"><div align="center" class="style9">列名</div></td>
+<td width="80"><div align="center" class="style9">汉字名</div></td>
+<td width="80"><div align="center" class="style9">数据类型</div></td>
+<td width="80"><div align="center" class="style9">长度</div></td>
+<td width="80"><div align="center" class="style9">精度</div></td>
+<td width="80"><div align="center" class="style9">非空</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center"><a href="DM_SB_BSZL.html">BSZL_DM</div></td>
+<td><div align="center">报送资料代码</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">10</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">BSZLMC</div></td>
+<td><div align="center">资料名称</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">300</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">BB</div></td>
+<td><div align="center">必报</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">TJBS</div></td>
+<td><div align="center">条件报送</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">GD</div></td>
+<td><div align="center">归档</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">CY</div></td>
+<td><div align="center">查验</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">DBG</div></td>
+<td><div align="center">代保管</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">HX</div></td>
+<td><div align="center">核销</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">BZ</div></td>
+<td><div align="center">备注</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">3000</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">XYBZ</div></td>
+<td><div align="center">选用标志</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">LJWZ</div></td>
+<td><div align="center">链接位置</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">750</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">YXBZ</div></td>
+<td><div align="center"> </div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">SFXCJ</div></td>
+<td><div align="center"> </div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+</table>
+
+
+   
+<table width="300" height="100" border="0" cellpadding="0" cellspacing="0">
+<tr><td><p align="center">资料报送表单参数表(数据)</p></td></tr></table>
+<table width="760" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#FF8800">
+<tr bgcolor="#FFAC75">
+<td width="80" height="26"><div align="center" class="style9">报送资料代码</div></td>
+<td width="80" height="26"><div align="center" class="style9">资料名称</div></td>
+<td width="80" height="26"><div align="center" class="style9">必报</div></td>
+<td width="80" height="26"><div align="center" class="style9">条件报送</div></td>
+<td width="80" height="26"><div align="center" class="style9">归档</div></td>
+<td width="80" height="26"><div align="center" class="style9">查验</div></td>
+<td width="80" height="26"><div align="center" class="style9">代保管</div></td>
+<td width="80" height="26"><div align="center" class="style9">核销</div></td>
+<td width="80" height="26"><div align="center" class="style9">备注</div></td>
+<td width="80" height="26"><div align="center" class="style9">选用标志</div></td>
+<td width="80" height="26"><div align="center" class="style9">链接位置</div></td>
+<td width="80" height="26"><div align="center" class="style9">YXBZ</div></td>
+<td width="80" height="26"><div align="center" class="style9">SFXCJ</div></td>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610048</div></td>
+<td><div align="center">股票期权协议书</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">1234</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610049</div></td>
+<td><div align="center">授权通知书</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">1234</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610050</div></td>
+<td><div align="center">股票期权行权通知书</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">1234</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610051</div></td>
+<td><div align="center">行权调整通知书</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">1234</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610052</div></td>
+<td><div align="center">外籍人员基础信息登记表（扣缴）</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">1234</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610053</div></td>
+<td><div align="center">中国大陆公民（包括华侨）基础信息登记表（扣缴）</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">1234</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610054</div></td>
+<td><div align="center">非税控电子器具使用的软件程序说明资料</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">1234</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610055</div></td>
+<td><div align="center">土地出让（转让）合同</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">1234</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610056</div></td>
+<td><div align="center">土地出让（转让）合同复印件</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">1234</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610057</div></td>
+<td><div align="center">土地使用证</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">1234</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610058</div></td>
+<td><div align="center">土地使用证复印件</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">1234</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610059</div></td>
+<td><div align="center">房屋销售合同</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">1234</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610060</div></td>
+<td><div align="center">增量房销售信息明细</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">1234</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610061</div></td>
+<td><div align="center">房屋转让合同</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">1234</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610062</div></td>
+<td><div align="center">房屋转让合同复印件</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">1234</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610063</div></td>
+<td><div align="center">房产证</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">1234</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610064</div></td>
+<td><div align="center">房产证复印件</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">1234</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610065</div></td>
+<td><div align="center">海上油（气）田设施废弃处置预备方案</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">1234</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610066</div></td>
+<td><div align="center">海上油（气）田设施废弃处置实施方案</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">1234</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610067</div></td>
+<td><div align="center">非居民情况报告表</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">/sb/sb154/sb154_fjmxsssxddyzxqkbgb.jsp</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610068</div></td>
+<td><div align="center">股权转让合同或协议</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">1234</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610069</div></td>
+<td><div align="center">股权转让合同或协议复印件</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">1234</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610070</div></td>
+<td><div align="center">境外投资方与其所转让的境外控股公司在资金、经营、购销等方面的关系</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">1234</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610071</div></td>
+<td><div align="center">境外投资方所转让的境外控股公司的生产经营、人员、账务、财产等情况</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">1234</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610072</div></td>
+<td><div align="center">境外投资方所转让的境外控股公司与中国居民企业在资金、经营、购销等方面的关系</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">1234</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610073</div></td>
+<td><div align="center">境外投资方设立被转让的境外控股公司具有合理商业目的的说明</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">1234</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610074</div></td>
+<td><div align="center">涉及本企业的分部合同</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">1234</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610075</div></td>
+<td><div align="center">涉及本企业的分部合同复印件</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">1234</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610076</div></td>
+<td><div align="center">被整体转让的各个控股公司的详细资料</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">1234</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610077</div></td>
+<td><div align="center">非居民企业特殊性重组书面备案材料</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">1234</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610078</div></td>
+<td><div align="center">土地出（转）让信息表</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">/sb/sb146/sb146_tdczrxxcj.html</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610079</div></td>
+<td><div align="center">增量房销售信息表</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">/sb/sb148/sb148_zlfxsxxcj.html</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610080</div></td>
+<td><div align="center">存量房销售信息表</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">/sb/sb149/sb149_clfxsxxcj.html</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610081</div></td>
+<td><div align="center">税源申报明细报告表</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">/sb/sb147/sb147_sysbmxbg.html</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610082</div></td>
+<td><div align="center">高等学校会计制度财务报表报送与信息采集</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">/sb/sb124/sb124_gdxxkjzdcwbb00.jsp</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610083</div></td>
+<td><div align="center">纳税人进项税额分摊方式备案报告表</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">1234</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610084</div></td>
+<td><div align="center">税务登记证副本</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">1234</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610085</div></td>
+<td><div align="center">新牌号、新规格卷烟信息汇总表</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">/sb/sb161/sb161_xphxgggyxhhzb.jsp</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZDYA060007</div></td>
+<td><div align="center">个人股东情况变化表</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">aaabbb</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610092</div></td>
+<td><div align="center">利润表（适用执行小企业会计制度的企业）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">/sb/sb103/sb103_xqykjzdlrb.html</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610163</div></td>
+<td><div align="center">人口和计划生育事业单位会计制度财务报表报送与信息采集</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">/sb/sb103/sb103_sydwkjzdzcfzb.jsp</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610162</div></td>
+<td><div align="center">66 体育事业单位会计制度财务报表报送与信息采集</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">/sb/sb102/sb102_sydwkjzdzcfzb.jsp</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610164</div></td>
+<td><div align="center">资产负债表</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">/sb/sb126/sb126_kxsyzcfzb.jsp</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610165</div></td>
+<td><div align="center">资产负债表</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">/sb/sb250/sb250_whsyzlbsyxxcj00.jsp</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610166</div></td>
+<td><div align="center">资产负债表</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">/sb/sb208/sb208_wwsyzlbsyxxcj00.jsp</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610005</div></td>
+<td><div align="center">资产负债表（适用执行企业会计制度的企业</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">/sb/sb099/sb099_qykjzzcwbbbsyxxcj_ybqy00.jsp</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610006</div></td>
+<td><div align="center">利润表（适用执行企业会计制度的企业）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">/sb/sb099/sb099_qykjzzcwbbbsyxxcj_ybqy00.jsp</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610007</div></td>
+<td><div align="center">现金流量表（适用执行企业会计制度的企业）</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">/sb/sb099/sb099_qykjzzcwbbbsyxxcj_ybqy00.jsp</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610008</div></td>
+<td><div align="center">所有者权益（或股东权益）增减变动表（适用执行企业会计制度的企业）</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">/sb/sb099/sb099_qykjzzcwbbbsyxxcj_ybqy00.jsp</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610200</div></td>
+<td><div align="center">应交增值税明细表（适用于增值税一般纳税人）</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">/sb/sb099/sb099_qykjzzcwbbbsyxxcj_ybqy00.jsp</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610201</div></td>
+<td><div align="center">分部报表（业务分部）</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">/sb/sb099/sb099_qykjzzcwbbbsyxxcj_ybqy00.jsp</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610202</div></td>
+<td><div align="center">分部报表（地区分部）</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">/sb/sb099/sb099_qykjzzcwbbbsyxxcj_ybqy00.jsp</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610203</div></td>
+<td><div align="center">《资产负债表（适用执行小企业会计制度的企业）》</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">/sb/sb100/sb100_qykjzdcwbbbsyxxcj00.jsp</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610204</div></td>
+<td><div align="center">《利润表（适用执行小企业会计制度的企业）》</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">/sb/sb100/sb100_qykjzdcwbbbsyxxcj00.jsp</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610205</div></td>
+<td><div align="center">《利润分配表（适用执行小企业会计制度的企业）》</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">/sb/sb100/sb100_qykjzdcwbbbsyxxcj00.jsp</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610206</div></td>
+<td><div align="center">《现金流量表（适用执行小企业会计制度的企业）》</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">/sb/sb100/sb100_qykjzdcwbbbsyxxcj00.jsp</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610207</div></td>
+<td><div align="center">《资产减值准备明细表》</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">/sb/sb100/sb100_qykjzdcwbbbsyxxcj00.jsp</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610208</div></td>
+<td><div align="center">《股东权益增减变动表》</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">/sb/sb100/sb100_qykjzdcwbbbsyxxcj00.jsp</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610209</div></td>
+<td><div align="center">《应交增值税明细表（适用于增值税一般纳税人）》</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">/sb/sb100/sb100_qykjzdcwbbbsyxxcj00.jsp</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610210</div></td>
+<td><div align="center">《分部报表（业务分部）》</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">/sb/sb100/sb100_qykjzdcwbbbsyxxcj00.jsp</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610211</div></td>
+<td><div align="center">《分部报表（地区分部）》</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">/sb/sb100/sb100_qykjzdcwbbbsyxxcj00.jsp</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610212</div></td>
+<td><div align="center">《资产负债表（适用执行小企业会计制度的企业）》</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">/sb/sb104/sb104_zcfzb.jsp</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610213</div></td>
+<td><div align="center">《利润表_月报（适用执行小企业会计制度的企业）》</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">/sb/sb104/sb104_zcfzb.jsp</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610214</div></td>
+<td><div align="center">《利润表_年报（适用执行小企业会计制度的企业）》</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">/sb/sb104/sb104_zcfzb.jsp</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610215</div></td>
+<td><div align="center">《现金流量表_月报（适用执行小企业会计制度的企业）》</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">/sb/sb104/sb104_zcfzb.jsp</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610216</div></td>
+<td><div align="center">《现金流量表_年报（适用执行小企业会计制度的企业）》</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">/sb/sb104/sb104_zcfzb.jsp</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610217</div></td>
+<td><div align="center">《应交增值税明细表（适用于增值税一般纳税人）》</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">/sb/sb104/sb104_zcfzb.jsp</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610218</div></td>
+<td><div align="center">《分部报表（业务分部）》</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">/sb/sb104/sb104_zcfzb.jsp</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610219</div></td>
+<td><div align="center">《分部报表（地区分部）》</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">/sb/sb104/sb104_zcfzb.jsp</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610198</div></td>
+<td><div align="center">资产负债表（适用执行村集体经济组织会计制度的单位）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">/sb/sb232/sb232_cjtjjzzcwbb.jsp</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610199</div></td>
+<td><div align="center">收益及收益分配表（适用执行村集体经济组织会计制度的单位）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">/sb/sb232/sb232_cjtjjzzcwbb.jsp</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610195</div></td>
+<td><div align="center">资产负债表（适用执行个体工商户会计制度的单位）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">/sb/sb233/sb233_gtgsh_zcfzbsjcj00.jsp</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610196</div></td>
+<td><div align="center">应税所得表（适用执行个体工商户会计制度的单位）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">/sb/sb233/sb233_gtgsh_yssdbsjcj01.jsp</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610197</div></td>
+<td><div align="center">留存利润表（适用执行个体工商户会计制度的单位）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">/sb/sb233/sb233_gtgsh_zcfzbsjcj00.jsp</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610087</div></td>
+<td><div align="center">资产负债表（适用执行事业单位会计制度的单位）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">/sb/sb122/sb122_sydwkjzdzcfzb.jsp</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610235</div></td>
+<td><div align="center">《定点联系企业名册信息表》</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">/sb/sb249/sb249_ddlxqymc.jsp</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610231</div></td>
+<td><div align="center">收入支出表_月报（适用执行广播事业单位会计制度）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">/sb/sb206/sb206_gbsykjzdcwbb00.jsp</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610220</div></td>
+<td><div align="center">资产负债表（适用执行中小学校会计制度的单位）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">/sb/sb123/sb123_zxxxkjzdcwbb00.jsp</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610221</div></td>
+<td><div align="center">收入支出表_月报（适用执行中小学校会计制度的单位）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">/sb/sb123/sb123_zxxxkjzdcwbb00.jsp</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610222</div></td>
+<td><div align="center">收入支出表_年报（适用执行中小学校会计制度的单位）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">/sb/sb123/sb123_zxxxkjzdcwbb00.jsp</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610223</div></td>
+<td><div align="center">财政补助收入支出表（适用执行中小学校会计制度的单位）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">/sb/sb123/sb123_zxxxkjzdcwbb00.jsp</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610224</div></td>
+<td><div align="center">资产负债表（适用执行彩票机构会计制度的单位）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">/sb/sb231/sb231_cpjgkjzdcwbb00.jsp</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610225</div></td>
+<td><div align="center">返奖奖金变动明细表（适用执行彩票机构会计制度的单位）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">/sb/sb231/sb231_cpjgkjzdcwbb00.jsp</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610226</div></td>
+<td><div align="center">彩票资金分配明细表（适用执行彩票机构会计制度的单位）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">/sb/sb231/sb231_cpjgkjzdcwbb00.jsp</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610227</div></td>
+<td><div align="center">收入支出表（月报)（适用执行彩票机构会计制度的单位）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">/sb/sb231/sb231_cpjgkjzdcwbb00.jsp</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610228</div></td>
+<td><div align="center">收入支出表（年报)（适用执行彩票机构会计制度的单位）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">/sb/sb231/sb231_cpjgkjzdcwbb00.jsp</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610229</div></td>
+<td><div align="center">财政专户核拨资金收入支出表（适用执行彩票机构会计制度的单位）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">/sb/sb231/sb231_cpjgkjzdcwbb00.jsp</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610230</div></td>
+<td><div align="center">《企业可比性因素分析表》</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">/sb/sb130/sb130_qykbxysfxb.jsp</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610232</div></td>
+<td><div align="center">财政补助收入支出表（适用执行广播事业单位会计制度）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">/sb/sb206/sb206_gbsykjzdcwbb00.jsp</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610233</div></td>
+<td><div align="center">资产负债表（适用执行广播事业单位会计制度）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">/sb/sb206/sb206_gbsykjzdcwbb00.jsp</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610234</div></td>
+<td><div align="center">固定资产加速折旧(扣除)预缴情况统计</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">/sb/sb400/sb400_gdzcjszjyjqktj.jsp</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610237</div></td>
+<td><div align="center">资产负债表（适用执行医院会计制度的单位）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">/sb/sb41301/sb413_yykjzdcwbb_zcfzb.jsp</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610238</div></td>
+<td><div align="center">收入费用总表（适用执行医院会计制度的单位）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">/sb/sb41301/sb413_yykjzdcwbb_zcfzb.jsp</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610239</div></td>
+<td><div align="center">医疗收入费用明细表（适用执行医院会计制度的单位）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">/sb/sb41301/sb413_yykjzdcwbb_zcfzb.jsp</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610240</div></td>
+<td><div align="center">现金流量表（适用执行医院会计制度的单位）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">/sb/sb41301/sb413_yykjzdcwbb_zcfzb.jsp</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610241</div></td>
+<td><div align="center">财政补助收支情况表（适用执行医院会计制度的单位）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">/sb/sb41301/sb413_yykjzdcwbb_zcfzb.jsp</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610242</div></td>
+<td><div align="center">耕地占用税税源明细表</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">/sb/sb416/sb416_gdzys_symxb.jsp</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610091</div></td>
+<td><div align="center">资产负债表（适用执行小企业会计制度的企业）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">/sb/sb103/sb103_xqykjzdzcfzb.html</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610105</div></td>
+<td><div align="center">资产质量、表外应收利息及资本充足率情况表（适用执行金融企业财务决算报表的银行类）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">/sb/sb104/sb104_yhljrqyzczlyslxjzbczlqkb.html</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610104</div></td>
+<td><div align="center">资产减值准备（呆账准备）明细表（适用执行金融企业财务决算报表的银行类）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">/sb/sb104/sb104_yhljrqyzcjzzbmxb.html</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610103</div></td>
+<td><div align="center">资产负债表（适用执行金融企业财务决算报表的银行类）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">/sb/sb104/sb104_yhljrqyzcfzb.html</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610102</div></td>
+<td><div align="center">业务及管理费与营业外收支明细表（适用执行金融企业财务决算报表的银行类）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">/sb/sb104/sb104_yhljrqyywjjglyymxb.html</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610101</div></td>
+<td><div align="center">信托业务资产负债表（适用执行金融企业财务决算报表的银行类）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">/sb/sb104/sb104_yhljrqyxtywzcfzb.html</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610100</div></td>
+<td><div align="center">信托业务利润表（适用执行金融企业财务决算报表的银行类）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">/sb/sb104/sb104_yhljrqyxtywlbb.html</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610099</div></td>
+<td><div align="center">现金流量表（适用执行金融企业财务决算报表的银行类）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">/sb/sb104/sb104_yhljrqyxjllb.html</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610098</div></td>
+<td><div align="center">所有者权益变动表（适用执行金融企业财务决算报表的银行类）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">/sb/sb104/sb104_yhljrqysyzqybdb.html</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610097</div></td>
+<td><div align="center">税金及社会保险费用缴纳情况表（适用执行金融企业财务决算报表的银行类）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">/sb/sb104/sb104_yhljrqysjjsbjnqkb.html</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610096</div></td>
+<td><div align="center">利润表（适用执行金融企业财务决算报表的银行类）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">/sb/sb104/sb104_yhljrqylrb.html</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610094</div></td>
+<td><div align="center">固定资产情况表（适用执行金融企业财务决算报表的银行类）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">/sb/sb104/sb104_yhljrqygdzcqkb.html</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610095</div></td>
+<td><div align="center">基本情况表（适用执行金融企业财务决算报表的银行类）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">/sb/sb211/sb211_yhljrqyjbqkb.jsp</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610115</div></td>
+<td><div align="center">资产质量情况表（适用执行金融企业财务决算报表的证券类）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">/sb/sb105/sb105_zqljrqykjzdzczlqkb.html</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610114</div></td>
+<td><div align="center">资产减值准备明细表（适用执行金融企业财务决算报表的证券类）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">/sb/sb105/sb105_zqljrqykjzdzcjzzbmxb.html</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610113</div></td>
+<td><div align="center">资产负债表（适用执行金融企业财务决算报表的证券类）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">/sb/sb105/sb105_zqljrqykjzdzcfzb.html</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610112</div></td>
+<td><div align="center">业务及管理费与营业外收支明细表（适用执行金融企业财务决算报表的证券类）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">/sb/sb105/sb105_zqljrqykjzdywjglfyyywszmxb.html</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610111</div></td>
+<td><div align="center">现金流量表（适用执行金融企业财务决算报表的证券类）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">/sb/sb105/sb105_zqljrqykjzdxjllb.html</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610110</div></td>
+<td><div align="center">所有者权益变动表（适用执行金融企业财务决算报表的证券类）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">/sb/sb105/sb105_zqljrqykjzdsyzqybdb.html</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610109</div></td>
+<td><div align="center">税金及社会保险费用缴纳情况表（适用执行金融企业财务决算报表的证券类）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">/sb/sb105/sb105_zqljrqykjzdsjjsbfjnqkb.html</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610108</div></td>
+<td><div align="center">利润表（适用执行金融企业财务决算报表的证券类）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">/sb/sb105/sb105_zqljrqykjzdlrb.html</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610107</div></td>
+<td><div align="center">基本情况表（适用执行金融企业财务决算报表的证券类）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">/sb/sb105/sb105_zqljrqykjzdjbqkb.jsp</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610106</div></td>
+<td><div align="center">固定资产情况表（适用执行金融企业财务决算报表的证券类</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">/sb/sb105/sb105_zqljrqykjzdgdzcqkb.html</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610117</div></td>
+<td><div align="center">基本情况表（适用执行金融企业财务决算报表的保险类）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">/sb/sb213/sb213_bxljrqycwbbjbqkb.jsp</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610116</div></td>
+<td><div align="center">固定资产情况表（适用执行金融企业财务决算报表的保险类）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">/sb/sb213/sb213_bxljrqycwbbgdzcqkb.jsp</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610125</div></td>
+<td><div align="center">资产质量情况表（适用执行金融企业财务决算报表的保险类）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">/sb/sb213/sb213_bxljrqycwbbzczlqkb.jsp</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610124</div></td>
+<td><div align="center">资产减值准备明细表（适用执行金融企业财务决算报表的保险类）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">/sb/sb213/sb213_bxljrqycwbbzcjzzbmxb.jsp</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610123</div></td>
+<td><div align="center">资产负债表（适用执行金融企业财务决算报表的保险类）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">/sb/sb213/sb213_bxljrqycwbbzcfzb.jsp</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610122</div></td>
+<td><div align="center">业务及管理费与营业外收支明细表（适用执行金融企业财务决算报表的保险类）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">/sb/sb213/sb213_bxljrqycwbbywjglfyyywszmxb.jsp</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610121</div></td>
+<td><div align="center">现金流量表（适用执行金融企业财务决算报表的保险类）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">/sb/sb213/sb213_bxljrqycwbbxjllb.jsp</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610120</div></td>
+<td><div align="center">所有者权益变动表（适用执行金融企业财务决算报表的保险类）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">/sb/sb213/sb213_bxljrqycwbbsyzqybdb.jsp</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610119</div></td>
+<td><div align="center">税金及社会保险费用缴纳情况表（适用执行金融企业财务决算报表的保险类）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">/sb/sb213/sb213_bxljrqycwbbsjjsbfjnqkb.jsp</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610118</div></td>
+<td><div align="center">利润表（适用执行金融企业财务决算报表的保险类）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">/sb/sb213/sb213_bxljrqycwbblrb.jsp</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610127</div></td>
+<td><div align="center">基本情况表（适用执行金融企业财务决算报表的担保类）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">/sb/sb214/sb214_dbljrqycwbbjbqkb.jsp</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610126</div></td>
+<td><div align="center">固定资产情况表（适用执行金融企业财务决算报表的担保类）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">/sb/sb214/sb214_dbljrqycwbbgdzcqkb.jsp</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610134</div></td>
+<td><div align="center">资产质量情况表（适用执行金融企业财务决算报表的担保类）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">/sb/sb214/sb214_dbljrqycwbbzczlqkb.jsp</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610133</div></td>
+<td><div align="center">资产减值准备明细表（适用执行金融企业财务决算报表的担保类）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">/sb/sb214/sb214_dbljrqycwbbzcjzzbmxb.jsp</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610132</div></td>
+<td><div align="center">资产负债表（适用执行金融企业财务决算报表的担保类）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">/sb/sb214/sb214_dbljrqycwbbzcfzb.jsp</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610131</div></td>
+<td><div align="center">营业费用及营业外收支明细表（适用执行金融企业财务决算报表的担保类）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">/sb/sb214/sb214_dbljrqycwbbyyfyjyywszmxb.jsp</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610130</div></td>
+<td><div align="center">所有者权益（或股东权益）增减变动表（适用执行金融企业财务决算报表的担保类）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">/sb/sb214/sb214_dbljrqycwbbsyzqyzjbdb.jsp</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610129</div></td>
+<td><div align="center">税金及社会保险费用缴纳情况表（适用执行金融企业财务决算报表的担保类）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">/sb/sb214/sb214_dbljrqycwbbsjjshbxfyjnqkb.jsp</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610128</div></td>
+<td><div align="center">利润及利润分配表（适用执行金融企业财务决算报表的担保类）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">/sb/sb214/sb214_dbljrqycwbblrjlrfpb.jsp</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610135</div></td>
+<td><div align="center">基本情况表（适用执行金融企业财务决算报表的金融控股集团公司类）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">/sb/sb215/sb215_jrkgjtgsljbqkb.jsp</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610137</div></td>
+<td><div align="center">税金及社会保险费用缴纳情况表（适用执行金融企业财务决算报表的金融控股集团公司类）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">/sb/sb215/sb215_jrkgjtgslsjjsbfjnqk.jsp</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610136</div></td>
+<td><div align="center">利润表（适用执行金融企业财务决算报表的金融控股集团公司类）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">/sb/sb215/sb215_jrkgjtgsllrb.jsp</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610142</div></td>
+<td><div align="center">固定资产情况表（适用执行金融企业财务决算报表的金融资产管理公司类）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">/sb/sb109/sb109_jrzcglgslgdzcqkb.html</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610143</div></td>
+<td><div align="center">基本情况表（适用执行金融企业财务决算报表的金融资产管理公司类）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">/sb/sb216/sb216_jrzcglgsljbqkb.jsp</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610150</div></td>
+<td><div align="center">资产减值准备（呆账准备）明细表（适用执行金融企业财务决算报表的金融资产管理公司类）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">/sb/sb109/sb109_jrzcglgslzcjzzb.html</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610149</div></td>
+<td><div align="center">资产负债表（适用执行金融企业财务决算报表的金融资产管理公司类）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">/sb/sb109/sb109_jrzcglgslzcfzb.html</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610148</div></td>
+<td><div align="center">业务及管理费与营业外收支明细表（适用执行金融企业财务决算报表的金融资产管理公司类）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">/sb/sb109/sb109_jrzcglgslywjglfyyywszmxb.html</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610147</div></td>
+<td><div align="center">现金流量表（适用执行金融企业财务决算报表的金融资产管理公司类）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">/sb/sb109/sb109_jrzcglgslxjllb.html</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610146</div></td>
+<td><div align="center">所有者权益变动表（适用执行金融企业财务决算报表的金融资产管理公司类）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">/sb/sb109/sb109_jrzcglgslsyzqybdb.html</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610141</div></td>
+<td><div align="center">资产减值准备（呆账准备）明细表（适用执行金融企业财务决算报表的金融控股集团公司类）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">/sb/sb215/sb215_jrkgjtgslzcjzzbmxb.jsp</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610140</div></td>
+<td><div align="center">资产负债表（适用执行金融企业财务决算报表的金融控股集团公司类）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">/sb/sb215/sb215_jrkgjtgslzcfzb.jsp</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610139</div></td>
+<td><div align="center">业务及管理费与营业外收支明细表（适用执行金融企业财务决算报表的金融控股集团公司类）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">/sb/sb215/sb215_jrkgjtgslywjglfyyywszmxb.jsp</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610138</div></td>
+<td><div align="center">所有者权益变动表（适用执行金融企业财务决算报表的金融控股集团公司类）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">/sb/sb215/sb215_jrkgjtgslsyzqybdb.jsp</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610145</div></td>
+<td><div align="center">税金及社会保险费用缴纳情况表（适用执行金融企业财务决算报表的金融资产管理公司类）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">/sb/sb109/sb109_jrzcglgslsjjsbfjnqkb.html</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610144</div></td>
+<td><div align="center">利润表（适用执行金融企业财务决算报表的金融资产管理公司类）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">/sb/sb109/sb109_jrzcglgsllrb.html</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610154</div></td>
+<td><div align="center">成品油消费税涉税信息采集表</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">/sb/sb110/sb110_xfssscpyxfsssxxcj.jsp</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610153</div></td>
+<td><div align="center">汽车摩托车涉税信息采集表</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">/sb/sb110/sb110_xfsssqcmtcssxxcj.jsp</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610151</div></td>
+<td><div align="center">烟消费税涉税信息采集表</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">/sb/sb110/sb110_xfsssyxfsssxxcj.jsp</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610152</div></td>
+<td><div align="center">酒消费税涉税信息采集表</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">/sb/sb110/sb110_xfsssjxfsssxxcj.jsp</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610155</div></td>
+<td><div align="center">石脑油、燃料油定点直供计划表</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">/sb/sb111/sb111_snyrlyddzgjhb.jsp</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610023</div></td>
+<td><div align="center">《所有者权益变动表（适用执行企业会计准则的保险公司）》</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610156</div></td>
+<td><div align="center">资产负债表（适用执行农民专业合作社财务会计制度的单位）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">/sb/sb112/sb112_nmzyhzszcfzb.jsp</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610157</div></td>
+<td><div align="center">盈余及盈余分配表（适用执行农民专业合作社财务会计制度的单位）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">/sb/sb112/sb112_nmzyhzsyyjyyfpb.html</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610158</div></td>
+<td><div align="center">成员权益变动表（适用执行农民专业合作社财务会计制度的单位）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">/sb/sb112/sb112_nmzyhzscyqybdb.html</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610159</div></td>
+<td><div align="center">资产负债表（适用执行民间非营利组织会计制度的组织）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">/sb/sb121/sb121_mjfylzzzcfzb.jsp</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610160</div></td>
+<td><div align="center">业务活动表（适用执行民间非营利组织会计制度的组织）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">/sb/sb113/sb113_mjfylzzywhdb.html</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610161</div></td>
+<td><div align="center">现金流量表_年报（适用执行民间非营利组织会计制度的组织）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">/sb/sb113/sb113_mjfylzzxjllbnb.html</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610001</div></td>
+<td><div align="center">企业会计准则(一般企业)财务报表报送与信息采集</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">/sb/sb099/sb099_qykjzzcwbbbsyxxcj_ybqy00.jsp</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610002</div></td>
+<td><div align="center">《利润表（适用执行企业会计准则的一般企业）》</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610003</div></td>
+<td><div align="center">《现金流量表（适用执行企业会计准则的一般企业）》</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610004</div></td>
+<td><div align="center">《所有者权益变动表（适用执行企业会计准则的一般企业）》</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610012</div></td>
+<td><div align="center">企业会计准则(商业银行)财务报表报送与信息采集</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">/sb/sb116/sb116_cwbbbsyxxcj00.jsp</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610013</div></td>
+<td><div align="center">《利润表（适用执行企业会计准则的商业银行）》</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610014</div></td>
+<td><div align="center">《现金流量表（适用执行企业会计准则的商业银行）》</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610015</div></td>
+<td><div align="center">《所有者权益变动表（适用执行企业会计准则的商业银行）》</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610016</div></td>
+<td><div align="center">企业会计准则(证券公司)财务报表报送与信息采集</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">/sb/sb117/sb117_zcfzb.jsp</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610017</div></td>
+<td><div align="center">《利润表（适用执行企业会计准则的证券公司）》</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610018</div></td>
+<td><div align="center">《现金流量表（适用执行企业会计准则的证券公司）》</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610019</div></td>
+<td><div align="center">《所有者权益变动表（适用执行企业会计准则的证券公司）》</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610020</div></td>
+<td><div align="center">企业会计准则(保险公司)财务报表报送与信息采集</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">/sb/sb118/sb118_qykjbxgszlbs00.jsp</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610021</div></td>
+<td><div align="center">《利润表（适用执行企业会计准则的保险公司）》</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610022</div></td>
+<td><div align="center">《现金流量表（适用执行企业会计准则的保险公司）》</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610090</div></td>
+<td><div align="center">财政补助收入支出表（适用执行事业单位会计制度的单位）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">33</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610089</div></td>
+<td><div align="center">收入支出表_年报（适用执行事业单位会计制度的单位）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">22</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610088</div></td>
+<td><div align="center">收入支出表_月报（适用执行事业单位会计制度的单位）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">11</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610093</div></td>
+<td><div align="center">现金流量表（适用执行小企业会计制度的企业）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">/sb/sb103/sb103_xqykjzdxjllb.html</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610024</div></td>
+<td><div align="center">《企业同期资料登记表》</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">/sb/sb130/sb130_qytqzldjb.jsp</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610025</div></td>
+<td><div align="center">《企业功能风险分析表》</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">/sb/sb130/sb130_qygnfxfxb.html</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610026</div></td>
+<td><div align="center">《企业年度关联交易财务状况分析表》</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">/sb/sb130/sb130_qyndgljycwqkfxb.html</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610027</div></td>
+<td><div align="center">《企业同期资料采集》</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">/sb/sb130/sb130_qykbxysfxb.jsp</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610029</div></td>
+<td><div align="center">单边预约定价安排企业执行情况年度报告</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">/sb/sb131/sb131_dbyydjapndbg.jsp</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610030</div></td>
+<td><div align="center">双边或多边预约定价安排企业执行情况年度报告</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">/sb/sb132/sb132_sdbyydjapndbg.jsp</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610031</div></td>
+<td><div align="center">单边预约定价安排企业执行情况实质性变化报告</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">/sb/sb133/sb133_dbyydjapszxbhbg.jsp</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610032</div></td>
+<td><div align="center">双边或多边预约定价安排企业执行情况实质性变化报告</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">/sb/sb134/sb134_sdbyydjapszxbhbg.jsp</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610033</div></td>
+<td><div align="center">企业成本分摊协议</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">/sb/sb135/sb135_cbftxybadjb.jsp</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610034</div></td>
+<td><div align="center">企业减免税调查表</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">/sb/sb136/sb136_jmsrsjcj.jsp</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610035</div></td>
+<td><div align="center">企业集团数据采集</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">/sb/sb138/sb138_qyjtssdcb.jsp</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610036</div></td>
+<td><div align="center">企业集团成员单位税收调查表</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">/sb/sb138/sb138_qyjtcydwssdcb.html</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610037</div></td>
+<td><div align="center">全国企业税收调查表（XXB信息表）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">/sb/sb139/sb139_ndqgqyssdcxxb.jsp</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610038</div></td>
+<td><div align="center">全国企业税收调查表（B0企业表）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">/sb/sb139/sb139_ndqgqyssdcqyb.html</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610039</div></td>
+<td><div align="center">全国企业税收调查表（B1货物劳务表）</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">/sb/sb139/sb139_ndqgqyssdchwlwb.html</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610040</div></td>
+<td><div align="center">重点税源企业信息采集</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">/sb/sb140/sb140_zdsyqyjbxxb.jsp</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610041</div></td>
+<td><div align="center">重点税源企业税收信息（月报）表</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">/sb/sb140/sb140_zdsyqyssxxybb.jsp</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610042</div></td>
+<td><div align="center">重点税源工业企业主要产品与税收信息（月报）表</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">/sb/sb140/sb140_zdsygyqyzycpyssxxybb.jsp</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610043</div></td>
+<td><div align="center">重点税源企业财务信息（季报）表</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">/sb/sb140/sb140_zdsyqycwxxjbb.jsp</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610044</div></td>
+<td><div align="center">重点税源房地产企业开发经营信息（季报）表</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">/sb/sb140/sb140_zdsyfdcqykfjyxxjbb.jsp</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610045</div></td>
+<td><div align="center">重点税源企业景气调查问卷（季报）表</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">/sb/sb140/sb140_zdsyqyjqdcwjjbb.jsp</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610046</div></td>
+<td><div align="center">个人股东变动情况报告表</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">1234</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">ZLA0610047</div></td>
+<td><div align="center">股票期权计划或实施方案</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">1234</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">N</div></td>
+<td><div align="center">  </div></td>
+</tr>

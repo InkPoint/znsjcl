@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xalt.demos.dao.DemoDczktjMapper">
+   <parameterMap id="sendMap" type="java.util.HashMap">
+       <parameter property="NAME" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN"/>
+       <parameter property="SEX" jdbcType="NUMERIC" javaType="java.lang.Integer" mode="IN"/>
+       <parameter property="RS" jdbcType="VARCHAR" javaType="java.lang.String" mode="OUT"/>
+   </parameterMap>
+
+  <!--查询满足条件的所有信息    <![CDATA[ ]]>   gt  >   lt <   -->
+  <select id="selectAll" parameterType="java.util.HashMap" resultType="com.xalt.demos.model.DczktjVo">
+
+      select jhid
+      ,sjl
+      ,to_char(jhsj,'yyyy-MM-dd') jhsj
+      from znsjcl_sy_sjjh t
+      where t.jhlx='导出'
+      <if test="svo.jhid != null">
+          and t.jhid = '${svo.jhid}'
+      </if>
+      <if test="svo.jhsjq != null">
+          and t.jhsj  &gt;=  to_date('${svo.jhsjq}','yyyy-MM-dd')
+      </if>
+      <if test="svo.jhsjz != null">
+          and t.jhsj  &lt;=  to_date('${svo.jhsjz}','yyyy-MM-dd')
+      </if>
+      order by t.jhsj desc
+
+
+  </select>
+
+  <!--查询满足条件的所有个数-->
+  <select id="selectNum" parameterType="java.util.HashMap"  resultType="java.lang.Integer">
+      select  count(1)
+      from znsjcl_sy_sjjh t
+      where t.jhlx='导出'
+      <if test="svo.jhid != null">
+          and t.jhid = '${svo.jhid}'
+      </if>
+      <if test="svo.jhsjq != null">
+          and t.jhsj  &gt;  to_date('${svo.jhsjq}','yyyy-MM-dd')
+      </if>
+      <if test="svo.jhsjz != null">
+          and t.jhsj   &lt; to_date('${svo.jhsjz}','yyyy-MM-dd')
+      </if>
+      order by t.jhsj desc
+  </select>
+
+</mapper>

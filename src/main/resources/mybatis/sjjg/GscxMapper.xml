@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xalt.sjjg.dao.GscxMapper">
+    <select id="SearchAll" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+        select t4.swjgmc dwswjgmc,
+                t3.nsrsbh sh,
+                t3.nsrmc dwmc,
+                t2.xm xm,
+                '居民身份证' zjlx,
+                t2.sfzjhm sfzhm,
+                to_char(t2.sdqjq,'yyyy-mm-dd') skssqq,
+                to_char(t2.sdqjz,'yyyy-mm-dd') skssqz,
+                t2.sre sre,
+                t2.ynse ynse,
+                t5.grsdssdxmmc xmmc
+        from  xads.zh_sb_kjgrsdsbgb@dbl_to_15xads t,
+              xads.zh_sb_kjgrsdsbgb_mx@dbl_to_15xads t2,
+              xads.zh_dj_nsrxx@dbl_to_15xads t3,
+              xads.dim_dm_gy_swjg@dbl_to_15xads t4,
+              xads.dim_dm_gy_grsdssdxm@dbl_to_15xads t5
+        where t.YXBZ = 'Y'
+        and t.NSRLX_DM = '2'
+        and t.JYLSH = t2.JYLSH
+        and t.kjywrdjxh = t3.djxh
+        and t3.zgswskfj_dm = t4.swjg_dm
+        and t2.GRSDSSDXM_DM = t5.grsdssdxm_dm(+)
+        <if test="svo.sfzhm!=null">
+            and t2.sfzjhm in ( '${svo.sfzhm}')
+        </if>
+        <if test="svo.xm!=null">
+            and t2.xm = '${svo.xm}'
+        </if>
+        <if test="svo.skssqq!=null">
+            and t2.sdqjq &gt;= to_date('${svo.skssqq}', 'yyyy-mm-dd')
+        </if>
+        <if test="svo.skssqz!=null">
+            and t2.sdqjz &lt;= to_date('${svo.skssqz}','yyyy-mm-dd')
+        </if>
+        order by t2.sdqjq
+    </select>
+</mapper>

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xalt.sjcl.dao.QxzbMapper">
+
+    <!--根据id查询具体的指标-->
+    <select id="basicinfo" parameterType="java.util.HashMap" resultType="com.xalt.sjcl.model.QxzbVO">
+        select t.zbid,t.zbmc,t.zbms,t.gz,t.bz,t.cjr,to_char(t.cjsj,'yyyy-mm-dd hh:mi:ss') cjsj   from znsjcl_cl_qxzhzb  t
+        where 1=1  and  t.yxbz='Y'
+        <if test="svo.zbid != null">
+            and t.zbid =   '${svo.zbid}'
+        </if>
+    </select>
+    <!--根据id查询具体的指标-->
+    <select id="basicinfo1" parameterType="java.lang.String" resultType="com.xalt.sjcl.model.QxzbVO">
+        select t.zbid,t.zbmc,t.zbms,t.gz,t.bz,t.cjr,to_char(t.cjsj,'yyyy-mm-dd hh:mi:ss') cjsj   from znsjcl_cl_qxzhzb  t
+        where 1=1  and  t.yxbz='Y'
+          and t.zbid =   #{zbid,jdbcType=VARCHAR}
+
+    </select>
+  <!--查询所有指标-->
+  <select id="selectAll" parameterType="java.util.HashMap" resultType="com.xalt.sjcl.model.QxzbVO">
+         select t.zbid,t.zbmc,t.zbms, t1.user_name cjr,t.bz,to_char(t.cjsj,'yyyy-mm-dd hh:mi:ss') cjsj,to_char(wm_concat(t2.gzmc)) gz
+      from znsjcl_cl_qxzhzb t ,acl_user  t1 ,znsjcl_cl_qxzhgz t2
+         where 1=1  and  t.yxbz='Y'  and t.cjr=t1.user_code(+)     and t.gz=t2.gzid(+)
+            <if test="svo.con_zbmc != null">
+                 and t.zbmc like   '%${svo.con_zbmc}%'
+            </if>
+      group by  t.zbid,t.zbmc,t.zbms,t1.user_name,t.cjsj ,t1.user_name,t.bz
+      order by  t.cjsj desc
+    </select>
+
+
+    <!--查询指标对应规则关联字段表-->
+    <select id="zbgzlist" parameterType="java.util.HashMap" resultType="com.xalt.sjcl.model.ZbgzVO">
+          select t.zbgzid, t.gzid, t.xh, t1.gzmc, t.zbid
+               from znsjcl_cl_zbgz t, znsjcl_cl_qxzhgz t1
+              where t.gzid = t1.gzid
+                and t.yxbz = 'Y'
+                and t.zbid = '${svo.zbid}'
+
+    </select>
+
+    <!--添加新指标-->
+    <insert id="insertdata" parameterType="java.util.HashMap">
+              insert into
+                    znsjcl_cl_qxzhzb(zbid,zbmc,zbms,gz,bz,cjr,cjsj,yxbz)
+            values (
+                    '${svo.zbid}',
+                    '${svo.zbmc}',
+                    '${svo.zbms}',
+                    '${svo.gz}',
+                    '${svo.bz}',
+                    '${curuser}',
+                    sysdate,
+                    'Y')
+    </insert>
+
+    <!--修改指标-->
+     <update id="updatedata"  parameterType="java.util.HashMap">
+             update znsjcl_cl_qxzhzb  t
+                set
+                    t.zbmc='${svo.zbmc}',t.zbms='${svo.zbms}',
+                    t.gz='${svo.gz}',t.bz='${svo.bz}'
+                where t.zbid='${svo.zbid}'
+     </update>
+
+    <!--删除指标-->
+    <update id="deletes" parameterType="java.util.HashMap">
+          update  znsjcl_cl_qxzhzb t set t.yxbz='N'  where    t.zbid='${svo.zbid}'
+    </update>
+
+    <!--删除指标下所有关系链接-->
+    <update id="deleteschildren" parameterType="java.util.HashMap">
+          update  znsjcl_cl_zbgz t set t.yxbz='N'  where    t.zbid='${svo.zbid}'
+    </update> 
+
+    <!--规则列表-->
+    <select id="gzlist" parameterType="java.util.HashMap" resultType="com.xalt.sjcl.model.DownlistVO">
+          select r.gzid id,r.gzmc text from znsjcl_cl_qxzhgz r where  1=1      and r.yxbz='Y'
+    </select>
+
+     <!--插入指标规关系数据-->
+    <insert id="insertzbgz" parameterType="java.util.HashMap">
+           insert into znsjcl_cl_zbgz
+                      (zbgzid,
+                       zbid,
+                       gzid,
+                       xh,
+                       bz,
+                       yxbz)
+                    values
+                      (to_char(sysdate, 'yyyymmdd') || all_indexes.nextval,
+                       '${svo.zbid}',
+                       '${svo.gzid}',
+                       '${svo.xh}',
+                       '${svo.bz}',
+                       'Y')
+    </insert>
+
+    <!--修改指标规则关系数据-->
+    <update id="updatezbgz" parameterType="java.util.HashMap">
+           update znsjcl_cl_zbgz t
+           set
+                       t.gzid='${svo.gzid}',
+                       t.xh='${svo.xh}'
+          where t.zbgzid  ='${svo.zbgzid}'
+    </update>
+</mapper>

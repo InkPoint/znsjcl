@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xalt.sjdr.dao.SjdrMapper">
+    <resultMap id="BaseResultMap" type="com.xalt.sjjh.model.sjdcrwssfk">
+        <result column="SQID" jdbcType="VARCHAR" property="sqid" />
+        <result column="SQBT" jdbcType="VARCHAR" property="sqbt" />
+        <result column="SQNR" jdbcType="VARCHAR" property="sqnr" />
+        <result column="SHR_DM" jdbcType="VARCHAR" property="sqr_dm" />
+        <result column="SHYJ" jdbcType="VARCHAR" property="shyj" />
+        <result column="WCJD" jdbcType="VARCHAR" property="wcsj" />
+        <result column="BZ" jdbcType="VARCHAR" property="bz" />
+        <result column="YXBZ" jdbcType="VARCHAR" property="yxbz" />
+        <result column="BMDM" jdbcType="VARCHAR" property="bmdm" />
+        <result column="PC" jdbcType="VARCHAR" property="pc" />
+        <result column="SHSJ" jdbcType="VARCHAR" property="shsj" />
+        <result column="JDFKSJ" jdbcType="VARCHAR" property="jdfksj" />
+        <result column="WCSJ" jdbcType="VARCHAR" property="wcsj" />
+        <result column="FKRY" jdbcType="VARCHAR" property="fkry" />
+        <result column="SQSJ" jdbcType="VARCHAR" property="sqsj" />
+        <result column="SQR_DM" jdbcType="VARCHAR" property="sqr_dm" />
+        <result column="SQLXID" jdbcType="VARCHAR" property="sqlxid" />
+    </resultMap>
+
+    <!--查询信息-->
+    <select id="search" parameterType="java.util.HashMap" resultType="com.xalt.sjjh.model.Sjwjsc">
+        select t.drid,t.wjmc,t.pc,t1.pcmc,to_char(t.sjdrsj,'yyyy-mm-dd') sjdrsj,t.wjlx,t.wjdx ,t.dxmc,t2.dxmczw
+        from znsjcl_jh_zzsjdr t,znsjcl_dm_pc t1,znsjcl_dm_sjdx  t2
+        where t.yxbz='Y'
+        and t.pc = t1.pc_dm(+)
+        and t.dxmc=t2.dxmcyw(+)     and t.drbz ='1'
+        <if test='pcmc != null and ""!=pcmc'>
+            and t1.pcmc LIKE '%${pcmc}%'
+        </if>
+        <if test='wjmc != null and ""!=wjmc'>
+            and t.wjmc like  '%${wjmc}%'
+        </if>
+    </select>
+
+    <!--删除页面信息-->
+    <update id="delete" parameterType="java.util.HashMap" >
+         update  znsjcl_jh_zzsjdr  set yxbz='N' where drid='${drid}'
+    </update>
+
+    <!--保存新增pc信息-->
+    <insert id="savedata" parameterType="java.util.HashMap" >
+        insert into znsjcl_jh_zzsjdr(drid,wjmc,wjlx,wjdx,pc,yxbz,sjdrsj)
+        values('${drid}','${wjmc}','${wjlx}','${wjdx}','${pc}','Y',sysdate)
+    </insert>
+
+    <!--文件名称下拉菜单-->
+    <select id="getWjmcData" parameterType="java.util.HashMap" resultType="com.xalt.sjjh.model.DropDownlistVo">
+        select t.drid id,t.wjmc text,t.wjlx,t.wjdx,t.pc
+        from znsjcl_jh_zzsjdr t
+        where t.yxbz='Y'
+    </select>
+
+    <!--批次信息下拉菜单-->
+    <select id="getPcData" parameterType="java.util.HashMap" resultType="com.xalt.sjjh.model.DropDownlistVo">
+          select distinct t.pc_dm id,t.pcmc  text from znsjcl_dm_pc  t  where t.yxbz ='Y'
+    </select>
+
+
+    <!--数据表下拉菜单-->
+    <select id="getSjdxList"   resultType="com.xalt.sjcl.model.DownlistVO">
+           select distinct t.dxmcyw id,t.dxmczw text from znsjcl_dm_sjdx   t where t.yxbz ='Y'
+    </select>
+
+
+    <!--更新导入标志-->
+     <update id="updatedrbz" parameterType="java.util.HashMap">
+               update znsjcl_jh_zzsjdr  t set t.drbz='1'  where drid='${drid}'
+     </update>
+
+    <!--获取数据项数据-->
+    <select id="sjxlists" parameterType="java.util.HashMap"  resultType="java.util.HashMap">
+           select  t.sjxmcyw,t.sjxlx   from znsjcl_dm_sjx  t  where UPPER(t.sjdxmcyw) =UPPER('${sjb}') and t.yxbz='Y'
+    </select>
+
+     <!--插入数据-->
+    <select id="insertsjb" parameterType="java.util.HashMap">
+          ${psql}
+    </select>
+</mapper>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by yuanli (prient) -->
+<ts-initialize>
+	<configurations-config>
+		<config clazzname="com.ts.startup.mapping.startup.agent.StartManagerAgent">
+			<alias>startup</alias>
+			<path>startup.xml</path>
+			<actived>true</actived>
+			<reload>true</reload>
+			<inside>TS</inside>
+		</config>
+		<config clazzname="com.ts.startup.mapping.upc.agent.UpcConfigManagerAgent">
+			<alias>upc</alias>
+			<path>upcConfig.xml</path>
+			<actived>true</actived>
+			<inside>TS</inside>
+		</config>
+		<!-- <config clazzname="com.ts.mapping.layout.agent.LayoutManagerAgent4Client">
+			<alias>clientLayout</alias>
+			<path>clientLayout</path>
+			<actived>true</actived>
+			<inside>TS</inside>
+		</config> -->
+	</configurations-config>
+</ts-initialize>

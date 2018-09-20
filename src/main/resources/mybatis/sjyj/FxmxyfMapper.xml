@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xalt.sjyj.dao.FxmxyfMapper">
+    <!--查询结果-->
+    <!--MyBatis的传入参数parameterType类型分为两种 1.基本数据类型int、string、long、date 2.复杂数据类型 类和Map-->
+    <!--分析模型(下拉菜单)-->
+    <select id="yjlistdata" parameterType="java.util.HashMap" resultType="com.xalt.sjcl.model.DownlistVO">
+        select t.mxid id ,t.mxmc text from znsjcl_dm_fxmx  t  where t.yxbz ='Y'
+    </select>
+    <!--分析模型研发(表数据查询)-->
+    <select id="selectAll" parameterType="java.util.HashMap" resultType="com.xalt.sjyj.model.FxmxyfVo">
+        select t1.rwid,
+                t1.rwmc xqmt, --需求命题
+                t1.rwsm xqsm, --需求说明
+                t1.sqrscwj xqwd, --需求文档
+                t2.user_name sqr, --申请人
+                to_char(t1.cjsj, 'yyyy-mm-dd HH:MM:SS') sqsj, --申请时间
+                decode(t1.shzt, '0', '未审核', '1', '审核通过', '2', '审核不通过') shzt, --审核状态
+                nvl(t1.wcjd, '0') wcjd --完成进度
+        from znsjcl_sqsp_rwxx t1, acl_user t2
+        where t1.shzt = '1'
+            and t1.yxbz = 'Y'
+            and t1.cjr = t2.user_code(+)
+        <if test="svo.rwmc != null">
+            and t1.rwmc like '%${svo.rwmc}%'
+        </if>
+        order by t1.cjsj desc
+    </select>
+    <!--（查询）是否选取模型-->
+    <select id="queryTheModel" parameterType="java.util.HashMap" resultType="java.lang.Integer">
+        select count(1) from znsjcl_sjyj_fxmxyf t where t.sqid='${svo.sqid}'
+    </select>
+    <!--（插入）选取的模型-->
+    <insert id="selectTheModel" parameterType="java.util.HashMap">
+        insert into znsjcl_sjyj_fxmxyf t
+             (t.sqid, t.yfr, t.mxid)
+           values
+             ('${svo.sqid}', '${svo.yfr}', '${svo.mxid}')
+    </insert>
+    <!--（修改）选取的模型-->
+    <update id="editTheModel" parameterType="java.util.HashMap">
+        update znsjcl_sjyj_fxmxyf t
+           set t.mxid = '${svo.mxid}'
+         where t.sqid = '${svo.sqid}'
+    </update>
+    <!--查询任务id是否存在-->
+    <select id="selectId" parameterType="java.util.HashMap" resultType="java.lang.Integer">
+         select count(1) from znsjcl_yj_ywzb t where t.rwid='${rwid}'
+    </select>
+
+    <!--添加完成功能进度-->
+    <insert id="insertWcjd" parameterType="java.util.HashMap">
+        insert into znsjcl_yj_ywzb (rwid,wcjd)  VALUES(  #{rwid, jdbcType = VARCHAR},#{sliding, jdbcType = VARCHAR})
+    </insert>
+
+    <!--完成进度修改-->
+    <update id="updateWcjd" parameterType="java.util.HashMap">
+         update znsjcl_yj_ywzb t
+         set t.wcjd =   #{sliding, jdbcType = VARCHAR}
+         where rwid =   #{rwid, jdbcType = VARCHAR}
+    </update>
+
+
+    <!--添加文件名称和备注-->
+    <insert id="insertSavepath" parameterType="java.util.HashMap">
+        insert into znsjcl_yj_ywzb (savepath,bz,rwid,scsj) values ( '${svo.wjmc}','${svo.bz}','${svo.rwid}',sysdate)
+    </insert>
+
+
+</mapper>

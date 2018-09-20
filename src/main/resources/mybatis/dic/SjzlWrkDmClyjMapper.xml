@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.pub.dic.dao.SjzlWrkDmClyjMapper">
+    <select id="selectAll" resultType="com.pub.dic.model.SjzlWrkDmClyj">
+          select '' clyjdm, '--请选择--' clyjmc, '' yxbz, '' bz from dual
+          union all
+          select * from (select t.clyjdm, t.clyjmc, t.yxbz, t.bz from SJZL_WRK_DM_CLYJ t where t.yxbz = 'Y' order by t.clyjdm)
+      </select>
+</mapper>

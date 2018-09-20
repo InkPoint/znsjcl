@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xalt.sjjg.dao.JgmxglMapper">
+
+    <!--基本分页查询-->
+    <select id="selectAll" parameterType="java.util.HashMap" resultType="com.xalt.sjjg.model.JgmxglVo">
+                select t.mxid,
+                t.mxmc,
+                t.cwmc,
+                t.ccgc,
+                t.sjyj,
+                t.bz,
+                t.cjr,
+                to_char(t.cjsj, 'yyyy-mm-dd HH:MM:SS') cjsj,
+                t.bbh,
+                t1.yjmc
+           from znsjcl_jg_jgmx t, znsjcl_jg_sjyj t1
+          where t.sjyj = t1.yjid
+            and t.yxbz = 'Y'
+        <if test="svo.mxmc!=null">
+            and t.mxmc like '%${svo.mxmc}%'
+        </if>
+    </select>
+
+    <!--数据元件下拉框-->
+    <select id="selectSjyj" resultType="com.xalt.sjjg.model.JgmxglVo">
+    select t.yjid id, t.yjmc text from znsjcl_jg_sjyj t
+    where t.pyjdm is not null
+    </select>
+
+    <!--添加加工模型-->
+    <insert id="insertJgmx" parameterType="java.util.HashMap">
+           insert into znsjcl_jg_jgmx
+           (mxid, mxmc, cwmc, sjyj, cjr, cjsj, bbh, bz, yxbz)
+           values
+           (zncjcl_jg_jgmx.nextval,
+           '${svo.mxmc}',
+           '${svo.cwmc}',
+           '${svo.sjyj}',
+           '',
+           sysdate,
+           '1',
+           '${svo.bz}',
+           'Y')
+    </insert>
+
+    <!--模型名称名称_校检-->
+    <select id="nameValidation" parameterType="java.util.HashMap" resultType="com.xalt.sjjg.model.JgmxglVo">
+        select t.mxmc from znsjcl_jg_jgmx t where t.mxmc='${svo.mxmc}' and t.yxbz='Y'
+    </select>
+
+    <!--加工模型编辑-->
+    <update id="updateJgmx" parameterType="java.util.HashMap">
+        UPDATE znsjcl_jg_jgmx
+        set mxmc = '${svo.mxmc}',
+        cwmc = '${svo.cwmc}',
+        sjyj = '${svo.sjyj}',
+        bz   = '${svo.bz}',
+        cjsj = sysdate
+        where mxid = '${svo.mxid}'
+    </update>
+
+    <!--加工模型删除-->
+    <update id="deleteJgmx" parameterType="java.util.HashMap">
+            update znsjcl_jg_jgmx
+            SET yxbz='N'
+            where mxid = '${svo.mxid}'
+        </update>
+
+</mapper>

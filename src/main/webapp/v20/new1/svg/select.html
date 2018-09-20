@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>菜单选项</title>
+  <meta name="description" content="mobile first, app, web app, responsive, admin dashboard, flat, flat ui">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">	
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/plugin.css">
+  <link rel="stylesheet" href="css/landing.css">
+  <link rel="stylesheet" href="css/select.css">
+	   <!-- echrts 3.0-->
+	<script src="js/echarts.min.js"></script>
+	<script src="js/jquery-3.0.0.js"></script>
+	 <!-- echrts 水球球-->
+	<script src="js/echarts.js"></script>
+	<script src="js/echarts-liquidfill.min.js"></script>
+	
+  <!--[if lt IE 9]>
+    <script src="js/ie/respond.min.js"></script>
+    <script src="js/ie/html5.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <!-- 系统头部 -->
+	<header id="header" class="navbar">
+    <ul class="nav navbar-nav navbar-avatar pull-right">
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">        
+          <span class="hidden-sm-only">冯大同</span>
+          <span class="thumb-small avatar inline"><img src="images/avatar.jpg" alt="Mika Sokeil" class="img-circle"></span>
+          <b class="caret hidden-sm-only"></b>
+        </a>
+        <ul class="dropdown-menu">
+        	<li><a href="index.html">演示模式</a></li>           
+          <li><a href="signin.html">岗位切换</a></li>
+          <li><a href="#">退出系统</a></li> 
+        </ul>
+      </li>
+    </ul>
+    <a class="navbar-brand" href="#">智能处理</a>
+    <button type="button" class="btn btn-link pull-left nav-toggle hidden-lg" data-toggle="class:slide-nav slide-nav-left" data-target="body">
+      <i class="icon-reorder icon-xlarge text-default"></i>
+    </button>
+    <ul class="nav navbar-nav hidden-sm">
+      <li>
+        <div class="m-t m-b-small" id="panel-notifications">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-comment-alt icon-xlarge text-default"></i><b class="badge badge-notes bg-danger count-n">2</b></a>
+          <section class="dropdown-menu m-l-small m-t-mini">
+            <section class="panel panel-large arrow arrow-top">
+              <header class="panel-heading bg-white"><span class="h5"><strong>您有 <span class="count-n">2</span>条最新提示</strong></span></header>
+              <div class="list-group list-group-flush m-t-n">
+                <a href="#" class="media list-group-item">
+                  <span class="pull-left thumb-small"><img src="images/avatar.jpg" alt="John said" class="img-circle"></span>
+                  <span class="media-body block m-b-none">
+                 	    消息一：刚处理得国税数据已处理添加完毕！<br>
+                    <small class="text-muted">2018/5/8 21:31:06</small>
+                  </span>
+                </a>
+              </div>
+              <footer class="panel-footer text-small">
+                <a href="#">西安地税数据智能处理系统消息列表</a>
+              </footer>
+            </section>
+          </section>
+        </div>
+      </li>
+      <li><div class="m-t-small"><a class="btn btn-small btn-info" data-toggle="modal" href="#modal"><i class="icon-plus"></i>弹出实例</a></div></li>
+      <li class="dropdown shift" data-toggle="shift:appendTo" data-target=".nav-primary .nav">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-cog icon-xlarge visible-sm visible-sm-inline"></i>个性设置 <b class="caret hidden-sm-only"></b></a>
+        <ul class="dropdown-menu">
+          <li>
+            <a href="#" data-toggle="class:navbar-fixed" data-target='body'>系统顶部 
+              <span class="text-active">取消</span>
+              <span class="text">固定</span>
+            </a>
+        </li>
+          <li class="visible-lg">
+            <a href="#" data-toggle="class:nav-vertical" data-target="#nav">菜单 
+              <span class="text-active">缩小</span>
+              <span class="text">拉伸</span>
+            </a>
+          </li>
+          <li class="divider hidden-sm"></li>
+          <li>
+            <a href="#" data-toggle="class:bg bg-black" data-target='.navbar'>顶部 
+              <span class="text-active">清爽版</span>
+              <span class="text">税务蓝</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" data-toggle="class:bg-light" data-target='#nav'>菜单
+              <span class="text-active">清爽版</span>
+              <span class="text">税务蓝</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+	</header>
+  <!-- / header -->
+  <!-- nav -->
+  <nav id="nav" class="nav-primary visible-lg nav-vertical">
+    <ul class="nav" data-spy="affix" data-offset-top="50">
+      <li class="active"><a href="index.html"><i class="icon-calendar"></i>系统首页</a></li>
+      <li><a href="select.html"><i class="icon-book"></i>数据字典</a></li>
+      <li><a href="select.html"><i class="icon-edit"></i>申请审批</a></li>
+      <li><a href="select.html"><i class="icon-retweet "></i>数据交换</a></li>
+      <li><a href="select.html"><i class="icon-signal "></i>数据处理</a></li>
+      <li><a href="select.html"><i class="icon-cog"></i>数据加工</a></li>
+      <li><a href="select.html"><i class="icon-beaker"></i>数据研究</a></li>
+      <li><a href="select.html"><i class="icon-star"></i>自助服务中心</a></li>
+		</ul>
+  </nav>
+  <!-- select开始 -->
+  <section id="content">
+    	<div class="cloud-product-box">
+				<div class="cloud-product-wrapper">
+					<div class="cloud-product">
+						<ul class="cloud-product-ul clearfix">
+							<li data-index="1" class="active">
+								<div class="normal-inner">
+									<div class="cloud-product-single-bottom clearfix">
+										<div class="empty-space">
+											<div class="bg-product-pic server-header-01"></div>
+										</div>
+										<h2 class="product-introduce-title">创建模型库</h2>
+			
+										<div class="product-introduce-list">
+											<p class="introduce-list-small"><input type="button" class="btnlist"   value="清洗规则管理"/></p>
+											<p class="introduce-list-small"><input type="button" class="btnlist"   value="清洗指标管理"/></p>
+											<p class="introduce-list-small"><input type="button" class="btnlist"   value="清洗模型管理"/></p>
+										</div>
+										<p class="product-introduce-price">
+										    对已有得清洗规则进行添加、查询，同时也可以自定义创建规则。			
+										</p>
+									</div>
+								</div>                   
+			                    
+			                    
+								<div class="active-inner active-inner-01 clearfix">
+									<div class="active-inner-item">
+										<a class="introduce-link" target="_blank" href="#"></a>
+										<div class="empty-space">
+											<div class="bg-product-pic server-header-active-01"></div>
+										</div>
+										<h2 class="product-introduce-title active-product-introduce-title ">创建模型库</h2>
+										<div class="product-introduce-list">
+											<p class="introduce-list-large">
+			                                   <p class="introduce-list-small"><input type="button" class="btnlist"   value="清洗规则管理"/></p>
+											   <p class="introduce-list-small"><input type="button" class="btnlist"   value="清洗指标管理"/></p>
+										       <p class="introduce-list-small"><input type="button" class="btnlist"   value="清洗模型管理"/></p>
+											</p>
+										</div>
+										<p class="product-introduce-price">
+											对已有得清洗规则进行添加、查询，同时也可以自定义创建规则。	
+										</p>
+									</div>
+								</div>
+							</li>
+			                
+			                
+			                
+							<li data-index="2">
+								<div class="normal-inner">
+									<div class="cloud-product-single-bottom clearfix">
+										<div class="empty-space">
+											<div class="bg-product-pic  server-header-02"></div>
+										</div>
+										<h2 class="product-introduce-title">匹配模型</h2>
+										<div class="product-introduce-list">
+											<p class="introduce-list-small"><input type="button" class="btnlist"   value="匹配规则管理"/></p>
+											<p class="introduce-list-small"><input type="button" class="btnlist"   value="匹配模型管理"/></p>
+										</div>
+										<p class="product-introduce-price">
+											模型匹配相关介绍	
+										</p>
+									</div>
+								</div>
+								<div class="active-inner active-inner-02 clearfix">
+									<div class="active-inner-item">
+										<a class="introduce-link" target="_blank" href="#"></a>
+										<div class="empty-space">
+											<div class="bg-product-pic server-header-active-02"></div>
+										</div>
+										<h2 class="product-introduce-title active-product-introduce-title">匹配模型</h2>
+										<div class="product-introduce-list">
+											<p class="introduce-list-small"><input type="button" class="btnlist"   value="匹配规则管理"/></p>
+											<p class="introduce-list-small"><input type="button" class="btnlist"   value="匹配模型管理"/></p>
+										</div>
+										<p class="product-introduce-price">
+											模型匹配相关介绍
+										</p>
+									</div>
+								</div>
+							</li>
+							<li data-index="3">
+								<div class="normal-inner">
+									<div class="cloud-product-single-bottom clearfix">
+										<div class="empty-space">
+											<div class="bg-product-pic  server-header-03"></div>
+										</div>
+										<h2 class="product-introduce-title">系统处理</h2>
+										<div class="product-introduce-list">
+											<p class="introduce-list-small"><input type="button" class="btnlist"   value="定制系统定时处理任务"/></p>
+											<p class="introduce-list-small"><input type="button" class="btnlist"   value="系统任务运行监控"/></p>
+										</div>
+										<p class="product-introduce-price">
+											系统处理相关介绍、处理哪些东西介绍	
+										</p>
+									</div>
+								</div>
+								<div class="active-inner active-inner-03 clearfix">
+									<div class="active-inner-item">
+										<a class="introduce-link" target="_blank" href="#"></a>
+										<div class="empty-space">
+											<div class="bg-product-pic server-header-active-03"></div>
+										</div>
+										<h2 class="product-introduce-title active-product-introduce-title ">系统处理</h2>
+										<div class="product-introduce-list">
+											<p class="introduce-list-small"><input type="button" class="btnlist"   value="定制系统定时处理任务"/></p>
+											<p class="introduce-list-small"><input type="button" class="btnlist"   value="系统任务运行监控"/></p>
+										</div>
+										<p class="product-introduce-price">
+											系统处理相关介绍、处理哪些东西介绍
+										</p>
+									</div>
+								</div>
+							</li>
+							<li data-index="4">
+								<div class="normal-inner">
+									<div class="cloud-product-single-bottom clearfix">
+										<div class="empty-space">
+											<div class="bg-product-pic  server-header-04"></div>
+										</div>
+										<h2 class="product-introduce-title">自主处理</h2>
+										<div class="product-introduce-list">
+											<p class="introduce-list-small"><input type="button" class="btnlist"   value="自定义处理任务"/></p>
+			                                <p class="introduce-list-small"><input type="button" class="btnlist"   value="处理任务运行监控"/></p>
+										</div>
+										<p class="product-introduce-price">
+											对已有得清洗规则进行添加、查询，同时也可以自定义创建规则。	
+										</p>
+									</div>
+								</div>
+								<div class="active-inner  active-inner-04 clearfix">
+									<div class="active-inner-item">
+										<a class="introduce-link" target="_blank" href="#"></a>
+										<div class="empty-space">
+											<div class="bg-product-pic server-header-active-04"></div>
+										</div>
+										<h2 class="product-introduce-title active-product-introduce-title ">自主处理</h2>
+										<div class="product-introduce-list">
+											<p class="introduce-list-small"><input type="button" class="btnlist"   value="自定义处理任务"/></p>
+			                                <p class="introduce-list-small"><input type="button" class="btnlist"   value="处理任务运行监控"/></p>
+										</div>
+										<p class="product-introduce-price">
+											对已有得清洗规则进行添加、查询，同时也可以自定义创建规则。	
+										</p>
+									</div>
+								</div>
+							</li>
+							<li data-index="5">
+								<div class="normal-inner">
+									<div class="cloud-product-single-bottom clearfix">
+										<div class="empty-space">
+											<div class="bg-product-pic server-header-05"></div>
+										</div>
+										<h2 class="product-introduce-title">协助处理</h2>
+										<div class="product-introduce-list">
+											<p class="introduce-list-small"><input type="button" class="btnlist"   value="任务实施反馈"/></p>
+			                                <p class="introduce-list-small"><input type="button" class="btnlist"   value="任务运行监控"/></p>
+										</div>
+										<p class="product-introduce-price">
+											对已有得清洗规则进行添加、查询，同时也可以自定义创建规则。	
+										</p>
+									</div>
+								</div>
+								<div class="active-inner active-inner-05 clearfix">
+									<div class="active-inner-item">
+										<a class="introduce-link" target="_blank" href="#"></a>
+										<div class="empty-space">
+											<div class="bg-product-pic server-header-active-05"></div>
+										</div>
+										<h2 class="product-introduce-title active-product-introduce-title ">协助处理</h2>
+										<div class="product-introduce-list">
+											<p class="introduce-list-small"><input type="button" class="btnlist"   value="任务实施反馈"/></p>
+			                                <p class="introduce-list-small"><input type="button" class="btnlist"   value="任务运行监控"/></p>
+										</div>
+										<p class="product-introduce-price">
+											对已有得清洗规则进行添加、查询，同时也可以自定义创建规则。	
+										</p>
+									</div>
+								</div>
+							</li>
+			                
+			                <li data-index="6">
+								<div class="normal-inner">
+									<div class="cloud-product-single-bottom clearfix">
+										<div class="empty-space">
+											<div class="bg-product-pic server-header-01"></div>
+										</div>
+										<h2 class="product-introduce-title">人工匹配</h2>
+										<div class="product-introduce-list">
+											<p class="introduce-list-small"><input type="button" class="btnlist"   value="人工匹配"/></p>
+			                                <p class="introduce-list-small"><input type="button" class="btnlist"   value="实地核查"/></p>
+			                                <p class="introduce-list-small"><input type="button" class="btnlist"   value="抽样核查"/></p>
+										</div>
+										<p class="product-introduce-price">
+											对已有得清洗规则进行添加、查询，同时也可以自定义创建规则。	
+										</p>
+									</div>
+								</div>
+								<div class="active-inner active-inner-05 clearfix">
+									<div class="active-inner-item">
+										<a class="introduce-link" target="_blank" href="#"></a>
+										<div class="empty-space">
+											<div class="bg-product-pic server-header-active-01"></div>
+										</div>
+										<h2 class="product-introduce-title active-product-introduce-title ">人工匹配</h2>
+										<div class="product-introduce-list">
+											<p class="introduce-list-small"><input type="button" class="btnlist"   value="人工匹配"/></p>
+			                                <p class="introduce-list-small"><input type="button" class="btnlist"   value="实地核查"/></p>
+			                                <p class="introduce-list-small"><input type="button" class="btnlist"   value="抽样核查"/></p>
+										</div>
+										<p class="product-introduce-price">
+											对已有得清洗规则进行添加、查询，同时也可以自定义创建规则。	
+										</p>
+									</div>
+								</div>
+							</li>
+			                
+			                <li data-index="7">
+								<div class="normal-inner">
+									<div class="cloud-product-single-bottom clearfix">
+										<div class="empty-space">
+											<div class="bg-product-pic server-header-02"></div>
+										</div>
+										<h2 class="product-introduce-title">处理状况查询</h2>
+										<div class="product-introduce-list">
+											<p class="introduce-list-small"><input type="button" class="btnlist"   value="处理明细查询"/></p>
+			                                <p class="introduce-list-small"><input type="button" class="btnlist"   value="清洗处理状况统计"/></p>
+			                                <p class="introduce-list-small"><input type="button" class="btnlist"   value="智能匹配处理状况统计"/></p>
+										</div>
+										<p class="product-introduce-price">
+											对已有得清洗规则进行添加、查询，同时也可以自定义创建规则。	
+										</p>
+									</div>
+								</div>
+								<div class="active-inner active-inner-05 clearfix">
+									<div class="active-inner-item">
+										<a class="introduce-link" target="_blank" href="#"></a>
+										<div class="empty-space">
+											<div class="bg-product-pic server-header-active-02"></div>
+										</div>
+										<h2 class="product-introduce-title active-product-introduce-title ">处理状况查询</h2>
+										<div class="product-introduce-list">
+											<p class="introduce-list-small"><input type="button" class="btnlist"   value="处理明细查询"/></p>
+			                                <p class="introduce-list-small"><input type="button" class="btnlist"   value="清洗处理状况统计"/></p>
+			                                <p class="introduce-list-small"><input type="button" class="btnlist"   value="智能匹配处理状况统计"/></p>
+										</div>
+										<p class="product-introduce-price">
+											对已有得清洗规则进行添加、查询，同时也可以自定义创建规则。	
+										</p>
+									</div>
+								</div>
+							</li>
+			                
+						</ul>
+					</div>
+				</div>
+			</div>
+
+  </section>
+  <!-- .modal -->
+  <div id="modal" class="modal fade">
+  	<form class="m-b-none">
+      <div class="modal-dialog pos-abt" style="margin-top:-235px; top:50%">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="icon-remove"></i></button>
+            <h4 class="modal-title" id="myModalLabel">弹出标题</h4>
+          </div>
+          <div class="modal-body">        
+            <div class="block">
+              <label class="control-label">标题</label>
+              <input type="text" class="form-control" placeholder="Post title">
+            </div>
+            <div class="block">
+              <label class="control-label">内容</label>
+              <textarea class="form-control" placeholder="Content" rows="5"></textarea>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-small btn-default" data-dismiss="modal">取消</button>
+            <button type="button" class="btn btn-small btn-primary" data-loading-text="Publishing...">保存</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div>
+    </form>
+  </div>
+  <!-- / .modal -->
+  <!-- footer -->
+  <footer id="footer">
+    <div class="text-center padder clearfix">
+      <p>
+        <small>&copy; 西安地方税务局 智能数据处理系统 版权所有</small><br><br>
+        <a href="#" class="btn btn-mini btn-circle btn-twitter"><i class="icon-twitter"></i></a>
+        <a href="#" class="btn btn-mini btn-circle btn-facebook"><i class="icon-facebook"></i></a>
+        <a href="#" class="btn btn-mini btn-circle btn-gplus"><i class="icon-google-plus"></i></a>
+      </p>
+    </div>
+  </footer>
+  <a href="#" class="hide slide-nav-block" data-toggle="class:slide-nav slide-nav-left" data-target="body"></a>
+  <!-- / footer -->
+	<script src="js/jquery.min.js"></script>
+  <!-- Bootstrap -->
+  <script src="js/bootstrap.js"></script>
+  <!-- app -->
+  <script src="js/app.js"></script>
+  <script src="js/app.plugin.js"></script>
+  <script src="js/app.data.js"></script>
+  <!--  select css3菜单选项-->
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function(){
+		var c=1;																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																													
+		$(".cloud-product-ul>li").mouseenter(function(){
+			var e=$(this);
+			c=e.data("index");
+			var e=$(this);
+			setTimeout(function(){
+				if(c==e.data("index")){
+					$(".cloud-product-ul>li").removeClass("active");
+					e.addClass("active")
+				}
+			},120)
+		});
+	
+	});
+	</script>
+</body>
+</html>

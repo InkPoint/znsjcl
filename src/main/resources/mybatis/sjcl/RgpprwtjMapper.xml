@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xalt.sjcl.dao.RgpprwtjMapper">
+
+    <!--抽样核查匹配人下拉框查询-->
+    <select id="selectClr" resultType="com.xalt.sjcl.model.RgpprwtjVo">
+        select t.user_code id,t.user_name text from acl_user t
+    </select>
+
+    <!--默认表信息查询-->
+    <select id="selectList" parameterType="java.util.HashMap" resultType="com.xalt.sjcl.model.RgpprwtjVo">
+
+        select *
+        from (
+        select '1' cllx
+                    ,t2.user_name clr
+                    ,'西安市税务局信息处数据采集科' hcdw
+                    ,count(1) sjl
+                    ,0 cwl
+                    ,0 xfl
+        from Znsjcl_Cl_Wppxx t
+        ,acl_user t2
+        ,dim_dm_gy_swjg t3
+        where t.hcr=t2.user_code(+)
+        and t.ppdw=t3.SWJG_DM(+)
+        and (t.djxh is not null or t.wfpp is not null)
+        and t.hcr is not null
+
+        <if test="svo.clsjq!=null ">
+            and hcsj &gt;= to_date('${svo.clsjq}','yyyy-MM-dd')
+        </if>
+        <if test=" svo.clsjz!=null">
+            and hcsj &lt; to_date('${svo.clsjz}','yyyy-MM-dd')+1
+        </if>
+        group by t2.user_name
+
+        union all
+
+        select '0' cllx
+        ,t1.user_name clr
+        ,to_char(yd_concat(distinct t3.SWJGMC)) SWJGMC
+        ,count(case when (t.djxh is not null or t.wfpp is not null)
+        <if test="svo.clsjq!=null ">
+            and ppsj &gt;= to_date('${svo.clsjq}','yyyy-MM-dd')
+        </if>
+        <if test=" svo.clsjz!=null">
+            and ppsj &lt; to_date('${svo.clsjz}','yyyy-MM-dd')+1
+        </if>
+        then 1 else null end) sjl
+        , count(
+        <if test=" svo.clsjz!=null and svo.clsjq!=null and  svo.clsjz!='' and  svo.clsjq!=''">
+        case
+         when
+            hcsj &gt;= to_date('${svo.clsjq}','yyyy-MM-dd') and
+            hcsj &lt; to_date('${svo.clsjz}','yyyy-MM-dd')+1
+            and    wfppyy  is not null
+            then
+
+        wfppyy
+
+            else
+            null
+            end
+        </if>
+        ) cwl
+        ,count(ppr) xfl
+        from Znsjcl_Cl_Wppxx t
+        ,acl_user t1
+        ,dim_dm_gy_swjg t3
+        where t.ppr=t1.user_code(+)
+        and t.ppdw=t3.SWJG_DM(+)
+        and t.ppr is not null
+        group by t1.user_name
+        ) a where 1=1
+        <if test="svo.ppr != null">
+            and a.clr= '${svo.ppr}'
+        </if>
+        <if test="svo.cllx != null">
+            and a.cllx= '${svo.cllx}'
+        </if>
+
+
+    </select>
+</mapper>

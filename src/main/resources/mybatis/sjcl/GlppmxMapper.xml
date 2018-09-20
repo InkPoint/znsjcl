@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xalt.sjcl.dao.GlppmxMapper">
+
+    <!--根据id查询具体的模型-->
+    <select id="basicinfo" parameterType="java.util.HashMap" resultType="com.xalt.sjcl.model.GlppmxVO">
+        select t.mxid,t.mxmc, t.yb,t.mbb,t.ppgz,t.ppsm,t.ppfs,t.cjr,to_char(t.cjsj,'yyyy-mm-dd hh:mi:ss')
+        cjsj,t.bbh,t.ppjgb from znsjcl_cl_glppmx t
+        where 1=1 and t.yxbz='Y'
+        <if test="svo.mxid != null">
+            and t.mxid like '%${svo.mxid}%'
+        </if>
+    </select>
+    <!--查询所有模型-->
+    <select id="selectAll" parameterType="java.util.HashMap" resultType="com.xalt.sjcl.model.GlppmxVO">
+        select t.mxid,
+        t.mxmc,
+        t.yb,
+        t.mbb,
+        t.ppgz,
+        t.ppsm,
+        t.ppfs,
+        t.cjr,
+        to_char(t.cjsj, 'yyyy-mm-dd hh24:mi:ss') cjsj,
+        t.bbh,
+        t.ppjgb,
+        wm_concat(t1.ppxzw) ppx,
+        wm_concat(t2.gzmc) ppgzstr
+        from znsjcl_cl_glppmx t, znsjcl_cl_ref_ppmx t1, znsjcl_cl_glppgz t2
+        where 1 = 1
+        and t.mxid = t1.mxid
+        and t1.gzid = t2.gzid
+        and t.yxbz = 'Y'
+        <if test="svo.con_mxmc != null">
+            and t.mxmc like '%${svo.con_mxmc}%'
+        </if>
+        group by t.mxid,
+        t.mxmc,
+        t.yb,
+        t.mbb,
+        t.ppgz,
+        t.ppsm,
+        t.ppfs,
+        t.cjr,
+        to_char(t.cjsj, 'yyyy-mm-dd hh24:mi:ss'),
+        t.bbh,
+        t.ppjgb
+        order by to_char(t.cjsj, 'yyyy-mm-dd hh24:mi:ss') desc
+    </select>
+    <!--查询所有数据表-->
+    <select id="getalltab" parameterType="java.util.HashMap" resultType="com.xalt.sjcl.model.DownlistVO">
+          select t.dxmcyw id,t.dxmczw text from znsjcl_dm_sjdx t where t.lxid='17001'  and t.yxbz='Y'
+    </select>
+
+    <!--查询模型对应规则关联字段表-->
+    <select id="mxgzlist" parameterType="java.util.HashMap" resultType="com.xalt.sjcl.model.MxgzVO">
+        select    t.mxgzid,
+                   t.mxid,
+                   t.ywzdmc_yb ywzdmcyb,
+                   t.zwzdmc_yb zwzdmcyb,
+                   t.ywzdmc_mbb ywzdmcmbb,
+                   t.zwzdmc_mbb zwzdmcmbb,
+                   t.gzid,
+                   t.zxsx,
+                   t1.gzmc
+              from znsjcl_cl_mxgzinfo t, znsjcl_cl_glppgz t1
+             where t.gzid = t1.gzid(+)
+                    and t.yxbz='Y'
+                    and t.mxid = '${svo.mxid}'
+    </select>
+
+    <!--添加新模型-->
+    <insert id="insertdata" parameterType="java.util.HashMap">
+              insert into
+                    znsjcl_cl_glppmx(mxid,mxmc,yb,mbb,ppgz,ppsm,yxbz,ppfs,cjr,cjsj,bbh,ppjgb)
+            values (
+                    '${svo.mxid}',
+                    '${svo.mxmc}',
+                    '${svo.yb}',
+                    '${svo.mbb}',
+                    '${svo.ppgz}',
+                    '${svo.ppsm}','Y','0','${curuser}',sysdate,'1','${svo.ppjgb}')
+    </insert>
+
+    <!--修改模型-->
+    <update id="updatedata" parameterType="java.util.HashMap">
+             update znsjcl_cl_glppmx  t
+                set
+                    t.mxmc='${svo.mxmc}',t.yb='${svo.yb}',
+                    t.mbb='${svo.mbb}',t.ppgz='${svo.ppgz}',
+                    t.ppsm='${svo.ppsm}',t.bbh='${svo.bbh}',t.ppjgb='${svo.ppjgb}'
+                where t.mxid='${svo.mxid}'
+     </update>
+
+    <!--删除模型-->
+    <update id="deletes" parameterType="java.util.HashMap">
+          update  znsjcl_cl_glppmx t set t.yxbz='N'  where    t.mxid='${svo.mxid}'
+    </update>
+
+    <!--删除模型下所有关系链接-->
+    <update id="deleteschildren" parameterType="java.util.HashMap">
+          update  znsjcl_cl_mxgzinfo t set t.yxbz='N'  where    t.mxid='${svo.mxid}'
+    </update>
+
+    <!--源表列信息-->
+    <select id="ybcolumns" parameterType="java.util.HashMap" resultType="com.xalt.sjcl.model.DownlistVO">
+        select t.sjxmcyw id,t.sjxmczw text from znsjcl_dm_sjx t where 1=1
+        and t.yxbz='Y'
+        <if test="yb != null">
+            and t.sjdxmcyw like '${yb}'
+        </if>
+    </select>
+
+    <!--目标表列信息-->
+    <select id="mbbcolumns" parameterType="java.util.HashMap" resultType="com.xalt.sjcl.model.DownlistVO">
+        select t.sjxmcyw id,t.sjxmczw text from znsjcl_dm_sjx t where 1=1
+        and t.yxbz='Y'
+        <if test="mbb != null">
+            and t.sjdxmcyw like '${mbb}'
+        </if>
+    </select>
+
+    <!--规则列表-->
+    <select id="gzlist" parameterType="java.util.HashMap" resultType="com.xalt.sjcl.model.DownlistVO">
+          select r.gzid id,r.gzmc text from znsjcl_cl_glppgz r where  r.cjr ='${curuser}'       and r.yxbz='Y'
+    </select>
+
+    <!--插入模型规关系数据-->
+    <insert id="insertmxgz" parameterType="java.util.HashMap">
+           insert into znsjcl_cl_mxgzinfo
+                      (mxgzid,
+                       mxid,
+                       ywzdmc_yb,
+                       zwzdmc_yb,
+                       ywzdmc_mbb,
+                       zwzdmc_mbb,
+                       gzid,
+                       yxbz,
+                       zxsx)
+                    values
+                      (to_char(sysdate, 'yyyymmdd') || all_indexes.nextval,
+                       '${svo.mxid}',
+                       '${svo.ywzdmcyb}',
+                       '${svo.zwzdmcyb}',
+                       '${svo.ywzdmcmbb}',
+                       '${svo.zwzdmcmbb}',
+                       '${svo.gzid}',
+                       'Y',
+                       '${svo.zxsx}')
+    </insert>
+
+    <!--修改模型规则关系数据-->
+    <update id="updatemxgz" parameterType="java.util.HashMap">
+           update znsjcl_cl_mxgzinfo t
+           set
+                       t.mxid='${svo.mxid}',
+                       t.ywzdmc_yb='${svo.ywzdmcyb}',
+                       t.zwzdmc_yb='${svo.zwzdmcyb}',
+                       t.ywzdmc_mbb='${svo.ywzdmcmbb}',
+                       t.zwzdmc_mbb='${svo.zwzdmcmbb}',
+                       t.gzid='${svo.gzid}',
+                       t.zxsx='${svo.zxsx}'
+          where t.mxgzid  ='${svo.mxgzid}'
+    </update>
+    <!--Date:2018-2-1  User:WangPengWen-->
+    <!--模型规则（下拉菜单）-->
+    <select id="rulesofthemenu" parameterType="java.util.HashMap" resultType="com.xalt.sjcl.model.GlppmxVO">
+        select t.gzid id, t.gzmc text from znsjcl_cl_glppgz t where t.yxbz = 'Y'
+    </select>
+    <!--(新增)匹配模型-->
+    <insert id="newaddition" parameterType="java.util.HashMap">
+        insert into znsjcl_cl_glppmx
+    (mxid, mxmc, yb, ppsm, cjsj,yxbz)
+      values
+    (sys_guid(), '${svo.mxmc}', '${svo.yb}', '${svo.ppsm}', sysdate,'Y')
+    </insert>
+    <!--查询任务 ID-->
+    <select id="viewRwid" parameterType="java.util.HashMap" resultType="com.xalt.sjcl.model.GlppmxVO">
+       select t.mxid from znsjcl_cl_glppmx t  where t.cjsj=(select max(cjsj)from znsjcl_cl_glppmx)
+    </select>
+    <!--往临时表里面添加数据-->
+    <insert id="addTempdata" parameterType="map">
+        insert into znsjcl_cl_ref_ppmx (mxid,ppxzw,ppxyw,gzid,xh)
+        <foreach collection="ppmxlist" item="svo" separator="union all">
+            select '${mxid}','${svo.ppxzw}','${svo.ppxyw}','${svo.gzid}','${svo.xh}' from dual
+        </foreach>
+    </insert>
+    <!--源数据表（下拉菜单）-->
+    <select id="tablemenu" parameterType="java.util.HashMap" resultType="com.xalt.sjcl.model.ZdyclrwVo">
+        select t.dxmcyw id, t.dxmczw text from znsjcl_dm_sjdx t where t.yxbz = 'Y'
+    </select>
+</mapper>

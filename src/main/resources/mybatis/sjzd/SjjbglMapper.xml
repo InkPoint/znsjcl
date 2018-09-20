@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xalt.sjzd.dao.SjjbglMapper">
+    <!--查询结果-->
+    <!--MyBatis的传入参数parameterType类型分为两种 1.基本数据类型int、string、long、date 2.复杂数据类型 类和Map-->
+    <!--查询(数据级别)下拉菜单-->
+    <select id="sjjblist" parameterType="java.util.HashMap" resultType="com.xalt.sjzd.model.SjjbglVo">
+        select t.jbid id, t.jbmc text from znsjcl_dm_sjjb t where t.yxbz = 'Y'
+    </select>
+    <!--数据级别管理(表数据查询)-->
+    <select id="sjjbAll" parameterType="java.util.HashMap" resultType="com.xalt.sjzd.model.SjjbglVo">
+        select t.jbid,
+        t.jbmc,
+        t.jbms,
+        to_char(t.cjsj, 'yyyy-mm-dd HH:MM:SS') cjsj,
+        t.bz,
+        t.yxbz,
+        t.cjr,
+        t.sybz
+        from znsjcl_dm_sjjb t
+        where t.yxbz = 'Y'
+        <if test="svo.jbid != null">
+            and t.jbid='${svo.jbid}'
+        </if>
+    </select>
+
+    <!--数据级别管理(新增)-->
+    <insert id="adddata" parameterType="java.util.HashMap">
+        insert into znsjcl_dm_sjjb(jbid,jbmc,jbms,cjsj,bz,yxbz,sybz)
+        values(SJDX_INDEX.NEXTVAL,'${svo.jbmc}','${svo.jbms}',sysdate,'${svo.bz}','Y','未使用')
+    </insert>
+    <!--数据级别管理_存储过程(新增)-->
+    <!--<select id="adddata" parameterType="java.util.Map" statementType="CALLABLE">-->
+        <!--{call  add_znsjcl_dm_sjjb(-->
+                 <!--#{jbmc,mode=IN,jdbcType=VARCHAR},-->
+                 <!--#{jbms,mode=IN,jdbcType=VARCHAR},-->
+                 <!--#{bz,mode=IN,jdbcType=VARCHAR},-->
+                 <!--#{yxbz,mode=IN,jdbcType=VARCHAR},-->
+                 <!--#{cjr,mode=IN,jdbcType=VARCHAR}-->
+                 <!--)}-->
+    <!--</select>-->
+    <!--数据级别管理(表信息修改)-->
+    <update id="modifydata" parameterType="java.util.HashMap" >
+         UPDATE znsjcl_dm_sjjb SET jbmc='${svo.jbmc}',jbms='${svo.jbms}',bz='${svo.bz}'WHERE jbid='${svo.jbid}'
+    </update>
+    <!--数据级别管理_存储过程(修改)-->
+    <!--<select id="modifydata" parameterType="java.util.Map" statementType="CALLABLE">-->
+        <!--{call  update_znsjcl_dm_sjjb( #{jbid,mode=IN,jdbcType=VARCHAR},-->
+                                        <!--#{jbmc,mode=IN,jdbcType=VARCHAR},-->
+                                         <!--#{jbms,mode=IN,jdbcType=VARCHAR},-->
+                                         <!--#{bz,mode=IN,jdbcType=VARCHAR})}-->
+    <!--</select>-->
+    <!--数据级别管理(删除)-->
+    <update id="deleteList" parameterType="java.util.HashMap">
+        update  znsjcl_dm_sjjb t set t.yxbz='N'  where t.jbid='${svo.jbid}' and t.sybz ='未使用'
+    </update>
+    <!--校验_级别名称是否已被使用-->
+    <select id="selectbyid" parameterType="java.util.HashMap" resultType="java.util.Map">
+        select t.sybz from znsjcl_dm_sjjb t where t.jbid='${svo.jbid}' and t.yxbz='Y'  and t.sybz ='未使用'
+    </select>
+    <!--数据级别管理_存储过程(删除)-->
+    <!--<select id="deleteList" parameterType="java.util.Map" statementType="CALLABLE">-->
+       <!--{call  del_znsjcl_dm_sjjb( #{jbid,mode=IN,jdbcType=VARCHAR})}-->
+    <!--</select>-->
+    <!--级别名称_校检-->
+    <select id="nameValidation" parameterType="java.util.HashMap" resultType="com.xalt.sjzd.model.SjjbglVo">
+      select t.jbmc from znsjcl_dm_sjjb t where t.jbmc='${svo.jbmc}' and t.yxbz='Y'
+    </select>
+</mapper>

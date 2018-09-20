@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xalt.sjsplc.dao.LogMapper">
+
+    <!--新增日志-->
+    <insert id="saveData" parameterType="java.util.HashMap">
+        insert into znsjcl_job_log t
+          (t.logid,
+           t.theme,
+           t.usercode,
+           t.username,
+           t.filename,
+           t.thetext,
+           t.mark,
+           t.filepath,
+           t.operatingtime,
+           t.entrytime,
+           t.type)
+        values
+          ('${svo.logid}',
+           '${svo.theme}',
+           '${svo.usercode}',
+           '${svo.username}',
+           '${svo.filename}',
+           #{thetext,jdbcType=CLOB},
+           'Y',
+           '${svo.filepath}',
+           '${svo.operatingtime}',
+           sysdate,
+           '${svo.type}')
+    </insert>
+    <!--附件信息-->
+    <insert id="saveAttachData" parameterType="java.util.HashMap">
+        insert into znsjcl_log_attach t
+            (t.uuid, t.logid, t.filename, t.filepath, t.entrytime)
+          values
+            ('${svo.uuid}',
+             '${svo.logid}',
+             '${svo.filename}',
+             '${svo.filepath}',
+             sysdate)
+    </insert>
+    <!--工作日志(表数据)-->
+    <select id="querysAll" parameterType="java.util.HashMap" resultType="com.xalt.sjsplc.model.LogVO">
+        select t.logid,
+        t.theme,
+        t.usercode,
+        t.username,
+        t.filename,
+        t.thetext,
+        t.operatingtime,
+        to_char(t.entrytime, 'yyyy-mm-dd HH:mm:ss') entrytime,
+        t.filepath,
+        t1.text
+        from znsjcl_job_log t,znsjcl_job_lx t1
+        where t.mark like '%Y%' and t.type=t1.id(+)
+        <if test="svo.theme != null">
+            and t.theme like '%${svo.theme}%'
+        </if>
+        <if test="svo.username != null">
+            and t.username like '%${svo.username}%'
+        </if>
+        <if test="svo.operatingtime != null">
+            and t.operatingtime like '%${svo.operatingtime}%'
+        </if>
+        order by t.entrytime desc
+    </select>
+    <!--删除日志(逻辑删除)-->
+    <update id="deleteTheLog" parameterType="java.util.HashMap">
+    update znsjcl_job_log t set t.mark = 'N' where t.logid like '%${svo.logid}%'
+    </update>
+    <!--获取文本-->
+    <select id="modifyTheText" parameterType="java.util.HashMap" resultType="com.xalt.sjsplc.model.LogVO">
+     select t.theme,t.thetext,t.operatingtime,t.type from znsjcl_job_log t where t.logid='${svo.logid}' and t.mark='Y'
+    </select>
+    <!--编辑文本-->
+    <update id="saveModifyTheText" parameterType="java.util.HashMap">
+    update znsjcl_job_log t
+        set t.thetext = #{thetext,jdbcType=CLOB},t.theme='${svo.theme}',t.operatingtime='${svo.operatingtime}',t.type='${svo.type}'
+      where t.logid = '${svo.logid}'
+    </update>
+    <!--根据ID获取文件路径-->
+    <select id="queryFilePath" parameterType="java.util.HashMap" resultType="com.xalt.sjsplc.model.LogVO">
+        select t.filepath from znsjcl_log_attach t where t.uuid='${svo.uuid}'
+    </select>
+    <!--根据ID获取已上传文件-->
+    <select id="getUploadedFile" parameterType="java.util.HashMap" resultType="com.xalt.sjsplc.model.LogVO">
+        select *
+          from znsjcl_log_attach t
+         where t.logid = '${svo.logid}'
+           and t.filename is not null
+         order by t.entrytime desc
+    </select>
+    <!--根据UUID查询(表数据)-->
+    <select id="specifyTheQuery" parameterType="java.util.HashMap" resultType="com.xalt.sjsplc.model.LogVO">
+        select t.filepath
+         from znsjcl_log_attach t
+        where t.logid = #{logid}
+    </select>
+    <!--文件上传(附件)-->
+    <insert id="uploadAgain" parameterType="java.util.HashMap">
+    insert into znsjcl_log_attach t
+      (t.uuid, t.logid, t.filename, t.filepath, t.entrytime)
+    values
+      ('${uuid}', '${logid}', '${filename}', '${filepath}', sysdate)
+    </insert>
+    <!--删除附件-->
+    <delete id="deleteTheAttachment" parameterType="java.util.HashMap">
+        delete from znsjcl_log_attach t where t.uuid = '${svo.uuid}'
+    </delete>
+    <!--最后一次文件上传-->
+    <update id="modifyFileName" parameterType="java.util.HashMap">
+        update znsjcl_job_log t
+            set t.filename = #{filename}
+          where t.logid = #{logid}
+    </update>
+    <!--工作日志汇总-->
+    <select id="exportCountAll" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+        select t.logid,
+                t.theme,
+                t.usercode,
+                t.username,
+                t.filename,
+                t.thetext,
+                t.operatingtime,
+                to_char(t.entrytime, 'yyyy-mm-dd HH:mm:ss') entrytime,
+                t.filepath
+        from znsjcl_job_log t
+        where t.mark like '%Y%'
+        order by t.entrytime desc
+    </select>
+    <!--工作类型 (工作类型菜单)-->
+    <select id="jobCategory" parameterType="java.util.HashMap" resultType="com.xalt.sjsplc.model.LogVO">
+       select t.id,t.text from znsjcl_job_lx t
+    </select>
+</mapper>

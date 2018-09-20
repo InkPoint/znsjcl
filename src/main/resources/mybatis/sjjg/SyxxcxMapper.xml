@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xalt.sjjg.dao.SyxxcxMapper">
+    <!--失业信息汇总-->
+    <select id="countAll" parameterType="java.util.HashMap" resultType="com.xalt.sjjg.model.SyxxcxVO">
+        select
+            t.序号                  xh,
+            t.征收UUID              zsuuid,
+            t.缴费人识别号          jfrsbh,
+            t.缴费人名称            jfrmc,
+            t.核算机关              hsjg,
+            t.缴费人科所税务机关    jfrksswjg,
+            t.申报数据来源          sbsjly,
+            t.社保经办机构          sbjbjg,
+            t.社保编码              sbbm,
+            t.征收项目代码          zsxmdm,
+            t.征收项目              zsxm,
+            t.征收品目代码          zspmdm,
+            t.征收品目              zspm,
+            t.征收子目代码          zszmdm,
+            t.征收子目              zszm,
+            t.费款所属期起止        fkssqz,
+            t.缴费人数              jfrs,
+            t.缴费基数              jfjs,
+            t.缴费比例              jfbl,
+            t.票证号码              pzhm,
+            t.开票经办人            kpjbr,
+            t.开票经办日期          kpjbrq,
+            t.电子税票号            dzsph,
+            t.入库日期              rkrq,
+            t.入库销号经办人        rkxhjbr,
+            t.入库销号经办日期      rkxhjbrq,
+            t.实缴金额              sjje,
+            t.类型说明              lxsm
+       from DM_ZS_SBF_JKS_ex_shy t
+        <if test="svo.hsjg!=null">
+            where t.核算机关 = '${svo.hsjg}'
+        </if>
+        <if test="svo.sbjbjg!=null">
+            where t.社保经办机构 = '${svo.sbjbjg}'
+        </if>
+        order by rkxhjbrq
+    </select>
+    <!--核算机关 (机关菜单)-->
+    <select id="organMenu" parameterType="java.util.HashMap" resultType="com.xalt.sjjg.model.SyxxcxVO">
+        select t.cxsql id,t.hsjg text
+          from (select 'select * from DM_ZS_SBF_JKS_ex_shy t where t.核算机关=''' || 核算机关 ||'''' cxsql,核算机关 hsjg
+                  from DM_ZS_SBF_JKS_ex_shy
+                 group by 核算机关 order by cxsql) t
+    </select>
+    <!--经办机构 (机构菜单)-->
+    <select id="mechanismMenu" parameterType="java.util.HashMap" resultType="com.xalt.sjjg.model.SyxxcxVO">
+    select t.cxsql id, t.sbjbjg text
+      from (select 'select * from DM_ZS_SBF_JKS_ex_shy t where t.社保经办机构=''' ||社保经办机构 || '''' cxsql,社保经办机构 sbjbjg
+              from DM_ZS_SBF_JKS_ex_shy
+             group by 社保经办机构 order by cxsql) t
+    </select>
+    <!--失业信息汇总-->
+    <select id="exportCountAll" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+        select
+        t.序号                  xh,
+        t.征收UUID              zsuuid,
+        t.缴费人识别号          jfrsbh,
+        t.缴费人名称            jfrmc,
+        t.核算机关              hsjg,
+        t.缴费人科所税务机关    jfrksswjg,
+        t.申报数据来源          sbsjly,
+        t.社保经办机构          sbjbjg,
+        t.社保编码              sbbm,
+        t.征收项目代码          zsxmdm,
+        t.征收项目              zsxm,
+        t.征收品目代码          zspmdm,
+        t.征收品目              zspm,
+        t.征收子目代码          zszmdm,
+        t.征收子目              zszm,
+        t.费款所属期起止        fkssqz,
+        t.缴费人数              jfrs,
+        t.缴费基数              jfjs,
+        t.缴费比例              jfbl,
+        t.票证号码              pzhm,
+        t.开票经办人            kpjbr,
+        t.开票经办日期          kpjbrq,
+        t.电子税票号            dzsph,
+        t.入库日期              rkrq,
+        t.入库销号经办人        rkxhjbr,
+        t.入库销号经办日期      rkxhjbrq,
+        t.实缴金额              sjje,
+        t.类型说明              lxsm
+        from DM_ZS_SBF_JKS_ex_shy t
+        <if test="svo.hsjg!=null">
+            where t.核算机关 = '${svo.hsjg}'
+        </if>
+        <if test="svo.sbjbjg!=null">
+            where t.社保经办机构 = '${svo.sbjbjg}'
+        </if>
+        order by rkxhjbrq
+    </select>
+</mapper>

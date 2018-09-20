@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xalt.sjyj.dao.SjcpztMapper">
+    <!--数据产品主题的查询-->
+    <select id="cpztlist" parameterType="java.util.HashMap" resultType="com.xalt.sjyj.model.SjcpztVO">
+        select ztid,ztmc,ztms from znsjcl_sjjg_sjcpzt where yxbz='Y'
+    </select>
+    <!--对数据元件的基本查询-->
+    <select id="sjyjlist" parameterType="java.util.HashMap" resultType="com.xalt.sjyj.model.SjyjVO">
+        select t.yjid, t.yjmc, t.yjly
+         from znsjcl_jg_sjyj t
+        where t.yjmc in ('征收税款', '申报税款')
+          and t.yxbz = 'Y'
+    </select>
+    <select id="queryByID" parameterType="java.util.HashMap" resultType="com.xalt.sjyj.model.SjyjVO">
+        select t.yjid, t.yjmc, t.yjly
+         from znsjcl_jg_sjyj t
+        where t.yjmc in ('征收税款', '申报税款')
+          and t.yxbz = 'Y'
+          and t.yjid = '${svo.yjid}'
+    </select>
+    <!--查询(元件列名)-->
+    <select id="viewdata" parameterType="java.util.HashMap" resultType="com.xalt.sjzd.model.DymicVO">
+        select upper(t.sjxmcyw) field,
+        t.sjxmczw title,
+        'left' align,
+        'center' halign
+        from znsjcl_dm_sjx t
+        WHERE t.yxbz = 'Y'
+        and t.sjdxmcyw = '${svo.dxmcyw}'
+        order by t.sjxid desc
+    </select>
+    <!--产品信息-->
+    <select id="produceTheProduct" parameterType="java.util.HashMap">
+
+    </select>
+   <!--数据元件弹出条件的查询-->
+    <select id="addsjyj" parameterType="java.util.HashMap" resultType="com.xalt.sjyj.model.SjyjVO">
+        select t2.yjmc,
+        t2.yjkj,
+        t1.csdm,
+        t1.csmc,
+        t1.cslx,
+        t1.cszdm,
+        t1.dmb,
+        t1.sjcsdm,
+        t1.dmbmczd,
+        t1.sjcsdmzdm
+        from znsjcl_sjjg_yjtctj t1, znsjcl_jg_sjyj t2
+        where t1.yjdm = '${svo.yjid}'
+        and t2.yxbz = 'Y'
+        and t2.yjid = '${svo.yjid}'
+    </select>
+    <!--对于参数类型是dm 下拉框查询-->
+    <select id="cslist" parameterType="java.util.HashMap" resultType="com.xalt.sjyj.model.SjyjVO">
+        select ${dmbmczd} id,${sjcsdmzdm} text from ${dmb}
+    </select>
+    <!--判断元件主题默认加载在表头的元件名称-->
+    <select id="yjbtlist" parameterType="java.util.HashMap" resultType="com.xalt.sjyj.model.SjyjVO">
+        select t.yjid, t.yjmc, t.yjly
+         from znsjcl_jg_sjyj t
+        where t.yjmc in ('登记类')
+          and t.yxbz = 'Y'
+    </select>
+    <!--所属分局下拉框-->
+    <select id="ssfjlist" resultType="com.xalt.sjyj.model.SjcpcxtjVO">
+        select t.SWJG_DM id, t.SWJGMC text
+        from dim_dm_gy_swjg t
+        where t.jgjc_dm = '42'
+        and t.swjgbz = '0'
+        and t.YXBZ = 'Y'
+        order by t.swjg_dm asc
+    </select>
+    <!--所属科所下拉框-->
+    <select id="sskslist" parameterType="java.util.HashMap" resultType="com.xalt.sjyj.model.SjcpcxtjVO">
+        select t.SWJG_DM id, t.SWJGMC text
+        from dim_dm_gy_swjg t
+        where t.jgjc_dm = '52'
+        and t.swjgbz = '0'
+        and t.YXBZ = 'Y'
+        and t.SWJG_DM like '${svo.swjg_dm}%'
+        order by t.swjg_dm asc
+    </select>
+    <!--纳税人状态下拉框-->
+    <select id="nsrztlist" resultType="com.xalt.sjyj.model.SjcpcxtjVO">
+        select t.nsrzt_dm id,t.nsrztmc text from dim_dm_gy_nsrzt t where t.yxbz='Y'
+    </select>
+    <!--调用存储过程 获得sql-->
+    <select id="callpro" parameterType="java.util.Map" statementType="CALLABLE">
+         {call  SP_ZNSJCL_rd(#{svo.cxl,mode=IN,jdbcType=VARCHAR},#{svo.gltj,mode=IN,jdbcType=VARCHAR},#{svo.pztj,mode=IN,jdbcType=VARCHAR},#{svo.out_sql,mode=OUT,jdbcType=VARCHAR})}
+    </select>
+
+    <!--查询表头信息-->
+    <select id="getHeader" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+       select t.sjxmcyw field, t.sjxmczw title, 'left' align, 'center' halign
+          from znsjcl_dm_sjx t
+         where t.sjdxmcyw = #{value}
+    </select>
+    <!--查询信息-->
+    <select id="queryinfos" parameterType="java.util.HashMap" resultType="map">
+        ${lastsql}
+    </select>
+</mapper>

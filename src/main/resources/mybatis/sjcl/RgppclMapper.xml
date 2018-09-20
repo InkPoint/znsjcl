@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xalt.sjcl.dao.RgppclMapper">
+    <!--数据表下拉框查询-->
+    <select id="selectSjb" resultType="com.xalt.sjcl.model.RgppclVo">
+       select distinct t.ybywm id , t1.dxmczw text
+              from znsjcl_cl_wppxx t ,
+                   znsjcl_dm_sjdx t1
+              where t.ybywm = t1.dxmcyw
+    </select>
+
+    <!--默认表数据查询-->
+    <select id="selectAll" parameterType="java.util.HashMap" resultType="com.xalt.sjcl.model.RgppclVo">
+        select t1.dxmczw,
+             --  t.znsjcl_id znsjclid,
+               t.ppz,
+               t.ybzd,
+               t.ybywm,
+               t.sjly,
+               t.znsjcl_id wid,
+               t.djxh,
+        t.scxffj,
+               t.wfppyy
+        from znsjcl_cl_wppxx t,
+        Znsjcl_Dm_Sjdx t1
+        where t.ybywm = t1.dxmcyw
+        and t.djxh is null
+        and t.xfdw is null
+        AND t.wfpp is NULL
+        and
+        ( t.ppr='${svo.ppr}'
+--           or
+--           t.xfdw in(
+--                     select case when a.JGJC_DM = 32 then substr(a.SWJG_DM, 1, 5) || '000000'
+--                     when a.JGJC_DM = 42 then substr(a.SWJG_DM, 1, 7) || '0000'
+--                     when a.JGJC_DM = 52 then substr(a.SWJG_DM, 1, 9) || '00'
+--                     else a.SWJG_DM end  swjgdm
+--                     from dim_dm_gy_swjg a
+--                     where a.SWJG_DM like '26101%'
+--                     and a.SWJG_DM = '${svo.ppdw}'
+--           )
+        )
+
+        <if test="svo.ybywm!=null">
+            and t.ybywm='${svo.ybywm}'
+        </if>
+        <if test="svo.sjly!=null">
+            and t.sjly='${svo.sjly}'
+        </if>
+        order by  t.sjly desc
+
+
+    </select>
+
+    <!--查询匹配信息-->
+    <select id="selectPpys" parameterType="java.util.HashMap" resultType="com.xalt.sjcl.model.RgppclVo">
+        select /*+index(t ZNSJCL_DJ_NSRXX_JGB_I1)*/
+        t.djxh
+        ,t.shxydm
+        ,t.nsrmc
+        ,t.ssdabh
+        ,t.nsrsbh
+        ,t.fddbrxm
+        ,t.fddbrsfzjhm
+        ,t.nsrztmc
+        ,t.hymc
+        ,t.fjmqybz
+        ,t.gdslxmc
+        ,t.kzztdjlxmc
+        ,t.scjydz
+        ,t.jyfw
+        ,t.xzqhmc
+        ,t.ZCDZ
+        ,t.xzqhmc xzqhmc1
+        ,t.djzclxmc
+        ,t.jdxzmc
+        ,t.dwlsgxmc
+        ,t.gdghlxmc
+        ,t.swjgmc
+        ,DJRQ  djrq
+        ,t.zzjglxmc
+        ,t.kqccsztdjbz
+        ,t.swjgmc swjgmc1
+        ,t.swjgmc swjgmc2
+        ,t.swryxm
+        ,t.swryxm swryxm1
+        ,t.LRRQ  lrrq
+        ,t.swryxm swryxm2
+        ,t.XGRQ xgrq
+        ,t.zgswj_dm zgswjgdm
+        from  ZNSJCL_DJ_NSRXX_JGB t
+        <if test="svo.nsrmc != null">
+            where t.nsrmc like '%${svo.nsrmc}%'
+        </if>
+
+        <if test="svo.djxh != null">
+            and t.djxh like '%${svo.djxh}%'
+        </if>
+
+    </select>
+
+    <!--基层局下拉框查询-->
+    <select id="selectZddw" resultType="com.xalt.sjcl.model.RgppclVo">
+        select t.swjg_dm value
+                  ,t.SWJGJC text
+        from dim_dm_gy_swjg t
+        where t.JGJC_DM='42'
+            and t.SWJGBZ='0'
+            and t.SWJG_DM like '26101%'
+            and t.yxbz='Y'
+        order by t.SWJG_DM
+    </select>
+
+    <!--审核是否通过查询-->
+    <select id="selectShyy" resultType="com.xalt.sjcl.model.RgppclVo">
+        select t.wid value ,t.nr text
+              from znsjcl_cl_wppxxsh t
+              where t.yxbz = 'Y'
+    </select>
+
+
+    <!--无法匹配原因查询-->
+    <select id="selectPpyy" resultType="com.xalt.sjcl.model.RgppclVo">
+         select t.wid value ,t.cause text
+         from znsjcl_dm_wfpp t
+         where t.yxbz='Y'
+    </select>
+
+    <!--市局确认匹配-->
+    <update id="qrpp" parameterType="java.util.HashMap">
+         update znsjcl_cl_wppxx t
+            set
+            t.djxh = '${svo.djxh}',
+            t.ppsj=sysdate,
+            t.cgbz = 'Y',
+            t.ppr = '${ppr}',
+            t.ppdw = '${ppdw}'
+            where t.ZNSJCL_ID = '${svo.wid}'
+    </update>
+
+
+    <!--基层局确认匹配-->
+    <update id="qrppjc" parameterType="java.util.HashMap">
+        update znsjcl_cl_wppxx t
+        set
+        t.djxh = '${svo.djxh}',
+        t.ppsj=sysdate,
+        t.cgbz = 'Y',
+        t.ppr = '${ppr}',
+        t.ppdw = '${ppdw}'
+        where t.ZNSJCL_ID = '${svo.wid}'
+    </update>
+
+
+
+
+    <!--下发基层分局-->
+    <update id="xfjcfj" parameterType="java.util.HashMap">
+           update znsjcl_cl_wppxx
+            set orgcode = '${xffj}',
+             xfsj = sysdate,
+             xfr = '${xfr}',
+             xfdw = '${ppdw}',
+             ppsj = sysdate,
+             wfpp = '${wfpp}',
+             ppr = '',
+             ppdw = '${xfdw}'
+            where zncjcl_id = '${wid}'
+    </update>
+
+
+    <!--下发基层默认数据查询-->
+    <select id="selectJc" parameterType="java.util.HashMap" resultType="com.xalt.sjcl.model.RgppclVo">
+        select t1.dxmczw,
+        t.ppz,
+        t.ybzd,
+        t.wfppyy,
+        t.ybywm,
+        t.xfr,
+        t.sjly,
+        --    t.orgcode,
+        a2.SWJGMC pprszdw,
+        t. znsjcl_id wid,
+        t.djxh,
+        a.user_name xfry,
+        a1.SWJGMC xfdw,
+        to_char(t.xfsj, 'yyyy-MM-dd hh24:mi:ss') xfsj
+        from (select *
+        from znsjcl_cl_wppxx t
+        where t.xfdw  is not null
+        and t.djxh is NULL
+        and t.wfpp is null
+        ) t,
+        Znsjcl_Dm_Sjdx t1,
+        acl_user a,
+        dim_dm_gy_swjg a1,
+        dim_dm_gy_swjg a2
+        where t.ybywm = t1.dxmcyw
+        and t.xfr = a.user_code
+        and t.xfdw = a1.SWJG_DM
+        and t.orgcode = a2.SWJG_DM
+        and
+        exists(
+        select 1
+        from acl_organize aa
+            where aa.org_level = '3'
+            and exists (select 1
+            from acl_organize aa1
+            where aa.org_id = aa1.org_pid
+            and aa1.org_code = '${svo.xfdw}'
+        )
+        and aa.org_code=t.xfdw
+        )
+                            <if test="svo.ybywm!=null">
+                                and t.ybywm='${svo.ybywm}'
+                            </if>
+                            <if test="svo.sjly!=null">
+                                and t.sjly='${svo.sjly}'
+                            </if>
+
+    </select>
+
+    <!--抽样核查默认数据查询-->
+    <select id="selectCyhc" parameterType="java.util.HashMap" resultType="com.xalt.sjcl.model.RgppclVo">
+        select t.ppz,
+        to_char(t.ppsj, 'yyyy-MM-dd hh24:mi:ss') ppsj,
+        t.djxh,
+        t.znsjcl_id wid,
+        t.ybzd,
+        t.ybywm,
+        t.ppdw,
+        t1.dxmczw,
+        t.ppr,
+        a.user_name uname,
+        a1.swjgmc,
+        a2.cause
+        from (select *
+        from znsjcl_cl_wppxx t
+        where t.djxh is not null or t.wfpp is not null
+        ) t,
+        Znsjcl_Dm_Sjdx t1,
+        acl_user a,
+        (select r.* from dim_dm_gy_swjg r where r.swjg_dm like '26101%') a1,
+        ZNSJCL_DM_WFPP a2
+        where t.ybywm = t1.dxmcyw
+        and t.ppr = a.user_code(+)
+        and t.ppdw = a1.SWJG_DM(+)
+        and t.wfpp= a2.wid(+)
+        and (t.sjly is   null or t.sjly!='2')
+
+        <if test="svo.ybywm != null">
+            and t.ybywm = '${svo.ybywm}'
+        </if>
+        <if test="svo.ppr != null">
+            and t.ppr = '${svo.ppr}'
+        </if>
+        <if test="svo.ppdw != null">
+            and t.ppdw= '${svo.ppdw}'
+        </if>
+        <if test="svo.cjsjbegin!=null and svo.cjsjend!=null">
+            and ppsj &gt; to_date('${svo.cjsjbegin}','yyyy-MM-dd')
+            and ppsj &lt; to_date('${svo.cjsjend}','yyyy-MM-dd')+1
+        </if>
+        order by t.ppsj asc
+    </select>
+
+
+    <!--核查成功-->
+    <update id="shcg"  parameterType="java.util.HashMap">
+              update znsjcl_cl_wppxx
+                      set sjly = '2',
+                      hcsj = sysdate,
+                      hcr = '${hcr}'
+                      where znsjcl_id = '${wid}'
+    </update>
+
+    <!--审核不成功-->
+    <update id="shbcg" parameterType="java.util.HashMap">
+          update znsjcl_cl_wppxx
+                   set sjly    = '1',
+                       djxh    = '',
+                   --    ppr     = '',
+                       hcr     = '${hcr}',
+                       hcsj    = sysdate,
+                       ppsj    = '',
+                    --   cgbz    = '',
+                       ppdw    = '',
+                       wfpp    = '',
+                       wfppyy  = '${wfppyy}'
+                 where znsjcl_id = '${wid}'
+    </update>
+
+
+    <!--人工匹配-下发分局-->
+    <update id="rgpp_xffj" parameterType="java.util.HashMap">
+                     update znsjcl_cl_wppxx
+                      set
+                      xfsj = sysdate,
+                      xfr = '${xfr}',
+                      xfdw = '${xffj}',
+                      ppdw ='${xffj}',
+                      orgcode='${orgcode}'
+                      where znsjcl_id = '${wid}'
+    </update>
+
+    <!--人工匹配-无法匹配-->
+    <update id="rgpp_wfpp" parameterType="java.util.HashMap">
+          update znsjcl_cl_wppxx
+                      set ppr = '${ppr}',
+                       ppdw = '${ppdw}',
+                       ppsj = sysdate,
+                       wfpp = '${wfpp}'
+                       where znsjcl_id = '${wid}'
+    </update>
+
+    <!--匹配单位下拉框查询-->
+    <select id="zddwcx" resultType="com.xalt.sjcl.model.RgppclVo">
+        select t.swjg_dm id, t.SWJGJC text
+        from dim_dm_gy_swjg t
+        where t.JGJC_DM = '42'
+        and t.SWJGBZ = '0'
+        and t.SWJG_DM like '26101%0000'
+        and t.yxbz = 'Y'
+        union all select t1.swjg_dm id, t1.SWJGJC text from  dim_dm_gy_swjg t1 where  t1.SWJG_DM='26101000000'
+        order by id
+    </select>
+
+    <!--基层局无法匹配原因查询-->
+    <select id="selectPpyy_jc" resultType="com.xalt.sjcl.model.RgppclVo">
+        select t.wid value ,t.cause text
+        from znsjcl_dm_wfpp_fj t
+        where t.yxbz='Y'
+    </select>
+
+    <!--基层局无法匹配不是该分局-->
+    <update id="jcjbugfj" parameterType="java.util.HashMap">
+            update znsjcl_cl_wppxx
+               set djxh    = '',
+                   ppsj    = '',
+                   sjly    = '0',
+                   ppdw    = '',
+                   xfdw    = '',
+                   xfsj    = '',
+                   xfr     = '',
+                   wfpp    = '',
+                   wfppyy  = '',
+                   orgcode = '',
+                   scxffj= '${xffj}',
+                   ppr     = '${xfr}'
+             where znsjcl_id = '${wid}'
+
+    </update>
+
+    <!--市局匹配信息撤销-->
+    <select id="cxcx"  parameterType="java.util.HashMap" >
+--                      update znsjcl_cl_wppxx t
+--                      set t.ppr = '', t.sjly = 0, t.wfppyy = '', t.scxffj = ''
+--                      where (t.djxh is null  or t.xfdw is null)
+--                      and (t.ppsj is null or t.cgbz is null or t.sjly = '1')
+--                      and t.wfpp is null
+--                      and t.ppr = '${ppr}'
+
+                     update  znsjcl_cl_wppxx a
+                        set a.ppr = '', a.sjly = 0, a.wfppyy = '', a.scxffj = '',a.xfdw=''
+                         where a.znsjcl_id not in
+                               (select t.znsjcl_id
+                                  from znsjcl_cl_wppxx t
+                                 where t.ppr = '${ppr}'
+                                   and (t.djxh is not null or t.wfpp is not null))
+                           and a.ppr = '${ppr}'
+
+
+
+
+    </select>
+
+    <!--抽样核查匹配人下拉框查询-->
+    <select id="selectHcr" resultType="com.xalt.sjcl.model.RgppclVo">
+        select t.user_code id,t.user_name text from acl_user t
+    </select>
+
+
+    <select id="selectLm"  parameterType="java.util.HashMap" resultType="com.xalt.sjzd.model.SjxVo">
+        select distinct t1.sjxmczw ,t1.sjxmcyw
+        from znsjcl_dm_sjx t1,
+        znsjcl_cl_wppxx t2
+        where   upper(t1.sjdxmcyw)=upper(t2.ybywm)
+        and  t1.yxbz = 'Y'   and upper(t1.sjdxmcyw) = upper('${svo.ybywm}')
+    </select>
+
+    <!--纳税人原始信息列名称查询-->
+    <select id="selectysb"  parameterType="java.util.HashMap"   resultType="java.util.HashMap">
+        ${ysbsql}
+    </select>
+
+</mapper>

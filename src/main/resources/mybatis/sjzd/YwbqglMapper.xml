@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xalt.sjzd.dao.YwbqglMapper">
+
+    <!--机构树-->
+    <select id="selectZtree" resultType="com.xalt.sjzd.model.YwbqglVo">
+        select bqid,pbqid,bqmc from ZNSJCL_DM_YWBQ where  yxbz='Y'
+    </select>
+
+    <!--父标签 默认子节点查询-->
+    <select id="selectAll" resultType="com.xalt.sjzd.model.YwbqglVo">
+      select t.* from ZNSJCL_DM_YWBQ t
+            where t.pbqid in (
+            select t1.bqid from ZNSJCL_DM_YWBQ t1
+            where t1.pbqid is null)   and t.yxbz='Y'
+    </select>
+
+    <!--指定标签详细信息查询-->
+    <select id="gettargetinfo" parameterType="java.util.HashMap" resultType="com.xalt.sjzd.model.YwbqglVo">
+        select t.* from ZNSJCL_DM_YWBQ t
+        where 1=1
+               and t.bqid='${svo.bqid}'
+               and t.yxbz='Y'
+     </select>
+
+    <!--指定标签子节点详细信息查询-->
+    <select id="getchildrens" parameterType="java.util.HashMap" resultType="com.xalt.sjzd.model.YwbqglVo">
+       select t.bqid,
+         t.bqmc,
+         t.bqms,
+         to_char(t.cjsj, 'yyyy-MM-dd HH24:mi:ss') cjsj,
+         t.pbqid,
+         t.bz,
+         t.cjr,
+         t.xh
+    from ZNSJCL_DM_YWBQ t
+    where t.pbqid = '${svo.bqid}'
+     and t.yxbz = 'Y'
+      ORDER BY cjsj DESC
+    </select>
+
+    <!--根据标签id查询子节点-->
+    <select id="selectbq" parameterType="java.util.HashMap" resultType="com.xalt.sjzd.model.YwbqglVo">
+        select t.* from ZNSJCL_DM_YWBQ t
+        where t.pbqid='${svo.bqid}'  and t.yxbz='Y'
+    </select>
+
+    <!--添加数据-->
+    <insert id="insertlable"  parameterType="java.util.HashMap"  >
+         INSERT into ZNSJCL_DM_YWBQ (bqmc,pbqid,bqms,cjsj,xh,bz,cjr,yxbz)
+            VALUES
+        ('${svo.bqmc}','${svo.pbqid}','${svo.bqms}',sysdate,to_number('${svo.xh}'),'${svo.bz}','${cjr}','Y')
+    </insert>
+
+    <!--标签编辑-->
+    <update id="updateLable" parameterType="java.util.HashMap"   >
+        UPDATE ZNSJCL_DM_YWBQ SET bqmc='${svo.bqmc}',bqms='${svo.bqms}',bz='${svo.bz}' where  bqid='${svo.bqid}'
+    </update>
+
+    <!--标签信息删除-->
+    <update id="deleteLable" parameterType="java.util.HashMap" >
+        UPDATE ZNSJCL_DM_YWBQ SET yxbz='N' WHERE bqid='${svo.bqid}'
+    </update>
+
+    <!--分区名称名称_校检-->
+    <select id="nameValidation" parameterType="java.util.HashMap" resultType="com.xalt.sjzd.model.YwbqglVo">
+        select t.bqmc from ZNSJCL_DM_YWBQ t where t.bqmc='${svo.bqmc}' and t.yxbz='Y'
+    </select>
+</mapper>

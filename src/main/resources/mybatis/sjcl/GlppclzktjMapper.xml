@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xalt.sjcl.dao.GlppclzktjMapper">
+    <select id="selectlist" parameterType="java.util.HashMap" resultType="com.xalt.sjcl.model.ClmxcxVo">
+        select t.lymc,
+        t.lyid,
+        z.jbid,
+        z.jbmc,
+        m.bmmc,
+        m.sjlxbm,
+        m.bm,
+        m.clsjl,
+        m.cll,
+        to_char(m.clsj,'yyyy-mm-dd hh24:mi:ss') clsj
+        from znsjcl_cl_clmxb m,
+        znsjcl_dm_sjdx  a,
+        znsjcl_dm_sjly  t,
+        znsjcl_dm_sjjb  z
+        where upper(m.bm) = upper(a.dxmcyw)
+        and a.lyid = t.lyid(+)
+        and a.sjjb = z.jbid(+)
+        and m.cllx='1'
+        and m.rwid in(
+        select rwid from znsjcl_jh_xtyxrw where yxbz='Y'
+        )
+    <if test="svo.lyid !=null">
+        t.lyid = '${svo.lyid}'
+    </if>
+    <if test="svo.jbid != null">
+        z.jbid='${svo.jbid}'
+    </if>
+        order by m.clsj DESC
+    </select>
+
+    <!--<select id="selectall" parameterType="java.util.HashMap" resultType="com.xalt.sjcl.model.ClmxcxVo">-->
+       <!--select t.dwmc, t.bm, t.dwxz, t.jfxs, t.bzs, t.frdb, t.dwxxdz-->
+          <!--from znsjcl_cl_glpp t-->
+         <!--where dwmc is not null-->
+
+    <!--</select>-->
+
+
+
+</mapper>

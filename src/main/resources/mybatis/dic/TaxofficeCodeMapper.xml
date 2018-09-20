@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.pub.dic.dao.TaxofficeCodeMapper" >
+      <select id="selectByOrgCode"  parameterType="java.lang.String" resultType="java.util.HashMap">
+            select 'all' user_code, '--全部--' user_name from dual
+            <if test="orgCode !=null and orgCode !='' ">
+                union all
+                select user_code, user_name
+                from
+                    (select distinct d.user_code, d.user_name
+                    from acl_organize a
+                    ,acl_organize_station_xref b
+                    ,acl_user_group c
+                    ,acl_user d
+                    where a.org_id = b.org_id
+                    and b.xref_id = c.xref_id
+                    and c.user_id = d.user_id
+                    and a.org_code = '${orgCode}'
+                    order by d.user_name
+                )
+            </if>
+      </select>
+</mapper>

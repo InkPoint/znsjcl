@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xalt.sjzd.dao.SjpcglMapper">
+    <!--基本的查询-->
+<select id="list" parameterType="java.util.HashMap" resultType="com.xalt.sjzd.model.SjpcglVO">
+    select
+    pc_dm pcdm,
+    pcmc,
+    bz,
+    sybz,
+    to_char(cjsj,'yyyy-mm-dd hh24:mi:ss') cjsj
+    from znsjcl_dm_pc  where yxbz='Y'
+    <if test="svo.pcmc!=null">
+        and pcmc like '%${svo.pcmc}%'
+    </if>
+    <if test="svo.cjsjbegin!=null and svo.cjsjend!=null">
+        and cjsj &gt; to_date('${svo.cjsjbegin}','yyyy-MM-dd')
+        and cjsj &lt; to_date('${svo.cjsjend}','yyyy-MM-dd')+1
+    </if>
+    order by cjsj desc
+</select>
+   <!-- 插入-->
+<insert id="insertSjpc" parameterType="java.util.HashMap">
+    insert into znsjcl_dm_pc(pc_dm,pcmc,bz,yxbz,sybz,cjsj)
+    values ('${svo.pcdm}','${svo.pcmc}','${svo.bz}','Y','1',sysdate)
+</insert>
+    <!--修改-->
+<update id="updateSjpc" parameterType="java.util.HashMap">
+     UPDATE znsjcl_dm_pc
+        set pcmc='${svo.pcmc}',bz='${svo.bz}'
+        where pc_dm = '${svo.pcdm}'
+</update>
+    <!--唯一性的管理-->
+<select id="pcdmValidation" parameterType="java.util.HashMap" resultType="com.xalt.sjzd.model.SjpcglVO">
+     select pc_dm from znsjcl_dm_pc  where pc_dm='${svo.pcdm}' and yxbz='Y'
+</select>
+    <!--删除-->
+<update id="deleteSjpc" parameterType="java.util.HashMap">
+    UPDATE znsjcl_dm_pc
+        set yxbz='N'
+        where pc_dm = '${svo.pcdm}'
+</update>
+</mapper>

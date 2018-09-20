@@ -1,0 +1,346 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>征期调整表(CS_GY_ZQTZ)</title><style type="text/css">
+<!--body {background-color: #EFECDD;}td{ font-family:"宋体"; font-size:9pt; color=#666666;}.style9 {color: #FFFFFF}-->
+</style></head><body>
+<table width="300" height="100" border="0" cellpadding="0" cellspacing="0">
+<tr><td><p align="center">征期调整表(CS_GY_ZQTZ)</p></td></tr></table>
+<table width="760" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#FF8800">
+<tr bgcolor="#FFAC75">
+<td width="80" height="26"><div align="center" class="style9">列名</div></td>
+<td width="80"><div align="center" class="style9">汉字名</div></td>
+<td width="80"><div align="center" class="style9">数据类型</div></td>
+<td width="80"><div align="center" class="style9">长度</div></td>
+<td width="80"><div align="center" class="style9">精度</div></td>
+<td width="80"><div align="center" class="style9">非空</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">UUID</div></td>
+<td><div align="center">参数编码</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">32</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center"><a href="DM_GY_SWJG.html">SWJG_DM</div></td>
+<td><div align="center">税务机关代码</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">11</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">YYYF</div></td>
+<td><div align="center">应用月份||数据使用年月</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">6</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center"><a href="DM_GY_ZSXM.html">ZSXM_DM</div></td>
+<td><div align="center">征收项目代码</div></td>
+<td><div align="center">VARCHAR2</div></td>
+<td><div align="center">5</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center"><a href="DM_GY_NSQX.html">NSQX_DM</div></td>
+<td><div align="center">纳税期限代码</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">2</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center"><a href="DM_GY_DZBZDSZL.html">YZPZZL_DM</div></td>
+<td><div align="center">应征凭证种类代码</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">10</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">YXQSRQ</div></td>
+<td><div align="center">有效起始日期</div></td>
+<td><div align="center">DATE</div></td>
+<td><div align="center">7</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">YXZZRQ</div></td>
+<td><div align="center">有效终止日期</div></td>
+<td><div align="center">DATE</div></td>
+<td><div align="center">7</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">SYTS</div></td>
+<td><div align="center">顺延天数||日期顺延天数</div></td>
+<td><div align="center">NUMBER</div></td>
+<td><div align="center">10</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">XYBZ</div></td>
+<td><div align="center">选用标志</div></td>
+<td><div align="center">CHAR</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">LRSJ</div></td>
+<td><div align="center">录入时间</div></td>
+<td><div align="center">DATE</div></td>
+<td><div align="center">7</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">N</div></td></tr>
+<tr bgcolor="#FFFFFF"><td height="26"><div align="center">XGSJ</div></td>
+<td><div align="center">修改时间</div></td>
+<td><div align="center">DATE</div></td>
+<td><div align="center">7</div></td>
+<td><div align="center">0</div></td>
+<td><div align="center">Y</div></td></tr>
+</table>
+
+
+   
+<table width="300" height="100" border="0" cellpadding="0" cellspacing="0">
+<tr><td><p align="center">征期调整表(数据)</p></td></tr></table>
+<table width="760" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#FF8800">
+<tr bgcolor="#FFAC75">
+<td width="80" height="26"><div align="center" class="style9">参数编码</div></td>
+<td width="80" height="26"><div align="center" class="style9">税务机关代码</div></td>
+<td width="80" height="26"><div align="center" class="style9">应用月份||数据使用年月</div></td>
+<td width="80" height="26"><div align="center" class="style9">征收项目代码</div></td>
+<td width="80" height="26"><div align="center" class="style9">纳税期限代码</div></td>
+<td width="80" height="26"><div align="center" class="style9">应征凭证种类代码</div></td>
+<td width="80" height="26"><div align="center" class="style9">有效起始日期</div></td>
+<td width="80" height="26"><div align="center" class="style9">有效终止日期</div></td>
+<td width="80" height="26"><div align="center" class="style9">顺延天数||日期顺延天数</div></td>
+<td width="80" height="26"><div align="center" class="style9">选用标志</div></td>
+<td width="80" height="26"><div align="center" class="style9">录入时间</div></td>
+<td width="80" height="26"><div align="center" class="style9">修改时间</div></td>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">183F9FCC0E3E00C2E053981016BF8474</div></td>
+<td><div align="center">24600000000</div></td>
+<td><div align="center">201505</div></td>
+<td><div align="center">10104</div></td>
+<td><div align="center">99</div></td>
+<td><div align="center">BDA0610688</div></td>
+<td><div align="center">01-5月 -15</div></td>
+<td><div align="center">31-12月-15</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">01-1月 -15</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">284F9FCC0E3E00C2E053981016BF8474</div></td>
+<td><div align="center">24600000000</div></td>
+<td><div align="center">201510</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">01-10月-15</div></td>
+<td><div align="center">31-10月-15</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">01-1月 -15</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">96C462227BB4B3B11EFD54F7A5307F98</div></td>
+<td><div align="center">24400000000</div></td>
+<td><div align="center">201508</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">01-8月 -15</div></td>
+<td><div align="center">15-8月 -15</div></td>
+<td><div align="center">4</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">13-3月 -15</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">BF1226DD103B5AF515650F154D7C66E3</div></td>
+<td><div align="center">24400000000</div></td>
+<td><div align="center">201601</div></td>
+<td><div align="center">10111</div></td>
+<td><div align="center">08</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">01-1月 -16</div></td>
+<td><div align="center">18-1月 -16</div></td>
+<td><div align="center">4</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">01-1月 -16</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">BF1116DD103B5AF515650F154D7C66E3</div></td>
+<td><div align="center">24400000000</div></td>
+<td><div align="center">201202</div></td>
+<td><div align="center">10102</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">BDD0520021</div></td>
+<td><div align="center">01-1月 -12</div></td>
+<td><div align="center">01-1月 -13</div></td>
+<td><div align="center">4</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">13-3月 -15</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">5916142D6692DF35C64D641C62090002</div></td>
+<td><div align="center">24400000000</div></td>
+<td><div align="center">201503</div></td>
+<td><div align="center">10104</div></td>
+<td><div align="center">03</div></td>
+<td><div align="center">BDD0520022</div></td>
+<td><div align="center">10-3月 -15</div></td>
+<td><div align="center">27-3月 -15</div></td>
+<td><div align="center">33</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">13-3月 -15</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">BE446CC4A27A208CC42D501AAA6D5AC8</div></td>
+<td><div align="center">24400000000</div></td>
+<td><div align="center">201202</div></td>
+<td><div align="center">10102</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">BDD0520021</div></td>
+<td><div align="center">01-1月 -12</div></td>
+<td><div align="center">01-1月 -13</div></td>
+<td><div align="center">4</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">13-3月 -15</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">088B0CB38A3C21959273045A72E8EEE9</div></td>
+<td><div align="center">24401000000</div></td>
+<td><div align="center">201101</div></td>
+<td><div align="center">10101</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">BDD0520021</div></td>
+<td><div align="center">01-3月 -15</div></td>
+<td><div align="center">03-3月 -15</div></td>
+<td><div align="center">3</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">02-3月 -15</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">F05828CB11AC5F5A7AD2D08686036B15</div></td>
+<td><div align="center">24400900000</div></td>
+<td><div align="center">201503</div></td>
+<td><div align="center">10102</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">02-3月 -15</div></td>
+<td><div align="center">09-3月 -15</div></td>
+<td><div align="center">1</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">02-3月 -15</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">412A343B2B432A87FC51A4A96EDD3957</div></td>
+<td><div align="center">24400900000</div></td>
+<td><div align="center">201502</div></td>
+<td><div align="center">10102</div></td>
+<td><div align="center">02</div></td>
+<td><div align="center">BDD0520025</div></td>
+<td><div align="center">04-2月 -15</div></td>
+<td><div align="center">25-2月 -15</div></td>
+<td><div align="center">4</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">03-2月 -15</div></td>
+<td><div align="center">02-3月 -15</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">BAD9AE41EDEBBEAE779C02BA30373CC9</div></td>
+<td><div align="center">24400900000</div></td>
+<td><div align="center">201502</div></td>
+<td><div align="center">10102</div></td>
+<td><div align="center">02</div></td>
+<td><div align="center">BDD0520023</div></td>
+<td><div align="center">02-2月 -15</div></td>
+<td><div align="center">23-2月 -15</div></td>
+<td><div align="center">5</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">03-2月 -15</div></td>
+<td><div align="center">02-3月 -15</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">0104374FC4BECE5FEC385BCF1DAFB52B</div></td>
+<td><div align="center">24401000000</div></td>
+<td><div align="center">201502</div></td>
+<td><div align="center">10102</div></td>
+<td><div align="center">02</div></td>
+<td><div align="center">BDD0520030</div></td>
+<td><div align="center">11-2月 -15</div></td>
+<td><div align="center">24-2月 -15</div></td>
+<td><div align="center">4</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">03-2月 -15</div></td>
+<td><div align="center">02-3月 -15</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">CB018F527D1B6F476BFC77C5EB473AAD</div></td>
+<td><div align="center">24400900000</div></td>
+<td><div align="center">201502</div></td>
+<td><div align="center">10104</div></td>
+<td><div align="center">03</div></td>
+<td><div align="center">BDD0520030</div></td>
+<td><div align="center">11-2月 -15</div></td>
+<td><div align="center">25-2月 -15</div></td>
+<td><div align="center">3</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">03-2月 -15</div></td>
+<td><div align="center">02-3月 -15</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">6A06819F8DEBBC313F95E9D0F7CE1552</div></td>
+<td><div align="center">24400900000</div></td>
+<td><div align="center">201502</div></td>
+<td><div align="center">10101</div></td>
+<td><div align="center">03</div></td>
+<td><div align="center">000001010 </div></td>
+<td><div align="center">03-2月 -15</div></td>
+<td><div align="center">25-2月 -15</div></td>
+<td><div align="center">4</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">04-2月 -15</div></td>
+<td><div align="center">04-2月 -15</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">464DEB68A7CC169EBEE803134A4969B9</div></td>
+<td><div align="center">24400900000</div></td>
+<td><div align="center">201502</div></td>
+<td><div align="center">10103</div></td>
+<td><div align="center">04</div></td>
+<td><div align="center">000001010 </div></td>
+<td><div align="center">02-2月 -15</div></td>
+<td><div align="center">23-2月 -15</div></td>
+<td><div align="center">3</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">05-2月 -15</div></td>
+<td><div align="center">05-2月 -15</div></td>
+<td><div align="center">  </div></td>
+</tr>
+<tr bgcolor="#FFFFFF"><td height="26">
+<div align="center">96C462227BB4B3B11EFD54F7A5307F97</div></td>
+<td><div align="center">24400000000</div></td>
+<td><div align="center">201202</div></td>
+<td><div align="center">10102</div></td>
+<td><div align="center">01</div></td>
+<td><div align="center">BDD0520021</div></td>
+<td><div align="center">01-1月 -12</div></td>
+<td><div align="center">01-1月 -13</div></td>
+<td><div align="center">4</div></td>
+<td><div align="center">Y</div></td>
+<td><div align="center">13-3月 -15</div></td>
+<td><div align="center">  </div></td>
+<td><div align="center">  </div></td>
+</tr>
